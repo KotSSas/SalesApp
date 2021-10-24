@@ -86,11 +86,11 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(1, titlesList.get(0), "Text", pricesList.get(0), discountsList.get(0)));
-                itemList.add(new Item(2, titlesList.get(1), "Text", pricesList.get(1), discountsList.get(1)));
-                itemList.add(new Item(3, titlesList.get(2), "Text", pricesList.get(2), discountsList.get(2)));
-                itemList.add(new Item(4, titlesList.get(3), "Text", pricesList.get(3), discountsList.get(3)));
-                itemList.add(new Item(5, titlesList.get(4), "Text", pricesList.get(4), discountsList.get(4)));
+                itemList.add(new Item(1, titlesList.get(12), pricesList.get(12), discountsList.get(12)));
+                itemList.add(new Item(2, titlesList.get(10),  pricesList.get(10), discountsList.get(10)));
+                itemList.add(new Item(3, titlesList.get(9), pricesList.get(9), discountsList.get(9)));
+                itemList.add(new Item(4, titlesList.get(8), pricesList.get(8), discountsList.get(8)));
+                itemList.add(new Item(5, titlesList.get(7), pricesList.get(7), discountsList.get(7)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -132,11 +132,11 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(1, name.get(0), "Text", old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(2, name.get(1), "Text", old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(3, name.get(2), "Text", old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(4, name.get(3), "Text", old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(5, name.get(4), "Text", old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(1, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(2, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(3, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(4, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(5, name.get(4), old_price.get(4), new_price.get(4)));
                 setItemRecycler(itemList);
 
 

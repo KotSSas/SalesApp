@@ -12,4 +12,6 @@
     <string name="h2.2">Hac</string>
     <string name="item_price1">Цена до скидки:</string>
     <string name="item_price2">Цена со скидкой:</string>
+    <string name="liked1">В желаемое</string>
+    <string name="liked2">В желаемом</string>
 </resources>

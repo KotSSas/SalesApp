@@ -35,7 +35,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         holder.title.setText(items.get(position).getTitle());
-        holder.text.setText(items.get(position).getText());
         holder.price1.setText(items.get(position).getPrice1());
         holder.price2.setText(items.get(position).getPrice2());
     }
@@ -53,7 +52,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
             super(itemView);
 
             title = itemView.findViewById(R.id.item_title);
-            text = itemView.findViewById(R.id.item_t);
             price1 = itemView.findViewById(R.id.item_p1);
             price2 = itemView.findViewById(R.id.item_p2);
 
