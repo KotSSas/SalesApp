@@ -34,7 +34,7 @@ public class ShopPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_page);
 
-        Toast.makeText(this, "Ожидайте, идет поист скидок! ;)", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Ожидайте, идет поиск скидок! ;)", Toast.LENGTH_LONG).show();
 
         ImageView image = findViewById(R.id.shop_page_img);
         title = findViewById(R.id.shop_page_text);
