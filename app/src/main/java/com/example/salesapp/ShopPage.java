@@ -74,6 +74,7 @@ public class ShopPage extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    //test
 
     private Document getDocument() throws IOException {
         String url = "https://www.tavriav.ua/";
