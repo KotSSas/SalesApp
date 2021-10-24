@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;

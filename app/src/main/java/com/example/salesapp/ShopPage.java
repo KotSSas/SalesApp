@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +33,8 @@ public class ShopPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_page);
+
+        Toast.makeText(this, "Ожидайте, идет поист скидок! ;)", Toast.LENGTH_LONG).show();
 
         ImageView image = findViewById(R.id.shop_page_img);
         title = findViewById(R.id.shop_page_text);
