@@ -142,7 +142,37 @@ public class ShopPage extends AppCompatActivity {
                 e.printStackTrace();
             }
         }else if (title.getText().equals("Metro")){
+            try {
+                Document document = Jsoup.connect(
+                        "https://metro.zakaz.ua/ru/promotions/").get();
+                List<String> name = new ArrayList<>();
+                List<String> old_price = new ArrayList<>();
+                List<String> new_price = new ArrayList<>();
+                Elements elementsByClass =
+                        document.getElementsByClass("jsx-33926795 ProductsBox__list");
+                for (Element byClass : elementsByClass) {
+                    Elements el_names = byClass.getElementsByClass("jsx-2958303393 ProductTile__titleWrapper");
+                    for (Element el_name : el_names) {
+                        name.add(el_name.getElementsByClass("jsx-2958303393 ProductTile__title").text());
+                    }
 
+                }
+                for (Element byClass : elementsByClass) {
+                    Elements el_prices = byClass.getElementsByClass("jsx-2958303393 ProductTile__prices");
+                    for (Element el_price : el_prices) {
+                        old_price.add(el_price.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text());
+                        new_price.add(el_price.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text());
+                    }
+                }
+            itemList.add(new Item(1, name.get(0), old_price.get(0), new_price.get(0)));
+            itemList.add(new Item(2, name.get(1), old_price.get(1), new_price.get(1)));
+            itemList.add(new Item(3, name.get(2), old_price.get(2), new_price.get(2)));
+            itemList.add(new Item(4, name.get(3), old_price.get(3), new_price.get(3)));
+            itemList.add(new Item(5, name.get(4), old_price.get(4), new_price.get(4)));
+            setItemRecycler(itemList);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
