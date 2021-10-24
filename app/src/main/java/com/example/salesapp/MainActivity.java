@@ -37,13 +37,12 @@ public class MainActivity extends AppCompatActivity {
         categoryList.clear();
         shopList.clear();
 
-        //Hello, I'm here
 
         categoryList.add(new Category(1, "Всё", "category_on"));
-        categoryList.add(new Category(2, "Техника", "category"));
-        categoryList.add(new Category(3, "Одежда", "category"));
-        categoryList.add(new Category(4, "Продукты", "category"));
-        categoryList.add(new Category(5, "Разное", "category"));
+//        categoryList.add(new Category(2, "Техника", "category"));
+//        categoryList.add(new Category(3, "Одежда", "category"));
+//        categoryList.add(new Category(4, "Продукты", "category"));
+//        categoryList.add(new Category(5, "Разное", "category"));
 
         setCategotyRecycler(categoryList);
 
