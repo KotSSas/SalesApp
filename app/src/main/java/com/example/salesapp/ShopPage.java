@@ -57,40 +57,46 @@ public class ShopPage extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        try {
-            Document document = getDocument();
-            Elements pricesU = document.getElementsByClass("catalog-products__container");
-            List<String> titlesList = new ArrayList<>();
-            List<String> pricesList = new ArrayList<>();
-            List<String> discountsList = new ArrayList<>();
 
-            for (Element e : pricesU) {
-                //All info abot the product
-                Elements items = e.getElementsByClass("products__item");
-                for (Element b : items) {
-                    //Titles
+
+        if (title.getText().equals("Tavriya")) {
+            try {
+                Document document = getDocument();
+                Elements pricesU = document.getElementsByClass("catalog-products__container");
+                List<String> titlesList = new ArrayList<>();
+                List<String> pricesList = new ArrayList<>();
+                List<String> discountsList = new ArrayList<>();
+
+                for (Element e : pricesU) {
+                    //All info abot the product
+                    Elements items = e.getElementsByClass("products__item");
+                    for (Element b : items) {
+                        //Titles
                         titlesList.add(b.getElementsByClass("product__title").text());
 
-                    //Prices
-                    Elements product__price = b.getElementsByClass("product__price");
-                    for (Element old : product__price) {
-                        pricesList.add(old.getElementsByClass("price__old").text());
-                    }
-                    for (Element newP :product__price){
-                        discountsList.add(newP.getElementsByClass("price__discount").text());
+                        //Prices
+                        Elements product__price = b.getElementsByClass("product__price");
+                        for (Element old : product__price) {
+                            pricesList.add(old.getElementsByClass("price__old").text());
+                        }
+                        for (Element newP : product__price) {
+                            discountsList.add(newP.getElementsByClass("price__discount").text());
 
+                        }
                     }
+
                 }
-
+                itemList.add(new Item(1, titlesList.get(0), "Text", pricesList.get(0), discountsList.get(0)));
+                itemList.add(new Item(2, titlesList.get(1), "Text", pricesList.get(1), discountsList.get(1)));
+                itemList.add(new Item(3, titlesList.get(2), "Text", pricesList.get(2), discountsList.get(2)));
+                itemList.add(new Item(4, titlesList.get(3), "Text", pricesList.get(3), discountsList.get(3)));
+                itemList.add(new Item(5, titlesList.get(4), "Text", pricesList.get(4), discountsList.get(4)));
+                setItemRecycler(itemList);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            itemList.add(new Item(1,titlesList.get(0),"Text",pricesList.get(0),discountsList.get(0)));
-            itemList.add(new Item(2,titlesList.get(1),"Text",pricesList.get(1),discountsList.get(1)));
-            itemList.add(new Item(3,titlesList.get(2),"Text",pricesList.get(2),discountsList.get(2)));
-            itemList.add(new Item(4,titlesList.get(3),"Text",pricesList.get(3),discountsList.get(3)));
-            itemList.add(new Item(5,titlesList.get(4),"Text",pricesList.get(4),discountsList.get(4)));
-            setItemRecycler(itemList);
-        } catch (IOException e) {
-            e.printStackTrace();
+        }else if (title.getText().equals("Sinsey")){
+
         }
     }
 
