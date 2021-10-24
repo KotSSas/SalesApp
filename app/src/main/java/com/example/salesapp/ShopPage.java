@@ -132,15 +132,17 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(1, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(2, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(3, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(4, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(5, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(1, name.get(0), old_price.get(0)+"₴", new_price.get(0)));
+                itemList.add(new Item(2, name.get(1), old_price.get(1)+"₴", new_price.get(1)));
+                itemList.add(new Item(3, name.get(2), old_price.get(2)+"₴", new_price.get(2)));
+                itemList.add(new Item(4, name.get(3), old_price.get(3)+"₴", new_price.get(3)));
+                itemList.add(new Item(5, name.get(4), old_price.get(4)+"₴", new_price.get(4)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else if (title.getText().equals("Metro")){
+
         }
     }
 
