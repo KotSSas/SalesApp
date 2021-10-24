@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SalesApp</string>
+    <string name="sales_icon">Sales</string>
+    <string name="about_us">Про нас</string>
+    <string name="main_scene">Главная</string>
+    <string name="h1">Sales</string>
+    <string name="h2">App</string>
+    <string name="shop_cat">Магазин:</string>
+    <string name="shop_work">Время работы:</string>
+    <string name="shop_site">Официальный сайт:</string>
+    <string name="h2.1">Про</string>
+    <string name="h2.2">Hac</string>
+    <string name="item_price1">Цена до скидки:</string>
+    <string name="item_price2">Цена со скидкой:</string>
+</resources>
