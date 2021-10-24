@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         categoryList.clear();
         shopList.clear();
 
+        //Hello
+
         categoryList.add(new Category(1, "Всё", "category_on"));
         categoryList.add(new Category(2, "Техника", "category"));
         categoryList.add(new Category(3, "Одежда", "category"));
