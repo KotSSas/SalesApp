@@ -56,19 +56,35 @@ public class ShopPage extends AppCompatActivity {
 
         try {
             Document document = getDocument();
-            Elements pricesU = document.getElementsByClass("recommended-products__container");
-            item = new ArrayList<String>();
+            Elements pricesU = document.getElementsByClass("catalog-products__container");
+            List<String> titlesList = new ArrayList<>();
+            List<String> pricesList = new ArrayList<>();
+            List<String> discountsList = new ArrayList<>();
+
             for (Element e : pricesU) {
+                //All info abot the product
                 Elements items = e.getElementsByClass("products__item");
-                for (Element i : items) {
-                    item.add(i.text());
+                for (Element b : items) {
+                    //Titles
+                        titlesList.add(b.getElementsByClass("product__title").text());
+
+                    //Prices
+                    Elements product__price = b.getElementsByClass("product__price");
+                    for (Element old : product__price) {
+                        pricesList.add(old.getElementsByClass("price__old").text());
+                    }
+                    for (Element newP :product__price){
+                        discountsList.add(newP.getElementsByClass("price__discount").text());
+
+                    }
                 }
+
             }
-            itemList.add(new Item(1,item.get(1),"Text", "2", "1"));
-            itemList.add(new Item(2,item.get(2),"Text", "2", "1"));
-            itemList.add(new Item(3,item.get(3),"Text", "2", "1"));
-            itemList.add(new Item(4,item.get(4),"Text", "2", "1"));
-            itemList.add(new Item(5,item.get(5),"Text", "2", "1"));
+            itemList.add(new Item(1,titlesList.get(0),"Text",pricesList.get(0),discountsList.get(0)));
+            itemList.add(new Item(2,titlesList.get(1),"Text",pricesList.get(1),discountsList.get(1)));
+            itemList.add(new Item(3,titlesList.get(2),"Text",pricesList.get(2),discountsList.get(2)));
+            itemList.add(new Item(4,titlesList.get(3),"Text",pricesList.get(3),discountsList.get(3)));
+            itemList.add(new Item(5,titlesList.get(4),"Text",pricesList.get(4),discountsList.get(4)));
             setItemRecycler(itemList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -76,7 +92,7 @@ public class ShopPage extends AppCompatActivity {
     }
 
     private Document getDocument() throws IOException {
-        String url = "https://www.tavriav.ua/";
+        String url = "https://www.tavriav.ua/catalog/discount/";
         return Jsoup.connect(url).get();
     }
 
