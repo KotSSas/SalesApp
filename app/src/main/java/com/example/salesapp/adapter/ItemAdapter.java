@@ -45,6 +45,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.price1.setText(items.get(position).getPrice1());
         holder.price2.setText(items.get(position).getPrice2());
 
+        //вот этот код -> не трогать!
+
 //        holder.itemView.setOnTouchListener(new View.OnTouchListener(){
 //            public boolean onTouch(View v, MotionEvent event)
 //            {
