@@ -22,13 +22,15 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ShopPage extends AppCompatActivity {
     RecyclerView recyclerView;
     ItemAdapter itemAdapter;
     static List<Item> itemList = new ArrayList<>();
-    static List<Item> fullItemList = new ArrayList<>();
+
     List<String> item;
 
     TextView title;
@@ -228,8 +230,13 @@ public class ShopPage extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        MainActivity.fullItemList.clear();
+        for (Item item : itemList) {
 
-        fullItemList.addAll(itemList);
+            if(!MainActivity.fullItemList.contains(item)){
+                MainActivity.fullItemList.add(item);
+            }
+        }
 
     }
 

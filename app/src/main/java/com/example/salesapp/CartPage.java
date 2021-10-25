@@ -46,12 +46,18 @@ public class CartPage extends AppCompatActivity {
         //дальше использую сущуствующий в проге адаптер для елементарного вывода без дизайна, дальше буду менять
 
         List<String> itemsTitle = new ArrayList<>();
-        for(Item item: ShopPage.fullItemList){
+        for(Item item: MainActivity.fullItemList){
             if(Order.items_id.contains(item.getId())){
                 itemsTitle.add(item.getTitle());
             }
         }
-        cart_list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
+        if(Order.items_id.size() == 0){
+            List<String> if_null = new ArrayList<>();
+            if_null.add("Кoрзина пуста! :(");
+            cart_list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, if_null));
+        }else {
+            cart_list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
+        }
     }
 
     private void openAboutActivity() {

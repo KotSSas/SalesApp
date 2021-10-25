@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.Category;
+import com.example.salesapp.model.Item;
 import com.example.salesapp.model.Shop;
 
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     static   List<Category> categoryList = new ArrayList<>();
     static   List<Shop> shopList = new ArrayList<>();
     static   List<Shop> fullShopsList = new ArrayList<>();
+    static List<Item> fullItemList = new ArrayList<>();
     TextView about_us;
 
 

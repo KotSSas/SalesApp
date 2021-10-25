@@ -61,7 +61,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                         if (elapsedTime1 > 50)
                         {
                             Toast.makeText(v.getContext(),
-                                    "Добавлено в карзину! ;)",
+                                    "Добавлено в кoрзину! ;)",
                                     Toast.LENGTH_LONG).show();
 
                             Order.items_id.add(items.get(position).getId());
