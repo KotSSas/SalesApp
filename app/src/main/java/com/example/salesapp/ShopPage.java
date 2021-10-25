@@ -229,7 +229,8 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            }else if (title.getText().equals("Sinsey")){
+            }
+        else if (title.getText().equals("Sinsey")){
                 try {
                     Document document = Jsoup.connect("https://www.sinsay.com/ua/uk/").get();
                     List<String> name = new ArrayList<>();
@@ -241,17 +242,27 @@ public class ShopPage extends AppCompatActivity {
                     for (Element byClass : elementsByClass) {
                         Elements elementsByClass1 = byClass.getElementsByClass("category-products active");
                         for (Element element : elementsByClass1) {
-
+                            //
                             Elements elementsByClass2 = element.getElementsByClass("product-price");
                             for (Element element1 : elementsByClass2) {
                                 Elements elementsByClass3 = element1.getElementsByClass("discount-price");
-                                new_price.add(elementsByClass3.text());
+                                String text = elementsByClass3.text();
+                                if(text.indexOf("U") == text.indexOf("A") -1 && text.indexOf("A") == text.indexOf("H") -1){
+                                    new_price.add(text.substring(0,text.indexOf("U") -1) + "₴");
+                                }
+
                             }
+                            //old price
                             for (Element element1 : elementsByClass2) {
                                 Elements elementsByClass3 = element1.getElementsByClass("regular-price");
                                 old_price.add(elementsByClass3.text());
-                            }
+                                String text = elementsByClass3.text();
+                                if(text.indexOf("U") == text.indexOf("A") -1 && text.indexOf("A") == text.indexOf("H") -1){
+                                    old_price.add(text.substring(0,text.indexOf("U") -1) + "₴");
+                                }
 
+                            }
+                            //name
                             Elements elements_names = element.getElementsByClass("product-name");
                             Elements a = elements_names.select("a");
                             for (Element element1 : a) {
@@ -309,6 +320,44 @@ public class ShopPage extends AppCompatActivity {
                 setItemRecycler(itemList);
 
 
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if (title.getText().equals("Staff")){
+            try {
+                Document document = Jsoup.connect(
+                        "https://www.staff-clothes.com/m/discounts/").get();
+                List<String> name = new ArrayList<>();
+                List<String> old_price = new ArrayList<>();
+                List<String> new_price = new ArrayList<>();
+
+
+                Elements elementsByClass = document.getElementsByClass("catalog__products-container");
+                for (Element byClass : elementsByClass) {
+                    Elements elementsByClass1 = byClass.getElementsByClass("product-card__container");
+                    for (Element element : elementsByClass1) {
+                        name.add(element.getElementsByClass("product-card__info--title").text());
+
+
+                        String s1 = element.getElementsByClass("product-card__info--price").text(); //with discount
+                        String s2 = element.getElementsByClass("product-card__info--oldprice").text(); //without discount
+
+                        if (s1.indexOf("г") == s1.indexOf("р") -1 && s1.indexOf("р") == s1.indexOf("н") -1){
+                            new_price.add(s1.substring(0,s1.indexOf("г") -1) + "₴");
+                            old_price.add(s2.substring(0,s2.indexOf("г") -1) + "₴");
+                        }
+
+                    }
+                }
+                //System.out.println(elementsByClass);
+
+                itemList.add(new Item(11, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(12, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(13, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(14, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(15, name.get(4), old_price.get(4), new_price.get(4)));
+                setItemRecycler(itemList);
 
             } catch (IOException e) {
                 e.printStackTrace();
