@@ -41,17 +41,17 @@ public class CartPage extends AppCompatActivity {
             }
         });
 
-//        ListView cart_list = findViewById(R.id.cart_list);
-//
-//        //дальше использую сущуствующий в проге адаптер для елементарного вывода без дизайна, дальше буду менять
-//
-//        List<String> itemsTitle = new ArrayList<>();
-//        for(Item item: ShopPage.fullItemList){
-//            if(Order.items_id.contains(item.getId())){
-//                itemsTitle.add(item.getTitle());
-//            }
-//        }
-//        cart_list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
+        ListView cart_list = findViewById(R.id.cart_list);
+
+        //дальше использую сущуствующий в проге адаптер для елементарного вывода без дизайна, дальше буду менять
+
+        List<String> itemsTitle = new ArrayList<>();
+        for(Item item: ShopPage.fullItemList){
+            if(Order.items_id.contains(item.getId())){
+                itemsTitle.add(item.getTitle());
+            }
+        }
+        cart_list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
     }
 
     private void openAboutActivity() {

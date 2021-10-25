@@ -229,6 +229,8 @@ public class ShopPage extends AppCompatActivity {
             }
         }
 
+        fullItemList.addAll(itemList);
+
     }
 
     private Document getDocument() throws IOException {
