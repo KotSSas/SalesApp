@@ -229,6 +229,54 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            }else if (title.getText().equals("Sinsey")){
+                try {
+                    Document document = Jsoup.connect("https://www.sinsay.com/ua/uk/").get();
+                    List<String> name = new ArrayList<>();
+                    List<String> old_price = new ArrayList<>();
+                    List<String> new_price = new ArrayList<>();
+
+
+                    Elements elementsByClass = document.getElementsByClass("home-ss20-recommended");
+                    for (Element byClass : elementsByClass) {
+                        Elements elementsByClass1 = byClass.getElementsByClass("category-products active");
+                        for (Element element : elementsByClass1) {
+
+                            Elements elementsByClass2 = element.getElementsByClass("product-price");
+                            for (Element element1 : elementsByClass2) {
+                                Elements elementsByClass3 = element1.getElementsByClass("discount-price");
+                                new_price.add(elementsByClass3.text());
+                            }
+                            for (Element element1 : elementsByClass2) {
+                                Elements elementsByClass3 = element1.getElementsByClass("regular-price");
+                                old_price.add(elementsByClass3.text());
+                            }
+
+                            Elements elements_names = element.getElementsByClass("product-name");
+                            Elements a = elements_names.select("a");
+                            for (Element element1 : a) {
+                                name.add(element1.text());
+                            }
+                        }
+                    }
+
+
+
+
+
+
+                    itemList.add(new Item(16, name.get(0), old_price.get(0), new_price.get(0)));
+                    itemList.add(new Item(17, name.get(1), old_price.get(1), new_price.get(1)));
+                    itemList.add(new Item(18, name.get(2), old_price.get(2), new_price.get(2)));
+                    itemList.add(new Item(19, name.get(3), old_price.get(3), new_price.get(3)));
+                    itemList.add(new Item(20, name.get(4), old_price.get(4), new_price.get(4)));
+
+                    setItemRecycler(itemList);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
         }
         MainActivity.fullItemList.clear();
         for (Item item : itemList) {
