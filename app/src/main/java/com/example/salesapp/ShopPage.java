@@ -276,7 +276,43 @@ public class ShopPage extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+        }else if (title.getText().equals("Allo")){
+            try {
+                Document document = Jsoup.connect(
+                        "https://allo.ua/").get();
+                List<String> name = new ArrayList<>();
+                List<String> old_price = new ArrayList<>();
+                List<String> new_price = new ArrayList<>();
 
+
+                Elements elementsByClass = document.getElementsByClass("h-products");
+                for (Element byClass : elementsByClass) {
+                    Elements elementsByClass1 = byClass.getElementsByClass("h-products__list h-pl h-products__list--before-mount");
+                    for (Element element : elementsByClass1) {
+                        Elements elementsByClass2 = element.getElementsByClass("h-pc no-rect-labels no-opts-2 no-opts-3 no-opts-4 no-opts-5 no-opts-6");
+                        for (Element element1 : elementsByClass2) {
+                            Elements elementsByClass3 = element1.getElementsByClass("h-pc__content");
+                            for (Element element2 : elementsByClass3) {
+                                name.add(element2.getElementsByClass("product-card__title h-pc__title").text());
+                                old_price.add(element2.getElementsByClass("v-price-box__old").text());
+                                new_price.add(element2.getElementsByClass("v-price-box__cur v-price-box__cur--discount").text());
+                            }
+                        }
+                    }
+                }
+
+                itemList.add(new Item(11, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(12, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(13, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(14, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(15, name.get(4), old_price.get(4), new_price.get(4)));
+                setItemRecycler(itemList);
+
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         MainActivity.fullItemList.clear();
         for (Item item : itemList) {
