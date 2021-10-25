@@ -186,7 +186,7 @@ public class ShopPage extends AppCompatActivity {
                         new_price.add(element1.getElementsByClass("discount-price").text());
                     }
                 }
-
+                //Changed here
                 itemList.add(new Item(16, name.get(0), old_price.get(0), new_price.get(0)));
                 itemList.add(new Item(17, name.get(1), old_price.get(1), new_price.get(1)));
                 itemList.add(new Item(18, name.get(2), old_price.get(2), new_price.get(2)));
