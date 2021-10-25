@@ -1,7 +1,9 @@
 package com.example.salesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,8 +28,11 @@ public class ShopPage extends AppCompatActivity {
     RecyclerView recyclerView;
     ItemAdapter itemAdapter;
     static List<Item> itemList = new ArrayList<>();
+    static List<Item> fullItemList = new ArrayList<>();
     List<String> item;
+
     TextView title;
+    TextView main_scene, about_us;
 
     List<String> name;
     List<String> old_price;
@@ -50,13 +55,21 @@ public class ShopPage extends AppCompatActivity {
 
         itemList.clear();
 
+        main_scene = findViewById(R.id.main_scene);
+        main_scene.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
 
-//        itemList.add(new Item(1,"Продукт", "Text", "20грн", "12грн"));
-//        itemList.add(new Item(2,"Продукт", "Text\nText", "20грн", "12грн"));
-//        itemList.add(new Item(3,"Продукт", "Text\nText\nText", "20грн", "12грн"));
-//        itemList.add(new Item(4,"Продукт", "Text\nText\nText", "20грн", "12грн"));
-//        itemList.add(new Item(5,"Продукт", "Text\nText\nText", "20грн", "12грн"));
-//        itemList.add(new Item(6,"Продукт", "Text\nText\nText", "20грн", "12грн"));
+        about_us = findViewById(R.id.about_us);
+        about_us.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAboutActivity();
+            }
+        });
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -221,6 +234,14 @@ public class ShopPage extends AppCompatActivity {
     private Document getDocument() throws IOException {
         String url = "https://www.tavriav.ua/catalog/discount/";
         return Jsoup.connect(url).get();
+    }
+
+    private void openAboutActivity() {
+        startActivity(new Intent(this, AboutUsActivity.class));
+    }
+
+    private void openMainActivity() {
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     private void setItemRecycler(List<Item> itemList) {

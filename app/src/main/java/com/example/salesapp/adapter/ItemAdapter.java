@@ -47,35 +47,35 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
         //вот этот код -> не трогать!
 
-//        holder.itemView.setOnTouchListener(new View.OnTouchListener(){
-//            public boolean onTouch(View v, MotionEvent event)
-//            {
-//                if (event.getAction() == MotionEvent.ACTION_DOWN)
-//                {
-//                    elapsedTime1 = System.currentTimeMillis() - startTime1;
-//                    if (elapsedTime1 > 500)
-//                    {
-//                        startTime1 = System.currentTimeMillis();
-//                        return false;
-//                    }
-//                    else
-//                    {
-//                        if (elapsedTime1 > 50)
-//                        {
-//                            Toast.makeText(v.getContext(),
-//                                    "Добавлено в карзину! ;)",
-//                                    Toast.LENGTH_LONG).show();
-//
-//                            Order.items_id.add(items.get(position).getId());
-//
-//                            startTime1 = System.currentTimeMillis();
-//                            return true;
-//                        }
-//                    }
-//                }
-//                return false;
-//            }
-//        });
+        holder.itemView.setOnTouchListener(new View.OnTouchListener(){
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                if (event.getAction() == MotionEvent.ACTION_DOWN)
+                {
+                    elapsedTime1 = System.currentTimeMillis() - startTime1;
+                    if (elapsedTime1 > 500)
+                    {
+                        startTime1 = System.currentTimeMillis();
+                        return false;
+                    }
+                    else
+                    {
+                        if (elapsedTime1 > 50)
+                        {
+                            Toast.makeText(v.getContext(),
+                                    "Добавлено в карзину! ;)",
+                                    Toast.LENGTH_LONG).show();
+
+                            Order.items_id.add(items.get(position).getId());
+
+                            startTime1 = System.currentTimeMillis();
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+        });
 
     }
 
