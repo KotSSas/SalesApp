@@ -7,6 +7,7 @@
     android:paddingBottom="15dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/item_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
@@ -18,7 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/item_bg"
-                android:paddingBottom="20dp"
+                android:paddingBottom="30dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -108,18 +109,6 @@
                     </LinearLayout>
 
                 </LinearLayout>
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button_liked"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="63dp"
-                    android:layout_marginTop="25dp"
-                    android:text="@string/liked1"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:textColor="@color/white"
-                    android:textSize="14dp"
-                    android:background="#C56C6C"
-                    android:foregroundGravity="center" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".MainActivity">
+    tools:context=".CartPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -36,11 +36,11 @@
             android:layout_width="120dp"
             android:layout_height="145dp"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/montserrat"
             android:gravity="center"
             android:rotation="270"
             android:text="@string/main_scene"
-            android:textColor="@color/black"
+            android:textColor="@color/text"
             android:textSize="25sp"
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/montserrat"
-        android:text="@string/h1"
+        android:text="@string/cart_h1"
         android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
@@ -94,62 +94,23 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/montserrat_bold"
-        android:text="@string/h2"
+        android:text="@string/cart_h2"
         android:textColor="@color/name_of_app"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/h1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/filter_logo"
-        android:layout_width="52dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:contentDescription="@string/sales_icon"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/h1"
-        app:srcCompat="@drawable/ic_filter" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/category_recycle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/filter_logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/filter_logo"
-        app:layout_constraintTop_toTopOf="@+id/filter_logo"
-        tools:listitem="@layout/category_item" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/shops_recycler"
+    <ListView
+        android:id="@+id/cart_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/category_recycle"
-        app:layout_constraintVertical_bias="0.427"
-        tools:listitem="@layout/shop_item" />
-
-    <ImageView
-        android:id="@+id/cart_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        android:onClick="open_cart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.564"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/shops_recycler"
-        app:srcCompat="@drawable/ic_shop" />
+        app:layout_constraintTop_toBottomOf="@+id/h2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

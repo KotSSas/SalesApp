@@ -1,7 +1,9 @@
 package com.example.salesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,8 +28,11 @@ public class ShopPage extends AppCompatActivity {
     RecyclerView recyclerView;
     ItemAdapter itemAdapter;
     static List<Item> itemList = new ArrayList<>();
-    List<String> item;
+    static List<Item> fullItemList = new ArrayList<>();
     TextView  title;
+
+    TextView main_scene, about_us;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +51,21 @@ public class ShopPage extends AppCompatActivity {
 
         itemList.clear();
 
+        main_scene = findViewById(R.id.main_scene);
+        main_scene.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
 
-//        itemList.add(new Item(1,"Продукт", "Text", "20грн", "12грн"));
-//        itemList.add(new Item(2,"Продукт", "Text\nText", "20грн", "12грн"));
-//        itemList.add(new Item(3,"Продукт", "Text\nText\nText", "20грн", "12грн"));
-//        itemList.add(new Item(4,"Продукт", "Text\nText\nText", "20грн", "12грн"));
-//        itemList.add(new Item(5,"Продукт", "Text\nText\nText", "20грн", "12грн"));
-//        itemList.add(new Item(6,"Продукт", "Text\nText\nText", "20грн", "12грн"));
+        about_us = findViewById(R.id.about_us);
+        about_us.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAboutActivity();
+            }
+        });
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -132,11 +145,11 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(1, name.get(0), old_price.get(0)+"₴", new_price.get(0)));
-                itemList.add(new Item(2, name.get(1), old_price.get(1)+"₴", new_price.get(1)));
-                itemList.add(new Item(3, name.get(2), old_price.get(2)+"₴", new_price.get(2)));
-                itemList.add(new Item(4, name.get(3), old_price.get(3)+"₴", new_price.get(3)));
-                itemList.add(new Item(5, name.get(4), old_price.get(4)+"₴", new_price.get(4)));
+                itemList.add(new Item(6, name.get(12), old_price.get(12)+"₴", new_price.get(12)));
+                itemList.add(new Item(7, name.get(10), old_price.get(10)+"₴", new_price.get(10)));
+                itemList.add(new Item(8, name.get(8), old_price.get(8)+"₴", new_price.get(8)));
+                itemList.add(new Item(9, name.get(7), old_price.get(7)+"₴", new_price.get(7)));
+                itemList.add(new Item(10,name.get(9), old_price.get(9)+"₴", new_price.get(9)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -164,16 +177,25 @@ public class ShopPage extends AppCompatActivity {
                         new_price.add(el_price.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text());
                     }
                 }
-            itemList.add(new Item(1, name.get(0), old_price.get(0), new_price.get(0)));
-            itemList.add(new Item(2, name.get(1), old_price.get(1), new_price.get(1)));
-            itemList.add(new Item(3, name.get(2), old_price.get(2), new_price.get(2)));
-            itemList.add(new Item(4, name.get(3), old_price.get(3), new_price.get(3)));
-            itemList.add(new Item(5, name.get(4), old_price.get(4), new_price.get(4)));
+            itemList.add(new Item(11, name.get(0), old_price.get(0), new_price.get(0)));
+            itemList.add(new Item(12, name.get(1), old_price.get(1), new_price.get(1)));
+            itemList.add(new Item(13, name.get(2), old_price.get(2), new_price.get(2)));
+            itemList.add(new Item(14, name.get(3), old_price.get(3), new_price.get(3)));
+            itemList.add(new Item(15, name.get(4), old_price.get(4), new_price.get(4)));
             setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
+        fullItemList.addAll(itemList);
+    }
+    private void openAboutActivity() {
+        startActivity(new Intent(this, AboutUsActivity.class));
+    }
+
+    private void openMainActivity() {
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     private Document getDocument() throws IOException {

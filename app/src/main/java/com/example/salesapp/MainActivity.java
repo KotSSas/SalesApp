@@ -73,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void open_cart(View view){
+        open_cartPage();
+    }
+
+    private void open_cartPage() {
+        startActivity(new Intent(this, CartPage.class));
+    }
+
     private void openAboutActivity() {
         startActivity(new Intent(this, AboutUsActivity.class));
     }
