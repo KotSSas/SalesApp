@@ -129,31 +129,24 @@ public class ShopPage extends AppCompatActivity {
 
                 Elements a = document.getElementsByClass("main-container pt24");
                 for (Element element : a) {
-                    Elements elementsByClass = element.getElementsByClass("dg grid-0-2-140");
+                    Elements elementsByClass = element.getElementsByClass("dg grid-0-2-145");
+//                System.out.println(elementsByClass);
                     for (Element byClass : elementsByClass) {
-                        Elements elemntsTitle = byClass.getElementsByClass("link link-0-2-145");
-                        Elements elementsByClassPrice = byClass.getElementsByClass("prices-0-2-148");
-                        for (Element element1 : elemntsTitle) {
-                            Elements findTitle = element1.getElementsByClass("line-clamp-2 break-word");
-                            name.add(findTitle.text());
-                        }
-                        for (Element element1 : elementsByClassPrice) {
+                        Elements elementsByClass1 = byClass.getElementsByClass("df fdc pr border-box br10 root-0-2-148 product-card");
+                        for (Element element1 : elementsByClass1) {
+                            name.add(element1.getElementsByClass("line-clamp-2 break-word").text());
                             old_price.add(element1.getElementsByClass("old-price mr8").text());
-                        }
-
-
-                        for (Element element1 : elementsByClassPrice) {
-                            new_price.add(element1.getElementsByClass("medium price-0-2-151").text());
+                            new_price.add(element1.getElementsByClass("medium price-0-2-156").text());
 
                         }
                     }
 
                 }
-                itemList.add(new Item(6, name.get(12), old_price.get(12) + "₴", new_price.get(12)));
-                itemList.add(new Item(7, name.get(10), old_price.get(10) + "₴", new_price.get(10)));
-                itemList.add(new Item(8, name.get(8), old_price.get(8) + "₴", new_price.get(8)));
-                itemList.add(new Item(9, name.get(7), old_price.get(7) + "₴", new_price.get(7)));
-                itemList.add(new Item(10, name.get(9), old_price.get(9) + "₴", new_price.get(9)));
+                itemList.add(new Item(6, name.get(1), old_price.get(1) + "₴", new_price.get(1)));
+                itemList.add(new Item(7, name.get(2), old_price.get(2) + "₴", new_price.get(2)));
+                itemList.add(new Item(8, name.get(3), old_price.get(3) + "₴", new_price.get(3)));
+                itemList.add(new Item(9, name.get(4), old_price.get(4) + "₴", new_price.get(4)));
+                itemList.add(new Item(10, name.get(5), old_price.get(5) + "₴", new_price.get(5)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -362,6 +355,8 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else if(title.getText().equals("Comfy")){
+
         }
         MainActivity.fullItemList.clear();
         for (Item item : itemList) {
