@@ -15,41 +15,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/item_bg"
-                android:paddingBottom="30dp"
-                android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/item_bg"
+            android:paddingBottom="30dp"
+            android:orientation="vertical">
+
+                <!-- КАК СДЕЛАТЬ ТАК
+                 ЧТО БЫ ТЕКСТ НЕ СЕДАЛО(О ЧТО Я НА ВИДЕО ПОКАЗЫВАЛ)
+                 Я НЕ ЗНАЮ, ПРОСТО НЕ ЕБУ
+                 Я УЖЕ ВСЕ ПРОБЫВАЛ(шрифт, размер, толщину, layoutЫ менял)
+                 КОРОЧЕ Я НЕ ЗНАЮ, ЭТО ПЛОХО-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
 
                 <TextView
                     android:id="@+id/item_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="@string/app_name"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
+        </LinearLayout>
 
-                <!-- <TextView
-                    android:id="@+id/item_t"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/montserrat"
-                    android:textSize="14sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="10dp"
-                    android:text="" /> -->
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+
                     android:layout_marginRight="15dp">
 
                     <LinearLayout

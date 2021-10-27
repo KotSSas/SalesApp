@@ -122,7 +122,6 @@ public class ShopPage extends AppCompatActivity {
                         "https://www.citrus.ua/shares/igrovu-periferiyu-razer/").get();
                 name = new ArrayList<>();
                 old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
 
 
                 Elements a = document.getElementsByClass("el-tabs");
@@ -135,10 +134,6 @@ public class ShopPage extends AppCompatActivity {
                             String name_el = element1.getElementsByClass("product-card__name").text();
                             name.add(name_el.substring(0, name_el.indexOf("(") - 1));
                             old_price.add(element1.getElementsByClass("price").text());
-
-                            String new_price_item = element1.getElementsByClass("prices__price").text();
-                            new_price.add(new_price_item.substring(0, new_price_item.indexOf(" ")) + "₴");
-
                         }
                     }
 
