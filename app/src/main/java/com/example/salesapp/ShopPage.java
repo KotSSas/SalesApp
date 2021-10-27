@@ -371,7 +371,39 @@ public class ShopPage extends AppCompatActivity {
                 e.printStackTrace();
             }
         }else if(title.getText().equals("Comfy")){
+            try {
+                Document doc = Jsoup.connect("https://www.foxtrot.com.ua/uk/actions/12768").ignoreHttpErrors(true).timeout(5000).get();
+                List<String> name = new ArrayList<>();
+                List<String> old_price = new ArrayList<>();
+                List<String> new_price = new ArrayList<>();
+                Elements elementsByClass1 = doc.getElementsByClass("action-product-container action-categoryid-58 slot");
+                for (Element e : elementsByClass1) {
+                    Elements elementsByClass = e.getElementsByClass("listing__body-wrap");
+                    for (Element byClass : elementsByClass) {
+                        Elements card__body = byClass.getElementsByClass("card__body");
+                        for (Element element : card__body) {
+                            name.add(element.getElementsByClass("card__title").text());
+                            new_price.add(element.getElementsByClass("card-price").text());
+                            old_price.add(element.getElementsByClass("card__price-discount").select("p").text());
 
+                        }
+                    }
+                }
+
+                itemList.add(new Item(57, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(58, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(59, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(60, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(61, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(62, name.get(5), old_price.get(5), new_price.get(5)));
+                itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6)));
+                setItemRecycler(itemList);
+
+//                System.out.println();
+                // System.out.println(elementsByClass);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             // когда в список помещаешь новый елемент(как выше): itemList.add(new Item(****35****(я про это ниже говорю), name.get(4), old_price.get(4), new_price.get(4)));
             // то id пиши каждый раз по возрастающей если последний 56, то следущие 8 - 57, 58, 59....(это для корзины пока что нужно дальше не знаю)
         }else if (title.getText().equals("ATB")) {
