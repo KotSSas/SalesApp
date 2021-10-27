@@ -50,13 +50,13 @@ public class MainActivity extends AppCompatActivity {
         setCategotyRecycler(categoryList);
 
 
-        shopList.add(new Shop(1,2, "citrus","Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/" )); //*
-        shopList.add(new Shop(2, 3,"lc","LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/" ));//*
-        shopList.add(new Shop(3, 4,"atb","ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/" ));
-        shopList.add(new Shop(4, 3,"staff","Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/" ));
-        shopList.add(new Shop(5,2, "comf","Comfy", "Техника", "09:00 - 21:00", "https://comfy.ua/" ));
-        shopList.add(new Shop(6, 2,"allo","Allo", "Техника", "09:00 - 20:00", "https://allo.ua/" ));
-        shopList.add(new Shop(7, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
+        shopList.add(new Shop(1, 3,"lc","LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/" ));//*
+        shopList.add(new Shop(2, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
+        shopList.add(new Shop(3, 2,"allo","Allo", "Техника", "09:00 - 20:00", "https://allo.ua/" ));
+        shopList.add(new Shop(4,2, "citrus","Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/" )); //*
+        shopList.add(new Shop(5, 4,"atb","ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/" ));
+        shopList.add(new Shop(6, 3,"staff","Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/" ));
+        shopList.add(new Shop(7,2, "comf","Comfy", "Техника", "09:00 - 21:00", "https://comfy.ua/" ));
         shopList.add(new Shop(8, 4,"metr","Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/" ));//*
         shopList.add(new Shop(9, 3,"sin","Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua" ));//*
         shopList.add(new Shop(10, 4,"tavr","Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/" ));//*

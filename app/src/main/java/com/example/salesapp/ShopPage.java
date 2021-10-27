@@ -109,6 +109,9 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(3, name.get(9), old_price.get(9), new_price.get(9)));
                 itemList.add(new Item(4, name.get(8), old_price.get(8), new_price.get(8)));
                 itemList.add(new Item(5, name.get(7), old_price.get(7), new_price.get(7)));
+                itemList.add(new Item(6, name.get(11), old_price.get(11), new_price.get(11)));
+                itemList.add(new Item(7, name.get(6), old_price.get(6), new_price.get(6)));
+                itemList.add(new Item(8, name.get(13), old_price.get(13), new_price.get(13)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -116,37 +119,48 @@ public class ShopPage extends AppCompatActivity {
         } else if (title.getText().equals("Citrus")) {
             try {
                 Document document = Jsoup.connect(
-                        "https://www.citrus.ua/").get();
-                /*
-                 * slick-track
-                 *product-slide slick-slide slick-current slick-active
-                 *product-name product-price
-                 * */
+                        "https://www.citrus.ua/shares/igrovu-periferiyu-razer/").get();
                 name = new ArrayList<>();
                 old_price = new ArrayList<>();
                 new_price = new ArrayList<>();
 
 
-                Elements a = document.getElementsByClass("main-container pt24");
+                Elements a = document.getElementsByClass("el-tabs");
                 for (Element element : a) {
-                    Elements elementsByClass = element.getElementsByClass("dg grid-0-2-145");
+                    Elements elementsByClass = element.getElementsByClass("products__list");
 //                System.out.println(elementsByClass);
                     for (Element byClass : elementsByClass) {
-                        Elements elementsByClass1 = byClass.getElementsByClass("df fdc pr border-box br10 root-0-2-148 product-card");
+                        Elements elementsByClass1 = byClass.getElementsByClass("product-card product-card--mini product-card--mini--separate");
                         for (Element element1 : elementsByClass1) {
-                            name.add(element1.getElementsByClass("line-clamp-2 break-word").text());
-                            old_price.add(element1.getElementsByClass("old-price mr8").text());
-                            new_price.add(element1.getElementsByClass("medium price-0-2-156").text());
+                            String name_el = element1.getElementsByClass("product-card__name").text();
+                            name.add(name_el.substring(0, name_el.indexOf("(") - 1));
+                            old_price.add(element1.getElementsByClass("price").text());
+
+                            String new_price_item = element1.getElementsByClass("prices__price").text();
+                            new_price.add(new_price_item.substring(0, new_price_item.indexOf(" ")) + "₴");
 
                         }
                     }
 
                 }
-                itemList.add(new Item(6, name.get(1), old_price.get(1) + "₴", new_price.get(1)));
-                itemList.add(new Item(7, name.get(2), old_price.get(2) + "₴", new_price.get(2)));
-                itemList.add(new Item(8, name.get(3), old_price.get(3) + "₴", new_price.get(3)));
-                itemList.add(new Item(9, name.get(4), old_price.get(4) + "₴", new_price.get(4)));
-                itemList.add(new Item(10, name.get(5), old_price.get(5) + "₴", new_price.get(5)));
+
+                //ЕБАТЬ ЭТО РАБОТАЕТ, ПРОСТО НЕ ТРОГАЙ ЭТО, Я ЗАЕБАЛСЯ - ЭТО ПИЗДЕЦ!!!!
+
+                String s1 ;
+                String s2 ;
+                for (int i = 0; i < 8; i++) {
+                    if (old_price.get(i).lastIndexOf(" ") == old_price.get(i).indexOf(" ")){
+                        s1 = old_price.get(i).substring(0,old_price.get(i).indexOf(" ")) + "₴";
+                        s2 = old_price.get(i).substring(old_price.get(i).indexOf(" "))+ "₴";
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2));
+                    }else{
+                        s1 = old_price.get(i).substring(0,old_price.get(i).indexOf(" ", 3))+ "₴";
+                        s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ", 3))+ "₴";
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2));
+                    }
+                }
+
+
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -181,11 +195,14 @@ public class ShopPage extends AppCompatActivity {
                         }
                     }
                 }
-                itemList.add(new Item(11, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(12, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(13, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(14, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(15, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(17, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(18, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(19, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(20, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(21, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(22, name.get(5), old_price.get(5), new_price.get(5)));
+                itemList.add(new Item(23, name.get(6), old_price.get(6), new_price.get(6)));
+                itemList.add(new Item(24, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -212,11 +229,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
                 //Changed here
-                itemList.add(new Item(16, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(17, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(18, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(19, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(20, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(28, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(29, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(30, name.get(5), old_price.get(5), new_price.get(5)));
+                itemList.add(new Item(31, name.get(6), old_price.get(6), new_price.get(6)));
+                itemList.add(new Item(32, name.get(7), old_price.get(7), new_price.get(7)));
 
                 setItemRecycler(itemList);
             } catch (IOException e) {
@@ -260,11 +280,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
 
-                    itemList.add(new Item(21, name.get(0), old_price.get(0), new_price.get(0)));
-                    itemList.add(new Item(22, name.get(1), old_price.get(1), new_price.get(1)));
-                    itemList.add(new Item(23, name.get(2), old_price.get(2), new_price.get(2)));
-                    itemList.add(new Item(24, name.get(3), old_price.get(3), new_price.get(3)));
-                    itemList.add(new Item(25, name.get(4), old_price.get(4), new_price.get(4)));
+                    itemList.add(new Item(33, name.get(0), old_price.get(0), new_price.get(0)));
+                    itemList.add(new Item(34, name.get(1), old_price.get(1), new_price.get(1)));
+                    itemList.add(new Item(35, name.get(2), old_price.get(2), new_price.get(2)));
+                    itemList.add(new Item(36, name.get(3), old_price.get(3), new_price.get(3)));
+                    itemList.add(new Item(37, name.get(4), old_price.get(4), new_price.get(4)));
+                    itemList.add(new Item(38, name.get(4), old_price.get(4), new_price.get(4)));
+                    itemList.add(new Item(39, name.get(4), old_price.get(4), new_price.get(4)));
+                    itemList.add(new Item(40, name.get(4), old_price.get(4), new_price.get(4)));
 
                     setItemRecycler(itemList);
 
@@ -296,11 +319,14 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(26, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(27, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(28, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(29, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(30, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(41, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(42, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(43, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(44, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(45, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(46, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(47, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(48, name.get(4), old_price.get(4), new_price.get(4)));
                 setItemRecycler(itemList);
 
 
@@ -336,11 +362,14 @@ public class ShopPage extends AppCompatActivity {
                 }
                 //System.out.println(elementsByClass);
 
-                itemList.add(new Item(31, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(32, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(33, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(34, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(35, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(52, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(53, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(54, name.get(5), old_price.get(5), new_price.get(5)));
+                itemList.add(new Item(55, name.get(6), old_price.get(6), new_price.get(6)));
+                itemList.add(new Item(56, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
 
             } catch (IOException e) {
@@ -349,7 +378,18 @@ public class ShopPage extends AppCompatActivity {
         }else if(title.getText().equals("Comfy")){
 
             // когда в список помещаешь новый елемент(как выше): itemList.add(new Item(****35****(я про это ниже говорю), name.get(4), old_price.get(4), new_price.get(4)));
-            // то id пиши каждый раз по возрастающей если последний 35, то следущие 5 - 36, 37, 38, 39, 40(это для корзины пока что нужно дальше не знаю)
+            // то id пиши каждый раз по возрастающей если последний 56, то следущие 8 - 57, 58, 59....(это для корзины пока что нужно дальше не знаю)
+        }else if (title.getText().equals("ATB")) {
+
+                itemList.add(new Item(57,"Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴"));
+                itemList.add(new Item(58,"Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴"));
+                itemList.add(new Item(59,"Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴"));
+                itemList.add(new Item(60,"Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴"));
+                itemList.add(new Item(61,"Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴"));
+                itemList.add(new Item(62,"Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴"));
+                itemList.add(new Item(63,"Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴"));
+                itemList.add(new Item(64,"Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴"));
+                setItemRecycler(itemList);
         }
         MainActivity.fullItemList.clear();
         for (Item item : itemList) {
