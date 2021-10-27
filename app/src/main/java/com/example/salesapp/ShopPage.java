@@ -239,23 +239,18 @@ public class ShopPage extends AppCompatActivity {
                             Elements elementsByClass2 = element.getElementsByClass("product-price");
                             for (Element element1 : elementsByClass2) {
                                 Elements elementsByClass3 = element1.getElementsByClass("discount-price");
-                                String text = elementsByClass3.text();
-                                if(text.indexOf("U") == text.indexOf("A") -1 && text.indexOf("A") == text.indexOf("H") -1){
-                                    new_price.add(text.substring(0,text.indexOf("U") -1) + "₴");
+                                String text1 = elementsByClass3.text();
+                                if(text1.indexOf("U") == text1.indexOf("A") -1 && text1.indexOf("A") == text1.indexOf("H") -1){
+                                    new_price.add(text1.substring(0,text1.indexOf("U") -1) + " ₴");
+                                }
+                                Elements elementsByClass4 = element1.getElementsByClass("regular-price");
+                                // old_price.add(elementsByClass3.text());
+                                String text2 = elementsByClass4.text();
+                                if(text2.indexOf("U") == text2.indexOf("A") -1 && text2.indexOf("A") == text2.indexOf("H") -1){
+                                    old_price.add(text2.substring(0,text2.indexOf("U") -1) + " ₴");
                                 }
 
                             }
-                            //old price
-                            for (Element element1 : elementsByClass2) {
-                                Elements elementsByClass3 = element1.getElementsByClass("regular-price");
-                                old_price.add(elementsByClass3.text());
-                                String text = elementsByClass3.text();
-                                if(text.indexOf("U") == text.indexOf("A") -1 && text.indexOf("A") == text.indexOf("H") -1){
-                                    old_price.add(text.substring(0,text.indexOf("U") -1) + "₴");
-                                }
-
-                            }
-                            //name
                             Elements elements_names = element.getElementsByClass("product-name");
                             Elements a = elements_names.select("a");
                             for (Element element1 : a) {
@@ -265,15 +260,11 @@ public class ShopPage extends AppCompatActivity {
                     }
 
 
-
-
-
-
-                    itemList.add(new Item(16, name.get(0), old_price.get(0), new_price.get(0)));
-                    itemList.add(new Item(17, name.get(1), old_price.get(1), new_price.get(1)));
-                    itemList.add(new Item(18, name.get(2), old_price.get(2), new_price.get(2)));
-                    itemList.add(new Item(19, name.get(3), old_price.get(3), new_price.get(3)));
-                    itemList.add(new Item(20, name.get(4), old_price.get(4), new_price.get(4)));
+                    itemList.add(new Item(21, name.get(0), old_price.get(0), new_price.get(0)));
+                    itemList.add(new Item(22, name.get(1), old_price.get(1), new_price.get(1)));
+                    itemList.add(new Item(23, name.get(2), old_price.get(2), new_price.get(2)));
+                    itemList.add(new Item(24, name.get(3), old_price.get(3), new_price.get(3)));
+                    itemList.add(new Item(25, name.get(4), old_price.get(4), new_price.get(4)));
 
                     setItemRecycler(itemList);
 
@@ -305,11 +296,11 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(11, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(12, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(13, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(14, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(15, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(26, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(27, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(28, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(29, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(30, name.get(4), old_price.get(4), new_price.get(4)));
                 setItemRecycler(itemList);
 
 
@@ -337,19 +328,19 @@ public class ShopPage extends AppCompatActivity {
                         String s2 = element.getElementsByClass("product-card__info--oldprice").text(); //without discount
 
                         if (s1.indexOf("г") == s1.indexOf("р") -1 && s1.indexOf("р") == s1.indexOf("н") -1){
-                            new_price.add(s1.substring(0,s1.indexOf("г") -1) + "₴");
-                            old_price.add(s2.substring(0,s2.indexOf("г") -1) + "₴");
+                            new_price.add(s1.substring(0,s1.indexOf("г") -1) + " ₴");
+                            old_price.add(s2.substring(0,s2.indexOf("г") -1) + " ₴");
                         }
 
                     }
                 }
                 //System.out.println(elementsByClass);
 
-                itemList.add(new Item(11, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(12, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(13, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(14, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(15, name.get(4), old_price.get(4), new_price.get(4)));
+                itemList.add(new Item(31, name.get(0), old_price.get(0), new_price.get(0)));
+                itemList.add(new Item(32, name.get(1), old_price.get(1), new_price.get(1)));
+                itemList.add(new Item(33, name.get(2), old_price.get(2), new_price.get(2)));
+                itemList.add(new Item(34, name.get(3), old_price.get(3), new_price.get(3)));
+                itemList.add(new Item(35, name.get(4), old_price.get(4), new_price.get(4)));
                 setItemRecycler(itemList);
 
             } catch (IOException e) {
@@ -357,6 +348,8 @@ public class ShopPage extends AppCompatActivity {
             }
         }else if(title.getText().equals("Comfy")){
 
+            // когда в список помещаешь новый елемент(как выше): itemList.add(new Item(****35****(я про это ниже говорю), name.get(4), old_price.get(4), new_price.get(4)));
+            // то id пиши каждый раз по возрастающей если последний 35, то следущие 5 - 36, 37, 38, 39, 40(это для корзины пока что нужно дальше не знаю)
         }
         MainActivity.fullItemList.clear();
         for (Item item : itemList) {
