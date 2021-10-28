@@ -409,8 +409,36 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(70,"Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴"));
                 itemList.add(new Item(71,"Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴"));
                 itemList.add(new Item(72,"Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴"));
-                setItemRecycler(itemList);
+            setItemRecycler(itemList);
         }
+        else if (title.getText().equals("Rozetka")) {
+            //test
+//            try {
+//                Document doc = Jsoup.connect("").ignoreHttpErrors(true).timeout(5000).get();
+//                List<String> name = new ArrayList<>();
+//                List<String> old_price = new ArrayList<>();
+//                List<String> new_price = new ArrayList<>();
+//
+//
+//
+//                itemList.add(new Item(57, name.get(0), old_price.get(0)+" ₴", new_price.get(0)));
+//                itemList.add(new Item(58, name.get(1), old_price.get(1)+" ₴", new_price.get(1)));
+//                itemList.add(new Item(59, name.get(2), old_price.get(2)+" ₴", new_price.get(2)));
+//                itemList.add(new Item(60, name.get(3), old_price.get(3)+" ₴", new_price.get(3)));
+//                itemList.add(new Item(61, name.get(4), old_price.get(4)+" ₴", new_price.get(4)));
+//                itemList.add(new Item(62, name.get(5), old_price.get(5)+" ₴", new_price.get(5)));
+//                itemList.add(new Item(63, name.get(6), old_price.get(6)+" ₴", new_price.get(6)));
+//
+////                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
+//                setItemRecycler(itemList);
+//
+////                System.out.println();
+//                // System.out.println(elementsByClass);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+        }
+
+
         MainActivity.fullItemList.clear();
         for (Item item : itemList) {
 
