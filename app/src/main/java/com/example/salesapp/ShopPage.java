@@ -401,14 +401,14 @@ public class ShopPage extends AppCompatActivity {
             // то id пиши каждый раз по возрастающей если последний 56, то следущие 8 - 57, 58, 59....(это для корзины пока что нужно дальше не знаю)
         }else if (title.getText().equals("ATB")) {
 
-                itemList.add(new Item(65,"Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴"));
-                itemList.add(new Item(66,"Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴"));
-                itemList.add(new Item(67,"Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴"));
-                itemList.add(new Item(68,"Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴"));
-                itemList.add(new Item(69,"Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴"));
-                itemList.add(new Item(70,"Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴"));
-                itemList.add(new Item(71,"Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴"));
-                itemList.add(new Item(72,"Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴"));
+                itemList.add(new Item(64,"Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴"));
+                itemList.add(new Item(65,"Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴"));
+                itemList.add(new Item(66,"Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴"));
+                itemList.add(new Item(67,"Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴"));
+                itemList.add(new Item(68,"Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴"));
+                itemList.add(new Item(69,"Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴"));
+                itemList.add(new Item(70,"Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴"));
+                itemList.add(new Item(71,"Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴"));
             setItemRecycler(itemList);
         }
         else if (title.getText().equals("Rozetka")) {

@@ -14,5 +14,6 @@
     <string name="item_price2">Цена со скидкой:</string>
     <string name="cart_h1">Cart</string>
     <string name="cart_h2">Page</string>
+    <string name="cart_price">Только сейчас:</string>
 
 </resources>
