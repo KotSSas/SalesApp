@@ -370,7 +370,7 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if(title.getText().equals("Comfy")){
+        }else if(title.getText().equals("Foxtrot")){
             try {
                 Document doc = Jsoup.connect("https://www.foxtrot.com.ua/uk/actions/12768").ignoreHttpErrors(true).timeout(5000).get();
                 List<String> name = new ArrayList<>();
@@ -397,6 +397,7 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(61, name.get(4), old_price.get(4), new_price.get(4)));
                 itemList.add(new Item(62, name.get(5), old_price.get(5), new_price.get(5)));
                 itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6)));
+                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
 
 //                System.out.println();
@@ -408,14 +409,14 @@ public class ShopPage extends AppCompatActivity {
             // то id пиши каждый раз по возрастающей если последний 56, то следущие 8 - 57, 58, 59....(это для корзины пока что нужно дальше не знаю)
         }else if (title.getText().equals("ATB")) {
 
-                itemList.add(new Item(57,"Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴"));
-                itemList.add(new Item(58,"Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴"));
-                itemList.add(new Item(59,"Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴"));
-                itemList.add(new Item(60,"Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴"));
-                itemList.add(new Item(61,"Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴"));
-                itemList.add(new Item(62,"Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴"));
-                itemList.add(new Item(63,"Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴"));
-                itemList.add(new Item(64,"Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴"));
+                itemList.add(new Item(65,"Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴"));
+                itemList.add(new Item(66,"Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴"));
+                itemList.add(new Item(67,"Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴"));
+                itemList.add(new Item(68,"Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴"));
+                itemList.add(new Item(69,"Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴"));
+                itemList.add(new Item(70,"Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴"));
+                itemList.add(new Item(71,"Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴"));
+                itemList.add(new Item(72,"Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴"));
                 setItemRecycler(itemList);
         }
         MainActivity.fullItemList.clear();
