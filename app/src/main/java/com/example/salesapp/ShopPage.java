@@ -58,20 +58,10 @@ public class ShopPage extends AppCompatActivity {
         itemList.clear();
 
         main_scene = findViewById(R.id.main_scene);
-        main_scene.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openMainActivity();
-            }
-        });
+        main_scene.setOnClickListener(v -> openMainActivity());
 
         about_us = findViewById(R.id.about_us);
-        about_us.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAboutActivity();
-            }
-        });
+        about_us.setOnClickListener(v -> openAboutActivity());
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -390,13 +380,15 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(57, name.get(0), old_price.get(0), new_price.get(0)));
-                itemList.add(new Item(58, name.get(1), old_price.get(1), new_price.get(1)));
-                itemList.add(new Item(59, name.get(2), old_price.get(2), new_price.get(2)));
-                itemList.add(new Item(60, name.get(3), old_price.get(3), new_price.get(3)));
-                itemList.add(new Item(61, name.get(4), old_price.get(4), new_price.get(4)));
-                itemList.add(new Item(62, name.get(5), old_price.get(5), new_price.get(5)));
-                itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6)));
+
+                itemList.add(new Item(57, name.get(0), old_price.get(0)+" ₴", new_price.get(0)));
+                itemList.add(new Item(58, name.get(1), old_price.get(1)+" ₴", new_price.get(1)));
+                itemList.add(new Item(59, name.get(2), old_price.get(2)+" ₴", new_price.get(2)));
+                itemList.add(new Item(60, name.get(3), old_price.get(3)+" ₴", new_price.get(3)));
+                itemList.add(new Item(61, name.get(4), old_price.get(4)+" ₴", new_price.get(4)));
+                itemList.add(new Item(62, name.get(5), old_price.get(5)+" ₴", new_price.get(5)));
+                itemList.add(new Item(63, name.get(6), old_price.get(6)+" ₴", new_price.get(6)));
+
 //                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
 
