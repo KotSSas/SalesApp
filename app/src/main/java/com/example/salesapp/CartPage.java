@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.salesapp.adapter.ItemCartAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
@@ -61,14 +62,19 @@ public class CartPage extends AppCompatActivity {
                 itemsPrice.add(item.getPrice2());
             }
         }
+        //То-есть оно так должно было быть?
+        cartItemsList.clear();
 
-        cartItemsList.add(new CartItem(1, itemsTitle.get(0), itemsPrice.get(0)));
 
-//        if(Order.items_id.size() > 0){
-//            for (int i = 0; i < Order.items_id.size(); i++) {
-//                cartItemsList.add(new CartItem(i, itemsTitle.get(i), itemsPrice.get(i)));
-//            }
-//        }
+//        cartItemsList.add(new CartItem(1, itemsTitle.get(0), itemsPrice.get(0)));
+
+        if(Order.items_id.size() > 0){
+            for (int i = 0; i < Order.items_id.size(); i++) {
+                cartItemsList.add(new CartItem(i, itemsTitle.get(i), itemsPrice.get(i)));
+            }
+        }else {
+            cartItemsList.add(new CartItem(1, "Корзина пустая",":("));
+        }
 
        //cartItemsList.add(new CartItem(1, "itemCartAdapteritemCartAdapteritemCartAdapteritemCartAdapteritemCartAdapter!", "23"));
 

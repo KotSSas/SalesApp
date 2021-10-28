@@ -411,7 +411,7 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(71,"Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴"));
             setItemRecycler(itemList);
         }
-        else if (title.getText().equals("Rozetka")) {
+         else if (title.getText().equals("Rozetka")) {
             //test
 //            try {
 //                Document doc = Jsoup.connect("").ignoreHttpErrors(true).timeout(5000).get();
