@@ -15,5 +15,7 @@
     <string name="cart_h1">Cart</string>
     <string name="cart_h2">Page</string>
     <string name="cart_price">Только сейчас:</string>
+    <string name="cart_items_list">Товаровы из этого магазина добавленые в корзину</string>
+    <string name="shop_cat1">Товаровы в корзине</string>
 
 </resources>

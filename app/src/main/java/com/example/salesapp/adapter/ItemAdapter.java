@@ -1,17 +1,23 @@
 package com.example.salesapp.adapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
 import com.example.salesapp.model.Item;
@@ -24,8 +30,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     Context context;
     List<Item> items;
-    long startTime1 = System.currentTimeMillis();
-    long elapsedTime1 = 0;
 
     public ItemAdapter(Context context, List<Item> items) {
         this.context = context;
@@ -45,36 +49,22 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.price1.setText(items.get(position).getPrice1());
         holder.price2.setText(items.get(position).getPrice2());
 
-        holder.itemView.setOnTouchListener(new View.OnTouchListener(){
-            public boolean onTouch(View v, MotionEvent event)
-            {
-                if (event.getAction() == MotionEvent.ACTION_DOWN)
-                {
-                    elapsedTime1 = System.currentTimeMillis() - startTime1;
-                    if (elapsedTime1 > 500)
-                    {
-                        startTime1 = System.currentTimeMillis();
-                        return false;
-                    }
-                    else
-                    {
-                        if (elapsedTime1 > 50)
-                        {
-                            Toast.makeText(v.getContext(),
-                                    "Добавлено в кoрзину! ;)",
-                                    Toast.LENGTH_LONG).show();
+        int img_id= context.getResources().getIdentifier("ic_" + items.get(position).getImg(), "drawable", context.getPackageName());
 
-                            Order.items_id.add(items.get(position).getId());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ItemPage.class);
 
-                            startTime1 = System.currentTimeMillis();
-                            return true;
-                        }
-                    }
-                }
-                return false;
+                intent.putExtra("image",img_id);
+                intent.putExtra("title",items.get(position).getTitle());
+                intent.putExtra("pr1",items.get(position).getPrice1());
+                intent.putExtra("pr2",items.get(position).getPrice2());
+                intent.putExtra("id",items.get(position).getId());
+
+                context.startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -85,6 +75,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     public static final class ItemViewHolder extends RecyclerView.ViewHolder{
 
         TextView title, id, price1, price2;
+        ImageView img;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);

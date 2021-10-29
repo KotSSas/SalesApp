@@ -8,17 +8,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.salesapp.adapter.ItemCartAdapter;
-import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.CartItem;
 import com.example.salesapp.model.Item;
 import com.example.salesapp.model.Order;
-import com.example.salesapp.model.Shop;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +26,7 @@ public class CartPage extends AppCompatActivity {
     RecyclerView recyclerView;
     static ItemCartAdapter itemCartAdapter;
     static List<CartItem> cartItemsList = new ArrayList<>();
+    static List<CartItem> fullCartItemsList = new ArrayList<>();
     ImageView clean_all;
 
     @Override
@@ -52,49 +50,63 @@ public class CartPage extends AppCompatActivity {
             }
         });
 
+        ListView listView = findViewById(R.id.list_view);
         List<String> itemsTitle = new ArrayList<>();
-        List<String> itemsPrice = new ArrayList<>();
 
-        for(Item item: MainActivity.fullItemList){
-            if(Order.items_id.contains(item.getId())){
-                itemsTitle.add(item.getTitle());
-                itemsPrice.add(item.getPrice2());
+        if(Order.items_id.size() >0){
+            for (Item item : MainActivity.fullItemList) {
+                if (Order.items_id.contains(item.getId())) {
+                    itemsTitle.add(item.getTitle());
+                }
             }
+
+            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
+
+        }else{
+            itemsTitle.add("Корзина пуста");
+            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
+
         }
 
-        cartItemsList.add(new CartItem(1, itemsTitle.get(0), itemsPrice.get(0)));
-
-//        if(Order.items_id.size() > 0){
-//            for (int i = 0; i < Order.items_id.size(); i++) {
-//                cartItemsList.add(new CartItem(i, itemsTitle.get(i), itemsPrice.get(i)));
+//        cartItemsList.clear();
+//
+//        List<String> itemsTitle = new ArrayList<>();
+//        List<String> itemsPrice = new ArrayList<>();
+//        int i = 0;
+//        if(Order.items_id.size() > 0) {
+//            for (Item item : MainActivity.fullItemList) {
+//                if (Order.items_id.contains(item.getId()) && !(itemsTitle.contains(item.getId()))) {
+//                    itemsTitle.add(item.getTitle());
+//                    itemsPrice.add(item.getPrice2());
+//                    cartItemsList.add(new CartItem(i, itemsTitle.get(i), itemsPrice.get(i)));
+//                    setItemRecycler(cartItemsList);
+//                }
+//                i++;
 //            }
+//        }else{
+//            //cartItemsList.add(new CartItem(1, "g", "g"));
 //        }
-
-       //cartItemsList.add(new CartItem(1, "itemCartAdapteritemCartAdapteritemCartAdapteritemCartAdapteritemCartAdapter!", "23"));
-
+//
 //        clean_all.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //               cartItemsList.clear();
 //               // cartItemsList.add(new CartItem(1, "Козина пуста :(", " "));
 //
-//               setItemRecycler(cartItemsList);
+//              setItemRecycler(cartItemsList);
 //            }
 //        });
+   }
 
-        setItemRecycler(cartItemsList);
-
-    }
-
-    private void setItemRecycler(List<CartItem> cartItemsList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
-
-        recyclerView = findViewById(R.id.recycler_items_cart_view);
-        recyclerView.setLayoutManager(layoutManager);
-
-        itemCartAdapter = new ItemCartAdapter(this, cartItemsList);
-        recyclerView.setAdapter(itemCartAdapter);
-    }
+//    private void setItemRecycler(List<CartItem> cartItemsList) {
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+//
+//        recyclerView = findViewById(R.id.recycler_cart_view);
+//        recyclerView.setLayoutManager(layoutManager);
+//
+//        itemCartAdapter = new ItemCartAdapter(this, cartItemsList);
+//        recyclerView.setAdapter(itemCartAdapter);
+//    }
 
     private void openAboutActivity() {
         startActivity(new Intent(this, AboutUsActivity.class));
