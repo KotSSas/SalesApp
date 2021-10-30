@@ -49,7 +49,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.price1.setText(items.get(position).getPrice1());
         holder.price2.setText(items.get(position).getPrice2());
 
-        int img_id= context.getResources().getIdentifier("ic_" + items.get(position).getImg(), "drawable", context.getPackageName());
+        //int img_id = context.getResources().getIdentifier("ic_" + items.get(position).getImg(), "drawable", context.getPackageName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
