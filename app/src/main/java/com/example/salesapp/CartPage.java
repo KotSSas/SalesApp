@@ -53,20 +53,20 @@ public class CartPage extends AppCompatActivity {
         ListView listView = findViewById(R.id.list_view);
         List<String> itemsTitle = new ArrayList<>();
 
-        if(Order.items_id.size() >0){
-            for (Item item : MainActivity.fullItemList) {
-                if (Order.items_id.contains(item.getId())) {
-                    itemsTitle.add(item.getTitle());
-                }
-            }
-
-            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
-
-        }else{
-            itemsTitle.add("Корзина пуста");
-            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
-
-        }
+//        if(Order.items_id.size() >0){
+//            for (Item item : MainActivity.fullItemList) {
+//                if (Order.items_id.contains(item.getId())) {
+//                    itemsTitle.add(item.getTitle());
+//                }
+//            }
+//
+//            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
+//
+//        }else{
+//            itemsTitle.add("Корзина пуста");
+//            listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, itemsTitle));
+//
+//        }
 
 //        cartItemsList.clear();
 //
