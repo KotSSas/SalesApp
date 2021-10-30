@@ -39,6 +39,8 @@ public class ShopPage extends AppCompatActivity {
     List<String> name;
     List<String> old_price;
     List<String> new_price;
+    List<String> photo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -198,10 +200,15 @@ public class ShopPage extends AppCompatActivity {
                 name = new ArrayList<>();
                 old_price = new ArrayList<>();
                 new_price = new ArrayList<>();
-
+                photo = new ArrayList<>();
                 Elements e = document.getElementsByClass("row c-items");
                 for (Element element : e) {
                     Elements el = element.getElementsByClass("product-item-info");
+                    Elements el1 = element.getElementsByClass("picture-box");
+                    for (Element element1 : el1) {
+                        photo.add(element1.select("img").attr("data-src"));
+                        //System.out.println(element1.select("img").attr("data-index","0").attr("src"));
+                    }
                     for (Element element1 : el) {
                         name.add(element1.getElementsByClass("title").text());
                         String s1 = element1.getElementsByClass("old-price").text();
@@ -214,14 +221,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
                 //Changed here
-                itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0), "lc"));
-                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), "lc"));
-                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), "lc"));
-                itemList.add(new Item(28, name.get(3), old_price.get(3), new_price.get(3), "lc"));
-                itemList.add(new Item(29, name.get(4), old_price.get(4), new_price.get(4), "lc"));
-                itemList.add(new Item(30, name.get(5), old_price.get(5), new_price.get(5), "lc"));
-                itemList.add(new Item(31, name.get(6), old_price.get(6), new_price.get(6), "lc"));
-                itemList.add(new Item(32, name.get(7), old_price.get(7), new_price.get(7), "lc"));
+                itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
+                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
+                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
+                itemList.add(new Item(28, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
+                itemList.add(new Item(29, name.get(4), old_price.get(4), new_price.get(4), photo.get(4)));
+                itemList.add(new Item(30, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
+                itemList.add(new Item(31, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
+                itemList.add(new Item(32, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
 
                 setItemRecycler(itemList);
             } catch (IOException e) {
