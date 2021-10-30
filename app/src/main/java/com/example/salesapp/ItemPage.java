@@ -38,7 +38,7 @@ public class ItemPage extends AppCompatActivity {
 //        image.setImageResource(getIntent().getIntExtra("image", 0));
 
         new DownloadImageTask((ImageView) findViewById(R.id.item_page_img))
-                .execute("https://www.sinsay.com/media/catalog/product/cache/850/a4e40ebdc3e371adff845072e1c73f37/1/5/1571F-89X-001-1.jpg");
+                .execute(getIntent().getStringExtra("image"));
 
 
 
