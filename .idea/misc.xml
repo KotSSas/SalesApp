@@ -3,23 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_allo.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_atb.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_img.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_about_us.xml" value="0.25025641025641027" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_item_page.xml" value="0.25025641025641027" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.25025641025641027" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/category_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_filter.xml" value="0.26666666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_cart_page.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_cart_shop_page.xml" value="0.24320652173913043" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_item_page.xml" value="0.24320652173913043" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_cart_page.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_shop_page.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/category_item.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/item.xml" value="0.536" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/items_cart.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/shop_item.xml" value="0.25052083333333336" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/shops_cart.xml" value="0.24320652173913043" />
       </map>
     </option>
   </component>
