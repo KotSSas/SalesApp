@@ -77,7 +77,8 @@
     <ImageView
         android:id="@+id/item_page_img"
         android:layout_width="0dp"
-        android:layout_height="230dp"
+        android:layout_height="380dp"
+
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
         android:transitionName="shopImage"
