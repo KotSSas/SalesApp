@@ -233,6 +233,8 @@ public class ShopPage extends AppCompatActivity {
                 List<String> name = new ArrayList<>();
                 List<String> old_price = new ArrayList<>();
                 List<String> new_price = new ArrayList<>();
+                List<String> photo
+                        = new ArrayList<>();
 
 
                 Elements elementsByClass = document.getElementsByClass("home-ss20-recommended");
@@ -262,18 +264,23 @@ public class ShopPage extends AppCompatActivity {
                         for (Element element1 : a) {
                             name.add(element1.text());
                         }
+                        //получение фотки
+                        Elements elements_pic = element.getElementsByClass("product-photo-img");
+                        for (Element element1 : elements_pic) {
+                            photo.add(element1.attr("data-img"));
+                        }
                     }
                 }
 
 
-            itemList.add(new Item(33, name.get(0), "Товар без скидки!", new_price.get(0), "sin"));
-            itemList.add(new Item(34, name.get(1), "Товар без скидки!", new_price.get(1), "sin"));
-            itemList.add(new Item(35, name.get(2), "Товар без скидки!", new_price.get(2), "sin"));
-            itemList.add(new Item(36, name.get(3), "Товар без скидки!", new_price.get(3), "sin"));
-            itemList.add(new Item(37, name.get(4), "Товар без скидки!", new_price.get(4), "sin"));
-            itemList.add(new Item(38, name.get(5), "Товар без скидки!", new_price.get(5), "sin"));
-            itemList.add(new Item(39, name.get(6), "Товар без скидки!", new_price.get(6), "sin"));
-            itemList.add(new Item(40, name.get(7), "Товар без скидки!", new_price.get(7), "sin"));
+            itemList.add(new Item(33, name.get(0), "Товар без скидки!", new_price.get(0), photo.get(0)));
+            itemList.add(new Item(34, name.get(1), "Товар без скидки!", new_price.get(1), photo.get(1)));
+            itemList.add(new Item(35, name.get(2), "Товар без скидки!", new_price.get(2), photo.get(2)));
+            itemList.add(new Item(36, name.get(3), "Товар без скидки!", new_price.get(3), photo.get(3)));
+            itemList.add(new Item(37, name.get(4), "Товар без скидки!", new_price.get(4), photo.get(4)));
+            itemList.add(new Item(38, name.get(5), "Товар без скидки!", new_price.get(5), photo.get(5)));
+            itemList.add(new Item(39, name.get(6), "Товар без скидки!", new_price.get(6), photo.get(6)));
+            itemList.add(new Item(40, name.get(7), "Товар без скидки!", new_price.get(7), photo.get(7)));
 
             setItemRecycler(itemList);
 
