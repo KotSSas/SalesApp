@@ -314,10 +314,10 @@ public class ShopPage extends AppCompatActivity {
             try {
                 Document document = Jsoup.connect(
                         "https://allo.ua/").get();
-                List<String> name = new ArrayList<>();
-                List<String> old_price = new ArrayList<>();
-                List<String> new_price = new ArrayList<>();
-                List<String> photo = new ArrayList<>();
+                 name = new ArrayList<>();
+                 old_price = new ArrayList<>();
+                 new_price = new ArrayList<>();
+                 photo = new ArrayList<>();
 
 
                 Elements elementsByClass = document.getElementsByClass("h-products");
