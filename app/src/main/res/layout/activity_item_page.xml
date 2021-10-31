@@ -84,7 +84,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/ic_roz" />
+        app:srcCompat="@drawable/ic_urb" />
 
     <TextView
         android:id="@+id/item_page_text"

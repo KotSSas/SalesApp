@@ -50,12 +50,11 @@ public class CartPage extends AppCompatActivity {
             }
         });
 
-        ListView listView = findViewById(R.id.list_view);
-        List<String> itemsTitle = new ArrayList<>();
+//        ListView listView = findViewById(R.id.list_view);
+//        List<String> itemsTitle = new ArrayList<>();
 
 //        if(Order.items_id.size() >0){
-//            for (Item item : MainActivity.fullItemList) {
-//                if (Order.items_id.contains(item.getId())) {
+//            for (Item item : MainActivity.fullItemList) {//                if (Order.items_id.contains(item.getId())) {
 //                    itemsTitle.add(item.getTitle());
 //                }
 //            }

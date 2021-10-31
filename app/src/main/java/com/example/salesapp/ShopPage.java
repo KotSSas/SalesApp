@@ -447,16 +447,71 @@ public class ShopPage extends AppCompatActivity {
             // когда в список помещаешь новый елемент(как выше): itemList.add(new Item(****35****(я про это ниже говорю), name.get(4), old_price.get(4), new_price.get(4)));
             // то id пиши каждый раз по возрастающей если последний 56, то следущие 8 - 57, 58, 59....(это для корзины пока что нужно дальше не знаю)
         } else if (title.getText().equals("ATB")) {
+            try {
+                Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").ignoreHttpErrors(true).timeout(5000).get();
+                List<String> name = new ArrayList<>();
+                List<String> old_price = new ArrayList<>();
+                List<String> new_price = new ArrayList<>();
+                List<String> photo = new ArrayList<>();
+                Elements elementsByClass1 = doc.getElementsByClass("catalog-list");
+                for (Element e : elementsByClass1) {
+                    Elements elementsByClass = e.getElementsByClass("  catalog-item js-product-container   ");
+                    for (Element byClass : elementsByClass) {
+                        Elements card__body = byClass.getElementsByClass("catalog-item__info");
+                        Elements card__pr = byClass.getElementsByClass("catalog-item__bottom");
+                        Elements card__head = byClass.getElementsByClass("catalog-item__photo");
 
-            itemList.add(new Item(64, "Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴", "atb"));
-            itemList.add(new Item(65, "Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴", "atb"));
-            itemList.add(new Item(66, "Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴", "atb"));
-            itemList.add(new Item(67, "Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴", "atb"));
-            itemList.add(new Item(68, "Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴", "atb"));
-            itemList.add(new Item(69, "Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴", "atb"));
-            itemList.add(new Item(70, "Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴", "atb"));
-            itemList.add(new Item(71, "Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴", "atb"));
-            setItemRecycler(itemList);
+                        for (Element element : card__head) {
+                            photo.add(element.getElementsByClass("catalog-item__photo-link").select("img").attr("src"));
+                        }
+
+                        for (Element element : card__body) {
+                            name.add(element.getElementsByClass("catalog-item__title").text());
+                        }
+                        String s0;
+                        String s1;
+                        String s2;
+                        String s3;
+                        for (Element element : card__pr) {
+                            s0 = element.getElementsByClass("product-price__top").text();
+                            //s0 = s0.substring(0, s0.indexOf("г"));
+                            s1 = element.getElementsByClass("product-price__coin").text();
+                            s3 = element.getElementsByClass("product-price__coin").text();
+
+                            s1 = s1.substring(0, s1.indexOf(" "));
+
+                            s2 = element.getElementsByClass("product-price__bottom").text();
+                            //s2 = s2.substring(0, s2.indexOf(" "));
+                            new_price.add(s0.substring(0, s2.length() - s1.length() - 8)+"."+ s1 + " ₴");
+                            old_price.add(s2.substring(0, s2.length()- 2 - 8) +"."+s3.substring(s3.indexOf(" "), s3.lastIndexOf(" "))+ " ₴");
+                        }
+                    }
+                }
+
+
+                itemList.add(new Item(57, name.get(0), old_price.get(0), new_price.get(0),    photo.get(0)   ));
+                itemList.add(new Item(58, name.get(1), old_price.get(1), new_price.get(1),    photo.get(1)   ));
+                itemList.add(new Item(59, name.get(2), old_price.get(2), new_price.get(2),    photo.get(2)   ));
+                itemList.add(new Item(60, name.get(12), old_price.get(12), new_price.get(12), photo.get(12)   ));
+                itemList.add(new Item(61, name.get(6), old_price.get(6), new_price.get(6),    photo.get(6)   ));
+                itemList.add(new Item(62, name.get(15), old_price.get(15), new_price.get(15), photo.get(15)   ));
+                itemList.add(new Item(63, name.get(20), old_price.get(20), new_price.get(20), photo.get(20)   ));
+                itemList.add(new Item(64, name.get(25), old_price.get(25), new_price.get(25), photo.get(25)   ));
+
+//                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
+                setItemRecycler(itemList);
+
+//            itemList.add(new Item(64, "Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴", "atb"));
+//            itemList.add(new Item(65, "Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴", "atb"));
+//            itemList.add(new Item(66, "Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴", "atb"));
+//            itemList.add(new Item(67, "Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴", "atb"));
+//            itemList.add(new Item(68, "Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴", "atb"));
+//            itemList.add(new Item(69, "Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴", "atb"));
+//            itemList.add(new Item(70, "Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴", "atb"));
+//            itemList.add(new Item(71, "Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴", "atb"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         } else if (title.getText().equals("Rozetka")) {
         }
         else if (title.getText().equals("Urban Planet")){
