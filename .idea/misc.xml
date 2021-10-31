@@ -5,8 +5,23 @@
       <map>
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_allo.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_atb.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_cart.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_cart_clear.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_cart_ico.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_category.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_category_on.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_citrus.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_comf.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_filter.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_fox.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_hot_deal.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_img.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_lc.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_logo.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_metr.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_about_us.xml" value="0.25025641025641027" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_cart_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_item_page.xml" value="0.25025641025641027" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.25416666666666665" />
