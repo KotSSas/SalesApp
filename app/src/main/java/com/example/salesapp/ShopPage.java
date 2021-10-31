@@ -314,10 +314,17 @@ public class ShopPage extends AppCompatActivity {
             try {
                 Document document = Jsoup.connect(
                         "https://allo.ua/").get();
+
+                List<String> name = new ArrayList<>();
+                List<String> old_price = new ArrayList<>();
+                List<String> new_price = new ArrayList<>();
+                List<String> photo = new ArrayList<>();
+
                  name = new ArrayList<>();
                  old_price = new ArrayList<>();
                  new_price = new ArrayList<>();
                  photo = new ArrayList<>();
+
 
 
                 Elements elementsByClass = document.getElementsByClass("h-products");
@@ -346,6 +353,7 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(47, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
                 itemList.add(new Item(48, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
                 setItemRecycler(itemList);
+
 
 
             } catch (IOException e) {
@@ -450,6 +458,58 @@ public class ShopPage extends AppCompatActivity {
             itemList.add(new Item(71, "Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴", "atb"));
             setItemRecycler(itemList);
         } else if (title.getText().equals("Rozetka")) {
+        }
+        else if (title.getText().equals("Urban Planet")){
+            try {
+                 name = new ArrayList<>();
+                 old_price = new ArrayList<>();
+                 new_price = new ArrayList<>();
+                 photo = new ArrayList<>();
+                 links = new ArrayList<>();
+                Document document = Jsoup.connect("https://urbanplanet-streetwear.com/sale").get();
+                Elements elementsByClass = document.getElementsByClass("products-page__content");
+                for (Element byClass : elementsByClass) {
+                    Elements ti = byClass.getElementsByClass("product-card__media");
+                    Elements im = byClass.getElementsByClass("product-card__media");
+                    Elements link = byClass.getElementsByClass("product-card__title");
+                    Elements pr = byClass.getElementsByClass("product-price product-price--has-old-price");
+                    for (Element element : im) {
+
+                        photo.add(element.select("img").attr("data-src"));
+                    }
+                    for (Element element : link) {
+                        links.add(element.select("a").attr("href"));
+                    }
+                    for (Element element : ti) {
+                        name.add(element.select("img").attr("alt"));
+                    }
+                    for (Element element : pr) {
+                        String s1 = element.getElementsByClass("product-price__price product-price__price--old").text();
+                        String s2 = element.getElementsByClass("product-price__price product-price__price--current").text();
+//                        if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
+//                            old_price.add(s1.substring(0, s1.indexOf("г") - 1));
+//                            new_price.add(s2.substring(0, s2.indexOf("г") - 1));
+//                        }
+                        old_price.add(s1);
+                        new_price.add(s2);
+
+                    }
+
+                }
+                itemList.add(new Item(57, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
+                itemList.add(new Item(58, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
+                itemList.add(new Item(59, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
+                itemList.add(new Item(60, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
+                itemList.add(new Item(61, name.get(4), old_price.get(4), new_price.get(4), photo.get(4)));
+                itemList.add(new Item(62, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
+                itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
+
+//                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
+                setItemRecycler(itemList);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
