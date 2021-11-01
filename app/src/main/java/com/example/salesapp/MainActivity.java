@@ -52,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         shopList.add(new Shop(1, 3,"lc","LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/" ));//*
-        shopList.add(new Shop(2, 3,"lc","Aviatsiya Halychyny", "Одежда", "10:00 - 21:00", "https://www.aviatsiyahalychyny.com/" ));//*
+        shopList.add(new Shop(2, 3,"ah","Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com" ));//*
         shopList.add(new Shop(3, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
         shopList.add(new Shop(4, 2,"allo","Allo", "Техника", "09:00 - 20:00", "https://allo.ua/" ));
         shopList.add(new Shop(5,2, "citrus","Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/" )); //*
         shopList.add(new Shop(6, 4,"atb","ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/" ));
-        shopList.add(new Shop(7, 3,"urb","Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet-streetwear.com/" ));//*
+        shopList.add(new Shop(7, 3,"urb","Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/" ));//*
         shopList.add(new Shop(8,2, "fox","Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/" ));
         shopList.add(new Shop(9, 4,"metr","Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/" ));//*
         shopList.add(new Shop(10, 3,"sin","Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua" ));//*
