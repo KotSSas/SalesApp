@@ -128,7 +128,11 @@ public class ShopPage extends AppCompatActivity {
                             String name_el = element1.getElementsByClass("product-card__name").text();
                             name.add(name_el.substring(0, name_el.indexOf("(") - 1));
                             old_price.add(element1.getElementsByClass("price").text());
+                            //это не работает
+                            photo.add(element1.getElementsByClass("product-card__preview").select("a").select("img").attr("src"));
                         }
+
+
                     }
 
                 }
@@ -139,11 +143,11 @@ public class ShopPage extends AppCompatActivity {
                     if (old_price.get(i).lastIndexOf(" ") == old_price.get(i).indexOf(" ")) {
                         s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ")) + "₴";
                         s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ")) + "₴";
-                        itemList.add(new Item(i + 9, name.get(i), s1, s2, "photo.get(i)"));
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i)));
                     } else {
                         s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ", 3)) + "₴";
                         s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ", 3)) + "₴";
-                        itemList.add(new Item(i + 9, name.get(i), s1, s2, "photo.get(i)"));
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i)));
                     }
                 }
 
@@ -577,7 +581,40 @@ public class ShopPage extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else if (title.getText().equals("Rozetka")) {
+            try {
+                name = new ArrayList<>();
+                old_price = new ArrayList<>();
+                new_price = new ArrayList<>();
+                photo = new ArrayList<>();
+                links = new ArrayList<>();
 
+                Document document = Jsoup.connect("https://rozetka.com.ua/news-articles-promotions/promotions/148599_gift_philips/").get();
+                Elements elementsByClass = document.getElementsByClass("goods-tile ng-star-inserted");
+                for (Element byClass : elementsByClass) {
+
+                        photo.add(byClass.getElementsByClass("goods-tile__picture ng-star-inserted").select("img").attr("src"));
+
+                        name.add(byClass.getElementsByClass("goods-tile__heading ng-star-inserted").attr("title"));
+                        String s1 = byClass.getElementsByClass("goods-tile__price--old price--gray ng-star-inserted").text();
+                        String s2 = byClass.getElementsByClass("goods-tile__price-value").text();
+                        old_price.add(s1);
+                        new_price.add(s2 + " ₴");
+
+                }
+                itemList.add(new Item(88, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
+                itemList.add(new Item(89, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
+                itemList.add(new Item(90, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
+                itemList.add(new Item(91, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
+                itemList.add(new Item(92, name.get(9), old_price.get(9), new_price.get(9), photo.get(9)));
+                itemList.add(new Item(93, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
+                itemList.add(new Item(94, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
+                itemList.add(new Item(95, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
+
+                setItemRecycler(itemList);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         fullItemList.addAll(itemList);

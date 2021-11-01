@@ -126,7 +126,7 @@ public class CartPage extends AppCompatActivity {
                     }
                 }
                 for (int i = 0; i < titles.size(); i++) {
-                    text.setText(text.getText() + titles.get(i) + "\n");
+                    text.setText(text.getText() + titles.get(i) + "\n\n");
                 }
             } else {
                 text.setText("Выберите магазин");
