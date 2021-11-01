@@ -81,13 +81,12 @@ public class ShopPage extends AppCompatActivity {
                 links = new ArrayList<>();
 
                 for (Element e : pricesU) {
-                    //All info abot the product
+
                     Elements items = e.getElementsByClass("products__item");
                     for (Element b : items) {
-                        //Titles
+
                         name.add(b.getElementsByClass("product__title").text());
 
-                        //Prices
                         Elements product__price = b.getElementsByClass("product__price");
                         for (Element old : product__price) {
                             old_price.add(old.getElementsByClass("price__old").text());
@@ -124,7 +123,6 @@ public class ShopPage extends AppCompatActivity {
                 Elements a = document.getElementsByClass("el-tabs");
                 for (Element element : a) {
                     Elements elementsByClass = element.getElementsByClass("products__list");
-//                System.out.println(elementsByClass);
                     for (Element byClass : elementsByClass) {
                         Elements elementsByClass1 = byClass.getElementsByClass("product-card product-card--mini product-card--mini--separate");
                         for (Element element1 : elementsByClass1) {
@@ -177,7 +175,6 @@ public class ShopPage extends AppCompatActivity {
                     Elements elementsByClass1 = byClass.getElementsByClass("jsx-2958303393 ProductTile__imageContainer");
                     Elements img = elementsByClass1.select("img");
                     for (Element a : img) {
-                        //class="ProductTile__image" aria-hidden="true"
                         photo.add(a.select("img").attr("src"));
 
 
@@ -222,7 +219,6 @@ public class ShopPage extends AppCompatActivity {
                     Elements el1 = element.getElementsByClass("picture-box");
                     for (Element element1 : el1) {
                         photo.add(element1.select("img").attr("data-src"));
-                        //System.out.println(element1.select("img").attr("data-index","0").attr("src"));
                     }
                     for (Element element1 : el) {
                         name.add(element1.getElementsByClass("title").text());
@@ -235,7 +231,6 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                //Changed here
                 itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
                 itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
                 itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
@@ -272,21 +267,12 @@ public class ShopPage extends AppCompatActivity {
                             if (text1.indexOf("U") == text1.indexOf("A") - 1 && text1.indexOf("A") == text1.indexOf("H") - 1) {
                                 new_price.add(text1.substring(0, text1.indexOf("U") - 1) + " ₴");
                             }
-//                        Elements elementsByClass4 = element1.getElementsByClass("regular-price");
-//                        // old_price.add(elementsByClass3.text());
-//                        String text2 = elementsByClass4.text();
-//
-//                        if(text2.indexOf("U") == text2.indexOf("A") -1 && text2.indexOf("A") == text2.indexOf("H") -1){
-//                            old_price.add(text2.substring(0,text2.indexOf("U") -1) + " ₴");
-//                        }
-
                         }
                         Elements elements_names = element.getElementsByClass("product-name");
                         Elements a = elements_names.select("a");
                         for (Element element1 : a) {
                             name.add(element1.text());
                         }
-                        //получение фотки
                         Elements elements_pic = element.getElementsByClass("product-photo-img");
                         for (Element element1 : elements_pic) {
                             photo.add(element1.attr("data-img"));
@@ -384,8 +370,6 @@ public class ShopPage extends AppCompatActivity {
 
                     }
                 }
-                //System.out.println(elementsByClass);
-
                 itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
                 itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
                 itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
@@ -433,16 +417,11 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(62, name.get(5), old_price.get(5) + " ₴", new_price.get(5), photo.get(5)));
                 itemList.add(new Item(63, name.get(6), old_price.get(6) + " ₴", new_price.get(6), photo.get(6)));
 
-//                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
 
-//                System.out.println();
-                // System.out.println(elementsByClass);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            // когда в список помещаешь новый елемент(как выше): itemList.add(new Item(****35****(я про это ниже говорю), name.get(4), old_price.get(4), new_price.get(4)));
-            // то id пиши каждый раз по возрастающей если последний 56, то следущие 8 - 57, 58, 59....(это для корзины пока что нужно дальше не знаю)
         } else if (title.getText().equals("ATB")) {
             try {
                 Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").ignoreHttpErrors(true).timeout(5000).get();
@@ -471,16 +450,14 @@ public class ShopPage extends AppCompatActivity {
                         String s3;
                         for (Element element : card__pr) {
                             s0 = element.getElementsByClass("product-price__top").text();
-                            //s0 = s0.substring(0, s0.indexOf("г"));
                             s1 = element.getElementsByClass("product-price__coin").text();
                             s3 = element.getElementsByClass("product-price__coin").text();
 
                             s1 = s1.substring(0, s1.indexOf(" "));
 
                             s2 = element.getElementsByClass("product-price__bottom").text();
-                            //s2 = s2.substring(0, s2.indexOf(" "));
-                            new_price.add(s0.substring(0, s2.length() - s1.length() - 8) + "." + s1 + " ₴");
-                            old_price.add(s2.substring(0, s2.length() - 2 - 8) + "." + s3.substring(s3.indexOf(" "), s3.lastIndexOf(" ")) + " ₴");
+                            new_price.add(s0.substring(0, s2.length() - 10) + "." + s1 + " ₴");
+                            old_price.add(s2.substring(0, s2.length() - 10) + "." + s3.substring(s3.indexOf(" "), s3.lastIndexOf(" ")) + " ₴");
                         }
                     }
                 }
@@ -495,17 +472,7 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20)));
                 itemList.add(new Item(71, name.get(25), old_price.get(25), new_price.get(25), photo.get(25)));
 
-//                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
-
-//            itemList.add(new Item(64, "Ікра Водный мир сайди солона", "36.40 ₴", "27.60 ₴", "atb"));
-//            itemList.add(new Item(65, "Алкогольний напій The Colonist Spiced Black", "229.90 ₴", "169.90 ₴", "atb"));
-//            itemList.add(new Item(66, "Балик Добров Дарницький, нарізка", "35.40 ₴", "29.10 ₴", "atb"));
-//            itemList.add(new Item(67, "Батончик вафельний Хіп Хоп в глазурі", "42.30 ₴", "32.90 ₴", "atb"));
-//            itemList.add(new Item(68, "Bареники Три Ведмеді Мішутка з картоплею", "35.90 ₴", "20.40 ₴", "atb"));
-//            itemList.add(new Item(69, "Вино Baron de Lusson сухе червоне, Франція", "99.90 ₴", "79.90 ₴", "atb"));
-//            itemList.add(new Item(70, "Горошок Своя лінія зелений", "24.40 ₴", "19.90 ₴", "atb"));
-//            itemList.add(new Item(71, "Готовий Сніданок 460г Nesquik", "64.70 ₴", "55.60 ₴", "atb"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -550,7 +517,6 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
                 itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
 
-//                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
 
             } catch (IOException e) {
@@ -606,7 +572,6 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
                 itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
 
-//                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7)));
                 setItemRecycler(itemList);
 
             } catch (IOException e) {
