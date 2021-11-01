@@ -557,7 +557,7 @@ public class ShopPage extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-        } else if (title.getText().equals("Aviatsiya Halychyny")) {
+        } else if (title.getText().equals("Aviatsiya")) {
             try {
                 name = new ArrayList<>();
                 old_price = new ArrayList<>();
