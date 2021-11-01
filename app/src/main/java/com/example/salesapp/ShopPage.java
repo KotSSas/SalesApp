@@ -30,8 +30,7 @@ public class ShopPage extends AppCompatActivity {
     RecyclerView recyclerView;
     ItemAdapter itemAdapter;
     static List<Item> itemList = new ArrayList<>();
-
-    List<String> item;
+    static List<Item> fullItemList = new ArrayList<>();
 
     TextView title;
     TextView main_scene, about_us;
@@ -508,14 +507,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(57, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
-                itemList.add(new Item(58, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
-                itemList.add(new Item(59, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
-                itemList.add(new Item(60, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
-                itemList.add(new Item(61, name.get(4), old_price.get(4), new_price.get(4), photo.get(4)));
-                itemList.add(new Item(62, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
-                itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
-                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
+                itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
+                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
+                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
+                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
+                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4)));
+                itemList.add(new Item(77, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
+                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
+                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
 
                 setItemRecycler(itemList);
 
@@ -563,14 +562,14 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(57, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
-                itemList.add(new Item(58, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
-                itemList.add(new Item(59, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
-                itemList.add(new Item(60, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
-                itemList.add(new Item(61, name.get(4), old_price.get(4), new_price.get(4), photo.get(4)));
-                itemList.add(new Item(62, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
-                itemList.add(new Item(63, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
-                itemList.add(new Item(64, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
+                itemList.add(new Item(80, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
+                itemList.add(new Item(81, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
+                itemList.add(new Item(82, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
+                itemList.add(new Item(83, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
+                itemList.add(new Item(84, name.get(4), old_price.get(4), new_price.get(4), photo.get(4)));
+                itemList.add(new Item(85, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
+                itemList.add(new Item(86, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
+                itemList.add(new Item(87, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
 
                 setItemRecycler(itemList);
 
@@ -580,6 +579,8 @@ public class ShopPage extends AppCompatActivity {
         } else if (title.getText().equals("Rozetka")) {
 
         }
+
+        fullItemList.addAll(itemList);
     }
 
     private Document getDocument() throws IOException {

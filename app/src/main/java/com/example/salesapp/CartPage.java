@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,18 +17,22 @@ import com.example.salesapp.adapter.ItemCartAdapter;
 import com.example.salesapp.model.CartItem;
 import com.example.salesapp.model.Item;
 import com.example.salesapp.model.Order;
+import com.example.salesapp.model.Shop;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class CartPage extends AppCompatActivity {
 
     TextView main_scene, about_us;
-    RecyclerView recyclerView;
-    static ItemCartAdapter itemCartAdapter;
-    static List<CartItem> cartItemsList = new ArrayList<>();
-    static List<CartItem> fullCartItemsList = new ArrayList<>();
-    ImageView clean_all;
+//    RecyclerView recyclerView;
+//    static ItemCartAdapter itemCartAdapter;
+//    static List<CartItem> cartItemsList = new ArrayList<>();
+//    static List<CartItem> fullCartItemsList = new ArrayList<>();
+//    ImageView clean_all;
+   // List<String> cit_list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +111,28 @@ public class CartPage extends AppCompatActivity {
 //        itemCartAdapter = new ItemCartAdapter(this, cartItemsList);
 //        recyclerView.setAdapter(itemCartAdapter);
 //    }
+
+    public void onClicked (View view){
+        List<String> titles = new ArrayList<>();;
+        CheckBox checkBox = (CheckBox) view;
+        TextView text = findViewById(R.id.textCart);
+        if (checkBox.getId() == R.id.cit_box) {
+            if (checkBox.isChecked()) {
+                text.setText("");
+                for (Item item : ShopPage.fullItemList) {
+                    if (Order.cit_list.contains(item.getId())){
+                        titles.add(item.getTitle());
+                        //text.setText(item.getTitle());
+                    }
+                }
+                for (int i = 0; i < titles.size(); i++) {
+                    text.setText(text.getText() + titles.get(i) + "\n");
+                }
+            } else {
+                text.setText("Выберите магазин");
+            }
+        }
+    }
 
     private void openAboutActivity() {
         startActivity(new Intent(this, AboutUsActivity.class));

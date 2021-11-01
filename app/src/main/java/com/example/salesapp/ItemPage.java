@@ -40,10 +40,6 @@ public class ItemPage extends AppCompatActivity {
         new DownloadImageTask((ImageView) findViewById(R.id.item_page_img))
                 .execute(getIntent().getStringExtra("image"));
 
-
-
-
-
         title.setText(getIntent().getStringExtra("title"));
         pr1.setText(getIntent().getStringExtra("pr1"));
         pr2.setText(getIntent().getStringExtra("pr2"));
@@ -69,7 +65,9 @@ public class ItemPage extends AppCompatActivity {
 
     public void addToCart(View view){
         int id = getIntent().getIntExtra("id", 0);
-        Order.items_id.add(id);
+        if (id > 8 && id < 17) {
+            Order.cit_list.add(id);
+        }
         Toast.makeText(this, "Добавлено в корзину! ;)", Toast.LENGTH_LONG).show();
     }
 

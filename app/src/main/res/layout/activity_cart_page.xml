@@ -133,6 +133,30 @@
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:srcCompat="@drawable/ic_cart_clear" />
 
+    <CheckBox
+        android:id="@+id/cit_box"
+        android:layout_width="177dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:onClick="onClicked"
+        android:text="Citrus"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/h2" />
+
+    <TextView
+        android:id="@+id/textCart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="Выбери магазин"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/cit_box" />
+
+
     <!--app:layout_constraintTop_toBottomOf="@+id/recycler_items_cart_view" -->
 
    <!-- <ListView

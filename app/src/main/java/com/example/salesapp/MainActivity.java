@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
     static   List<Category> categoryList = new ArrayList<>();
     static   List<Shop> shopList = new ArrayList<>();
     static   List<Shop> fullShopsList = new ArrayList<>();
-    static   List<Shop> fullItemList = new ArrayList<>();
-
     TextView about_us;
 
 
