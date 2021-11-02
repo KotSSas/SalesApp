@@ -21,8 +21,6 @@ import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
 import com.example.salesapp.model.Item;
-import com.example.salesapp.model.Order;
-import com.example.salesapp.model.Shop;
 
 import java.util.List;
 

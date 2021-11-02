@@ -139,18 +139,4 @@
         app:layout_constraintVertical_bias="0.427"
         tools:listitem="@layout/shop_item" />
 
-    <ImageView
-        android:id="@+id/cart_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        android:onClick="open_cart"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.564"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/shops_recycler"
-        app:srcCompat="@drawable/ic_shop" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
