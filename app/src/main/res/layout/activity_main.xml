@@ -40,7 +40,7 @@
             android:gravity="center"
             android:rotation="270"
             android:text="@string/main_scene"
-            android:textColor="@color/black"
+            android:textColor="#4B4768"
             android:textSize="25sp"
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
             android:gravity="center"
             android:rotation="270"
             android:text="@string/about_us"
-            android:textColor="@color/text"
+            android:textColor="#7D75B8"
             android:textSize="25sp"
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,8 +65,8 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="60dp"
-            android:layout_height="86dp"
+            android:layout_width="50dp"
+            android:layout_height="76dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -102,10 +102,10 @@
 
     <ImageView
         android:id="@+id/filter_logo"
-        android:layout_width="52dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:clickable="true"
         android:contentDescription="@string/sales_icon"
         android:minHeight="48dp"
@@ -116,12 +116,12 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/category_recycle"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="30dp"
         android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/filter_logo"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/filter_logo"
-        app:layout_constraintTop_toTopOf="@+id/filter_logo"
+        app:layout_constraintTop_toBottomOf="@+id/h2"
         tools:listitem="@layout/category_item" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -151,6 +151,6 @@
         app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/shops_recycler"
-        app:srcCompat="@drawable/ic_cart" />
+        app:srcCompat="@drawable/ic_shop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

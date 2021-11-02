@@ -40,7 +40,7 @@
             android:gravity="center"
             android:rotation="270"
             android:text="@string/main_scene"
-            android:textColor="@color/text"
+            android:textColor="#7D75B8"
             android:textSize="25sp"
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +56,7 @@
             android:gravity="center"
             android:rotation="270"
             android:text="@string/about_us"
-            android:textColor="@color/text"
+            android:textColor="#7D75B8"
             android:textSize="25sp"
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -65,8 +65,8 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="60dp"
-            android:layout_height="86dp"
+            android:layout_width="50dp"
+            android:layout_height="76dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -123,15 +123,6 @@
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/h2"
         tools:listitem="@layout/shops_cart" /> -->
-
-    <ImageView
-        android:id="@+id/b_clean"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/ic_cart_clear" />
 
     <CheckBox
         android:id="@+id/cit_box"
