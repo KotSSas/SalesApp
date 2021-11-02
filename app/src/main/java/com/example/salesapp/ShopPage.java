@@ -595,6 +595,7 @@ public class ShopPage extends AppCompatActivity {
                         photo.add(byClass.getElementsByClass("goods-tile__picture ng-star-inserted").select("img").attr("src"));
 
                         name.add(byClass.getElementsByClass("goods-tile__heading ng-star-inserted").attr("title"));
+                        name.add(byClass.getElementsByClass("goods-tile__heading ng-star-inserted").attr("title"));
                         String s1 = byClass.getElementsByClass("goods-tile__price--old price--gray ng-star-inserted").text();
                         String s2 = byClass.getElementsByClass("goods-tile__price-value").text();
                         old_price.add(s1);
@@ -611,6 +612,47 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(95, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
 
                 setItemRecycler(itemList);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if (title.getText().equals("Kibernetiki")){
+            try {
+                name = new ArrayList<>();
+                old_price = new ArrayList<>();
+                new_price = new ArrayList<>();
+                photo = new ArrayList<>();
+                links = new ArrayList<>();
+
+
+                Document document = Jsoup.connect("https://kibernetiki.com.ua/#prod1_1").get();
+                Elements elementsByClass = document.getElementsByClass("product-section special");
+                for (Element byClass : elementsByClass) {
+                    Elements img = byClass.select("img");
+                    Elements pr = byClass.getElementsByClass("item__price-wrap");
+                    for (Element element : pr) {
+                        old_price.add(element.getElementsByClass("item__price-old").text());
+                        new_price.add(element.getElementsByClass("item__price").text());
+
+                        //System.out.println(element.getElementsByClass("item__price").text());
+                    }
+                    for (Element element : img) {
+                        photo.add(element.attr("src"));
+                        name.add(element.attr("alt"));
+                    }
+
+                }
+                itemList.add(new Item(96, name.get(0), old_price.get(0), new_price.get(0), photo.get(0)));
+                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1)));
+                itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2)));
+                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3)));
+                itemList.add(new Item(100, name.get(9), old_price.get(9), new_price.get(9), photo.get(9)));
+                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5)));
+                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6)));
+                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7)));
+
+                setItemRecycler(itemList);
+
 
             } catch (IOException e) {
                 e.printStackTrace();
