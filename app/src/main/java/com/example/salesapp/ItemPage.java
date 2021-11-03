@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.salesapp.model.Order;
+
 import java.io.InputStream;
 import java.net.URL;
 
@@ -67,6 +69,12 @@ public class ItemPage extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void addToCart(View view){
+        int id = getIntent().getIntExtra("id", 0);
+        Order.items_id.add(id);
+        Toast.makeText(this, "Добавлено в корзину! ;)", Toast.LENGTH_SHORT).show();
     }
 
     private void openAboutActivity() {

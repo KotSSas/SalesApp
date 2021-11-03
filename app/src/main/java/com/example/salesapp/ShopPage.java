@@ -673,6 +673,7 @@ public class ShopPage extends AppCompatActivity {
 //            }
 //        }
 
+        fullItemList.clear();
         fullItemList.addAll(itemList);
     }
 
