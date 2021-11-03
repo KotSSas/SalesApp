@@ -16,7 +16,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".CartPage"
+            android:name=".ErrorPage"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

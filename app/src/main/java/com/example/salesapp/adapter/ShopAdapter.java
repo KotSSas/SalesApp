@@ -6,6 +6,7 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.widget.ImageView;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.salesapp.ErrorPage;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
 import com.example.salesapp.model.Shop;
@@ -53,7 +55,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             holder.time_work.setText(shops.get(position).getWork_time());
             holder.cat.setText(shops.get(position).getCategory());
             holder.site.setText(shops.get(position).getSite());
-
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        if (wifi!=null && wifi.isConnected()||(mob!=null && mob.isConnected())){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,6 +75,22 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                     context.startActivity(intent, options.toBundle());
                 }
             });
+            System.out.println("Connected!");
+            //true
+        }else{
+           holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                                  @Override
+                                                  public void onClick(View v) {
+                                                      Intent intent = new Intent(context, ErrorPage.class);
+                                                      context.startActivity(intent);
+                                                  }
+                                              });
+            //false
+//            showCustomDialog();
+
+            System.out.println("connect to the internet");
+        }
+
 
     }
 

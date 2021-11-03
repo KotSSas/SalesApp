@@ -78,19 +78,19 @@ public class MainActivity extends AppCompatActivity {
 
         fullShopsList.addAll(shopList);
 
-        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if (wifi!=null && wifi.isConnected()||(mob!=null && mob.isConnected())){
-            setShopRecycler(shopList);
-            System.out.println("Connected!");
-            //true
-        }else{
-            //false
-            showCustomDialog();
-            System.out.println("connect to the internet");
-        }
-//        setShopRecycler(shopList);
+//        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+//        NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+//        if (wifi!=null && wifi.isConnected()||(mob!=null && mob.isConnected())){
+//            setShopRecycler(shopList);
+//            System.out.println("Connected!");
+//            //true
+//        }else{
+//            //false
+//            showCustomDialog();
+//            System.out.println("connect to the internet");
+//        }
+        setShopRecycler(shopList);
 
         about_us = findViewById(R.id.about_us);
         about_us.setOnClickListener(new View.OnClickListener() {
@@ -109,19 +109,12 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Please connect to the Internet ")
                 .setCancelable(false)
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-                    }
+                .setPositiveButton("Connect", (dialogInterface, i) -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
+                .setNegativeButton("Exit", (dialogInterface, i) -> {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
                 })
-                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        finish();
-                    }
-                }).show()
+                .show()
         ;
     }
 
