@@ -31,6 +31,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_hot_deal" />
 
+
+
         <TextView
             android:id="@+id/main_scene"
             android:layout_width="120dp"
@@ -91,6 +93,8 @@
             android:layout_height="wrap_content"
             android:background="#4C4C4C"
             android:orientation="vertical">
+
+
 
             <ImageView
                 android:id="@+id/item_page_img"
