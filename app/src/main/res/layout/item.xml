@@ -22,12 +22,6 @@
             android:paddingBottom="30dp"
             android:orientation="vertical">
 
-                <!-- КАК СДЕЛАТЬ ТАК
-                 ЧТО БЫ ТЕКСТ НЕ СЕДАЛО(О ЧТО Я НА ВИДЕО ПОКАЗЫВАЛ)
-                 Я НЕ ЗНАЮ, ПРОСТО НЕ ЕБУ
-                 Я УЖЕ ВСЕ ПРОБЫВАЛ(шрифт, размер, толщину, layoutЫ менял)
-                 КОРОЧЕ Я НЕ ЗНАЮ, ЭТО ПЛОХО-->
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

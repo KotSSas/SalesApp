@@ -453,26 +453,22 @@ public class ShopPage extends AppCompatActivity {
                         Elements card__head = byClass.getElementsByClass("catalog-item__photo");
 
                         for (Element element : card__head) {
-                            photo.add(element.getElementsByClass("catalog-item__photo-link").select("img").attr("src"));
+                            photo.add(element.getElementsByClass("catalog-item__img").attr("src"));
                         }
 
                         for (Element element : card__body) {
-                            name.add(element.getElementsByClass("catalog-item__title").text());
+                            name.add(element.getElementsByClass("blue-link").text());
                         }
                         String s0;
                         String s1;
                         String s2;
                         String s3;
                         for (Element element : card__pr) {
-                            s0 = element.getElementsByClass("product-price__top").text();
-                            s1 = element.getElementsByClass("product-price__coin").text();
-                            s3 = element.getElementsByClass("product-price__coin").text();
+                            s0 = element.getElementsByClass("product-price__top").attr("value");
+                            s1 = element.getElementsByClass("product-price__bottom").attr("value");
 
-                            s1 = s1.substring(0, s1.indexOf(" "));
-
-                            s2 = element.getElementsByClass("product-price__bottom").text();
-                            new_price.add(s0.substring(0, s2.length() - 10) + "." + s1 + " ₴");
-                            old_price.add(s2.substring(0, s2.length() - 10) + "." + s3.substring(s3.indexOf(" "), s3.lastIndexOf(" ")) + " ₴");
+                            new_price.add(s0 + " ₴");
+                            old_price.add(s1 + " ₴");
                         }
                     }
                 }
@@ -623,14 +619,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(96, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),""));
-                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),""));
-                itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),""));
-                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),""));
-                itemList.add(new Item(100, name.get(9), old_price.get(9), new_price.get(9), photo.get(9),""));
-                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),""));
-                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),""));
-                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),""));
+                itemList.add(new Item(96, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),""));
+                itemList.add(new Item(97, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),""));
+                itemList.add(new Item(98, name.get(12), old_price.get(12), new_price.get(12), photo.get(12),""));
+                itemList.add(new Item(99, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),""));
+                itemList.add(new Item(100, name.get(10), old_price.get(10), new_price.get(10), photo.get(10),""));
+                itemList.add(new Item(101, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),""));
+                itemList.add(new Item(102, name.get(13), old_price.get(13), new_price.get(13), photo.get(13),""));
+                itemList.add(new Item(103, name.get(15), old_price.get(15), new_price.get(15), photo.get(15),""));
 
                 setItemRecycler(itemList);
 
