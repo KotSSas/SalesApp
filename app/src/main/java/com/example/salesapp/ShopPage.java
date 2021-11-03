@@ -702,7 +702,59 @@ public class ShopPage extends AppCompatActivity {
 //                e.printStackTrace();
 //            }
 //        }
+        else if (title.getText().equals("Sportmaster")) {
+            try {
+                name = new ArrayList<>();
+                old_price = new ArrayList<>();
+                new_price = new ArrayList<>();
+                photo = new ArrayList<>();
+                links = new ArrayList<>();
 
+
+                Document document = Jsoup.connect("https://www.sportmaster.ua/ru/catalog/odegda_i_obuv_kollektsiya_vesnaleto_2021/page-2/?sale=1").get();
+
+                Elements elementsByClass = document.getElementsByClass("products-list__box block_big l-goods  ");
+                for (Element byClass : elementsByClass) {
+                    Elements img = byClass.getElementsByClass("products-list__box-image");
+                    //Elements name_el = byClass.select("products-list__box-name");
+                    Elements pr = byClass.getElementsByClass("products-list__box-info");
+
+                    String s1;
+                    String s2;
+                    for (Element element : pr) {
+                        s1 = element.getElementsByClass("price-old").text();
+                        s2 = element.getElementsByClass("price-new bigger").text();
+                        old_price.add(s1.substring(0, s1.indexOf(",")) + " ₴");
+                        new_price.add(s2.substring(0, s2.indexOf(",")) + " ₴");
+                        name.add(element.getElementsByClass("products-list__box-name").attr("alt"));
+
+                        //System.out.println(element.getElementsByClass("item__price").text());
+                    }
+                    String s3;
+                    for (Element element : img) {
+                        s3 = element.getElementsByClass("products-list__box-img").attr("style");
+                        photo.add(s3.substring(s3.indexOf("(") + 1, s3.length()-2));
+
+                        links.add(element.getElementsByClass("products-list__box-img").attr("href"));
+                    }
+
+                }
+                itemList.add(new Item(96, name.get(0), old_price.get(0),  new_price.get(0), photo.get(0), "https://www.sportmaster.ua" + links.get(0)));
+                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), "https://www.sportmaster.ua" + links.get(1)));
+                itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), "https://www.sportmaster.ua" + links.get(2)));
+                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), "https://www.sportmaster.ua" + links.get(3)));
+                itemList.add(new Item(100, name.get(4),old_price.get(4), new_price.get(4), photo.get(4), "https://www.sportmaster.ua" + links.get(4)));
+                itemList.add(new Item(101, name.get(5),old_price.get(5), new_price.get(5), photo.get(5), "https://www.sportmaster.ua" + links.get(5)));
+                itemList.add(new Item(102, name.get(6),old_price.get(6), new_price.get(6), photo.get(6), "https://www.sportmaster.ua" + links.get(6)));
+                itemList.add(new Item(103, name.get(7),old_price.get(7), new_price.get(7), photo.get(7), "https://www.sportmaster.ua" + links.get(7)));
+
+                setItemRecycler(itemList);
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         fullItemList.clear();
         fullItemList.addAll(itemList);
     }
