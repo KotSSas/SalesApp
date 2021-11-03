@@ -88,7 +88,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#4C4C4C"
             android:orientation="vertical">
 
@@ -175,7 +175,7 @@
 
                     <TextView
                         android:id="@+id/price_item2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_bold"
                         android:text="TextView"
@@ -203,6 +203,17 @@
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         app:srcCompat="@drawable/ic_site_b" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addToCart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/ic_shop2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

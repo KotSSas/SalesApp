@@ -475,13 +475,13 @@ public class ShopPage extends AppCompatActivity {
 
 
                 itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(65, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(66, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(67, name.get(12), old_price.get(12), new_price.get(12), photo.get(12),""));
+                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),"https://www.google.com.ua/?hl=ru"));
+                itemList.add(new Item(66, name.get(23), old_price.get(23), new_price.get(23), photo.get(23),"https://www.google.com.ua/?hl=ru"));
+                itemList.add(new Item(67, name.get(8), old_price.get(8), new_price.get(8), photo.get(8),""));
                 itemList.add(new Item(68, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),""));
                 itemList.add(new Item(69, name.get(15), old_price.get(15), new_price.get(15), photo.get(15),"https://www.google.com.ua/?hl=ru"));
                 itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(71, name.get(25), old_price.get(25), new_price.get(25), photo.get(25),"https://www.google.com.ua/?hl=ru"));
+                itemList.add(new Item(71, name.get(9), new_price.get(9), "Товар без скидки!", photo.get(9),"https://www.google.com.ua/?hl=ru"));
 
                 setItemRecycler(itemList);
             } catch (IOException e) {
@@ -676,6 +676,7 @@ public class ShopPage extends AppCompatActivity {
 //            }
 //        }
 
+        fullItemList.clear();
         fullItemList.addAll(itemList);
     }
 

@@ -80,6 +80,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openCart(View view){
+        startActivity(new Intent(this, CartPage.class));
+    }
+
     private void openAboutActivity() {
         startActivity(new Intent(this, AboutUsActivity.class));
     }
