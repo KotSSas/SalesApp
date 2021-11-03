@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SalesApp">
         <activity
+            android:name=".CartShopPage"
+            android:exported="false" />
+        <activity
+            android:name=".CartItem"
+            android:exported="false" />
+        <activity
             android:name=".CartPage"
             android:exported="false"
             android:screenOrientation="portrait" />
