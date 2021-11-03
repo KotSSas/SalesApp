@@ -1,20 +1,24 @@
 package com.example.salesapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.Category;
-import com.example.salesapp.model.Item;
 import com.example.salesapp.model.Shop;
 
 import java.util.ArrayList;
@@ -29,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     static   List<Shop> shopList = new ArrayList<>();
     static   List<Shop> fullShopsList = new ArrayList<>();
     TextView about_us;
-
+    boolean connected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +56,10 @@ public class MainActivity extends AppCompatActivity {
 
         setCategotyRecycler(categoryList);
 
+//
+//
+
+
 
         shopList.add(new Shop(1,3,"staff","Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/" ));
         //shopList.add(new Shop(2, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
@@ -70,21 +78,57 @@ public class MainActivity extends AppCompatActivity {
 
         fullShopsList.addAll(shopList);
 
-        setShopRecycler(shopList);
+        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        if (wifi!=null && wifi.isConnected()||(mob!=null && mob.isConnected())){
+            setShopRecycler(shopList);
+            System.out.println("Connected!");
+            //true
+        }else{
+            //false
+            showCustomDialog();
+            System.out.println("connect to the internet");
+        }
+//        setShopRecycler(shopList);
 
         about_us = findViewById(R.id.about_us);
         about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openAboutActivity();
+
+
             }
         });
 
+
     }
 
-    public void openCart(View view){
-        startActivity(new Intent(this, CartPage.class));
+    private void showCustomDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Please connect to the Internet ")
+                .setCancelable(false)
+                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                    }
+                })
+                .setNegativeButton("Exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+                }).show()
+        ;
     }
+
+
+//    public void openCart(View view){
+//        startActivity(new Intent(this, CartPage.class));
+//    }
 
     private void openAboutActivity() {
         startActivity(new Intent(this, AboutUsActivity.class));

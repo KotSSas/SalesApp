@@ -3,7 +3,7 @@
     package="com.example.salesapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,9 +14,7 @@
         <activity
             android:name=".CartShopPage"
             android:exported="false" />
-        <activity
-            android:name=".CartItem"
-            android:exported="false" />
+
         <activity
             android:name=".CartPage"
             android:exported="false"

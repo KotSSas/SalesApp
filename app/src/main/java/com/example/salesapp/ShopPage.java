@@ -60,6 +60,7 @@ public class ShopPage extends AppCompatActivity {
         itemList.clear();
 
         main_scene = findViewById(R.id.main_scene);
+
         main_scene.setOnClickListener(v -> openMainActivity());
 
         about_us = findViewById(R.id.about_us);
