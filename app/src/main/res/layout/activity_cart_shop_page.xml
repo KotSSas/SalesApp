@@ -80,7 +80,7 @@
         android:layout_height="230dp"
         android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        android:transitionName="cartImage"
+        android:transitionName="shopImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent"

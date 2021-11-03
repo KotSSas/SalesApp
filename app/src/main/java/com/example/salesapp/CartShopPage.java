@@ -10,9 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.salesapp.adapter.CartItemAdapter;
-import com.example.salesapp.adapter.CartShopAdapter;
 import com.example.salesapp.model.CartItem;
-import com.example.salesapp.model.CartShop;
 import com.example.salesapp.model.Item;
 import com.example.salesapp.model.Order;
 

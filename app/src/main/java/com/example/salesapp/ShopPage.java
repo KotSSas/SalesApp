@@ -721,6 +721,17 @@ public class ShopPage extends AppCompatActivity {
         fullItemList.addAll(itemList);
     }
 
+    public void openCart(View view){
+        openCartPage();
+    }
+
+    private void openCartPage() {
+//        Intent intent = new Intent(this, CartShopPage.class);
+//        intent.putExtra("image",img_id);
+//        intent.putExtra("title",.get(position).getTitle());
+//        startActivity(intent);
+    }
+
     private Document getDocument() throws IOException {
         String url = "https://www.tavriav.ua/catalog/discount/";
         return Jsoup.connect(url).get();
