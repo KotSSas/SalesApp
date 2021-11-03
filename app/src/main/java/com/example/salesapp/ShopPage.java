@@ -169,6 +169,14 @@ public class ShopPage extends AppCompatActivity {
 
                 Elements elementsByClass =
                         document.getElementsByClass("jsx-33926795 ProductsBox__list");
+
+
+                Elements a1 = elementsByClass.select("a");
+                for (Element g : a1) {
+                    links.add("https://metro.zakaz.ua/ru/products/metro28971000000000"+g.attr("href"));
+
+                }
+
                 for (Element byClass : elementsByClass) {
                     Elements el_names = byClass.getElementsByClass("jsx-2958303393 ProductTile__titleWrapper");
                     for (Element el_name : el_names) {
@@ -192,21 +200,23 @@ public class ShopPage extends AppCompatActivity {
 
                         String s1 = el_price.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text();
                         String s2 = el_price.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text();
-                        if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
-                            old_price.add(s1.substring(0, s1.indexOf("г") - 1) + "₴");
-                            new_price.add(s2 + "₴");
-
-                        }
+//                        if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
+//                            old_price.add(s1.substring(0, s1.indexOf("г") - 1) + "₴");
+//                            new_price.add(s2 + "₴");
+//
+//                        }
+                        old_price.add(s1);
+                        new_price.add(s2);
                     }
                 }
-                itemList.add(new Item(17, name.get(0), old_price.get(0), new_price.get(0), photo.get(1), ""));
-                itemList.add(new Item(18, name.get(1), old_price.get(1), new_price.get(1), photo.get(4), ""));
-                itemList.add(new Item(19, name.get(2), old_price.get(2), new_price.get(2), photo.get(7), ""));
-                itemList.add(new Item(20, name.get(3), old_price.get(3), new_price.get(3), photo.get(10), ""));
-                itemList.add(new Item(21, name.get(4), old_price.get(4), new_price.get(4), photo.get(13), ""));
-                itemList.add(new Item(22, name.get(5), old_price.get(5), new_price.get(5), photo.get(16), ""));
-                itemList.add(new Item(23, name.get(6), old_price.get(6), new_price.get(6), photo.get(19), ""));
-                itemList.add(new Item(24, name.get(7), old_price.get(7), new_price.get(7), photo.get(22), ""));
+                itemList.add(new Item(17, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),links.get(1) ));
+                itemList.add(new Item(18, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),links.get(2) ));
+                itemList.add(new Item(19, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),links.get(3) ));
+                itemList.add(new Item(20, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),links.get(4)));
+                itemList.add(new Item(21, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),links.get(5)));
+                itemList.add(new Item(22, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),links.get(6)));
+                itemList.add(new Item(23, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),links.get(7)));
+                itemList.add(new Item(24, name.get(8), old_price.get(8), new_price.get(8), photo.get(8),links.get(8)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -222,6 +232,12 @@ public class ShopPage extends AppCompatActivity {
 
                 Elements e = document.getElementsByClass("row c-items");
                 for (Element element : e) {
+                    Elements a = element.select("a");
+                    for (Element u : a) {
+                        links.add("https://www.lcwaikiki.ua"+u.attr("href"));
+
+                    }
+                    System.out.println(element.select("a").attr("href"));
                     Elements el = element.getElementsByClass("product-item-info");
                     Elements el1 = element.getElementsByClass("picture-box");
                     for (Element element1 : el1) {
@@ -238,14 +254,14 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(28, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(29, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(30, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(31, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(32, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),"https://www.google.com.ua/?hl=ru"));
+                itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(28, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(29, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(30, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(31, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(32, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
 
                 setItemRecycler(itemList);
             } catch (IOException e) {
@@ -262,12 +278,11 @@ public class ShopPage extends AppCompatActivity {
                 links = new ArrayList<>();
 
 
-
                 Elements elementsByClass = document.getElementsByClass("home-ss20-recommended");
                 for (Element byClass : elementsByClass) {
                     Elements elementsByClass1 = byClass.getElementsByClass("category-products active");
                     for (Element element : elementsByClass1) {
-                        //
+                        //https://www.sinsay.com/ua/uk
                         Elements elementsByClass2 = element.getElementsByClass("product-price");
                         for (Element element1 : elementsByClass2) {
                             Elements elementsByClass3 = element1.getElementsByClass("final-price");
@@ -282,7 +297,13 @@ public class ShopPage extends AppCompatActivity {
                         for (Element element1 : a) {
                             name.add(element1.text());
                         }
-                        Elements elements_pic = element.getElementsByClass("product-photo-img");
+
+                        Elements a1 = element.select("a");
+                        for (Element element1 : a1) {
+                            links.add(
+                                    "https://www.sinsay.com/ua/uk/"+element1.attr("href"));
+                        }
+                            Elements elements_pic = element.getElementsByClass("product-photo-img");
                         for (Element element1 : elements_pic) {
                             photo.add(element1.attr("data-img"));
                         }
@@ -290,14 +311,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
 
-                itemList.add(new Item(33, name.get(0), new_price.get(0), "Товар без скидки!", photo.get(0),""));
-                itemList.add(new Item(34, name.get(1), new_price.get(1), "Товар без скидки!", photo.get(1),""));
-                itemList.add(new Item(35, name.get(2), new_price.get(2), "Товар без скидки!", photo.get(2),""));
-                itemList.add(new Item(36, name.get(3), new_price.get(3), "Товар без скидки!", photo.get(3),""));
-                itemList.add(new Item(37, name.get(4), new_price.get(4), "Товар без скидки!", photo.get(4),""));
-                itemList.add(new Item(38, name.get(5), new_price.get(5), "Товар без скидки!", photo.get(5),""));
-                itemList.add(new Item(39, name.get(6), new_price.get(6), "Товар без скидки!", photo.get(6),""));
-                itemList.add(new Item(40, name.get(7), new_price.get(7), "Товар без скидки!", photo.get(7),""));
+                itemList.add(new Item(33, name.get(0), new_price.get(0), "Товар без скидки!", photo.get(0), links.get(1)));
+                itemList.add(new Item(34, name.get(1), new_price.get(1), "Товар без скидки!", photo.get(1), links.get(2)));
+                itemList.add(new Item(35, name.get(2), new_price.get(2), "Товар без скидки!", photo.get(2), links.get(3)));
+                itemList.add(new Item(36, name.get(3), new_price.get(3), "Товар без скидки!", photo.get(3), links.get(4)));
+                itemList.add(new Item(37, name.get(4), new_price.get(4), "Товар без скидки!", photo.get(4), links.get(5)));
+                itemList.add(new Item(38, name.get(5), new_price.get(5), "Товар без скидки!", photo.get(5), links.get(6)));
+                itemList.add(new Item(39, name.get(6), new_price.get(6), "Товар без скидки!", photo.get(6), links.get(7)));
+                itemList.add(new Item(40, name.get(7), new_price.get(7), "Товар без скидки!", photo.get(7), links.get(8)));
 
                 setItemRecycler(itemList);
 
@@ -333,19 +354,20 @@ public class ShopPage extends AppCompatActivity {
                                 name.add(element2.getElementsByClass("product-card__title h-pc__title").text());
                                 old_price.add(element2.getElementsByClass("v-price-box__old").text());
                                 new_price.add(element2.getElementsByClass("v-price-box__cur v-price-box__cur--discount").text());
+                                links.add(element2.select("a").attr("href"));
                             }
                         }
                     }
                 }
 
-                itemList.add(new Item(41, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),""));
-                itemList.add(new Item(42, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),""));
-                itemList.add(new Item(43, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),""));
-                itemList.add(new Item(44, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),""));
-                itemList.add(new Item(45, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),""));
-                itemList.add(new Item(46, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),""));
-                itemList.add(new Item(47, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),""));
-                itemList.add(new Item(48, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),""));
+                itemList.add(new Item(41, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(42, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(43, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(44, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(45, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(46, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(47, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(48, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                 setItemRecycler(itemList);
 
 
@@ -366,6 +388,12 @@ public class ShopPage extends AppCompatActivity {
                 Elements elementsByClass = document.getElementsByClass("catalog__products-container");
                 for (Element byClass : elementsByClass) {
                     Elements elementsByClass1 = byClass.getElementsByClass("product-card__container");
+                    Elements elementsByClass2 = document.getElementsByClass("catalog__product-catalog");
+                    for (Element element : elementsByClass2) {
+                        links.add("https://www.staff-clothes.com" + element.select("a").attr("href"));
+                    }
+
+
                     for (Element element : elementsByClass1) {
                         photo.add(element.getElementsByClass("product-card__main-image").select("img").attr("src"));
                         name.add(element.getElementsByClass("product-card__info--title").text());
@@ -381,14 +409,14 @@ public class ShopPage extends AppCompatActivity {
 
                     }
                 }
-                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),""));
-                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),""));
-                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),""));
-                itemList.add(new Item(52, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),""));
-                itemList.add(new Item(53, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),""));
-                itemList.add(new Item(54, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),""));
-                itemList.add(new Item(55, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),""));
-                itemList.add(new Item(56, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),""));
+                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(52, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(53, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(54, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(55, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(56, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                 setItemRecycler(itemList);
 
             } catch (IOException e) {
@@ -411,6 +439,8 @@ public class ShopPage extends AppCompatActivity {
                         Elements card__head = byClass.getElementsByClass("card__image");
                         for (Element element : card__head) {
                             photo.add(element.select("source").attr("srcset"));
+                            links.add("https://www.foxtrot.com.ua" + element.select("a").attr("href"));
+
                         }
                         for (Element element : card__body) {
                             name.add(element.getElementsByClass("card__title").text());
@@ -420,15 +450,15 @@ public class ShopPage extends AppCompatActivity {
                         }
                     }
                 }
+                System.out.println(links.get(0));
 
-
-                itemList.add(new Item(57, name.get(0), old_price.get(0) + " ₴", new_price.get(0), photo.get(0),""));
-                itemList.add(new Item(58, name.get(1), old_price.get(1) + " ₴", new_price.get(1), photo.get(1),""));
-                itemList.add(new Item(59, name.get(2), old_price.get(2) + " ₴", new_price.get(2), photo.get(2),""));
-                itemList.add(new Item(60, name.get(3), old_price.get(3) + " ₴", new_price.get(3), photo.get(3),""));
-                itemList.add(new Item(61, name.get(4), old_price.get(4) + " ₴", new_price.get(4), photo.get(4),""));
-                itemList.add(new Item(62, name.get(5), old_price.get(5) + " ₴", new_price.get(5), photo.get(5),""));
-                itemList.add(new Item(63, name.get(6), old_price.get(6) + " ₴", new_price.get(6), photo.get(6),""));
+                itemList.add(new Item(57, name.get(0), old_price.get(0) + " ₴", new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(58, name.get(1), old_price.get(1) + " ₴", new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(59, name.get(2), old_price.get(2) + " ₴", new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(60, name.get(3), old_price.get(3) + " ₴", new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(61, name.get(4), old_price.get(4) + " ₴", new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(62, name.get(5), old_price.get(5) + " ₴", new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(63, name.get(6), old_price.get(6) + " ₴", new_price.get(6), photo.get(6), links.get(6)));
 
                 setItemRecycler(itemList);
 
@@ -454,6 +484,8 @@ public class ShopPage extends AppCompatActivity {
 
                         for (Element element : card__head) {
                             photo.add(element.getElementsByClass("catalog-item__img").attr("src"));
+                            links.add("https://zakaz.atbmarket.com" + element.select("a").attr("href"));
+
                         }
 
                         for (Element element : card__body) {
@@ -474,14 +506,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
 
-                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(66, name.get(23), old_price.get(23), new_price.get(23), photo.get(23),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(67, name.get(8), old_price.get(8), new_price.get(8), photo.get(8),""));
-                itemList.add(new Item(68, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),""));
-                itemList.add(new Item(69, name.get(15), old_price.get(15), new_price.get(15), photo.get(15),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20),"https://www.google.com.ua/?hl=ru"));
-                itemList.add(new Item(71, name.get(9), new_price.get(9), "Товар без скидки!", photo.get(9),"https://www.google.com.ua/?hl=ru"));
+                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
+                itemList.add(new Item(66, name.get(23), old_price.get(23), new_price.get(23), photo.get(23), links.get(23)));
+                itemList.add(new Item(67, name.get(8), old_price.get(8), new_price.get(8), photo.get(8), links.get(8)));
+                itemList.add(new Item(68, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(69, name.get(15), old_price.get(15), new_price.get(15), photo.get(15), links.get(15)));
+                itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20), links.get(20)));
+                itemList.add(new Item(71, name.get(9), new_price.get(9), "Товар без скидки!", photo.get(9), links.get(9)));
 
                 setItemRecycler(itemList);
             } catch (IOException e) {
@@ -519,14 +551,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),links.get(1)));
-                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),links.get(2)));
-                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),links.get(3)));
-                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),links.get(4)));
-                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),links.get(5)));
-                itemList.add(new Item(77, name.get(5), old_price.get(5),     new_price.get(5), photo.get(5),links.get(6)));
-                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),links.get(7)));
-                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),links.get(8)));
+                itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(1)));
+                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(2)));
+                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(3)));
+                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(4)));
+                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(5)));
+                itemList.add(new Item(77, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(6)));
+                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(7)));
+                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(8)));
 
                 setItemRecycler(itemList);
 
@@ -574,14 +606,14 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(80, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),links.get(0)));
-                itemList.add(new Item(81, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),links.get(1)));
-                itemList.add(new Item(82, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),links.get(2)));
-                itemList.add(new Item(83, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),links.get(3)));
-                itemList.add(new Item(84, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),links.get(4)));
-                itemList.add(new Item(85, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),links.get(5)));
-                itemList.add(new Item(86, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),links.get(6)));
-                itemList.add(new Item(87, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),links.get(7)));
+                itemList.add(new Item(80, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(81, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(82, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(83, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(84, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(85, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(86, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(87, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
 
                 setItemRecycler(itemList);
 
@@ -622,14 +654,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(96, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),     links.get(1)));
-                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),     links.get(2)));
+                itemList.add(new Item(96, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(1)));
+                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(2)));
                 itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(3)));
-                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),     links.get(4)));
-                itemList.add(new Item(100, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),links.get(5)));
-                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),    links.get(6)));
-                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),links.get(7)));
-                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),links.get(8)));
+                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(4)));
+                itemList.add(new Item(100, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(5)));
+                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(6)));
+                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(7)));
+                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(8)));
 
                 setItemRecycler(itemList);
 

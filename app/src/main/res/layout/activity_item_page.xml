@@ -111,7 +111,7 @@
                 android:fontFamily="@font/montserrat_bold"
                 android:text="TextView"
                 android:textColor="@color/white"
-                android:textSize="25sp" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -211,8 +211,10 @@
         android:onClick="addToCart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.495"
         app:srcCompat="@drawable/ic_shop2" />
 
 
