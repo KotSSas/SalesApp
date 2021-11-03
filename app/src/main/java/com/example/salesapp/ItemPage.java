@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,12 @@ public class ItemPage extends AppCompatActivity {
         setContentView(R.layout.activity_item_page);
 
         ImageView image = findViewById(R.id.item_page_img);
+        ImageView link_img = findViewById(R.id.imageView4);
+        link_img.setOnClickListener(v -> {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getIntent().getStringExtra("link")));
+                startActivity(browserIntent);
+
+        });
 
         TextView title = findViewById(R.id.item_page_text);
         TextView pr1 = findViewById(R.id.price_item1);
@@ -46,6 +53,8 @@ public class ItemPage extends AppCompatActivity {
         main_scene.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
+//                startActivity(browserIntent);
                 openMainActivity();
             }
         });

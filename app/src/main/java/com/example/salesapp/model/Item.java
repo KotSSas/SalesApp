@@ -6,14 +6,23 @@ public class Item {
 
     int id;
     String title;
-    String price1, price2, img;
+    String price1, price2, img,link;
 
-    public Item(int id, String title, String price1, String price2, String img) {
+    public Item(int id, String title, String price1, String price2, String img,String link) {
         this.id = id;
         this.title = title;
         this.price1 = price1;
         this.price2 = price2;
         this.img = img;
+        this.link = link;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 
     public String getImg() {

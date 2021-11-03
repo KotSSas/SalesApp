@@ -59,6 +59,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                 intent.putExtra("pr1",items.get(position).getPrice1());
                 intent.putExtra("pr2",items.get(position).getPrice2());
                 intent.putExtra("id",items.get(position).getId());
+                intent.putExtra("link",items.get(position).getLink());
 
                 context.startActivity(intent);
             }
