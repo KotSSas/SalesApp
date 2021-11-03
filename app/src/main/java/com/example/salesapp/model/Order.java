@@ -18,5 +18,6 @@ public class Order {
     public static Set<Integer> urb_id = new HashSet<>();
     public static Set<Integer> ac_id = new HashSet<>();
     public static Set<Integer> ciber_id = new HashSet<>();
+    public static Set<Integer> spr_id = new HashSet<>();
 
 }

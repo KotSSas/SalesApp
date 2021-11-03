@@ -96,8 +96,10 @@ public class ItemPage extends AppCompatActivity {
             Order.urb_id.add(id);
         }else if (id>79 && id <88){
             Order.ac_id.add(id);
-        }else if (id>87 && id <95){
+        }else if (id>87 && id <96){
             Order.ciber_id.add(id);
+        }else if (id>95 && id <104){
+            Order.spr_id.add(id);
         }
         Toast.makeText(this, "Добавлено в корзину! ;)", Toast.LENGTH_SHORT).show();
     }

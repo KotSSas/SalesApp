@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category(2, "Техника", "category"));
         categoryList.add(new Category(3, "Одежда", "category"));
         categoryList.add(new Category(4, "Продукты", "category"));
+        categoryList.add(new Category(5, "Спорт", "category"));
        // categoryList.add(new Category(5, "Разное", "category"));
 
         setCategotyRecycler(categoryList);
@@ -61,10 +62,11 @@ public class MainActivity extends AppCompatActivity {
         shopList.add(new Shop(6, 4,"atb","ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/" ));
         shopList.add(new Shop(7, 3,"urb","Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/" ));//*
         shopList.add(new Shop(8,2, "fox","Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/" ));
-        shopList.add(new Shop(9, 4,"metr","Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/" ));//*
-        shopList.add(new Shop(10, 3,"sin","Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua" ));//*
-        shopList.add(new Shop(11, 4,"tavr","Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/" ));//*
-        shopList.add(new Shop(12, 3,"ah","Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com" ));//*
+        shopList.add(new Shop(9,5,"spr","Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/" ));
+        shopList.add(new Shop(10, 4,"metr","Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/" ));//*
+        shopList.add(new Shop(11, 3,"sin","Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua" ));//*
+        shopList.add(new Shop(12, 4,"tavr","Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/" ));//*
+        shopList.add(new Shop(13, 3,"ah","Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com" ));//*
 
         fullShopsList.addAll(shopList);
 
@@ -134,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                     categoryList.add(new Category(2, "Техника", "category_on"));
                     categoryList.add(new Category(3, "Одежда", "category"));
                     categoryList.add(new Category(4, "Продукты", "category"));
-
+                    categoryList.add(new Category(5, "Спорт", "category"));
                  //   categoryList.add(new Category(5, "Разное", "category"));
                 }else if (category==3){
                     categoryList.clear();
@@ -142,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     categoryList.add(new Category(2, "Техника", "category"));
                     categoryList.add(new Category(3, "Одежда", "category_on"));
                     categoryList.add(new Category(4, "Продукты", "category"));
+                    categoryList.add(new Category(5, "Спорт", "category"));
                   //  categoryList.add(new Category(5, "Разное", "category"));
 
                 }else if(category == 4){
@@ -150,17 +153,18 @@ public class MainActivity extends AppCompatActivity {
                     categoryList.add(new Category(2, "Техника", "category"));
                     categoryList.add(new Category(3, "Одежда", "category"));
                     categoryList.add(new Category(4, "Продукты", "category_on"));
+                    categoryList.add(new Category(5, "Спорт", "category"));
                    // categoryList.add(new Category(5, "Разное", "category"));
 
                 }
-//                else if(category == 5){
-//                    categoryList.clear();
-//                    categoryList.add(new Category(1, "Всё", "category"));
-//                    categoryList.add(new Category(2, "Техника", "category"));
-//                    categoryList.add(new Category(3, "Одежда", "category"));
-//                    categoryList.add(new Category(4, "Продукты", "category"));
-//                    categoryList.add(new Category(5, "Разное", "category_on"));
-//                }
+               else if(category == 5){
+                   categoryList.clear();
+                   categoryList.add(new Category(1, "Всё", "category"));
+                   categoryList.add(new Category(2, "Техника", "category"));
+                   categoryList.add(new Category(3, "Одежда", "category"));
+                   categoryList.add(new Category(4, "Продукты", "category"));
+                   categoryList.add(new Category(5, "Спорт", "category_on"));
+                }
 
                 List<Shop> filter_shops = new ArrayList<>();
 

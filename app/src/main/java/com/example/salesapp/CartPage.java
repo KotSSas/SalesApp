@@ -60,17 +60,20 @@ public class CartPage extends AppCompatActivity {
         if (Order.fox_id.size() > 0){
             cartShopList.add(new CartShop(8, "fox", "Foxtrot", "Техника"));
         }
+        if (Order.spr_id.size() > 0){
+            cartShopList.add(new CartShop(9, "spr", "Sportmaster", "Спорт"));
+        }
         if (Order.metr_id.size() > 0){
-            cartShopList.add(new CartShop(9, "metr", "Metro", "Продукты"));
+            cartShopList.add(new CartShop(10, "metr", "Metro", "Продукты"));
         }
         if (Order.sin_id.size() > 0){
-            cartShopList.add(new CartShop(10, "sin", "Sinsey", "Одежда"));
+            cartShopList.add(new CartShop(11, "sin", "Sinsey", "Одежда"));
         }
         if (Order.tavr_id.size() > 0){
-            cartShopList.add(new CartShop(11, "tavr", "Tavriya", "Продукты"));
+            cartShopList.add(new CartShop(12, "tavr", "Tavriya", "Продукты"));
         }
         if (Order.ac_id.size() > 0){
-            cartShopList.add(new CartShop(12, "ah", "Aviatsiya", "Одежда"));
+            cartShopList.add(new CartShop(13, "ah", "Aviatsiya", "Одежда"));
         }
 
         setShopRecycler(cartShopList);
