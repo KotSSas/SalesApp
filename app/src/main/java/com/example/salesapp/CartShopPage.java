@@ -48,6 +48,7 @@ public class CartShopPage extends AppCompatActivity {
         if (title.getText().equals("Tavriya")){
             for (Item item : ShopPage.fullItemList) {
                 if (Order.tavr_id.contains(item.getId())){
+
                     cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
                 }
             }
