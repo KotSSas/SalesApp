@@ -13,6 +13,7 @@ import com.example.salesapp.adapter.CartItemAdapter;
 import com.example.salesapp.adapter.CartShopAdapter;
 import com.example.salesapp.model.CartItem;
 import com.example.salesapp.model.CartShop;
+import com.example.salesapp.model.Item;
 import com.example.salesapp.model.Order;
 
 import java.util.ArrayList;
@@ -44,12 +45,98 @@ public class CartShopPage extends AppCompatActivity {
 
         cartItemList.clear();
 
-//        if (title.getText().equals("Tavriya")){
-//            for (int i = 0; i < Order.tavr_id.size(); i++) {
-//                cartItemList.add(new CartItem(i, ))
-//            }
-//        }
-        cartItemList.add(new CartItem(1, "d", "f"));
+        if (title.getText().equals("Tavriya")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.tavr_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Citrus")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.citr_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Metro")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.metr_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("LC Waikiki")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.waikiki_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Sinsey")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.sin_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Allo")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.allo_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Staff")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.staff_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Foxtrot")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.fox_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("ATB")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.atb_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Urban Planet")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.urb_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Aviatsiya")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.ac_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Kibernetiki")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.ciber_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        if (title.getText().equals("Sportmaster")){
+            for (Item item : ShopPage.fullItemList) {
+                if (Order.spr_id.contains(item.getId())){
+                    cartItemList.add(new CartItem(item.getId(), item.getTitle(), item.getPrice2()));
+                }
+            }
+        }
+        //cartItemList.add(new CartItem(1, "d", "f"));
 
         setItemRecycler(cartItemList);
     }
