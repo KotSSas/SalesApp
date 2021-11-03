@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +18,8 @@ public class ErrorPage extends AppCompatActivity {
         ImageView link_img = findViewById(R.id.imageView6);
         link_img.setOnClickListener(v -> {
             startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-
         });
+
     }
+
 }

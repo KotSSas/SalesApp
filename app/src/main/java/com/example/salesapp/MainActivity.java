@@ -56,11 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
         setCategotyRecycler(categoryList);
 
-//
-//
-
-
-
         shopList.add(new Shop(1,3,"staff","Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/" ));
         //shopList.add(new Shop(2, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
         shopList.add(new Shop(2, 2,"allo","Allo", "Техника", "09:00 - 20:00", "https://allo.ua/" ));
@@ -118,7 +113,9 @@ public class MainActivity extends AppCompatActivity {
         ;
     }
 
-
+    public void exitApp(View view){
+        finish();
+    }
 //    public void openCart(View view){
 //        startActivity(new Intent(this, CartPage.class));
 //    }
