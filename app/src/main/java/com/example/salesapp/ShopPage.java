@@ -169,30 +169,19 @@ public class ShopPage extends AppCompatActivity {
 
                 Elements elementsByClass =
                         document.getElementsByClass("jsx-33926795 ProductsBox__list");
-
-
-                Elements a1 = elementsByClass.select("a");
-                for (Element g : a1) {
-                    links.add("https://metro.zakaz.ua/ru/products/metro28971000000000"+g.attr("href"));
-
+                Elements a = elementsByClass.select("a");
+                for (Element k : a) {
+                    links.add("https://metro.zakaz.ua"+k.attr("href"));
                 }
-
-                for (Element byClass : elementsByClass) {
-                    Elements el_names = byClass.getElementsByClass("jsx-2958303393 ProductTile__titleWrapper");
-                    for (Element el_name : el_names) {
-                        name.add(el_name.getElementsByClass("jsx-2958303393 ProductTile__title").text());
+                for (Element element : a) {
+                    name.add(element.attr("title"));
+                    links.add(element.attr("href"));
+                    Elements img = a.select("img");
+                    for (Element element1 : img) {
+                        if (element1.attr("src").startsWith("https")){
+                            photo.add(element1.attr("src"));
+                        }
                     }
-
-                }
-                for (Element byClass : elementsByClass) {
-                    Elements elementsByClass1 = byClass.getElementsByClass("jsx-2958303393 ProductTile__imageContainer");
-                    Elements img = elementsByClass1.select("img");
-                    for (Element a : img) {
-                        photo.add(a.select("img").attr("src"));
-
-
-                    }
-
                 }
                 for (Element byClass : elementsByClass) {
                     Elements el_prices = byClass.getElementsByClass("jsx-2958303393 ProductTile__prices");
@@ -200,24 +189,25 @@ public class ShopPage extends AppCompatActivity {
 
                         String s1 = el_price.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text();
                         String s2 = el_price.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text();
-//                        if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
-//                            old_price.add(s1.substring(0, s1.indexOf("г") - 1) + "₴");
-//                            new_price.add(s2 + "₴");
-//
-//                        }
-                        old_price.add(s1);
-                        new_price.add(s2);
+                        if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
+                            old_price.add(s1.substring(0, s1.indexOf("г") - 1) + "₴");
+                            new_price.add(s2 + "₴");
+
+                        }
+
                     }
                 }
-                itemList.add(new Item(17, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),links.get(1) ));
-                itemList.add(new Item(18, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),links.get(2) ));
-                itemList.add(new Item(19, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),links.get(3) ));
-                itemList.add(new Item(20, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),links.get(4)));
-                itemList.add(new Item(21, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),links.get(5)));
-                itemList.add(new Item(22, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),links.get(6)));
-                itemList.add(new Item(23, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),links.get(7)));
-                itemList.add(new Item(24, name.get(8), old_price.get(8), new_price.get(8), photo.get(8),links.get(8)));
-                setItemRecycler(itemList);
+
+
+            itemList.add(new Item(17, name.get(0), old_price.get(0), new_price.get(0), photo.get(0),links.get(0) ));
+            itemList.add(new Item(18, name.get(1), old_price.get(1), new_price.get(1), photo.get(1),links.get(1) ));
+            itemList.add(new Item(19, name.get(2), old_price.get(2), new_price.get(2), photo.get(2),links.get(2) ));
+            itemList.add(new Item(20, name.get(3), old_price.get(3), new_price.get(3), photo.get(3),links.get(3)));
+            itemList.add(new Item(21, name.get(4), old_price.get(4), new_price.get(4), photo.get(4),links.get(4)));
+            itemList.add(new Item(22, name.get(5), old_price.get(5), new_price.get(5), photo.get(5),links.get(5)));
+            itemList.add(new Item(23, name.get(6), old_price.get(6), new_price.get(6), photo.get(6),links.get(6)));
+            itemList.add(new Item(24, name.get(7), old_price.get(7), new_price.get(7), photo.get(7),links.get(7)));
+            setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
             }
