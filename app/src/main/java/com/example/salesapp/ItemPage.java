@@ -2,13 +2,17 @@ package com.example.salesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -34,7 +38,12 @@ public class ItemPage extends AppCompatActivity {
         ImageView link_img = findViewById(R.id.imageView4);
 
         link_img.setOnClickListener(v -> {
+            Vibrator v1 = (Vibrator) ItemPage.this.getSystemService(Context.VIBRATOR_SERVICE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                v1.vibrate(VibrationEffect.createOneShot(100, 1));
+            }
 
+            v.startAnimation(AnimationUtils.loadAnimation(ItemPage.this, R.anim.anim_item));
 
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getIntent().getStringExtra("link")));
             startActivity(browserIntent);

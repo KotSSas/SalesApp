@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.util.Pair;
@@ -20,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salesapp.ErrorPage;
+import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
 import com.example.salesapp.model.Shop;
@@ -65,7 +69,10 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                 public void onClick(View v) {
 
 //                    v.startAnimation(AnimationUtils.loadAnimation(holder.img.getContext(), R.anim.anim_item));
-
+                    Vibrator v1 = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
                     Intent intent = new Intent(context, ShopPage.class);
 
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context,

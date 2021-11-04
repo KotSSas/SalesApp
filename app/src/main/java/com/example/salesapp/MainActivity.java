@@ -1,5 +1,6 @@
 package com.example.salesapp;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -10,7 +11,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.provider.Settings;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -90,8 +94,18 @@ public class MainActivity extends AppCompatActivity {
 
         about_us = findViewById(R.id.about_us);
         about_us.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
+                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+// Vibrate for 400 milliseconds
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                }
+
+
                 v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.anim_item));
                 openAboutActivity();
 
