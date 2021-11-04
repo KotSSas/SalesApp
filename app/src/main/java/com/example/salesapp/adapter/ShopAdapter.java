@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -62,6 +63,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+//                    v.startAnimation(AnimationUtils.loadAnimation(holder.img.getContext(), R.anim.anim_item));
+
                     Intent intent = new Intent(context, ShopPage.class);
 
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context,

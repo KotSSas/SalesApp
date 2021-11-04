@@ -13,6 +13,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.anim_item));
                 openAboutActivity();
 
 

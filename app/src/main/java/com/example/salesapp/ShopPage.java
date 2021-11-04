@@ -63,13 +63,13 @@ public class ShopPage extends AppCompatActivity {
         main_scene = findViewById(R.id.main_scene);
 
         main_scene.setOnClickListener(v -> {
-            v.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_item));
+            v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
             openMainActivity();
         });
 
         about_us = findViewById(R.id.about_us);
         about_us.setOnClickListener(v -> {
-            v.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_item));
+            v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
             openAboutActivity();
         });
 
