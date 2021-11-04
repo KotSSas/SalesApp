@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -99,6 +100,8 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
+
+
                 itemList.add(new Item(1, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
                 itemList.add(new Item(2, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
                 itemList.add(new Item(3, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
@@ -405,6 +408,8 @@ public class ShopPage extends AppCompatActivity {
 
                     }
                 }
+                document = Jsoup.connect(links.get(0)).get();
+                System.out.println(document.getElementsByClass("product__description"));
                 itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
                 itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
                 itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
@@ -723,6 +728,7 @@ public class ShopPage extends AppCompatActivity {
     }
 
     public void openCart(View view){
+        view.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_item));
         openCartPage();
     }
 
