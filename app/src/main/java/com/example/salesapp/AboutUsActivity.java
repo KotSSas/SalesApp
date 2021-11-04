@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 public class AboutUsActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class AboutUsActivity extends AppCompatActivity {
         main_scene.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
                 openMainActivity();
             }
         });
