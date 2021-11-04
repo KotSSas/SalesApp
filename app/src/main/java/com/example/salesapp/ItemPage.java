@@ -66,6 +66,8 @@ public class ItemPage extends AppCompatActivity {
 
         main_scene = findViewById(R.id.main_scene);
         main_scene.setOnClickListener(v -> {
+            v.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_item));
+
 //                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
 //                startActivity(browserIntent);
             openMainActivity();
@@ -75,6 +77,7 @@ public class ItemPage extends AppCompatActivity {
         about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                v.startAnimation(AnimationUtils.loadAnimation(ItemPage.this, R.anim.anim_item));
                 openAboutActivity();
             }
         });
