@@ -37,6 +37,9 @@ public class ItemPage extends AppCompatActivity {
         ImageView image = findViewById(R.id.item_page_img);
         ImageView link_img = findViewById(R.id.imageView4);
 
+
+
+
         link_img.setOnClickListener(v -> {
             Vibrator v1 = (Vibrator) ItemPage.this.getSystemService(Context.VIBRATOR_SERVICE);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

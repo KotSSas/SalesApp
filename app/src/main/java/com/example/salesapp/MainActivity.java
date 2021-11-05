@@ -18,7 +18,12 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
+import android.view.animation.AnticipateOvershootInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +36,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.SlideInBottomAnimationAdapter;
+import jp.wasabeef.recyclerview.adapters.SlideInLeftAnimationAdapter;
+import jp.wasabeef.recyclerview.animators.SlideInLeftAnimator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -144,14 +152,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setShopRecycler(List<Shop> shopList) {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL
+                , false);
 
         shopRecycler = findViewById(R.id.shops_recycler);
         shopRecycler.setLayoutManager(layoutManager);
 
         shopAdapter = new ShopAdapter(this, shopList);
 //        shopRecycler.setAdapter(shopAdapter);
-        shopRecycler.setAdapter(new AlphaInAnimationAdapter(shopAdapter));
+
+
+        AlphaInAnimationAdapter alpha = new AlphaInAnimationAdapter(shopAdapter);
+        alpha.setDuration(1000);
+        alpha.setInterpolator(new OvershootInterpolator());
+        alpha.setFirstOnly(false);
+        shopRecycler.setAdapter(alpha);
     }
 
     private void setCategotyRecycler(List<Category> categoryList) {
