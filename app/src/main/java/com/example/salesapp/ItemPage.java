@@ -129,6 +129,10 @@ public class ItemPage extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
+    public void openDescription(View view) {
+        startActivity(new Intent(this,DescriptionPage.class));
+    }
+
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;

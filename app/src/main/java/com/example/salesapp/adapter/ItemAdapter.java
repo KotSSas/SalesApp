@@ -21,6 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.salesapp.DescriptionPage;
 import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
@@ -69,6 +70,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                 intent.putExtra("pr2",items.get(position).getPrice2());
                 intent.putExtra("id",items.get(position).getId());
                 intent.putExtra("link",items.get(position).getLink());
+                intent.putExtra("description",items.get(position).getDescription());
 
                 context.startActivity(intent);
             }
