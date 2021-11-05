@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -29,14 +30,16 @@ import com.example.salesapp.model.Shop;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView, shopRecycler;
     static CategoryAdapter categoryAdapter;
     static ShopAdapter shopAdapter;
-    static   List<Category> categoryList = new ArrayList<>();
-    static   List<Shop> shopList = new ArrayList<>();
-    static   List<Shop> fullShopsList = new ArrayList<>();
+    static List<Category> categoryList = new ArrayList<>();
+    static List<Shop> shopList = new ArrayList<>();
+    static List<Shop> fullShopsList = new ArrayList<>();
     TextView about_us;
     boolean connected = false;
 
@@ -57,24 +60,24 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category(3, "Одежда", "category"));
         categoryList.add(new Category(4, "Продукты", "category"));
         categoryList.add(new Category(5, "Спорт", "category"));
-       // categoryList.add(new Category(5, "Разное", "category"));
+        // categoryList.add(new Category(5, "Разное", "category"));
 
         setCategotyRecycler(categoryList);
 
-        shopList.add(new Shop(1,3,"staff","Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/" ));
+        shopList.add(new Shop(1, 3, "staff", "Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/"));
         //shopList.add(new Shop(2, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
-        shopList.add(new Shop(2, 2,"allo","Allo", "Техника", "09:00 - 20:00", "https://allo.ua/" ));
-        shopList.add(new Shop(3,2, "citrus","Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/" )); //*
-        shopList.add(new Shop(4, 3,"lc","LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/" ));//*
-        shopList.add(new Shop(5, 2,"ciber","Kibernetiki", "Техника", "10:00 - 21:00", "https://kibernetiki.com.ua" ));//*
-        shopList.add(new Shop(6, 4,"atb","ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/" ));
-        shopList.add(new Shop(7, 3,"urb","Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/" ));//*
-        shopList.add(new Shop(8,2, "fox","Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/" ));
-        shopList.add(new Shop(9,5,"spr","Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/" ));
-        shopList.add(new Shop(10, 4,"metr","Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/" ));//*
-        shopList.add(new Shop(11, 3,"sin","Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua" ));//*
-        shopList.add(new Shop(12, 4,"tavr","Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/" ));//*
-        shopList.add(new Shop(13, 3,"ah","Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com" ));//*
+        shopList.add(new Shop(2, 2, "allo", "Allo", "Техника", "09:00 - 20:00", "https://allo.ua/"));
+        shopList.add(new Shop(3, 2, "citrus", "Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/")); //*
+        shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
+        shopList.add(new Shop(5, 2, "ciber", "Kibernetiki", "Техника", "10:00 - 21:00", "https://kibernetiki.com.ua"));//*
+        shopList.add(new Shop(6, 4, "atb", "ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/"));
+        shopList.add(new Shop(7, 3, "urb", "Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/"));//*
+        shopList.add(new Shop(8, 2, "fox", "Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/"));
+        shopList.add(new Shop(9, 5, "spr", "Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/"));
+        shopList.add(new Shop(10, 4, "metr", "Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/"));//*
+        shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
+        shopList.add(new Shop(12, 4, "tavr", "Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/"));//*
+        shopList.add(new Shop(13, 3, "ah", "Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com"));//*
 
         fullShopsList.addAll(shopList);
 
@@ -129,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         ;
     }
 
-    public void exitApp(View view){
+    public void exitApp(View view) {
         finish();
     }
 //    public void openCart(View view){
@@ -147,7 +150,8 @@ public class MainActivity extends AppCompatActivity {
         shopRecycler.setLayoutManager(layoutManager);
 
         shopAdapter = new ShopAdapter(this, shopList);
-        shopRecycler.setAdapter(shopAdapter);
+//        shopRecycler.setAdapter(shopAdapter);
+        shopRecycler.setAdapter(new AlphaInAnimationAdapter(shopAdapter));
     }
 
     private void setCategotyRecycler(List<Category> categoryList) {
@@ -157,82 +161,82 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         categoryAdapter = new CategoryAdapter(this, categoryList);
-        recyclerView.setAdapter(categoryAdapter);
+        recyclerView.setAdapter(new AlphaInAnimationAdapter(categoryAdapter));
+
     }
 
-    public static void show_category_shops(int category){
+    public static void show_category_shops(int category) {
 
 //            shopList.clear();
 //            shopList.addAll(fullShopsList);
 
-            if (category == 1){
+        if (category == 1) {
 
+            categoryList.clear();
+            shopList.clear();
+            shopList.addAll(fullShopsList);
+
+            categoryList.add(new Category(1, "Всё", "category_on"));
+            categoryList.add(new Category(2, "Техника", "category"));
+            categoryList.add(new Category(3, "Одежда", "category"));
+            categoryList.add(new Category(4, "Продукты", "category"));
+            // categoryList.add(new Category(5, "Разное", "category"));
+
+            shopAdapter.notifyDataSetChanged();
+            categoryAdapter.notifyDataSetChanged();
+        } else {
+            if (category == 2) {
                 categoryList.clear();
-                shopList.clear();
-                shopList.addAll(fullShopsList);
+                categoryList.add(new Category(1, "Всё", "category"));
+                categoryList.add(new Category(2, "Техника", "category_on"));
+                categoryList.add(new Category(3, "Одежда", "category"));
+                categoryList.add(new Category(4, "Продукты", "category"));
+                categoryList.add(new Category(5, "Спорт", "category"));
+                //   categoryList.add(new Category(5, "Разное", "category"));
+            } else if (category == 3) {
+                categoryList.clear();
+                categoryList.add(new Category(1, "Всё", "category"));
+                categoryList.add(new Category(2, "Техника", "category"));
+                categoryList.add(new Category(3, "Одежда", "category_on"));
+                categoryList.add(new Category(4, "Продукты", "category"));
+                categoryList.add(new Category(5, "Спорт", "category"));
+                //  categoryList.add(new Category(5, "Разное", "category"));
 
-                categoryList.add(new Category(1, "Всё", "category_on"));
+            } else if (category == 4) {
+                categoryList.clear();
+                categoryList.add(new Category(1, "Всё", "category"));
+                categoryList.add(new Category(2, "Техника", "category"));
+                categoryList.add(new Category(3, "Одежда", "category"));
+                categoryList.add(new Category(4, "Продукты", "category_on"));
+                categoryList.add(new Category(5, "Спорт", "category"));
+                // categoryList.add(new Category(5, "Разное", "category"));
+
+            } else if (category == 5) {
+                categoryList.clear();
+                categoryList.add(new Category(1, "Всё", "category"));
                 categoryList.add(new Category(2, "Техника", "category"));
                 categoryList.add(new Category(3, "Одежда", "category"));
                 categoryList.add(new Category(4, "Продукты", "category"));
-               // categoryList.add(new Category(5, "Разное", "category"));
-
-                shopAdapter.notifyDataSetChanged();
-                categoryAdapter.notifyDataSetChanged();
-            }else {
-                if (category == 2){
-                    categoryList.clear();
-                    categoryList.add(new Category(1, "Всё", "category"));
-                    categoryList.add(new Category(2, "Техника", "category_on"));
-                    categoryList.add(new Category(3, "Одежда", "category"));
-                    categoryList.add(new Category(4, "Продукты", "category"));
-                    categoryList.add(new Category(5, "Спорт", "category"));
-                 //   categoryList.add(new Category(5, "Разное", "category"));
-                }else if (category==3){
-                    categoryList.clear();
-                    categoryList.add(new Category(1, "Всё", "category"));
-                    categoryList.add(new Category(2, "Техника", "category"));
-                    categoryList.add(new Category(3, "Одежда", "category_on"));
-                    categoryList.add(new Category(4, "Продукты", "category"));
-                    categoryList.add(new Category(5, "Спорт", "category"));
-                  //  categoryList.add(new Category(5, "Разное", "category"));
-
-                }else if(category == 4){
-                    categoryList.clear();
-                    categoryList.add(new Category(1, "Всё", "category"));
-                    categoryList.add(new Category(2, "Техника", "category"));
-                    categoryList.add(new Category(3, "Одежда", "category"));
-                    categoryList.add(new Category(4, "Продукты", "category_on"));
-                    categoryList.add(new Category(5, "Спорт", "category"));
-                   // categoryList.add(new Category(5, "Разное", "category"));
-
-                }
-               else if(category == 5){
-                   categoryList.clear();
-                   categoryList.add(new Category(1, "Всё", "category"));
-                   categoryList.add(new Category(2, "Техника", "category"));
-                   categoryList.add(new Category(3, "Одежда", "category"));
-                   categoryList.add(new Category(4, "Продукты", "category"));
-                   categoryList.add(new Category(5, "Спорт", "category_on"));
-                }
-
-                List<Shop> filter_shops = new ArrayList<>();
-
-                shopList.clear();
-                shopList.addAll(fullShopsList);
-                filter_shops.clear();
-
-                for (Shop sh : shopList) {
-                    if (sh.getCategory_s() == category) {
-                        filter_shops.add(sh);
-                    }
-                }
-
-                shopList.clear();
-                shopList.addAll(filter_shops);
-
-                shopAdapter.notifyDataSetChanged();
-                categoryAdapter.notifyDataSetChanged();
+                categoryList.add(new Category(5, "Спорт", "category_on"));
             }
+
+            List<Shop> filter_shops = new ArrayList<>();
+
+            shopList.clear();
+            shopList.addAll(fullShopsList);
+            filter_shops.clear();
+
+            for (Shop sh : shopList) {
+                if (sh.getCategory_s() == category) {
+                    filter_shops.add(sh);
+                }
+            }
+
+            shopList.clear();
+            shopList.addAll(filter_shops);
+
+            shopAdapter.notifyDataSetChanged();
+            categoryAdapter.notifyDataSetChanged();
+        }
     }
 }

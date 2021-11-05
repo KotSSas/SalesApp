@@ -41,4 +41,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'org.jsoup:jsoup:1.14.3'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
+
 }
