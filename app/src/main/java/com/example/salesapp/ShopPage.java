@@ -545,7 +545,7 @@ public class ShopPage extends AppCompatActivity {
                         photo.add(element.select("img").attr("data-src"));
                     }
                     for (Element element : link) {
-                        links.add(element.select("a").attr("href"));
+                        links.add("https://urbanplanet-streetwear.com"+element.select("a").attr("href"));
                     }
                     for (Element element : ti) {
                         name.add(element.select("img").attr("alt"));
