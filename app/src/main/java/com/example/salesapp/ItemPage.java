@@ -28,7 +28,7 @@ import java.net.URL;
 public class ItemPage extends AppCompatActivity {
 
     TextView main_scene, about_us;
-
+    TextView title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +53,7 @@ public class ItemPage extends AppCompatActivity {
 
         });
 
-        TextView title = findViewById(R.id.item_page_text);
+        title = findViewById(R.id.item_page_text);
         TextView pr1 = findViewById(R.id.price_item1);
         TextView pr2 = findViewById(R.id.price_item2);
 
@@ -130,7 +130,9 @@ public class ItemPage extends AppCompatActivity {
     }
 
     public void openDescription(View view) {
-        startActivity(new Intent(this,DescriptionPage.class));
+        Intent intent = new Intent(this,DescriptionPage.class);
+        intent.putExtra("title1", String.valueOf(title));
+        startActivity(intent);
     }
 
 

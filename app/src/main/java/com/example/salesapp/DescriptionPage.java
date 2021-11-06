@@ -20,9 +20,10 @@ public class DescriptionPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
+
         title = findViewById(R.id.title_desc);
         description = findViewById(R.id.desc);
-        title.setText(getIntent().getStringExtra("title"));
+        title.setText(getIntent().getStringExtra("title1"));
         description.setText(getIntent().getStringExtra("description"));
 
         main_scene = findViewById(R.id.main_scene);
