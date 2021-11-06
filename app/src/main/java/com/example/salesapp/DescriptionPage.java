@@ -13,7 +13,7 @@ public class DescriptionPage extends AppCompatActivity {
     TextView title;
     TextView description;
     TextView main_scene, about_us;
-
+    ImageView image;
 
 
     @Override
@@ -25,6 +25,8 @@ public class DescriptionPage extends AppCompatActivity {
         description = findViewById(R.id.desc);
         title.setText(getIntent().getStringExtra("title1"));
        // description.setText(getIntent().getStringExtra("description"));
+        image = findViewById(R.id.item_dec_page_img);
+        image.setImageResource(Integer.parseInt(getIntent().getStringExtra("image")));
 
         main_scene = findViewById(R.id.main_scene);
         main_scene.setOnClickListener(v -> {

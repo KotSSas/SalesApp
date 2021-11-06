@@ -3,7 +3,6 @@ package com.example.salesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -51,7 +50,7 @@ public class ShopPage extends AppCompatActivity {
 
         Toast.makeText(this, "Ожидайте, идет поиск скидок! ;)", Toast.LENGTH_LONG).show();
 
-        ImageView image = findViewById(R.id.shop_page_img);
+        ImageView image = findViewById(R.id.item_dec_page_img);
         title = findViewById(R.id.shop_page_text);
         TextView category = findViewById(R.id.shop_page_cat);
 
