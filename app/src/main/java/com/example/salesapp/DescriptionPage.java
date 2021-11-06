@@ -4,14 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
-import java.io.IOException;
 
 public class DescriptionPage extends AppCompatActivity {
     TextView title;
@@ -24,6 +20,7 @@ public class DescriptionPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description);
+
         title = findViewById(R.id.title_desc);
         description = findViewById(R.id.desc);
         title.setText(getIntent().getStringExtra("title1"));

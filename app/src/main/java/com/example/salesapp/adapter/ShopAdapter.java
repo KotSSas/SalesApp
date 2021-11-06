@@ -60,6 +60,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             holder.time_work.setText(shops.get(position).getWork_time());
             holder.cat.setText(shops.get(position).getCategory());
             holder.site.setText(shops.get(position).getSite());
+
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);

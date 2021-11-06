@@ -2,6 +2,8 @@ package com.example.salesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,9 +13,11 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -29,12 +33,13 @@ public class ItemPage extends AppCompatActivity {
 
     TextView main_scene, about_us;
     TextView title;
+    ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_page);
 
-        ImageView image = findViewById(R.id.item_page_img);
+        image = findViewById(R.id.item_page_img);
         ImageView link_img = findViewById(R.id.imageView4);
 
 
@@ -131,6 +136,7 @@ public class ItemPage extends AppCompatActivity {
 
     public void openDescription(View view) {
         Intent intent = new Intent(this,DescriptionPage.class);
+
         intent.putExtra("title1", getIntent().getStringExtra("title"));
         intent.putExtra("description",getIntent().getStringExtra("description"));
         startActivity(intent);

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#888787"
     tools:context=".DescriptionPage">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="70dp"
@@ -74,11 +75,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="283dp"
         android:layout_height="470dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="84dp"
         android:layout_marginEnd="24dp"
         android:background="#4C4C4C"
         android:orientation="vertical"
@@ -139,5 +141,6 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
