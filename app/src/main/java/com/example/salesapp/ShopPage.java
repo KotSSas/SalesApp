@@ -41,6 +41,7 @@ public class ShopPage extends AppCompatActivity {
     List<String> new_price;
     List<String> photo;
     List<String> links;
+    List<String> description;
 
 
     @Override
@@ -533,6 +534,7 @@ public class ShopPage extends AppCompatActivity {
                 new_price = new ArrayList<>();
                 photo = new ArrayList<>();
                 links = new ArrayList<>();
+                description = new ArrayList<>();
                 Document document = Jsoup.connect("https://urbanplanet-streetwear.com/sale").get();
                 Elements elementsByClass = document.getElementsByClass("products-page__content");
                 for (Element byClass : elementsByClass) {
@@ -545,7 +547,7 @@ public class ShopPage extends AppCompatActivity {
                         photo.add(element.select("img").attr("data-src"));
                     }
                     for (Element element : link) {
-                        links.add(element.select("a").attr("href"));
+                        links.add("https://urbanplanet-streetwear.com"+element.select("a").attr("href"));
                     }
                     for (Element element : ti) {
                         name.add(element.select("img").attr("alt"));
@@ -558,14 +560,23 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(1), ""));
-                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(2), ""));
-                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(3), ""));
-                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(4), ""));
-                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(5), ""));
-                itemList.add(new Item(77, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(6), ""));
-                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(7), ""));
-                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(8), ""));
+                for (int i = 1; i <=9; i++) {
+                    document = Jsoup.connect(links.get(i)).get();
+                    Elements div = document.select("div");
+                    for (Element h : div) {
+
+                        description.add(h.attr("itemprop","description").text());
+                    }
+                }
+
+                itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), description.get(0)));
+                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), description.get(1)));
+                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), description.get(2)));
+                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), description.get(3)));
+                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), description.get(4)));
+                itemList.add(new Item(77, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), description.get(5)));
+                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), description.get(6)));
+                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), description.get(7)));
 
                 setItemRecycler(itemList);
 

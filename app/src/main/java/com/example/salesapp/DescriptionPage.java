@@ -25,9 +25,6 @@ public class DescriptionPage extends AppCompatActivity {
         title.setText(getIntent().getStringExtra("title"));
         description.setText(getIntent().getStringExtra("description"));
 
-
-
-
         main_scene = findViewById(R.id.main_scene);
         main_scene.setOnClickListener(v -> {
             v.startAnimation(AnimationUtils.loadAnimation(DescriptionPage.this, R.anim.anim_item));
