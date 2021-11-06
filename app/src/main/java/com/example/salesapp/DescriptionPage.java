@@ -24,7 +24,7 @@ public class DescriptionPage extends AppCompatActivity {
         title = findViewById(R.id.title_desc);
         description = findViewById(R.id.desc);
         title.setText(getIntent().getStringExtra("title1"));
-        description.setText(getIntent().getStringExtra("description"));
+       // description.setText(getIntent().getStringExtra("description"));
 
         main_scene = findViewById(R.id.main_scene);
         main_scene.setOnClickListener(v -> {
