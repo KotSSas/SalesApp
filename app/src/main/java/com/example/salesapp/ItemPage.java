@@ -132,6 +132,7 @@ public class ItemPage extends AppCompatActivity {
     public void openDescription(View view) {
         Intent intent = new Intent(this,DescriptionPage.class);
         intent.putExtra("title1", getIntent().getStringExtra("title"));
+        intent.putExtra("description",getIntent().getStringExtra("description"));
         startActivity(intent);
     }
 

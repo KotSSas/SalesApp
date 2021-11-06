@@ -568,6 +568,7 @@ public class ShopPage extends AppCompatActivity {
                         description.add(h.attr("itemprop","description").text());
                     }
                 }
+                System.out.println(description.get(0));
 
                 itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), description.get(0)));
                 itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), description.get(1)));
