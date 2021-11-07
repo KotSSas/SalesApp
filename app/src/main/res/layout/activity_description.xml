@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#888787"
+    android:background="#7F7C82"
     tools:context=".DescriptionPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,7 +30,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_hot_deal" />
-
 
 
         <TextView
@@ -76,71 +75,82 @@
             app:srcCompat="@drawable/ic_logo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="283dp"
-        android:layout_height="470dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="24dp"
-        android:background="#4C4C4C"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/linearLayout3"
+        android:layout_width="290dp"
+        android:layout_height="467dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="25dp"
+
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         tools:ignore="MissingConstraints">
 
-
-        <TextView
-            android:id="@+id/title_desc"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="TextView"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-
         <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="216dp"
-            android:layout_height="132dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-            app:layout_constraintTop_toBottomOf="@+id/item_page_text">
+
+            android:id="@+id/linearLayout4"
+            android:layout_width="290dp"
+            android:layout_height="match_parent"
+
+            android:background="#EEEEEE"
+            android:orientation="vertical"
+
+            tools:ignore="MissingConstraints">
+
+
+            <TextView
+                android:id="@+id/title_desc"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="TextView"
+                android:textColor="#BC8CF2"
+                android:textSize="20sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:orientation="vertical">
+                android:id="@+id/linearLayout2"
+                android:layout_width="225dp"
+                android:layout_height="370dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+                app:layout_constraintTop_toBottomOf="@+id/item_page_text">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:orientation="vertical">
 
 
-                <TextView
-                    android:id="@+id/desc"
-                    android:layout_width="208dp"
-                    android:layout_height="132dp"
-                    android:fontFamily="@font/montserrat_bold"
-                    android:text="Description"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/desc"
+                        android:layout_width="208dp"
+                        android:layout_height="369dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Description"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-
         </LinearLayout>
-
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

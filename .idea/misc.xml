@@ -17,6 +17,7 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_item_page.xml" value="0.25" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/cart_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/category_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/item.xml" value="0.1" />
@@ -56,5 +57,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.25416666666666665" />
+      </ProjectState>
+    </option>
   </component>
 </project>

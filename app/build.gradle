@@ -43,4 +43,5 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
     implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
 
+
 }

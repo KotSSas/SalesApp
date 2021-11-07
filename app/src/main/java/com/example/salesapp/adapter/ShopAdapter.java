@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.view.animation.AnimationUtils;
@@ -26,6 +27,7 @@ import com.example.salesapp.ErrorPage;
 import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
+import com.example.salesapp.SplashPage;
 import com.example.salesapp.model.Shop;
 
 import java.util.List;
@@ -84,7 +86,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                     intent.putExtra("title", shops.get(position).getTitle());
                     intent.putExtra("category", shops.get(position).getCategory());
 
-                    context.startActivity(intent, options.toBundle());
+
+
+                   context.startActivity(intent, options.toBundle());
                 }
             });
             System.out.println("Connected!");

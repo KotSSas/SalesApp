@@ -107,6 +107,8 @@
 
 
 
+
+
             <TextView
                 android:id="@+id/item_page_text"
                 android:layout_width="200dp"
