@@ -109,7 +109,7 @@ public class AboutUsActivity extends AppCompatActivity {
         if(currentIndex > 0) {
             currentIndex--;
         }else  {
-            currentIndex=0;
+            currentIndex=imageNames.length-1;
         }
         this.showImage(currentIndex);
     }
