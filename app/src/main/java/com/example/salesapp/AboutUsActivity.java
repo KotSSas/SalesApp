@@ -25,7 +25,7 @@ public class AboutUsActivity extends AppCompatActivity {
     private ImageSwitcher mImageSwitcher;
     ImageView b_n, b_p;
 
-    private final String[] imageNames={"mac", "mac3","ph1", "mac2"};
+    private final String[] imageNames={"mac", "mac3", "mac2"};
     private int currentIndex;
 
     @Override
@@ -72,7 +72,7 @@ public class AboutUsActivity extends AppCompatActivity {
             @Override
             public View makeView() {
                 ImageView imageView = new ImageView(getApplicationContext());
-                imageView.setScaleType(ImageView.ScaleType.CENTER);
+                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
                 ImageSwitcher.LayoutParams params= new ImageSwitcher.LayoutParams(
                         ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT);
