@@ -141,14 +141,4 @@
 
         />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/shops_recycler"
-        app:srcCompat="@drawable/ic_shop" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
