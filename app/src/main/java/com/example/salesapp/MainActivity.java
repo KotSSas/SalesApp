@@ -159,7 +159,6 @@ public class MainActivity extends AppCompatActivity {
         shopAdapter = new ShopAdapter(this, shopList);
 //        shopRecycler.setAdapter(shopAdapter);
 
-
         AlphaInAnimationAdapter alpha = new AlphaInAnimationAdapter(shopAdapter);
         alpha.setDuration(1000);
         alpha.setInterpolator(new OvershootInterpolator());

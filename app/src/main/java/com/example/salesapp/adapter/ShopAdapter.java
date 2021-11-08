@@ -89,6 +89,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 
 
                    context.startActivity(intent, options.toBundle());
+
+
                 }
             });
             System.out.println("Connected!");
