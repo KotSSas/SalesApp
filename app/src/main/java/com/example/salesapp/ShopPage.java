@@ -371,8 +371,8 @@ public class ShopPage extends AppCompatActivity {
                 itemList.add(new Item(44, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
                 itemList.add(new Item(45, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
                 itemList.add(new Item(46, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
-                itemList.add(new Item(47, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
-                itemList.add(new Item(48, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
+//                itemList.add(new Item(47, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+//                itemList.add(new Item(48, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                 setItemRecycler(itemList);
 
 
