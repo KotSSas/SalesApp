@@ -3,6 +3,7 @@ package com.example.salesapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -40,7 +41,6 @@ public class ShopPage extends AppCompatActivity {
     List<String> new_price;
     List<String> photo;
     List<String> links;
-    List<String> description;
 
 
     @Override
@@ -50,7 +50,7 @@ public class ShopPage extends AppCompatActivity {
 
         Toast.makeText(this, "Ожидайте, идет поиск скидок! ;)", Toast.LENGTH_LONG).show();
 
-        ImageView image = findViewById(R.id.item_dec_page_img);
+        ImageView image = findViewById(R.id.shop_page_img);
         title = findViewById(R.id.shop_page_text);
         TextView category = findViewById(R.id.shop_page_cat);
 
@@ -108,14 +108,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
 
-                itemList.add(new Item(1, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), ""));
-                itemList.add(new Item(2, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), ""));
-                itemList.add(new Item(3, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), ""));
-                itemList.add(new Item(4, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), ""));
-                itemList.add(new Item(5, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), ""));
-                itemList.add(new Item(6, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), ""));
-                itemList.add(new Item(7, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), ""));
-                itemList.add(new Item(8, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), ""));
+                itemList.add(new Item(1, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(2, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(3, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(4, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(5, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(6, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(7, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(8, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -159,11 +159,11 @@ public class ShopPage extends AppCompatActivity {
                     if (old_price.get(i).lastIndexOf(" ") == old_price.get(i).indexOf(" ")) {
                         s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ")) + "₴";
                         s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ")) + "₴";
-                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i), ""));
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i)));
                     } else {
                         s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ", 3)) + "₴";
                         s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ", 3)) + "₴";
-                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i), ""));
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i)));
                     }
                 }
 
@@ -214,14 +214,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
 
-                itemList.add(new Item(17, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), ""));
-                itemList.add(new Item(18, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), ""));
-                itemList.add(new Item(19, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), ""));
-                itemList.add(new Item(20, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), ""));
-                itemList.add(new Item(21, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), ""));
-                itemList.add(new Item(22, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), ""));
-                itemList.add(new Item(23, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), ""));
-                itemList.add(new Item(24, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), ""));
+                itemList.add(new Item(17, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(18, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(19, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(20, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(21, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(22, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(23, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(24, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                 setItemRecycler(itemList);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -259,14 +259,14 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), ""));
-                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), ""));
-                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), ""));
-                itemList.add(new Item(28, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), ""));
-                itemList.add(new Item(29, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), ""));
-                itemList.add(new Item(30, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), ""));
-                itemList.add(new Item(31, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), ""));
-                itemList.add(new Item(32, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), ""));
+                itemList.add(new Item(25, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(28, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(29, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(30, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(31, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(32, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
 
                 setItemRecycler(itemList);
             } catch (IOException e) {
@@ -316,14 +316,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
 
-                itemList.add(new Item(33, name.get(0), new_price.get(0), "Товар без скидки!", photo.get(0), links.get(1), ""));
-                itemList.add(new Item(34, name.get(1), new_price.get(1), "Товар без скидки!", photo.get(1), links.get(2), ""));
-                itemList.add(new Item(35, name.get(2), new_price.get(2), "Товар без скидки!", photo.get(2), links.get(3), ""));
-                itemList.add(new Item(36, name.get(3), new_price.get(3), "Товар без скидки!", photo.get(3), links.get(4), ""));
-                itemList.add(new Item(37, name.get(4), new_price.get(4), "Товар без скидки!", photo.get(4), links.get(5), ""));
-                itemList.add(new Item(38, name.get(5), new_price.get(5), "Товар без скидки!", photo.get(5), links.get(6), ""));
-                itemList.add(new Item(39, name.get(6), new_price.get(6), "Товар без скидки!", photo.get(6), links.get(7), ""));
-                itemList.add(new Item(40, name.get(7), new_price.get(7), "Товар без скидки!", photo.get(7), links.get(8), ""));
+                itemList.add(new Item(33, name.get(0), new_price.get(0), "Товар без скидки!", photo.get(0), links.get(1)));
+                itemList.add(new Item(34, name.get(1), new_price.get(1), "Товар без скидки!", photo.get(1), links.get(2)));
+                itemList.add(new Item(35, name.get(2), new_price.get(2), "Товар без скидки!", photo.get(2), links.get(3)));
+                itemList.add(new Item(36, name.get(3), new_price.get(3), "Товар без скидки!", photo.get(3), links.get(4)));
+                itemList.add(new Item(37, name.get(4), new_price.get(4), "Товар без скидки!", photo.get(4), links.get(5)));
+                itemList.add(new Item(38, name.get(5), new_price.get(5), "Товар без скидки!", photo.get(5), links.get(6)));
+                itemList.add(new Item(39, name.get(6), new_price.get(6), "Товар без скидки!", photo.get(6), links.get(7)));
+                itemList.add(new Item(40, name.get(7), new_price.get(7), "Товар без скидки!", photo.get(7), links.get(8)));
 
                 setItemRecycler(itemList);
 
@@ -365,14 +365,14 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(41, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), ""));
-                itemList.add(new Item(42, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), ""));
-                itemList.add(new Item(43, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), ""));
-                itemList.add(new Item(44, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), ""));
-                itemList.add(new Item(45, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), ""));
-                itemList.add(new Item(46, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), ""));
-               // itemList.add(new Item(47, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), ""));
-                //itemList.add(new Item(48, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), ""));
+                itemList.add(new Item(41, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(42, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(43, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(44, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(45, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(46, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+//                itemList.add(new Item(47, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+//                itemList.add(new Item(48, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                 setItemRecycler(itemList);
 
 
@@ -383,12 +383,11 @@ public class ShopPage extends AppCompatActivity {
             try {
                 Document document = Jsoup.connect(
                         "https://www.staff-clothes.com/m/discounts/").get();
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
+                List<String> name = new ArrayList<>();
+                List<String> old_price = new ArrayList<>();
+                List<String> new_price = new ArrayList<>();
+                List<String> photo = new ArrayList<>();
                 links = new ArrayList<>();
-                description = new ArrayList<>();
 
 
                 Elements elementsByClass = document.getElementsByClass("catalog__products-container");
@@ -415,20 +414,16 @@ public class ShopPage extends AppCompatActivity {
 
                     }
                 }
-                for (int i = 0; i < 8; i++) {
-                    document = Jsoup.connect(links.get(i)).get();
-                    Elements product__description = document.getElementsByClass("product__description").select("p");
-                    description.add(product__description.text());
-                }
-
-                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), description.get(0)));
-                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), description.get(1)));
-                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), description.get(2)));
-                itemList.add(new Item(52, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), description.get(3)));
-                itemList.add(new Item(53, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), description.get(4)));
-                itemList.add(new Item(54, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), description.get(5)));
-                itemList.add(new Item(55, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), description.get(6)));
-                itemList.add(new Item(56, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), description.get(7)));
+                document = Jsoup.connect(links.get(0)).get();
+                System.out.println(document.getElementsByClass("product__description"));
+                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(52, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(53, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(54, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(55, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(56, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                 setItemRecycler(itemList);
 
             } catch (IOException e) {
@@ -442,7 +437,6 @@ public class ShopPage extends AppCompatActivity {
                 List<String> new_price = new ArrayList<>();
                 List<String> photo = new ArrayList<>();
                 links = new ArrayList<>();
-                description = new ArrayList<>();
 
                 Elements elementsByClass1 = doc.getElementsByClass("action-product-container action-categoryid-58 slot");
                 for (Element e : elementsByClass1) {
@@ -463,19 +457,15 @@ public class ShopPage extends AppCompatActivity {
                         }
                     }
                 }
-                for (int i = 0; i <=8; i++) {
-                    doc = Jsoup.connect(links.get(i)).get();
-                    String p = doc.getElementsByClass("main-details container").attr("p");
+                System.out.println(links.get(0));
 
-
-                }
-                itemList.add(new Item(57, name.get(0), old_price.get(0) + " ₴", new_price.get(0), photo.get(0), links.get(0), description.get(0)));
-                itemList.add(new Item(58, name.get(1), old_price.get(1) + " ₴", new_price.get(1), photo.get(1), links.get(1), description.get(1)));
-                itemList.add(new Item(59, name.get(2), old_price.get(2) + " ₴", new_price.get(2), photo.get(2), links.get(2), description.get(2)));
-                itemList.add(new Item(60, name.get(3), old_price.get(3) + " ₴", new_price.get(3), photo.get(3), links.get(3), description.get(3)));
-                itemList.add(new Item(61, name.get(4), old_price.get(4) + " ₴", new_price.get(4), photo.get(4), links.get(4), description.get(4)));
-                itemList.add(new Item(62, name.get(5), old_price.get(5) + " ₴", new_price.get(5), photo.get(5), links.get(5), description.get(5)));
-                itemList.add(new Item(63, name.get(6), old_price.get(6) + " ₴", new_price.get(6), photo.get(6), links.get(6), description.get(6)));
+                itemList.add(new Item(57, name.get(0), old_price.get(0) + " ₴", new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(58, name.get(1), old_price.get(1) + " ₴", new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(59, name.get(2), old_price.get(2) + " ₴", new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(60, name.get(3), old_price.get(3) + " ₴", new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(61, name.get(4), old_price.get(4) + " ₴", new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(62, name.get(5), old_price.get(5) + " ₴", new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(63, name.get(6), old_price.get(6) + " ₴", new_price.get(6), photo.get(6), links.get(6)));
 
                 setItemRecycler(itemList);
 
@@ -523,14 +513,14 @@ public class ShopPage extends AppCompatActivity {
                 }
 
 
-                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), ""));
-                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), ""));
-                itemList.add(new Item(66, name.get(23), old_price.get(23), new_price.get(23), photo.get(23), links.get(23), ""));
-                itemList.add(new Item(67, name.get(8), old_price.get(8), new_price.get(8), photo.get(8), links.get(8), ""));
-                itemList.add(new Item(68, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), ""));
-                itemList.add(new Item(69, name.get(15), old_price.get(15), new_price.get(15), photo.get(15), links.get(15), ""));
-                itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20), links.get(20), ""));
-                itemList.add(new Item(71, name.get(9), new_price.get(9), "Товар без скидки!", photo.get(9), links.get(9), ""));
+                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
+                itemList.add(new Item(66, name.get(23), old_price.get(23), new_price.get(23), photo.get(23), links.get(23)));
+                itemList.add(new Item(67, name.get(8), old_price.get(8), new_price.get(8), photo.get(8), links.get(8)));
+                itemList.add(new Item(68, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(69, name.get(15), old_price.get(15), new_price.get(15), photo.get(15), links.get(15)));
+                itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20), links.get(20)));
+                itemList.add(new Item(71, name.get(9), new_price.get(9), "Товар без скидки!", photo.get(9), links.get(9)));
 
                 setItemRecycler(itemList);
             } catch (IOException e) {
@@ -543,7 +533,6 @@ public class ShopPage extends AppCompatActivity {
                 new_price = new ArrayList<>();
                 photo = new ArrayList<>();
                 links = new ArrayList<>();
-                description = new ArrayList<>();
                 Document document = Jsoup.connect("https://urbanplanet-streetwear.com/sale").get();
                 Elements elementsByClass = document.getElementsByClass("products-page__content");
                 for (Element byClass : elementsByClass) {
@@ -569,24 +558,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                for (int i = 1; i <=9; i++) {
-                    document = Jsoup.connect(links.get(i)).get();
-                    Elements div = document.select("div");
-                    for (Element h : div) {
-
-                        description.add(h.attr("itemprop","description").text());
-                    }
-                }
-                System.out.println(description.get(0));
-
-                itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), description.get(0)));
-                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), description.get(1)));
-                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), description.get(2)));
-                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), description.get(3)));
-                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), description.get(4)));
-                itemList.add(new Item(77, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), description.get(5)));
-                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), description.get(6)));
-                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), description.get(7)));
+                itemList.add(new Item(72, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(1)));
+                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(2)));
+                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(3)));
+                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(4)));
+                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(5)));
+                itemList.add(new Item(77, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(6)));
+                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(7)));
+                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(8)));
 
                 setItemRecycler(itemList);
 
@@ -634,14 +613,14 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
 
-                itemList.add(new Item(80, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0), ""));
-                itemList.add(new Item(81, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1), ""));
-                itemList.add(new Item(82, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2), ""));
-                itemList.add(new Item(83, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3), ""));
-                itemList.add(new Item(84, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4), ""));
-                itemList.add(new Item(85, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5), ""));
-                itemList.add(new Item(86, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6), ""));
-                itemList.add(new Item(87, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7), ""));
+                itemList.add(new Item(80, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(81, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(82, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(83, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(84, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(85, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(86, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(87, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
 
                 setItemRecycler(itemList);
 
@@ -682,14 +661,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(88, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(1), ""));
-                itemList.add(new Item(89, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(2), ""));
-                itemList.add(new Item(90, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(3), ""));
-                itemList.add(new Item(91, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(4), ""));
-                itemList.add(new Item(92, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(5), ""));
-                itemList.add(new Item(93, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(6), ""));
-                itemList.add(new Item(94, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(7), ""));
-                itemList.add(new Item(95, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(8), ""));
+                itemList.add(new Item(88, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(1)));
+                itemList.add(new Item(89, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(2)));
+                itemList.add(new Item(90, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(3)));
+                itemList.add(new Item(91, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(4)));
+                itemList.add(new Item(92, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(5)));
+                itemList.add(new Item(93, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(6)));
+                itemList.add(new Item(94, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(7)));
+                itemList.add(new Item(95, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(8)));
 
                 setItemRecycler(itemList);
 
@@ -734,14 +713,14 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(96, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), "https://www.sportmaster.ua" + links.get(0), ""));
-                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), "https://www.sportmaster.ua" + links.get(1), ""));
-                itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), "https://www.sportmaster.ua" + links.get(2), ""));
-                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), "https://www.sportmaster.ua" + links.get(3), ""));
-                itemList.add(new Item(100, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), "https://www.sportmaster.ua" + links.get(4), ""));
-                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), "https://www.sportmaster.ua" + links.get(5), ""));
-                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), "https://www.sportmaster.ua" + links.get(6), ""));
-                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), "https://www.sportmaster.ua" + links.get(7), ""));
+                itemList.add(new Item(96, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), "https://www.sportmaster.ua" + links.get(0)));
+                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), "https://www.sportmaster.ua" + links.get(1)));
+                itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), "https://www.sportmaster.ua" + links.get(2)));
+                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), "https://www.sportmaster.ua" + links.get(3)));
+                itemList.add(new Item(100, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), "https://www.sportmaster.ua" + links.get(4)));
+                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), "https://www.sportmaster.ua" + links.get(5)));
+                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), "https://www.sportmaster.ua" + links.get(6)));
+                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), "https://www.sportmaster.ua" + links.get(7)));
 
                 setItemRecycler(itemList);
 
