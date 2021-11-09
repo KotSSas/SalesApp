@@ -1,32 +1,23 @@
 package com.example.salesapp.adapter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Pair;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.salesapp.DescriptionPage;
 import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
-import com.example.salesapp.ShopPage;
-import com.example.salesapp.SplashPage;
 import com.example.salesapp.model.Item;
 
 import java.util.List;
@@ -86,9 +77,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                 intent.putExtra("link", items.get(position).
 
                         getLink());
-                intent.putExtra("description", items.get(position).
 
-                        getDescription());
 //                Handler handler = new Handler();
 //                handler.postDelayed(new Runnable() {
 //
