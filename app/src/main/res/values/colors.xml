@@ -12,4 +12,28 @@
     <color name="text">#68686D</color>
     <color name="item_bg">#B5B0B0</color>
     <color name="name_of_app">#897BDF</color>
+
+
+
+    //inactive colors
+    <color name="dark_one">#dcdcdc</color>
+    <color name="dark_two">#dcdcdc</color>
+    <color name="dark_three">#dcdcdc</color>
+
+
+    //active colors
+    <color name="orange_one">#FFBB86FC</color>
+    <color name="orange_two">#FFBB86FC</color>
+    <color name="orange_three">#FFBB86FC</color>
+
+    <array name="inactive">
+        <item>@color/dark_one</item>
+        <item>@color/dark_two</item>
+        <item>@color/dark_three</item>
+    </array>
+    <array name="active">
+        <item>@color/orange_one</item>
+        <item>@color/orange_two</item>
+        <item>@color/orange_three</item>
+    </array>
 </resources>

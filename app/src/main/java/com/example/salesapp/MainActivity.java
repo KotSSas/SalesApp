@@ -53,39 +53,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        IntroPref introPref = new IntroPref(this);
+        if (introPref.isFirstTimeLaunch()) {
 
-        categoryList.clear();
-        shopList.clear();
-        fullShopsList.clear();
+            startActivity(new Intent(MainActivity.this, IntroActivity.class));
+        } else {
+            categoryList.clear();
+            shopList.clear();
+            fullShopsList.clear();
 
 //        setCategotyRecycler(categoryList);
 //        setShopRecycler(shopList);
 
-        categoryList.add(new Category(1, "Всё", "category_on"));
-        categoryList.add(new Category(2, "Техника", "category"));
-        categoryList.add(new Category(3, "Одежда", "category"));
-        categoryList.add(new Category(4, "Продукты", "category"));
-        categoryList.add(new Category(5, "Спорт", "category"));
-        // categoryList.add(new Category(5, "Разное", "category"));
+            categoryList.add(new Category(1, "Всё", "category_on"));
+            categoryList.add(new Category(2, "Техника", "category"));
+            categoryList.add(new Category(3, "Одежда", "category"));
+            categoryList.add(new Category(4, "Продукты", "category"));
+            categoryList.add(new Category(5, "Спорт", "category"));
+            // categoryList.add(new Category(5, "Разное", "category"));
 
-        setCategotyRecycler(categoryList);
+            setCategotyRecycler(categoryList);
 
-        shopList.add(new Shop(1, 3, "staff", "Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/"));
-        //shopList.add(new Shop(2, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
-        shopList.add(new Shop(2, 2, "allo", "Allo", "Техника", "09:00 - 20:00", "https://allo.ua/"));
-        shopList.add(new Shop(3, 2, "citrus", "Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/")); //*
-        shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
-        shopList.add(new Shop(5, 2, "ciber", "Kibernetiki", "Техника", "10:00 - 21:00", "https://kibernetiki.com.ua"));//*
-        shopList.add(new Shop(6, 4, "atb", "ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/"));
-        shopList.add(new Shop(7, 3, "urb", "Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/"));//*
-        shopList.add(new Shop(8, 2, "fox", "Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/"));
-        shopList.add(new Shop(9, 5, "spr", "Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/"));
-        shopList.add(new Shop(10, 4, "metr", "Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/"));//*
-        shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
-        shopList.add(new Shop(12, 4, "tavr", "Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/"));//*
-        shopList.add(new Shop(13, 3, "ah", "Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com"));//*
+            shopList.add(new Shop(1, 3, "staff", "Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/"));
+            //shopList.add(new Shop(2, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
+            shopList.add(new Shop(2, 2, "allo", "Allo", "Техника", "09:00 - 20:00", "https://allo.ua/"));
+            shopList.add(new Shop(3, 2, "citrus", "Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/")); //*
+            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
+            shopList.add(new Shop(5, 2, "ciber", "Kibernetiki", "Техника", "10:00 - 21:00", "https://kibernetiki.com.ua"));//*
+            shopList.add(new Shop(6, 4, "atb", "ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/"));
+            shopList.add(new Shop(7, 3, "urb", "Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/"));//*
+            shopList.add(new Shop(8, 2, "fox", "Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/"));
+            shopList.add(new Shop(9, 5, "spr", "Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/"));
+            shopList.add(new Shop(10, 4, "metr", "Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/"));//*
+            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
+            shopList.add(new Shop(12, 4, "tavr", "Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/"));//*
+            shopList.add(new Shop(13, 3, "ah", "Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com"));//*
 
-        fullShopsList.addAll(shopList);
+            fullShopsList.addAll(shopList);
 
 //        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 //        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
@@ -99,29 +103,29 @@ public class MainActivity extends AppCompatActivity {
 //            showCustomDialog();
 //            System.out.println("connect to the internet");
 //        }
-        setShopRecycler(shopList);
+            setShopRecycler(shopList);
 
-        about_us = findViewById(R.id.about_us);
-        about_us.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View v) {
-                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            about_us = findViewById(R.id.about_us);
+            about_us.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.O)
+                @Override
+                public void onClick(View v) {
+                    Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 // Vibrate for 400 milliseconds
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
+
+
+                    v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.anim_item));
+                    openAboutActivity();
+
+
                 }
-
-
-                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.anim_item));
-                openAboutActivity();
-
-
-            }
-        });
-
+            });
+        }
 
     }
 
