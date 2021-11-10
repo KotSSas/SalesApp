@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
     TextView about_us;
-    FloatingActionButton fb0,fb1,fb2;
+    FloatingActionButton fb0,fb1,fb2,fb3,fb4,fb5;
     boolean connected = false;
     private boolean clicked = false;
 
@@ -69,23 +69,54 @@ public class MainActivity extends AppCompatActivity {
             fb0= findViewById(R.id.mainButn);
             fb1= findViewById(R.id.firstButn);
             fb2= findViewById(R.id.secondButn);
+            fb3= findViewById(R.id.thirdButn);
+            fb4= findViewById(R.id.fourthButn);
+            fb5= findViewById(R.id.fifthButn);
 
             fb0.setOnClickListener(view -> {
                 onAddButtonClicked();
             });
 
-//            fb1.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Toast.makeText( this,"1", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//            fb2.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    Toast.makeText( this,"2", Toast.LENGTH_SHORT).show();
-//                }
-//            });
+            fb1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    show_category_shops(1);
+                    Toast.makeText( MainActivity.this,"All categories", Toast.LENGTH_SHORT).show();
+                }
+            });
+            fb2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    show_category_shops(2);
+
+                    Toast.makeText( MainActivity.this,"Техника", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            fb3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    show_category_shops(3);
+
+                    Toast.makeText( MainActivity.this,"Одежда", Toast.LENGTH_SHORT).show();
+                }
+            });
+            fb4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    show_category_shops(4);
+
+                    Toast.makeText( MainActivity.this,"Продукты", Toast.LENGTH_SHORT).show();
+                }
+            });
+            fb5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    show_category_shops(4);
+
+                    Toast.makeText( MainActivity.this,"Спорт", Toast.LENGTH_SHORT).show();
+                }
+            });
 
 //        setCategotyRecycler(categoryList);
 //        setShopRecycler(shopList);
@@ -164,11 +195,15 @@ public class MainActivity extends AppCompatActivity {
         if (!clicked){
             fb1.setVisibility(View.VISIBLE);
             fb2.setVisibility(View.VISIBLE);
-//            fb3.setVisibility(View.VISIBLE);
+            fb3.setVisibility(View.VISIBLE);
+            fb4.setVisibility(View.VISIBLE);
+            fb5.setVisibility(View.VISIBLE);
         }else{
             fb1.setVisibility(View.INVISIBLE);
             fb2.setVisibility(View.INVISIBLE);
-//            fb3.setVisibility(View.INVISIBLE);
+            fb3.setVisibility(View.INVISIBLE);
+            fb4.setVisibility(View.INVISIBLE);
+            fb5.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -176,10 +211,16 @@ public class MainActivity extends AppCompatActivity {
         if (!clicked){
             fb1.setClickable(true);
             fb2.setClickable(true);
+            fb3.setClickable(true);
+            fb4.setClickable(true);
+            fb5.setClickable(true);
 
         }else{
             fb1.setClickable(false);
             fb2.setClickable(false);
+            fb3.setClickable(false);
+            fb4.setClickable(false);
+            fb5.setClickable(false);
 
         }
 
@@ -191,6 +232,9 @@ public class MainActivity extends AppCompatActivity {
             Animation b= AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim);
             fb1.startAnimation(a);
             fb2.startAnimation(a);
+            fb3.startAnimation(a);
+            fb4.startAnimation(a);
+            fb5.startAnimation(a);
 
             fb0.startAnimation(b);
         }else{
@@ -198,6 +242,9 @@ public class MainActivity extends AppCompatActivity {
             Animation b= AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim);
             fb1.startAnimation(a);
             fb2.startAnimation(a);
+            fb3.startAnimation(a);
+            fb4.startAnimation(a);
+            fb5.startAnimation(a);
 
             fb0.startAnimation(b);
         }
@@ -259,8 +306,6 @@ public class MainActivity extends AppCompatActivity {
 
 //            shopList.clear();
 //            shopList.addAll(fullShopsList);
-
-
 
         if (category == 1) {
 
