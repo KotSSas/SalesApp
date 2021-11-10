@@ -141,6 +141,7 @@
         app:backgroundTint="@color/name_of_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#EDEDED"
         app:srcCompat="@drawable/ic_gr" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

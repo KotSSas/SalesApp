@@ -10,7 +10,9 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -83,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
                     show_category_shops(1);
 
                     Toast.makeText( MainActivity.this,"Всё", Toast.LENGTH_SHORT).show();
+                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(73, 53, 100)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
                 }
             });
             fb2.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +98,11 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     show_category_shops(2);
                     Toast.makeText( MainActivity.this,"Техника", Toast.LENGTH_SHORT).show();
+//                   fb2.setColorFilter(Color.YELLOW);
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(73, 53, 100)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
                 }
             });
 
@@ -100,6 +112,9 @@ public class MainActivity extends AppCompatActivity {
                     show_category_shops(3);
 
                     Toast.makeText( MainActivity.this,"Одежда", Toast.LENGTH_SHORT).show();
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(73, 53, 100)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+
                 }
             });
             fb4.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
                     show_category_shops(4);
 
                     Toast.makeText( MainActivity.this,"Продукты", Toast.LENGTH_SHORT).show();
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(73, 53, 100)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
                 }
             });
             fb5.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
                     show_category_shops(5);
 
                     Toast.makeText( MainActivity.this,"Спорт", Toast.LENGTH_SHORT).show();
+                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(73, 53, 100)));
+                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
                 }
             });
 
