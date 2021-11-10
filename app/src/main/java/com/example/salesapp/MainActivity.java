@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             fb5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    show_category_shops(4);
+                    show_category_shops(5);
 
                     Toast.makeText( MainActivity.this,"Спорт", Toast.LENGTH_SHORT).show();
                 }
