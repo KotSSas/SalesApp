@@ -15,7 +15,7 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_cart_shop_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_error.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_item_page.xml" value="0.25" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.136" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_splash.xml" value="0.25052083333333336" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/cart_item.xml" value="0.25416666666666665" />
@@ -28,11 +28,13 @@
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_ah.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_allo.xml" value="0.2703125" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_baseline_wrap_text_24.xml" value="0.26875" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_cart.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_cart_ico.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_category.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_category_on.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_filter.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_gr2.xml" value="0.26875" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_hot_deal.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_logo.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_shop2.xml" value="0.2703125" />

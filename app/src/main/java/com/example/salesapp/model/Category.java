@@ -2,21 +2,11 @@ package com.example.salesapp.model;
 
 public class Category {
 
-    int id;
-    String title, img;
+    int id, color_ind;
 
-    public Category(int id, String title, String img) {
+    public Category(int id, int color_ind) {
         this.id = id;
-        this.title = title;
-        this.img = img;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
+        this.color_ind = color_ind;
     }
 
     public int getId() {
@@ -27,11 +17,11 @@ public class Category {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public int getColor_ind() {
+        return color_ind;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setColor_ind(int color_ind) {
+        this.color_ind = color_ind;
     }
 }
