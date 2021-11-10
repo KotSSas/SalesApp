@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".AboutUsActivity">
+    tools:context=".Matching">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -52,30 +52,32 @@
             android:layout_width="120dp"
             android:layout_height="145dp"
             android:layout_marginTop="0dp"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/montserrat"
             android:gravity="center"
             android:rotation="270"
             android:text="@string/about_us"
-            android:textColor="#4B4768"
+            android:textColor="#7D75B8"
             android:textSize="25sp"
             android:clickable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_scene" />
+
         <TextView
             android:id="@+id/coming_soon_scene"
             android:layout_width="160dp"
             android:layout_height="165dp"
             android:clickable="true"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
             android:rotation="270"
             android:text="@string/coming_soon"
-            android:textColor="#7D75B8"
+            android:textColor="#4B4768"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/about_us" />
+
 
         <ImageView
             android:id="@+id/imageView3"
@@ -95,23 +97,10 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/montserrat"
-        android:text="@string/h2.1"
+        android:text="@string/coming_soon_h1"
         android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/h2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="@string/h2.2"
-        android:textColor="@color/name_of_app"
-        android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/h1"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -123,11 +112,21 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:fontFamily="@font/montserrat"
+        android:text="@string/coming_soon_text"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/h2" />
+        app:layout_constraintTop_toBottomOf="@+id/h1" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/soon1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,12 @@
 package com.example.salesapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -34,7 +38,7 @@ public class ShopPage extends AppCompatActivity {
     static List<Item> fullItemList = new ArrayList<>();
 
     TextView title;
-    TextView main_scene, about_us;
+    TextView main_scene, about_us, coming_soon_scene;
 
     List<String> name;
     List<String> old_price;
@@ -63,14 +67,43 @@ public class ShopPage extends AppCompatActivity {
         main_scene = findViewById(R.id.main_scene);
 
         main_scene.setOnClickListener(v -> {
+            Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+// Vibrate for 400 milliseconds
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                v1.vibrate(VibrationEffect.createOneShot(100, 1));
+            }
             v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
             openMainActivity();
         });
 
         about_us = findViewById(R.id.about_us);
         about_us.setOnClickListener(v -> {
+            Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+// Vibrate for 400 milliseconds
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                v1.vibrate(VibrationEffect.createOneShot(100, 1));
+            }
             v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
             openAboutActivity();
+        });
+        coming_soon_scene = findViewById(R.id.coming_soon_scene);
+        coming_soon_scene.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                }
+
+                v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
+                openMatchingActivity();
+
+            }
         });
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -776,6 +809,10 @@ public class ShopPage extends AppCompatActivity {
 
     private void openAboutActivity() {
         startActivity(new Intent(this, AboutUsActivity.class));
+    }
+
+    private void openMatchingActivity() {
+        startActivity(new Intent(this, Matching.class));
     }
 
     private void openMainActivity() {

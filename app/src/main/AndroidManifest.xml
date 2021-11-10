@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SalesApp">
-
+        <activity
+            android:name=".Matching"
+            android:exported="false" />
         <activity
             android:name=".ErrorPage"
             android:exported="false"
@@ -30,11 +32,10 @@
             android:name=".AboutUsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
-
         <activity
-        android:name=".SplashPage"
-        android:exported="false"
-        android:screenOrientation="portrait" />
+            android:name=".SplashPage"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".IntroActivity"
             android:exported="false"
