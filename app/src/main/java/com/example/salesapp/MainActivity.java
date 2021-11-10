@@ -20,6 +20,7 @@ import android.provider.Settings;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.view.animation.DecelerateInterpolator;
@@ -31,6 +32,7 @@ import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.Category;
 import com.example.salesapp.model.Shop;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,20 +49,43 @@ public class MainActivity extends AppCompatActivity {
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
     TextView about_us;
+    FloatingActionButton fb0,fb1,fb2;
     boolean connected = false;
+    private boolean clicked = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         IntroPref introPref = new IntroPref(this);
         if (introPref.isFirstTimeLaunch()) {
-
             startActivity(new Intent(MainActivity.this, IntroActivity.class));
         } else {
             categoryList.clear();
             shopList.clear();
             fullShopsList.clear();
+            fb0= findViewById(R.id.mainButn);
+            fb1= findViewById(R.id.firstButn);
+            fb2= findViewById(R.id.secondButn);
+
+            fb0.setOnClickListener(view -> {
+                onAddButtonClicked();
+            });
+
+//            fb1.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText( this,"1", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//            fb2.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText( this,"2", Toast.LENGTH_SHORT).show();
+//                }
+//            });
 
 //        setCategotyRecycler(categoryList);
 //        setShopRecycler(shopList);
@@ -129,6 +154,54 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void onAddButtonClicked() {
+        setVisibility(clicked);
+        setAnimation(clicked);
+        setClickable(clicked);
+        clicked= !clicked;
+    }
+    private void setAnimation(boolean clicked) {
+        if (!clicked){
+            fb1.setVisibility(View.VISIBLE);
+            fb2.setVisibility(View.VISIBLE);
+//            fb3.setVisibility(View.VISIBLE);
+        }else{
+            fb1.setVisibility(View.INVISIBLE);
+            fb2.setVisibility(View.INVISIBLE);
+//            fb3.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void setClickable(boolean clicked){
+        if (!clicked){
+            fb1.setClickable(true);
+            fb2.setClickable(true);
+
+        }else{
+            fb1.setClickable(false);
+            fb2.setClickable(false);
+
+        }
+
+    }
+
+    private void setVisibility(boolean clicked) {
+        if (!clicked){
+            Animation a= AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim);
+            Animation b= AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim);
+            fb1.startAnimation(a);
+            fb2.startAnimation(a);
+
+            fb0.startAnimation(b);
+        }else{
+            Animation a= AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim);
+            Animation b= AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim);
+            fb1.startAnimation(a);
+            fb2.startAnimation(a);
+
+            fb0.startAnimation(b);
+        }
+    }
     private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Please connect to the Internet ")
@@ -186,6 +259,8 @@ public class MainActivity extends AppCompatActivity {
 
 //            shopList.clear();
 //            shopList.addAll(fullShopsList);
+
+
 
         if (category == 1) {
 
