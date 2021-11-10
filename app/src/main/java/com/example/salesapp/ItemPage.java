@@ -30,7 +30,7 @@ import java.net.URL;
 
 public class ItemPage extends AppCompatActivity {
 
-    TextView main_scene, about_us;
+    TextView main_scene, about_us, coming_soon_scene;
     TextView title;
     ImageView image;
     @Override
@@ -73,6 +73,11 @@ public class ItemPage extends AppCompatActivity {
 
         main_scene = findViewById(R.id.main_scene);
         main_scene.setOnClickListener(v -> {
+            Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                v1.vibrate(VibrationEffect.createOneShot(100, 1));
+            }
             v.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_item));
 
 //                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
@@ -84,11 +89,37 @@ public class ItemPage extends AppCompatActivity {
         about_us.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                }
                 v.startAnimation(AnimationUtils.loadAnimation(ItemPage.this, R.anim.anim_item));
                 openAboutActivity();
             }
         });
+        coming_soon_scene = findViewById(R.id.coming_soon_scene);
+        coming_soon_scene.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                }
+
+                v.startAnimation(AnimationUtils.loadAnimation(ItemPage.this, R.anim.anim_item));
+                openMatchingActivity();
+
+            }
+        });
+
+    }
+
+
+    private void openMatchingActivity() {
+        Intent intent = new Intent(this, Matching.class);
+        startActivity(intent);
     }
 
     private void openAboutActivity() {

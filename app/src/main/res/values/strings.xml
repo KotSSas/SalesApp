@@ -2,6 +2,9 @@
     <string name="app_name">SalesApp</string>
     <string name="sales_icon">Sales</string>
     <string name="about_us">Про нас</string>
+    <string name="coming_soon">Сравнение</string>
+    <string name="coming_soon_h1">Сравнение</string>
+    <string name="coming_soon_text">This page\'ll be working soon!</string>
     <string name="main_scene">Главная</string>
     <string name="h1">Sales</string>
     <string name="h2">App</string>

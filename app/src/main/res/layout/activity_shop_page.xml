@@ -63,6 +63,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/main_scene" />
 
+        <TextView
+            android:id="@+id/coming_soon_scene"
+            android:layout_width="160dp"
+            android:layout_height="165dp"
+            android:clickable="true"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="@string/coming_soon"
+            android:textColor="#7D75B8"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/about_us" />
+
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="50dp"
@@ -131,10 +147,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_recycler"
         android:layout_width="272dp"
-        android:layout_height="385dp"
+        android:layout_height="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"

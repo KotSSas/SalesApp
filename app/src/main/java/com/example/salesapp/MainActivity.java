@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     static List<Category> categoryList = new ArrayList<>();
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
-    TextView about_us;
+    TextView about_us, coming_soon_scene;
     boolean connected = false;
 
     @Override
@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
             setShopRecycler(shopList);
 
             about_us = findViewById(R.id.about_us);
+            coming_soon_scene = findViewById(R.id.coming_soon_scene);
+
             about_us.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override
@@ -125,8 +127,27 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+
+            coming_soon_scene.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
+
+                    v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.anim_item));
+                    openMatchingActivity();
+
+                }
+            });
         }
 
+    }
+
+    private void openMatchingActivity() {
+        startActivity(new Intent(this, Matching.class));
     }
 
     private void showCustomDialog() {
