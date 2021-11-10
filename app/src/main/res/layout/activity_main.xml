@@ -150,7 +150,7 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_wrap_text_24" />
+        app:srcCompat="@drawable/ic_baseline_wrap_text_24"/>
 
     <!--    <ImageView-->
 <!--        android:id="@+id/imageView5"-->

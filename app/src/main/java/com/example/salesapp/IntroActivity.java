@@ -45,7 +45,8 @@ public class IntroActivity extends AppCompatActivity {
         layouts = new int[]{
                 R.layout.intro_one,
                 R.layout.intro_two,
-                R.layout.intro_three
+                R.layout.intro_three,
+                R.layout.intro_four
         };
 
         tvNext.setOnClickListener(new View.OnClickListener() {
@@ -79,9 +80,9 @@ public class IntroActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             addBottomDots(position);
             if (position == layouts.length - 1) {
-                tvNext.setText("START");
+                tvNext.setText("START ");
             } else {
-                tvNext.setText("NEXT");
+                tvNext.setText("");
             }
         }
 

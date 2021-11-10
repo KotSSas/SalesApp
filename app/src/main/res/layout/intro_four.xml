@@ -15,7 +15,7 @@
         android:layout_marginTop="70dp"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
-        android:text="CHOOSE"
+        android:text="RECEIVE"
         android:textColor="@color/text"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
-        android:text="the product you need"
+        android:text="your product"
         android:textColor="@color/text"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/cart" />
+        app:srcCompat="@drawable/payment" />
 
     <TextView
         android:id="@+id/textView5"
@@ -57,7 +57,7 @@
         android:layout_marginEnd="60dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
-        android:text="Go to the page in the app and then buy from the official website..."
+        android:text="And don't forget to visit the app more often❤😉"
 
         android:textColor="@color/text"
         android:textSize="18sp"
