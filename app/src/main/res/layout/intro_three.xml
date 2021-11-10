@@ -40,13 +40,14 @@
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="250dp"
         android:layout_marginTop="50dp"
+        android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/photo" />
+        app:srcCompat="@drawable/photo3" />
 
     <TextView
         android:id="@+id/textView5"
