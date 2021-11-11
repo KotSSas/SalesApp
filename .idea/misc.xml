@@ -34,6 +34,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_category.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_category_on.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_filter.xml" value="0.26666666666666666" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_gr0.xml" value="0.26875" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_gr2.xml" value="0.26875" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_hot_deal.xml" value="0.2703125" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ic_logo.xml" value="0.2703125" />
@@ -46,7 +47,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_error.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_intro.xml" value="0.2504528985507246" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_item_page.xml" value="0.264" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_main.xml" value="0.4713313896987366" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_matching.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/activity_shop_page.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/layout/cart_item.xml" value="0.12284701114488349" />

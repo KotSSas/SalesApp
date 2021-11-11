@@ -84,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     show_category_shops(1);
+                    Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
+
                     Toast.makeText( MainActivity.this,"Всё", Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196, 188, 248)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
@@ -97,6 +103,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     show_category_shops(2);
+                    Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
+
                     Toast.makeText( MainActivity.this,"Техника", Toast.LENGTH_SHORT).show();
 //                   fb2.setColorFilter(Color.YELLOW);
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
@@ -112,6 +124,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     show_category_shops(3);
+                    Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
+
                     Toast.makeText( MainActivity.this,"Одежда", Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
@@ -124,6 +142,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     show_category_shops(4);
+                    Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
+
                     Toast.makeText( MainActivity.this,"Продукты", Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
@@ -137,6 +161,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     show_category_shops(5);
+                    Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                    }
+
                     Toast.makeText( MainActivity.this,"Спорт", Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
