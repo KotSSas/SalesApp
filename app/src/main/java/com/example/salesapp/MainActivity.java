@@ -12,12 +12,16 @@ import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ShortcutInfo;
+import android.content.pm.ShortcutManager;
 import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Icon;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -42,6 +46,8 @@ import com.example.salesapp.model.Shop;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
@@ -63,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean clicked = false;
 
 
+    @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
             fb0.setOnClickListener(view -> {
                 onAddButtonClicked();
             });
+
+            createShorcut();
 
             fb1.setOnClickListener(new View.OnClickListener() {
                 @SuppressLint("ResourceAsColor")
@@ -181,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                     fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
                 }
             });
+
 
 //        setCategotyRecycler(categoryList);
 //        setShopRecycler(shopList);
@@ -325,6 +335,49 @@ public class MainActivity extends AppCompatActivity {
 
             fb0.startAnimation(b);
         }
+    }
+
+    private void createShorcut() {
+        ShortcutManager sM = getSystemService(ShortcutManager.class);
+
+        Intent intent1 = new Intent(getApplicationContext(), AboutUsActivity.class);
+        intent1.setAction(Intent.ACTION_VIEW);
+
+        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+        intent2.setAction(Intent.ACTION_VIEW);
+
+        Intent intent3 = new Intent(getApplicationContext(), Matching.class);
+        intent3.setAction(Intent.ACTION_VIEW);
+
+        ShortcutInfo shortcut1 = new ShortcutInfo.Builder(this, "shortcut1")
+                .setIntent(intent1)
+                .setShortLabel("About")
+                .setRank(2)
+                .setLongLabel("About us page")
+                .setShortLabel("This is an about us page")
+                .setIcon(Icon.createWithResource(this, R.drawable.cart))
+                .build();
+
+
+        ShortcutInfo shortcut2 = new ShortcutInfo.Builder(this, "shortcut2")
+                .setIntent(intent2)
+                .setShortLabel("Main")
+                .setRank(1)
+                .setLongLabel("Main page")
+                .setShortLabel("This is main page")
+                .setIcon(Icon.createWithResource(this, R.drawable.ic_atb))
+                .build();
+        ShortcutInfo shortcut3 = new ShortcutInfo.Builder(this, "shortcut3")
+                .setIntent(intent3)
+                .setShortLabel("Compare page")
+                .setLongLabel("Compare page")
+                .setRank(3)
+                .setShortLabel("This is compare page")
+                .setIcon(Icon.createWithResource(this, R.drawable.ic_cart_ico))
+                .build();
+
+        sM.setDynamicShortcuts(Arrays.asList(shortcut1,shortcut2,shortcut3));
+
     }
     private void showCustomDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
