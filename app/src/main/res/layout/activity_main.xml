@@ -151,7 +151,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:visibility="invisible"
-        app:backgroundTint="#BB86FC"
+        app:backgroundTint="#C4BCF8"
         app:layout_constraintBottom_toTopOf="@+id/mainButn"
         app:layout_constraintEnd_toEndOf="@+id/mainButn"
         app:srcCompat="@drawable/ic_gr0" />
