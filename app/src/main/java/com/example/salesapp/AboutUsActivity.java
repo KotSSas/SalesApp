@@ -3,6 +3,8 @@ package com.example.salesapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActionBar;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -10,6 +12,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -22,6 +25,7 @@ import android.widget.ViewSwitcher;
 public class AboutUsActivity extends AppCompatActivity {
 
     TextView main_scene, coming_soon_scene;
+    ImageView ico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +65,21 @@ public class AboutUsActivity extends AppCompatActivity {
 
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        ico = findViewById(R.id.photo1);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
+                new Pair<View, String>(ico, "icoImage")
+        );
+        startActivity(intent, options.toBundle());
     }
 
     private void openMatchingActivity() {
-        startActivity(new Intent(this, Matching.class));
+        Intent intent = new Intent(this, Matching.class);
+        ico = findViewById(R.id.photo1);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
+                new Pair<View, String>(ico, "icoImage")
+        );
+        startActivity(intent, options.toBundle());
     }
 }

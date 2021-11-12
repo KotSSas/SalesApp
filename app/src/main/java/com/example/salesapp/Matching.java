@@ -2,18 +2,24 @@ package com.example.salesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.util.Pair;
+import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Matching extends AppCompatActivity {
 
     TextView main_scene, about_us;
+    ImageView ico;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +49,21 @@ public class Matching extends AppCompatActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 v1.vibrate(VibrationEffect.createOneShot(100, 1));
             }
+
             v.startAnimation(AnimationUtils.loadAnimation(Matching.this, R.anim.anim_item));
             openAboutActivity();
         });
     }
 
     private void openAboutActivity() {
-        startActivity(new Intent(this, AboutUsActivity.class));
+
+        ico = findViewById(R.id.logo2);
+        Intent intent = new Intent(this, AboutUsActivity.class);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
+                new Pair<View, String>(ico, "icoImage")
+        );
+
+        startActivity(intent, options.toBundle());
     }
 
     private void openMainActivity() {
