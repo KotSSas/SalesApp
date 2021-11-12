@@ -180,11 +180,10 @@ public class ShopPage extends AppCompatActivity {
                             name.add(name_el);
                             old_price.add(element1.getElementsByClass("price").text());
                             //это не работает
-                            Elements photos = element1.getElementsByClass("product-card__preview");
 
-                            for (Element ph : photos) {
-                                photo.add(ph.getElementsByClass("image-catalog").attr("src"));
-                            }
+                            String ph = element1.getElementsByClass("image-catalog").attr("src");
+
+                            photo.add(ph);
 
                             links.add(element1.getElementsByClass("product-card__preview").select("a").attr("href"));
                         }
