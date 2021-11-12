@@ -23,4 +23,5 @@
     <string name="error">Отсутствует подключение к сети!</string>
     <string name="main_text">Магазины из нашего приложения</string>
     <string name="main_text2">Фильтр</string>
+    <string name="description">Мы команда разроботчиков Sector Java. Если вы захотели узнать про нас по подробнее, призаживайтесь мы - начинаем!</string>
 </resources>
