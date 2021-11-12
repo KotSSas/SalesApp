@@ -159,7 +159,7 @@ public class ShopPage extends AppCompatActivity {
         } else if (title.getText().equals("Citrus")) {
             try {
                 Document document = Jsoup.connect(
-                        "https://www.citrus.ua/shares/zachehli-nout/").get();
+                        "https://www.citrus.ua/shares/vremya-skidok-ot-philips-tehniku-dlya-kuhni/").get();
                 name = new ArrayList<>();
                 old_price = new ArrayList<>();
                 photo = new ArrayList<>();
@@ -177,10 +177,15 @@ public class ShopPage extends AppCompatActivity {
                                 links.add("https://www.citrus.ua" + element2.attr("href").replaceAll("reviews", "description"));
                             }
                             String name_el = element1.getElementsByClass("product-card__name").select("a").attr("title");
-                            name.add(name_el.substring(0, name_el.indexOf("(") - 1));
+                            name.add(name_el);
                             old_price.add(element1.getElementsByClass("price").text());
                             //это не работает
-                            photo.add(element1.getElementsByClass("product-card__preview").select("a").select("img").attr("src"));
+                            Elements photos = element1.getElementsByClass("product-card__preview");
+
+                            for (Element ph : photos) {
+                                photo.add(ph.getElementsByClass("image-catalog").attr("src"));
+                            }
+
                             links.add(element1.getElementsByClass("product-card__preview").select("a").attr("href"));
                         }
 
@@ -189,18 +194,20 @@ public class ShopPage extends AppCompatActivity {
 
                 }
 
+
+
                 String s1;
                 String s2;
-                for (int i = 0; i < 8; i++) {
-                   // if (old_price.get(i).lastIndexOf(" ") == old_price.get(i).indexOf(" ")) {
-                        //s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ")) + "₴";
-                        //s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ")) + "₴";
-                        itemList.add(new Item(i + 9, name.get(i), "s1", "s2", "photo.get(i)", "links.get(i)"));
-                  //  } else {
-                      //  s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ", 3)) + "₴";
-                      //  s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ", 3)) + "₴";
-                      //  itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i)));
-                   // }
+                for (int i = 0; i < name.size(); i++) {
+                    if (old_price.get(i).lastIndexOf(" ") == old_price.get(i).indexOf(" ")) {
+                        s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ")) + "₴";
+                        s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ")) + "₴";
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i)));
+                    } else {
+                        s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ", 3)) + "₴";
+                        s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ", 3)) + "₴";
+                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i)));
+                    }
                 }
 
 
