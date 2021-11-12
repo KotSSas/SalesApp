@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +22,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.util.Pair;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.view.animation.AccelerateInterpolator;
@@ -28,6 +31,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
     TextView about_us, coming_soon_scene;
+
+    ImageView ico;
 
     FloatingActionButton fb0,fb1,fb2,fb3,fb4,fb5;
     boolean connected = false;
@@ -341,7 +347,14 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     private void openAboutActivity() {
-        startActivity(new Intent(this, AboutUsActivity.class));
+        ico = findViewById(R.id.ico_image);
+        Intent intent = new Intent(this, AboutUsActivity.class);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
+                new Pair<View, String>(ico, "icoImage")
+        );
+
+        startActivity(intent, options.toBundle());
     }
     private void openMatchingActivity() {
         startActivity(new Intent(this, Matching.class));
