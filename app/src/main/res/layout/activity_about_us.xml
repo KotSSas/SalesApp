@@ -91,7 +91,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="250dp"
             android:fitsSystemWindows="true"
             android:theme="@style/CardView.Light">
 
@@ -108,7 +108,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center|end"
-                    android:scaleType="centerCrop"
                     android:src="@drawable/ab_pr" />
 
                 <androidx.appcompat.widget.Toolbar
@@ -146,11 +145,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="10dp"
                     android:fontFamily="@font/montserrat_bold"
                     android:text="Sector Java"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textColor="@color/text"
+                    android:textSize="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/photo1"
                     app:layout_constraintStart_toEndOf="@+id/photo1"
                     app:layout_constraintTop_toTopOf="@+id/photo1" />
