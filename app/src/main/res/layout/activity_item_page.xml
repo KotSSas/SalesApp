@@ -95,7 +95,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/linearLayout3"
-        android:layout_width="wrap_content"
+        android:layout_width="272dp"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         app:cardCornerRadius="25dp"
@@ -167,7 +167,7 @@
 
                     <TextView
                         android:id="@+id/price_item1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_bold"
                         android:text="TextView"
