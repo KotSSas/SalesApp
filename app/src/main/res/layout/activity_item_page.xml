@@ -119,7 +119,7 @@
 
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/ic_urb" />
+                app:srcCompat="@drawable/ic_load" />
 
 
 
