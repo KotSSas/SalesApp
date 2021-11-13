@@ -66,30 +66,6 @@ public class AboutUsActivity extends AppCompatActivity {
 
     }
 
-    public void openWindow(View v){
-
-        Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            v1.vibrate(VibrationEffect.createOneShot(100, 1));
-        }
-        v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
-
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.window, null);
-
-        // create the popup window
-        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
-        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
-        boolean focusable = true; // lets taps outside the popup also dismiss it
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-
-        // show the popup window
-        // which view you pass in doesn't matter, it is only used for the window tolken
-        popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
-
-    }
-
 
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
