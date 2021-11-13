@@ -357,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
                 .setRank(2)
                 .setLongLabel("About us page")
                 .setShortLabel("This is an about us page")
-                .setIcon(Icon.createWithResource(this, R.drawable.cart))
+                .setIcon(Icon.createWithResource(this, R.drawable.in))
                 .build();
 
 
@@ -367,7 +367,7 @@ public class MainActivity extends AppCompatActivity {
                 .setRank(3)
                 .setLongLabel("Main page")
                 .setShortLabel("This is main page")
-                .setIcon(Icon.createWithResource(this, R.drawable.ic_atb))
+                .setIcon(Icon.createWithResource(this, R.drawable.home))
                 .build();
 
         sM.setDynamicShortcuts(Arrays.asList(shortcut1,shortcut2));
