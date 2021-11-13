@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean clicked = false;
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @SuppressLint("WrongThread")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -337,6 +338,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     private void createShorcut() {
         ShortcutManager sM = getSystemService(ShortcutManager.class);
 
@@ -362,35 +364,27 @@ public class MainActivity extends AppCompatActivity {
         ShortcutInfo shortcut2 = new ShortcutInfo.Builder(this, "shortcut2")
                 .setIntent(intent2)
                 .setShortLabel("Main")
-                .setRank(1)
+                .setRank(3)
                 .setLongLabel("Main page")
                 .setShortLabel("This is main page")
                 .setIcon(Icon.createWithResource(this, R.drawable.ic_atb))
                 .build();
-        ShortcutInfo shortcut3 = new ShortcutInfo.Builder(this, "shortcut3")
-                .setIntent(intent3)
-                .setShortLabel("Compare page")
-                .setLongLabel("Compare page")
-                .setRank(3)
-                .setShortLabel("This is compare page")
-                .setIcon(Icon.createWithResource(this, R.drawable.ic_cart_ico))
-                .build();
 
-        sM.setDynamicShortcuts(Arrays.asList(shortcut1,shortcut2,shortcut3));
+        sM.setDynamicShortcuts(Arrays.asList(shortcut1,shortcut2));
 
     }
-    private void showCustomDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Please connect to the Internet ")
-                .setCancelable(false)
-                .setPositiveButton("Connect", (dialogInterface, i) -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
-                .setNegativeButton("Exit", (dialogInterface, i) -> {
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                    finish();
-                })
-                .show()
-        ;
-    }
+//    private void showCustomDialog() {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setMessage("Please connect to the Internet ")
+//                .setCancelable(false)
+//                .setPositiveButton("Connect", (dialogInterface, i) -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
+//                .setNegativeButton("Exit", (dialogInterface, i) -> {
+//                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                    finish();
+//                })
+//                .show()
+//        ;
+//    }
 
     public void exitApp(View view) {
         finish();
