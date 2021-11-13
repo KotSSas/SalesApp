@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -66,6 +67,29 @@ public class AboutUsActivity extends AppCompatActivity {
 
     }
 
+    public void openGit(View v){
+        Vibrator v1 = (Vibrator) AboutUsActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            v1.vibrate(VibrationEffect.createOneShot(100, 1));
+        }
+
+        v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
+
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));
+        startActivity(browserIntent);
+    }
+
+    public void openTt(View v){
+        Vibrator v1 = (Vibrator) AboutUsActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            v1.vibrate(VibrationEffect.createOneShot(100, 1));
+        }
+
+        v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
+
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rt.pornhub.com/"));
+        startActivity(browserIntent);
+    }
 
     private void openMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);

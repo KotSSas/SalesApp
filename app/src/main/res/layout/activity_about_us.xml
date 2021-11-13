@@ -301,18 +301,40 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
                 <TextView
                     android:id="@+id/textView11.2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
                     android:layout_marginTop="15dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/description3.3"
                     android:textColor="@color/text"
                     android:textSize="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView11.1" />
+
+                <ImageView
+                    android:id="@+id/ico1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/git"
+                    android:clickable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11.2" />
+
+                <ImageView
+                    android:id="@+id/ico2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/tt"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@+id/ico1"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11.2" />
 
 
 
