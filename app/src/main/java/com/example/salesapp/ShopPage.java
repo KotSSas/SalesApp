@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salesapp.adapter.ItemAdapter;
 import com.example.salesapp.model.Item;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -39,7 +40,6 @@ public class ShopPage extends AppCompatActivity {
 
     TextView title;
     TextView main_scene, about_us, coming_soon_scene;
-
     List<String> name;
     List<String> old_price;
     List<String> new_price;
@@ -65,6 +65,7 @@ public class ShopPage extends AppCompatActivity {
         itemList.clear();
 
         main_scene = findViewById(R.id.main_scene);
+
 
         main_scene.setOnClickListener(v -> {
             Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
