@@ -714,9 +714,10 @@ public class ShopPage extends AppCompatActivity {
                     for (Element element : pr) {
                         s1 = element.getElementsByClass("item__price-old").text();
                         s2 = element.getElementsByClass("item__price").text();
-                        old_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
-                        new_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
-
+//                        old_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
+//                        new_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
+                        old_price.add(s1);
+                        new_price.add(s2);
                         //System.out.println(element.getElementsByClass("item__price").text());
                     }
                     for (Element element : img) {
