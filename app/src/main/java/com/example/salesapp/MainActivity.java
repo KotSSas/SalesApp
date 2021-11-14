@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -60,14 +61,17 @@ public class MainActivity extends AppCompatActivity {
     static List<Category> categoryList = new ArrayList<>();
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
-    TextView about_us, coming_soon_scene;
+    TextView about_us, coming_soon_scene,main_scene;
 
     ImageView ico;
 
-    FloatingActionButton fb0,fb1,fb2,fb3,fb4,fb5;
+    FloatingActionButton fb0,fb1,fb2,fb3,fb4,fb5,langButton;
     boolean connected = false;
     private boolean clicked = false;
 
+    boolean lang_selected = true;
+    Context context;
+    Resources resources;
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @SuppressLint("WrongThread")
@@ -89,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
             fb3= findViewById(R.id.thirdButn);
             fb4= findViewById(R.id.fourthButn);
             fb5= findViewById(R.id.fifthButn);
+            langButton = findViewById(R.id.langFButton);
+            about_us = findViewById(R.id.about_us);
             fb0.setOnClickListener(view -> {
                 onAddButtonClicked();
             });
@@ -134,7 +140,6 @@ public class MainActivity extends AppCompatActivity {
                     fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                 }
             });
-
             fb3.setOnClickListener(new View.OnClickListener() {
                 @SuppressLint("ResourceAsColor")
                 @Override
@@ -193,6 +198,50 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
+
+
+            langButton.setOnClickListener(view -> {
+                final String[] langs = {"Russian", "Ukrainian"};
+                int c_item;
+                if (lang_selected) {
+                    c_item = 0;
+                } else {
+                    c_item = 1;
+                }
+                main_scene = findViewById(R.id.main_scene);
+                coming_soon_scene = findViewById(R.id.coming_soon_scene);
+                final AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle("Select language")
+                        .setSingleChoiceItems(langs, c_item, (dialogInterface, i) -> {
+                            about_us.setText(langs[i]);
+                            main_scene.setText(langs[i]);
+                            if (langs[i].equals("Ukrainian")){
+                                context = LocalHelper.setLocale(MainActivity.this,"uk");
+                                resources = context.getResources();
+
+                                about_us.setText(resources.getString(R.string.about_us));
+                                main_scene.setText(resources.getString(R.string.main_scene));
+                                coming_soon_scene.setText(resources.getString(R.string.coming_soon));
+                            }else if(langs[i].equals("Russian")){
+                                context = LocalHelper.setLocale(MainActivity.this,"rus");
+                                resources = context.getResources();
+                                about_us.setText(resources.getString(R.string.about_us));
+                                main_scene.setText(resources.getString(R.string.main_scene));
+                                coming_soon_scene.setText(resources.getString(R.string.coming_soon));
+                            }
+
+
+                        }).setPositiveButton("Ok", (dialogInterface, i) -> {
+                    dialogInterface.dismiss();
+                });
+                dialog.create().show();
+
+            });
+
+
+
+
+
 //        setCategotyRecycler(categoryList);
 //        setShopRecycler(shopList);
 
@@ -234,7 +283,6 @@ public class MainActivity extends AppCompatActivity {
 //        }
             setShopRecycler(shopList);
 
-            about_us = findViewById(R.id.about_us);
             about_us.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
                 @Override

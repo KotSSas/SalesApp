@@ -146,6 +146,18 @@
         app:srcCompat="@drawable/ic_gr" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/langFButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="264dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/name_of_app"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/translation" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/firstButn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

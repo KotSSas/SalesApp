@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">SalesApp</string>
+    <string name="sales_icon">Sales</string>
+    <string name="about_us">Про наш продукт</string>
+    <string name="coming_soon">Порівняння</string>
+    <string name="coming_soon_h1">Порівняння</string>
+    <string name="coming_soon_text">This page\'ll be working soon!</string>
+    <string name="main_scene">Головна</string>
+    <string name="h1">Sales</string>
+    <string name="h2">App</string>
+    <string name="shop_cat">Магазин:</string>
+    <string name="shop_work">Час роботи:</string>
+    <string name="shop_site">Офіційний сайт</string>
+    <string name="h2.1">Про</string>
+    <string name="h2.2">Hac</string>
+    <string name="item_price1">Ціна до знижки:</string>
+    <string name="item_price2">Ціна зі знижкою:</string>
+    <string name="cart_h1">Cart</string>
+    <string name="cart_h2">Page</string>
+
+    <string name="clothes_f">Одяг</string>
+    <string name="tech_f">Техніка</string>
+    <string name="all_f">Все</string>
+    <string name="sport_f">Спорт</string>
+    <string name="products_f">Продукти</string>
+
+    <string name="wait">Очікуйте, шукаємо для вас знижки :0</string>
+    <string name="language">Ukrainian</string>
+
+    <string name="cart_price">Тільки зараз:</string>
+    <string name="cart_items_list">Товари з даного переліку були додані до очікуваних</string>
+    <string name="shop_cat1">Товари в корзині</string>
+    <string name="error">Відсутнє підключення до мережі!</string>
+    <string name="main_text">Магазини з нашого додатку</string>
+    <string name="main_text2">Фільтр</string>
+    <string name="description">
+        Ми команда розробників Sector Java. Якщо ви зацікавились дізнатись про нас більш детально тоді ми починаємо!</string>
+    <string name="description2.2">
+        Додаток Sales App зроблен для пошуку актуальних акцій з переліку найвідоміших магазинів у вашому регіоні.
+</string>
+    <string name="description2.3">
+    У нашому додаку ви зможете знайти магазин з потрібним для вас товаром. Попри це ви можете відвідати сайт шуканого товару та дізнатися про нього більш делатьно.
+    </string>
+    <string name="description3.1">
+     Sector Java також наша команда робила масштабні по нашим критеріям проєкти - Діскорд боти.</string>
+    <string name="description3.2">  «Ботинки» це помічники у вигляді адмінів серверу на платформі Діскорд. </string>
+    <string name="description3.3">
+        Вони були створені для того, аби полегшити проведення онлайн-уроків і зробити їх більш комфортними.
+    </string>
+</resources>
