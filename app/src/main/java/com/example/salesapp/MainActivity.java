@@ -100,7 +100,45 @@ public class MainActivity extends AppCompatActivity {
             });
 
             createShorcut();
+            langButton.setOnClickListener(view -> {
+                final String[] langs = {"Russian", "Ukrainian"};
+                int c_item;
+                if (lang_selected) {
+                    c_item = 0;
+                } else {
+                    c_item = 1;
+                }
+                main_scene = findViewById(R.id.main_scene);
+                coming_soon_scene = findViewById(R.id.coming_soon_scene);
+                final AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setTitle("Select language")
+                        .setSingleChoiceItems(langs, c_item, (dialogInterface, i) -> {
+                            about_us.setText(langs[i]);
+                            main_scene.setText(langs[i]);
+                            if (langs[i].equals("Ukrainian")){
+                                context = LocalHelper.setLocale(MainActivity.this,"uk");
+                                resources = context.getResources();
 
+                                about_us.setText(resources.getString(R.string.about_us));
+                                main_scene.setText(resources.getString(R.string.main_scene));
+                                coming_soon_scene.setText(resources.getString(R.string.coming_soon));
+
+                            }else if(langs[i].equals("Russian")){
+                                context = LocalHelper.setLocale(MainActivity.this,"rus");
+                                resources = context.getResources();
+                                about_us.setText(resources.getString(R.string.about_us));
+                                main_scene.setText(resources.getString(R.string.main_scene));
+                                coming_soon_scene.setText(resources.getString(R.string.coming_soon));
+
+                            }
+
+
+                        }).setPositiveButton("Ok", (dialogInterface, i) -> {
+                    dialogInterface.dismiss();
+                });
+                dialog.create().show();
+
+            });
             fb1.setOnClickListener(new View.OnClickListener() {
                 @SuppressLint("ResourceAsColor")
                 @Override
@@ -170,6 +208,9 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.products_f, Toast.LENGTH_SHORT).show();
+
+
+
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
@@ -200,43 +241,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            langButton.setOnClickListener(view -> {
-                final String[] langs = {"Russian", "Ukrainian"};
-                int c_item;
-                if (lang_selected) {
-                    c_item = 0;
-                } else {
-                    c_item = 1;
-                }
-                main_scene = findViewById(R.id.main_scene);
-                coming_soon_scene = findViewById(R.id.coming_soon_scene);
-                final AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog.setTitle("Select language")
-                        .setSingleChoiceItems(langs, c_item, (dialogInterface, i) -> {
-                            about_us.setText(langs[i]);
-                            main_scene.setText(langs[i]);
-                            if (langs[i].equals("Ukrainian")){
-                                context = LocalHelper.setLocale(MainActivity.this,"uk");
-                                resources = context.getResources();
 
-                                about_us.setText(resources.getString(R.string.about_us));
-                                main_scene.setText(resources.getString(R.string.main_scene));
-                                coming_soon_scene.setText(resources.getString(R.string.coming_soon));
-                            }else if(langs[i].equals("Russian")){
-                                context = LocalHelper.setLocale(MainActivity.this,"rus");
-                                resources = context.getResources();
-                                about_us.setText(resources.getString(R.string.about_us));
-                                main_scene.setText(resources.getString(R.string.main_scene));
-                                coming_soon_scene.setText(resources.getString(R.string.coming_soon));
-                            }
-
-
-                        }).setPositiveButton("Ok", (dialogInterface, i) -> {
-                    dialogInterface.dismiss();
-                });
-                dialog.create().show();
-
-            });
 
 
 
