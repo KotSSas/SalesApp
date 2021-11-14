@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         v1.vibrate(VibrationEffect.createOneShot(100, 1));
                     }
 
-                    Toast.makeText( MainActivity.this,"Продукты", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( MainActivity.this,R.string.products_f, Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                         v1.vibrate(VibrationEffect.createOneShot(100, 1));
                     }
 
-                    Toast.makeText( MainActivity.this,"Спорт", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( MainActivity.this,R.string.sport_f, Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
