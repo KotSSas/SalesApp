@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                         v1.vibrate(VibrationEffect.createOneShot(100, 1));
                     }
 
-                    Toast.makeText( MainActivity.this,"Всё", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( MainActivity.this,R.string.all_f, Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196, 188, 248)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                         v1.vibrate(VibrationEffect.createOneShot(100, 1));
                     }
 
-                    Toast.makeText( MainActivity.this,"Техника", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( MainActivity.this,R.string.tech_f, Toast.LENGTH_SHORT).show();
 //                   fb2.setColorFilter(Color.YELLOW);
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                         v1.vibrate(VibrationEffect.createOneShot(100, 1));
                     }
 
-                    Toast.makeText( MainActivity.this,"Одежда", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( MainActivity.this,R.string.clothes_f, Toast.LENGTH_SHORT).show();
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));

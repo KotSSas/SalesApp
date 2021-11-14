@@ -13,9 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SalesApp">
-        <activity
-            android:name=".Contacts"
-            android:exported="false" />
+
         <activity
             android:name=".Matching"
             android:exported="false" />
