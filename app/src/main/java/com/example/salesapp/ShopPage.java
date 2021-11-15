@@ -779,14 +779,18 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                itemList.add(new Item(96, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), "https://www.sportmaster.ua" + links.get(0)));
-                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), "https://www.sportmaster.ua" + links.get(1)));
-                itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), "https://www.sportmaster.ua" + links.get(2)));
-                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), "https://www.sportmaster.ua" + links.get(3)));
-                itemList.add(new Item(100, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), "https://www.sportmaster.ua" + links.get(4)));
-                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), "https://www.sportmaster.ua" + links.get(5)));
-                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), "https://www.sportmaster.ua" + links.get(6)));
-                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), "https://www.sportmaster.ua" + links.get(7)));
+                for (int i = 0; i < name.size(); i++) {
+                    itemList.add(new Item(96, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), "https://www.sportmaster.ua" + links.get(i)));
+
+                }
+
+//                itemList.add(new Item(97, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), "https://www.sportmaster.ua" + links.get(1)));
+//                itemList.add(new Item(98, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), "https://www.sportmaster.ua" + links.get(2)));
+//                itemList.add(new Item(99, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), "https://www.sportmaster.ua" + links.get(3)));
+//                itemList.add(new Item(100, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), "https://www.sportmaster.ua" + links.get(4)));
+//                itemList.add(new Item(101, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), "https://www.sportmaster.ua" + links.get(5)));
+//                itemList.add(new Item(102, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), "https://www.sportmaster.ua" + links.get(6)));
+//                itemList.add(new Item(103, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), "https://www.sportmaster.ua" + links.get(7)));
 
                 setItemRecycler(itemList);
 
