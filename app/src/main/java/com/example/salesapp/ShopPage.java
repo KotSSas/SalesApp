@@ -308,7 +308,6 @@ public class ShopPage extends AppCompatActivity {
                     }
                 }
                 for (int i = 0; i < 30; i++) {
-
                     itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                 }
 //                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
@@ -793,6 +792,55 @@ public class ShopPage extends AppCompatActivity {
 
                 setItemRecycler(itemList);
 
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if (title.getText().equals("Ashan")) {
+            try {
+                Document document =  Jsoup.connect("https://auchan.zakaz.ua/ru/ ").get();
+                name = new ArrayList<>();
+                old_price = new ArrayList<>();
+                new_price = new ArrayList<>();
+                photo = new ArrayList<>();
+                links = new ArrayList<>();
+
+
+
+                Elements elementsByClass = document.getElementsByClass("jsx-490943314 Slider__viewport");
+                for (Element byClass : elementsByClass) {
+                    Elements a = byClass.select("a");
+                    for (Element element : a) {
+                        links.add(element.attr("href"));
+                        Elements elementsByClass1 = element.getElementsByClass("jsx-2958303393 ProductTile__prices");
+                        for (Element element1 : elementsByClass1) {
+                            old_price.add(element1.getElementsByClass("jsx-3642073353 Price__value_body Price__value_minor").text());
+                            new_price.add(element1.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text());
+                        }
+                    }
+
+                    for (Element element : a) {
+                        Elements elementsByClass1 = element.getElementsByClass("jsx-2958303393 ProductTile__imageContainer");
+                        for (Element element1 : elementsByClass1) {
+                            Elements img = element1.select("img");
+                            for (Element element2 : img) {
+                                photo.add(element2.attr("src"));
+                                name.add(element2.attr("alt"));
+                            }
+                        }
+
+                    }
+                }
+
+                itemList.add(new Item(34, name.get(1),old_price.get(1), new_price.get(1), photo.get(1), links.get(2)));
+                itemList.add(new Item(35, name.get(2),old_price.get(2), new_price.get(2), photo.get(2), links.get(3)));
+                itemList.add(new Item(36, name.get(3),old_price.get(3), new_price.get(3), photo.get(3), links.get(4)));
+                itemList.add(new Item(37, name.get(4),old_price.get(4), new_price.get(4), photo.get(4), links.get(5)));
+                itemList.add(new Item(38, name.get(5),old_price.get(5), new_price.get(5), photo.get(5), links.get(6)));
+                itemList.add(new Item(39, name.get(6),old_price.get(6), new_price.get(6), photo.get(6), links.get(7)));
+                itemList.add(new Item(40, name.get(7),old_price.get(7), new_price.get(7), photo.get(7), links.get(8)));
+
+                setItemRecycler(itemList);
 
             } catch (IOException e) {
                 e.printStackTrace();
