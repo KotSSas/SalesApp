@@ -815,6 +815,7 @@ public class ShopPage extends AppCompatActivity {
                         links.add(element.select("a").attr("href"));
                         photo.add(element.getElementsByClass("ProductTile__image").attr("src"));
                         Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__oldPrice");
+
                     }
 
                 }
