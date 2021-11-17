@@ -307,8 +307,11 @@ public class ShopPage extends AppCompatActivity {
                         }
                     }
                 }
-                for (int i = 0; i < 30; i++) {
-                    itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                for (int i = 0; i <= name.size()-1; i++) {
+                    if (i<=name.size()){
+                        itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+
+                    }
                 }
 //                itemList.add(new Item(26, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
 //                itemList.add(new Item(27, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
@@ -573,7 +576,7 @@ public class ShopPage extends AppCompatActivity {
 
                // itemList.add(new Item(64, "name.get(0)", "old_price.get(0)", "new_price.get(0)", "jj", "jj"));
                 for (int i = 0; i < name.size(); i++) {
-                    itemList.add(new Item(64, name.get(i), "old_price.get(i)", "new_price.get(i)", photo.get(i), links.get(i)));
+                    itemList.add(new Item(64, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                    }
                 }
 //                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
