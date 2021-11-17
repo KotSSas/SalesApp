@@ -814,13 +814,18 @@ public class ShopPage extends AppCompatActivity {
                         name.add(element.select("a").attr("title"));
                         links.add(element.select("a").attr("href"));
                         photo.add(element.getElementsByClass("ProductTile__image").attr("src"));
-                        Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__oldPrice");
+                        Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__prices");
+
+                        for (Element pr_l : pr) {
+                            old_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_body Price__value_minor").text());
+                            new_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text());
+                        }
 
                     }
 
                 }
-                itemList.add(new Item(33, name.get(0), old_price.get(0), "df", photo.get(0), links.get(0)));
                 for (int i = 0; i <= name.size()-1; i++) {
+                    itemList.add(new Item(33, name.get(i), old_price.get(i)+ " ₴", new_price.get(i)+ " ₴", photo.get(i), links.get(i)));
 
                 }
                 setItemRecycler(itemList);
