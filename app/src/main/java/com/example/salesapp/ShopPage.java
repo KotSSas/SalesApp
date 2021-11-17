@@ -825,7 +825,7 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if (title.getText().equals("Yusk")){
+        }else if (title.getText().equals("Jysk")){
             try {
                 Document document =  Jsoup.connect("https://jysk.ua/campaigns#meta=solr&start=0&sort=fts_field_product_rating%2Bdesc").get();
                 name = new ArrayList<>();
