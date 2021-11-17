@@ -798,7 +798,7 @@ public class ShopPage extends AppCompatActivity {
             }
         }else if (title.getText().equals("Ashan")) {
             try {
-                Document document =  Jsoup.connect("https://auchan.zakaz.ua/ru/ ").get();
+                Document document =  Jsoup.connect("https://auchan.zakaz.ua/ru/promotions/").get();
                 name = new ArrayList<>();
                 old_price = new ArrayList<>();
                 new_price = new ArrayList<>();
@@ -807,7 +807,7 @@ public class ShopPage extends AppCompatActivity {
 
 
 
-                Elements elementsByClass = document.getElementsByClass("jsx-490943314 Slider__viewport");
+                Elements elementsByClass = document.getElementsByClass("jsx-33926795 ProductsBox");
                 for (Element byClass : elementsByClass) {
                     Elements a = byClass.select("a");
                     for (Element element : a) {
@@ -831,6 +831,7 @@ public class ShopPage extends AppCompatActivity {
 
                     }
                 }
+
 
                 itemList.add(new Item(34, name.get(1),old_price.get(1), new_price.get(1), photo.get(1), links.get(2)));
                 itemList.add(new Item(35, name.get(2),old_price.get(2), new_price.get(2), photo.get(2), links.get(3)));
