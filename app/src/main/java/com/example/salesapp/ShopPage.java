@@ -534,42 +534,48 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (title.getText().equals("ATB")) {
+        }
+        else if (title.getText().equals("ATB")) {
             try {
-                Document doc = Jsoup.connect("https://www.atbmarket.com/ru/promo/akciya-ekonomiya").ignoreHttpErrors(true).timeout(5000).get();
+                Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").ignoreHttpErrors(true).timeout(5000).get();
                 List<String> name = new ArrayList<>();
                 List<String> old_price = new ArrayList<>();
                 List<String> new_price = new ArrayList<>();
                 List<String> photo = new ArrayList<>();
                 links = new ArrayList<>();
 
-                Elements elementsByClass = doc.getElementsByClass("shop-list-wrap");
-                for (Element byClass : elementsByClass) {
-                    Elements card__name = byClass.getElementsByClass("one-action-descr-left");
-                    Elements card__pr = byClass.getElementsByClass("one-action-price");
-                    Elements card__head = byClass.getElementsByClass("one-action-thumb");
+                Elements elementsByClass1 = doc.getElementsByClass("catalog-list");
+                for (Element e : elementsByClass1) {
+                    Elements elementsByClass = e.getElementsByClass("  catalog-item js-product-container   ");
+                    for (Element byClass : elementsByClass) {
+                        Elements card__body = byClass.getElementsByClass("catalog-item__info");
+                        Elements card__pr = byClass.getElementsByClass("catalog-item__bottom");
+                        Elements card__head = byClass.getElementsByClass("catalog-item__photo");
 
-                    for (Element element : card__head) {
-                        photo.add("https://www.atbmarket.com" + element.select("img").attr("src"));
-                      //  links.add("https://zakaz.atbmarket.com" + element.select("a").attr("href"));
-                    }
+                        for (Element element : card__head) {
+                            photo.add(element.getElementsByClass("catalog-item__img").attr("src"));
+                            links.add("https://zakaz.atbmarket.com" + element.select("a").attr("href"));
+                        }
+                        for (Element element : card__body) {
+                            name.add(element.getElementsByClass("blue-link").text());
+                        }
+                        String s0;
+                        String s1;
+                        String s2;
+                        String s3;
+                        for (Element element : card__pr) {
+                            s0 = element.getElementsByClass("product-price__top").attr("value");
+                            s1 = element.getElementsByClass("product-price__bottom").attr("value");
 
-                    for (Element tit : card__name) {
-                        name.add(tit.getElementsByClass("one-action-tit").text());
-                    }
-                    String s0;
-                    String s1;
-                    for (Element element : card__pr) {
-                        s0 = element.getElementsByClass("one-action-price-now").text();
-                        s1 = element.getElementsByClass("one-action-was-price").select("span").text();
-
-                        new_price.add(s0 + " ₴");
-                        old_price.add(s1 + " ₴");
-                    }
+                            new_price.add(s0 + " ₴");
+                            old_price.add(s1 + " ₴");
+                        }
                 }
 
-                itemList.add(new Item(64, "name.get(0)", "old_price.get(0)", "new_price.get(0)", "jj", "jj"));
+               // itemList.add(new Item(64, "name.get(0)", "old_price.get(0)", "new_price.get(0)", "jj", "jj"));
                 for (int i = 0; i < name.size(); i++) {
+                    itemList.add(new Item(64, name.get(i), "old_price.get(i)", "new_price.get(i)", photo.get(i), links.get(i)));
+                   }
                 }
 //                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
 //                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
