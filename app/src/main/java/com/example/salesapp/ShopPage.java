@@ -368,7 +368,7 @@ public class ShopPage extends AppCompatActivity {
                 }
 
                 for (int i = 0; i < name.size(); i++) {
-                    itemList.add(new Item(41, name.get(i), "Товар без скидки!", new_price.get(i), photo.get(i), links.get(i)));
+                    itemList.add(new Item(41, name.get(i), new_price.get(i) , "Товар без скидки!", photo.get(i), links.get(i)));
                 }
 //                itemList.add(new Item(33, name.get(0), new_price.get(0), "Товар без скидки!", photo.get(0), links.get(1)));
 //                itemList.add(new Item(34, name.get(1), new_price.get(1), "Товар без скидки!", photo.get(1), links.get(2)));
