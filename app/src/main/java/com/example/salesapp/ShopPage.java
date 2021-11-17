@@ -825,7 +825,7 @@ public class ShopPage extends AppCompatActivity {
 
                 }
                 for (int i = 0; i <= name.size()-1; i++) {
-                    itemList.add(new Item(33, name.get(i), old_price.get(i)+ " ₴", new_price.get(i)+ " ₴", photo.get(i), links.get(i)));
+                    itemList.add(new Item(33, name.get(i), old_price.get(i)+ " ₴", new_price.get(i)+ " ₴", photo.get(i), "https://auchan.zakaz.ua"+links.get(i)));
 
                 }
                 setItemRecycler(itemList);
