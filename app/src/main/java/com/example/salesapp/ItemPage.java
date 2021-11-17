@@ -123,7 +123,14 @@ public class ItemPage extends AppCompatActivity {
     }
 
     private void openAboutActivity() {
-        startActivity(new Intent(this, AboutUsActivity.class));
+
+        ImageView ico = findViewById(R.id.imageView3);
+        Intent intent = new Intent(this, AboutUsActivity.class);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
+                new Pair<View, String>(ico, "icoImage")
+        );
+        startActivity(intent, options.toBundle());
     }
 
     private void openMainActivity() {

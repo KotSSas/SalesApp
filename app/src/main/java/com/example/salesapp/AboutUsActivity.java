@@ -86,9 +86,9 @@ public class AboutUsActivity extends AppCompatActivity {
         }
 
         v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
-
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rt.pornhub.com/"));
-        startActivity(browserIntent);
+//
+//        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(""));
+//        startActivity(browserIntent);
     }
 
     private void openMainActivity() {

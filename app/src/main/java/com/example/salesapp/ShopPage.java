@@ -1,5 +1,7 @@
 package com.example.salesapp;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -8,6 +10,7 @@ import android.os.StrictMode;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
+import android.util.Pair;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -820,7 +823,14 @@ public class ShopPage extends AppCompatActivity {
     }
 
     private void openAboutActivity() {
-        startActivity(new Intent(this, AboutUsActivity.class));
+        ImageView ico = findViewById(R.id.imageView3);
+        Intent intent = new Intent(this, AboutUsActivity.class);
+
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
+                new Pair<View, String>(ico, "icoImage")
+        );
+
+        startActivity(intent, options.toBundle());
     }
 
     private void openMatchingActivity() {

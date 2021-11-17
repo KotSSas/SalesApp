@@ -322,7 +322,7 @@
                     android:id="@+id/ico1"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginStart="124dp"
+                    android:layout_marginTop="15dp"
                     android:clickable="true"
                     android:onClick="openGit"
                     android:src="@drawable/git"
@@ -334,11 +334,12 @@
                     android:id="@+id/ico2"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginEnd="164dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
                     android:clickable="true"
                     android:onClick="openTt"
                     android:src="@drawable/tt"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ico1"
                     app:layout_constraintTop_toBottomOf="@+id/textView11.2"
                     tools:ignore="SpeakableTextPresentCheck" />
 
