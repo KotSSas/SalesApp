@@ -833,7 +833,43 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else if (title.getText().equals("Yusk")){
+            try {
+                Document document =  Jsoup.connect("https://jysk.ua/campaigns#meta=solr&start=0&sort=fts_field_product_rating%2Bdesc").get();
+                name = new ArrayList<>();
+                old_price = new ArrayList<>();
+                new_price = new ArrayList<>();
+                photo = new ArrayList<>();
+                links = new ArrayList<>();
+
+
+
+                Elements elementsByClass = document.getElementsByClass("products");
+
+                for (Element byClass : elementsByClass) {
+                    Elements article = byClass.select("article");
+                    for (Element element : article) {
+                        name.add(element.select("img").attr("alt"));
+                        photo.add(element.select("img").attr("src"));
+                        links.add("https://jysk.ua"+element.select("a").attr("href"));
+                        old_price.add(element.getElementsByClass("product-price-support price-before beforeprice").text());
+                        new_price.add(element.getElementsByClass("product-price-value").text());
+                    }
+
+                }
+
+                for (int i = 0; i <= name.size()-1; i++) {
+                    itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                }
+                setItemRecycler(itemList);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
+
+
         fullItemList.clear();
         fullItemList.addAll(itemList);
     }
