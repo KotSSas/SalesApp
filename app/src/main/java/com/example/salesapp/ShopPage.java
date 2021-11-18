@@ -858,47 +858,6 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if (title.getText().equals("Watsons")){
-            try {
-                Document document =  Jsoup.connect("https://www.watsons.ua/ru/aktsii-/mega-ekonomiya/c/sub2").get();
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
-                links = new ArrayList<>();
-
-
-                Elements elementsByClass = document.getElementsByClass("product-tile-container js-product-tile-container");
-                for (Element byClass : elementsByClass) {
-                    Elements elementsByClass1 =
-                            byClass.getElementsByClass("product-tile__price-wrapper");
-                    for (Element element : elementsByClass1) {
-                        old_price.add(element.getElementsByClass("product-tile__price product-tile__price--old js-variant-old-price ").text());
-                        new_price.add(element.getElementsByClass("product-tile__price product-tile__price--discounted js-variant-price").text());
-                    }
-
-                    Elements a = byClass.select("a");
-                    for (Element element : a) {
-                        links.add("https://www.watsons.ua"+element.attr("href"));
-                        Elements img = element.select("img");
-                        for (Element element1 : img) {
-                            name.add(element1.attr("title"));
-                            //System.out.println(element1);
-                            photo.add("https://www.watsons.ua"+element1.attr("src")); //там короче херня в том что оно ставиться через раз причем ровно
-
-                        }
-                    }
-                }
-                for (int i = 0; i < name.size(); i++) {
-//                    if (!(i%2==0)){
-                        itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
-//                    }
-                }
-                setItemRecycler(itemList);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
 
 
