@@ -528,7 +528,7 @@ public class ShopPage extends AppCompatActivity {
         }
         else if (title.getText().equals("ATB")) {
             try {
-                Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").ignoreHttpErrors(true).timeout(5000).get();
+                Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").get();
                 List<String> name = new ArrayList<>();
                 List<String> old_price = new ArrayList<>();
                 List<String> new_price = new ArrayList<>();
@@ -545,7 +545,7 @@ public class ShopPage extends AppCompatActivity {
 
                         for (Element element : card__head) {
                             photo.add(element.getElementsByClass("catalog-item__img").attr("src"));
-                            links.add("https://zakaz.atbmarket.com" + element.select("a").attr("href"));
+                            links.add("https://zakaz.atbmarket.com" + element.getElementsByClass("catalog-item__photo-link").attr("href"));
                         }
                         for (Element element : card__body) {
                             name.add(element.getElementsByClass("blue-link").text());
@@ -564,9 +564,9 @@ public class ShopPage extends AppCompatActivity {
                 }
 
                // itemList.add(new Item(64, "name.get(0)", "old_price.get(0)", "new_price.get(0)", "jj", "jj"));
-                for (int i = 0; i < name.size(); i++) {
-                    itemList.add(new Item(64, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
-                   }
+                    for (int i = 0; i < name.size(); i++) {
+                        itemList.add(new Item(64, name.get(i), old_price.get(i), new_price.get(i), photo.get(i),links.get(i)));
+                    }
                 }
 //                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
 //                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
