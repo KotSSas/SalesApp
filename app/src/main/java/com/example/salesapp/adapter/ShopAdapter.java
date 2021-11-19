@@ -24,10 +24,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salesapp.ErrorPage;
-import com.example.salesapp.ItemPage;
+
+import com.example.salesapp.LoadingDialog;
+import com.example.salesapp.MainActivity;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
-import com.example.salesapp.SplashPage;
+
 import com.example.salesapp.model.Shop;
 
 import java.util.List;
@@ -52,21 +54,22 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     @Override
     public void onBindViewHolder(@NonNull ShopAdapter.ShopViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-            int img_id = context.getResources().getIdentifier("ic_" + shops.get(position).getImg(), "drawable", context.getPackageName());
-            holder.img.setImageResource(img_id);
+        int img_id = context.getResources().getIdentifier("ic_" + shops.get(position).getImg(), "drawable", context.getPackageName());
+        holder.img.setImageResource(img_id);
 
 
-
-
-            holder.title.setText(shops.get(position).getTitle());
-            holder.time_work.setText(shops.get(position).getWork_time());
-            holder.cat.setText(shops.get(position).getCategory());
-            holder.site.setText(shops.get(position).getSite());
+        holder.title.setText(shops.get(position).getTitle());
+        holder.time_work.setText(shops.get(position).getWork_time());
+        holder.cat.setText(shops.get(position).getCategory());
+        holder.site.setText(shops.get(position).getSite());
 
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if (wifi!=null && wifi.isConnected()||(mob!=null && mob.isConnected())){
+
+
+        LoadingDialog dialog = new LoadingDialog((Activity) context);
+        if (wifi != null && wifi.isConnected() || (mob != null && mob.isConnected())) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -76,6 +79,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                         v1.vibrate(VibrationEffect.createOneShot(100, 1));
                     }
+
+
                     Intent intent = new Intent(context, ShopPage.class);
 
                     ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
@@ -87,20 +92,29 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                     intent.putExtra("category", shops.get(position).getCategory());
 
 
+                    dialog.startLoadingDialog();
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            dialog.dismissDialog();
+                            context.startActivity(intent, options.toBundle());
 
-                   context.startActivity(intent, options.toBundle());
+                        }
+                    }, 2000);
+//                    context.startActivity(intent, options.toBundle());
                 }
             });
             System.out.println("Connected!");
             //true
-        }else{
-           holder.itemView.setOnClickListener(new View.OnClickListener() {
-                                                  @Override
-                                                  public void onClick(View v) {
-                                                      Intent intent = new Intent(context, ErrorPage.class);
-                                                      context.startActivity(intent);
-                                                  }
-                                              });
+        } else {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, ErrorPage.class);
+                    context.startActivity(intent);
+                }
+            });
             //false
 //            showCustomDialog();
 
@@ -115,7 +129,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         return shops.size();
     }
 
-    public static final class ShopViewHolder extends RecyclerView.ViewHolder{
+    public static final class ShopViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
         TextView title;
