@@ -71,6 +71,7 @@
     <string name="intro2_2_1">НАХОДИТЕ</string>
     <string name="intro2_2_2">все выгодные предложения в вашем регионе</string>
     <string name="intro2_2_3">У нас дюжина известных магазинов с популярными товарами...</string>
+    <string name="loading">Загрузка...</string>
 
 
 </resources>

@@ -63,6 +63,7 @@
     <string name="intro2_2_1">ЗНАХОДЬТЕ</string>
     <string name="intro2_2_2">"усі вигідні пропозиції у вашому регіоні "</string>
     <string name="intro2_2_3">В нашому асортименті ми маємо велику кількість магазинів з популярними товарами…</string>
+    <string name="loading">Завантаження...</string>
 
 
 </resources>

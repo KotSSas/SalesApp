@@ -3,28 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="50dp">
+    android:layout_height="250dp"
+    >
 
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="64dp"
+        android:layout_marginEnd="132dp"
+        android:src="@drawable/soon1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="62dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="124dp"
-        android:text="Loading"
+        android:layout_width="70dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="148dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="@string/loading"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+        app:layout_constraintTop_toBottomOf="@+id/gifImageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
