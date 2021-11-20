@@ -80,7 +80,7 @@ public class IntroActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             addBottomDots(position);
             if (position == layouts.length - 1) {
-                tvNext.setText("START ");
+                tvNext.setText(R.string.start);
             } else {
                 tvNext.setText("");
             }
