@@ -192,7 +192,7 @@
         app:backgroundTint="#EAEAEA"
         app:layout_constraintBottom_toTopOf="@+id/firstButn"
         app:layout_constraintEnd_toEndOf="@+id/firstButn"
-        app:srcCompat="@drawable/ic_gr2" />
+        app:srcCompat="@drawable/ic_gr_2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fifthButn"
@@ -204,7 +204,7 @@
 
         app:layout_constraintBottom_toTopOf="@+id/thirdButn"
         app:layout_constraintEnd_toEndOf="@+id/thirdButn"
-        app:srcCompat="@drawable/ic_gr4" />
+        app:srcCompat="@drawable/ic_ico_5" />
 
     <TextView
         android:id="@+id/textView6"
