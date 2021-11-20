@@ -18,6 +18,8 @@ public class LoadingDialog {
         builder.setView(inflater.inflate(R.layout.custom_dialog,null));
         builder.setCancelable(true);
         dialog = builder.create();
+
+        ///
         dialog.show();
     }
     public void dismissDialog(){
