@@ -105,7 +105,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 //                    context.startActivity(intent, options.toBundle());
                 }
             });
-            System.out.println("Connected!");
+            //System.out.println("Connected!");
             //true
         } else {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
