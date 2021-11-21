@@ -101,7 +101,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                             context.startActivity(intent, options.toBundle());
 
                         }
-                    }, 5000);
+                    }, 2000);
 //                    context.startActivity(intent, options.toBundle());
                 }
             });
