@@ -9,6 +9,7 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_baseline_restore_24.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_but1.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_hot_deal.xml" value="0.14814814814814814" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_ico_5.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_img.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2703125" />
@@ -27,16 +28,17 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.42397914856646396" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_matching.xml" value="0.25052083333333336" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_recent.xml" value="0.25416666666666665" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.536" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.264" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_splash.xml" value="0.25052083333333336" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/cart_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/category_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/custom_dialog.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_four.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_one.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_three.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_two.xml" value="0.264" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/item.xml" value="0.1" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.25025641025641027" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.536" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
