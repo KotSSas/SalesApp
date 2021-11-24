@@ -119,10 +119,10 @@ public class MainActivity extends AppCompatActivity {
                     text_head_cat2.setText("Все магазины из нашего приложения");
                     text_head_cat1.setText("Отсутствует");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196, 188, 248)));
-                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
-                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
-                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
-                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
                 }
             });
             fb2.setOnClickListener(new View.OnClickListener() {
@@ -138,13 +138,13 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast.makeText( MainActivity.this,R.string.tech_f, Toast.LENGTH_SHORT).show();
 //                   fb2.setColorFilter(Color.YELLOW);
-                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat2.setText("Отфильтрованые магазины, техника");
                     text_head_cat1.setText("\"Техника\"");
-                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
+                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
-                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
-                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
-                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
                 }
             });
             fb3.setOnClickListener(new View.OnClickListener() {
@@ -159,13 +159,13 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.clothes_f, Toast.LENGTH_SHORT).show();
-                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat2.setText("Отфильтрованые магазины, одежда");
                     text_head_cat1.setText("\"Одежда\"");
-                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
-                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
+                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
-                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
-                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));}
+                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));}
             });
             fb4.setOnClickListener(new View.OnClickListener() {
                 @SuppressLint("ResourceAsColor")
@@ -179,15 +179,15 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.products_f, Toast.LENGTH_SHORT).show();
-                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat2.setText("Отфильтрованые магазины, продуты");
                     text_head_cat1.setText("\"Продукты\"");
 
 
-                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
-                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
-                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
+                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
                     fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
-                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
+                    fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
                 }
             });
             fb5.setOnClickListener(new View.OnClickListener() {
@@ -202,12 +202,12 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.sport_f, Toast.LENGTH_SHORT).show();
-                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat2.setText("Отфильтрованые магазины, разное");
                     text_head_cat1.setText("\"Разное\"");
-                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
-                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
-                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
-                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
+                    fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
+                    fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(	232,	230,	245)));
+                    fb4.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(232,	230,	245)));
                     fb5.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
                 }
             });
