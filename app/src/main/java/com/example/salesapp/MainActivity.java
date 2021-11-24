@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     static List<Category> categoryList = new ArrayList<>();
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
-    TextView about_us, coming_soon_scene, text_head_cat;
+    TextView about_us, coming_soon_scene, text_head_cat1, text_head_cat2;
 
     ImageView ico;
 
@@ -80,7 +80,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text_head_cat = findViewById(R.id.text_head_cat);
+        text_head_cat1 = findViewById(R.id.text_head_cat);
+        text_head_cat2 = findViewById(R.id.text_head_cat2);
 
         IntroPref introPref = new IntroPref(this);
         if (introPref.isFirstTimeLaunch()) {
@@ -115,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.all_f, Toast.LENGTH_SHORT).show();
-                    text_head_cat.setText("Магазины из нашего приложения");
+                    text_head_cat2.setText("Все магазины из нашего приложения");
+                    text_head_cat1.setText("Отсутствует");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196, 188, 248)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
@@ -136,7 +138,8 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast.makeText( MainActivity.this,R.string.tech_f, Toast.LENGTH_SHORT).show();
 //                   fb2.setColorFilter(Color.YELLOW);
-                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Техника\"");
+                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat1.setText("\"Техника\"");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
@@ -156,7 +159,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.clothes_f, Toast.LENGTH_SHORT).show();
-                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Одежда\"");
+                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat1.setText("\"Одежда\"");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
@@ -175,7 +179,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.products_f, Toast.LENGTH_SHORT).show();
-                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Продукты\"");
+                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat1.setText("\"Продукты\"");
 
 
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
@@ -197,7 +202,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.sport_f, Toast.LENGTH_SHORT).show();
-                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Разное\"");
+                    text_head_cat2.setText("Фильтрованые магазины");
+                    text_head_cat1.setText("\"Разное\"");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));

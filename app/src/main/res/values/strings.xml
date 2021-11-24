@@ -27,19 +27,13 @@
     <string name="wait">Ожидайте, идет поиск скидок! ;)</string>
     <string name="language">Ukrainian</string>
 
-
-
-
-
-
-
-
     <string name="cart_price">Только сейчас:</string>
     <string name="cart_items_list">Товаровы из этого магазина добавленые в список желаемого</string>
     <string name="shop_cat1">Товаровы в корзине</string>
     <string name="error">Отсутствует подключение к сети!</string>
-    <string name="main_text">Магазины из нашего приложения</string>
-    <string name="main_text2">Фильтр</string>
+    <string name="main_text">Все магазины из нашего приложения</string>
+    <string name="main_text2">Фильтр:</string>
+    <string name="main_text3">Отсутствует</string>
     <string name="description">
         Мы команда разроботчиков Sector Java. Если вы захотели узнать про нас подробнее, присаживайтесь мы начинаем!</string>
     <string name="description2.2">

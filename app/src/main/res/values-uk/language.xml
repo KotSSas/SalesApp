@@ -35,7 +35,7 @@
     <string name="shop_cat1">Товари в корзині</string>
     <string name="error">Відсутнє підключення до мережі!</string>
     <string name="main_text">Магазини з нашого додатку</string>
-    <string name="main_text2">Фільтр</string>
+    <string name="main_text2">Фільтр:</string>
     <string name="description">
         Ми команда розробників Sector Java. Якщо ви зацікавились дізнатись про нас більш детально тоді ми починаємо!</string>
     <string name="description2.2">
@@ -65,6 +65,7 @@
     <string name="intro2_2_3">В нашому асортименті ми маємо велику кількість магазинів з популярними товарами…</string>
     <string name="loading">Завантаження...</string>
     <string name="start">"Розпочати "</string>
+    <string name="main_text3">Відсутній</string>
 
 
 </resources>
