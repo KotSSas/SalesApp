@@ -165,7 +165,7 @@
         android:layout_marginBottom="4dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:backgroundTint="#DCD8F4"
+        app:backgroundTint="#E8E6F5"
         app:layout_constraintBottom_toTopOf="@+id/firstButn"
         app:layout_constraintEnd_toEndOf="@+id/firstButn"
         app:srcCompat="@drawable/ic_gr1" />
@@ -177,7 +177,7 @@
         android:layout_marginBottom="116dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:backgroundTint="#DCD8F4"
+        app:backgroundTint="#E8E6F5"
         app:layout_constraintBottom_toTopOf="@+id/firstButn"
         app:layout_constraintEnd_toEndOf="@+id/firstButn"
         app:srcCompat="@drawable/ic_gr3" />
@@ -189,7 +189,7 @@
         android:layout_marginBottom="60dp"
         android:clickable="true"
         android:visibility="invisible"
-        app:backgroundTint="#DCD8F4"
+        app:backgroundTint="#E8E6F5"
         app:layout_constraintBottom_toTopOf="@+id/firstButn"
         app:layout_constraintEnd_toEndOf="@+id/firstButn"
         app:srcCompat="@drawable/ic_gr_2" />
@@ -200,7 +200,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:visibility="invisible"
-        app:backgroundTint="#DCD8F4"
+        app:backgroundTint="#E8E6F5"
 
         app:layout_constraintBottom_toTopOf="@+id/thirdButn"
         app:layout_constraintEnd_toEndOf="@+id/thirdButn"
