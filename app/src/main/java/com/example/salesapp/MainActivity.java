@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     static List<Category> categoryList = new ArrayList<>();
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
-    TextView about_us, coming_soon_scene,main_scene;
+    TextView about_us, coming_soon_scene, text_head_cat;
 
     ImageView ico;
 
@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        text_head_cat = findViewById(R.id.text_head_cat);
+
         IntroPref introPref = new IntroPref(this);
         if (introPref.isFirstTimeLaunch()) {
 
@@ -112,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.all_f, Toast.LENGTH_SHORT).show();
+                    text_head_cat.setText("Магазины из нашего приложения");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196, 188, 248)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(255,255,255)));
@@ -132,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Toast.makeText( MainActivity.this,R.string.tech_f, Toast.LENGTH_SHORT).show();
 //                   fb2.setColorFilter(Color.YELLOW);
+                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Техника\"");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
@@ -151,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.clothes_f, Toast.LENGTH_SHORT).show();
+                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Одежда\"");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(196,188,248)));
@@ -169,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.products_f, Toast.LENGTH_SHORT).show();
-
+                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Продукты\"");
 
 
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
@@ -191,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText( MainActivity.this,R.string.sport_f, Toast.LENGTH_SHORT).show();
+                    text_head_cat.setText("Магазины из нашего приложения" + " в категории \"Разное\"");
                     fb1.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234, 234, 234)));
                     fb2.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
                     fb3.setBackgroundTintList(ColorStateList.valueOf(Color.rgb(234,234,234)));
