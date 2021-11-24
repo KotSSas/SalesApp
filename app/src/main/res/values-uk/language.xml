@@ -24,7 +24,7 @@
     <string name="clothes_f">Одяг</string>
     <string name="tech_f">Техніка</string>
     <string name="all_f">Все</string>
-    <string name="sport_f">Спорт</string>
+    <string name="sport_f">Інше</string>
     <string name="products_f">Продукти</string>
 
     <string name="wait">Очікуйте, шукаємо для вас знижки :0</string>
@@ -34,7 +34,7 @@
     <string name="cart_items_list">Товари з даного переліку були додані до очікуваних</string>
     <string name="shop_cat1">Товари в корзині</string>
     <string name="error">Відсутнє підключення до мережі!</string>
-    <string name="main_text">Магазини з нашого додатку</string>
+    <string name="main_text">Усі магазини з нашого додатку</string>
     <string name="main_text2">Фільтр:</string>
     <string name="description">
         Ми команда розробників Sector Java. Якщо ви зацікавились дізнатись про нас більш детально тоді ми починаємо!</string>
@@ -66,6 +66,16 @@
     <string name="loading">Завантаження...</string>
     <string name="start">"Розпочати "</string>
     <string name="main_text3">Відсутній</string>
+    <string name="clothes_f2">\"Одяг\"</string>
+    <string name="tech_f2">\"Техніка\"</string>
+    <string name="all_f2">\"Все\"</string>
+    <string name="sport_f2">\"Інше\"</string>
+    <string name="products_f2">\"Продукти\"</string>
+    <string name="clothes_f3">Відфільтровані магазини, одежа</string>
+    <string name="tech_f3">Відфільтровані магазини, техніка</string>
+    <string name="all_f3">Усі магазини з нашого додатку</string>
+    <string name="sport_f3">Відфільтровані магазини, інше</string>
+    <string name="products_f3">Відфільтровані магазини, продукти</string>
 
 
 </resources>

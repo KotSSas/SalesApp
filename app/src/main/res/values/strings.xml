@@ -24,6 +24,18 @@
     <string name="sport_f">Разное</string>
     <string name="products_f">Продукты</string>
 
+    <string name="clothes_f2">\"Одежда\"</string>
+    <string name="tech_f2">\"Техника\"</string>
+    <string name="all_f2">\"Всё\"</string>
+    <string name="sport_f2">\"Разное\"</string>
+    <string name="products_f2">\"Продукты\"</string>
+
+    <string name="clothes_f3">Отфильтрованые магазины, одежда</string>
+    <string name="tech_f3">Отфильтрованые магазины, техника</string>
+    <string name="all_f3">Все магазины из нашего приложения</string>
+    <string name="sport_f3">Отфильтрованые магазины, разное</string>
+    <string name="products_f3">Отфильтрованые магазины, продуты</string>
+
     <string name="wait">Ожидайте, идет поиск скидок! ;)</string>
     <string name="language">Ukrainian</string>
 
