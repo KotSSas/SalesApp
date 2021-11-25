@@ -742,7 +742,7 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (title.getText().equals("Eva")){
+        } else if (title.getText().equals("Prostor")){
 
                 try {
                     Document document =  Jsoup.connect("https://prostor.ua/ru/supertseny/").get();
