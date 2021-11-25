@@ -117,7 +117,7 @@
                 android:id="@+id/item_page_img"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-
+                android:background="@color/white"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_load" />

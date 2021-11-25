@@ -16,6 +16,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class Matching extends AppCompatActivity {
 
     TextView main_scene, about_us;
@@ -67,7 +69,13 @@ public class Matching extends AppCompatActivity {
     }
 
     private void openMainActivity() {
-        startActivity(new Intent(this, MainActivity.class));
+        FloatingActionButton fb0 = findViewById(R.id.mainButn);
+        Intent intent = new Intent(this, MainActivity.class);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
+                new Pair<View, String>(fb0, "filterIco")
+        );
+
+        startActivity(intent, options.toBundle());
     }
 
 }

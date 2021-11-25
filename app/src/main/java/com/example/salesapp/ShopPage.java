@@ -566,8 +566,13 @@ public class ShopPage extends AppCompatActivity {
                             s0 = element.getElementsByClass("product-price__top").attr("value");
                             s1 = element.getElementsByClass("product-price__bottom").attr("value");
 
-                            new_price.add(s0 + " ₴");
-                            old_price.add(s1 + " ₴");
+                            if(s1.length() != 0) {
+                                new_price.add(s0 + " ₴");
+                                old_price.add(s1 + " ₴");
+                            }else {
+                                new_price.add("Товар без скидки!");
+                                old_price.add(s0 + " ₴");
+                            }
                         }
                 }
 
