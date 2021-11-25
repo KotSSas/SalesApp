@@ -771,8 +771,8 @@ public class ShopPage extends AppCompatActivity {
                             s1 = element.getElementsByClass("catalogCard-oldPrice").text();
                             s2 = element.getElementsByClass("catalogCard-price").text();
                            // s1 = s1.substring(0, s1.length()-3);
-                            old_price.add(s1 + " ₴");
-                            new_price.add(s2 + " ₴");
+                            old_price.add(s1 );
+                            new_price.add(s2 );
                             //
                         }
 
