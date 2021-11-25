@@ -223,22 +223,23 @@ public class MainActivity extends AppCompatActivity {
             // categoryList.add(new Category(5, "Разное", "category"));
 
             shopList.add(new Shop(1, 3, "staff", "Staff", "Одежда", "10:00 - 20:00", "https://staff-clothes.com/"));
+            shopList.add(new Shop(1, 5, "prost", "Prostor", "Уход за телом", "10:00 - 21:00", "https://prostor.ua/"));
             //shopList.add(new Shop(2, 5,"roz","Rozetka", "Разное", "10:00 - 21:00", "https://rozetka.com.ua/" ));
-            shopList.add(new Shop(2, 2, "allo", "Allo", "Техника", "09:00 - 20:00", "https://allo.ua/"));
-            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
-            shopList.add(new Shop(5, 2, "ciber", "Kibernetiki", "Техника", "10:00 - 21:00", "https://kibernetiki.com.ua"));//*
-            shopList.add(new Shop(6, 4, "atb", "ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/"));
-            shopList.add(new Shop(14, 4, "ahn", "Ashan", "Продукты", "00:00 - 24:00", "https://auchan.zakaz.ua/ru/"));
-            shopList.add(new Shop(7, 3, "urb", "Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/"));//*
-            shopList.add(new Shop(8, 2, "fox", "Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/"));
-            shopList.add(new Shop(9, 5, "spr", "Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/"));
-            shopList.add(new Shop(9, 5, "jysk", "Jysk", "Мебель", "10:30 - 20:30", "https://jysk.ua/"));
-            shopList.add(new Shop(10, 4, "metr", "Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/"));//*
-            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
-            shopList.add(new Shop(12, 4, "tavr", "Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/"));//*
-            shopList.add(new Shop(13, 3, "ah", "Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com"));//*
+            //shopList.add(new Shop(2, 2, "allo", "Allo", "Техника", "09:00 - 20:00", "https://allo.ua/"));
+        shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
+        shopList.add(new Shop(5, 2, "ciber", "Kibernetiki", "Техника", "10:00 - 21:00", "https://kibernetiki.com.ua"));//*
+        shopList.add(new Shop(6, 4, "atb", "ATB", "Продукты", "00:00 - 24:00", "https://atbmarket.com/"));
+        shopList.add(new Shop(14, 4, "ahn", "Ashan", "Продукты", "00:00 - 24:00", "https://auchan.zakaz.ua/ru/"));
+        shopList.add(new Shop(7, 3, "urb", "Urban Planet", "Одежда", "10:00–20:00", "https://urbanplanet.com/"));//*
+        shopList.add(new Shop(8, 2, "fox", "Foxtrot", "Техника", "09:00 - 21:00", "https://foxtrot.com.ua/"));
+        shopList.add(new Shop(9, 5, "spr", "Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/"));
+        shopList.add(new Shop(9, 5, "jysk", "Jysk", "Мебель", "10:30 - 20:30", "https://jysk.ua/"));
+        shopList.add(new Shop(10, 4, "metr", "Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/"));//*
+        shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
+        shopList.add(new Shop(12, 4, "tavr", "Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/"));//*
+          //  shopList.add(new Shop(13, 3, "ah", "Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com"));//*
 //            shopList.add(new Shop(3, 2, "citrus", "Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/")); //*
-
+//f
             fullShopsList.addAll(shopList);
 
 //        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
