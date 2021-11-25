@@ -101,9 +101,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:rippleColor="#EDEDED"
-            app:srcCompat="@drawable/ic_gr_c" />
-
-
+            app:srcCompat="@drawable/ic_gr_c"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
