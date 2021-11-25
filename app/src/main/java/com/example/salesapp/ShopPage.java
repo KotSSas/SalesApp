@@ -683,6 +683,7 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            //proverka
         } else if (title.getText().equals("Kibernetiki")) {
             try {
                 name = new ArrayList<>();
