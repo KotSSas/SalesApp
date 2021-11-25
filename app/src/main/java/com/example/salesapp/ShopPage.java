@@ -717,10 +717,8 @@ public class ShopPage extends AppCompatActivity {
                     for (Element element : pr) {
                         s1 = element.getElementsByClass("item__price-old").text();
                         s2 = element.getElementsByClass("item__price").text();
-//                        old_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
-//                        new_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
-                        old_price.add(s1);
-                        new_price.add(s2);
+                        old_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
+                        new_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
                         //System.out.println(element.getElementsByClass("item__price").text());
                     }
                     for (Element element : img) {
@@ -744,7 +742,54 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if (title.getText().equals("Sportmaster")) {
+        } else if (title.getText().equals("Eva")){
+
+                try {
+                    Document document =  Jsoup.connect("https://prostor.ua/ru/supertseny/").get();
+
+                name = new ArrayList<>();
+                old_price = new ArrayList<>();
+                new_price = new ArrayList<>();
+                photo = new ArrayList<>();
+                links = new ArrayList<>();
+
+                  Elements elementsByClass = document.getElementsByClass("catalogGrid catalog-grid catalog-grid--m catalog-grid--sidebar");
+
+                    for (Element byClass : elementsByClass) {
+
+
+                        Elements article = byClass.getElementsByClass("catalog-grid__item");
+
+                        String s1;
+                        String s2;
+
+                        for (Element element : article) {
+                            name.add(element.getElementsByClass("catalogCard-img").attr("alt"));
+                            //System.out.println(element.getElementsByClass("product__link product__name").text());
+                            photo.add("https://prostor.ua"+ element.getElementsByClass("catalogCard-img").attr("src"));
+                            links.add("https://prostor.ua"+ element.getElementsByClass("catalogCard-image ").attr("href"));
+                            s1 = element.getElementsByClass("catalogCard-oldPrice").text();
+                            s2 = element.getElementsByClass("catalogCard-price").text();
+                           // s1 = s1.substring(0, s1.length()-3);
+                            old_price.add(s1 + " ₴");
+                            new_price.add(s2 + " ₴");
+                            //
+                        }
+
+                    }
+
+                    for (int i = 0; i <= name.size()-1; i++) {
+                        itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                    }
+                setItemRecycler(itemList);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            else if (title.getText().equals("Sportmaster")) {
             try {
                 name = new ArrayList<>();
                 old_price = new ArrayList<>();
