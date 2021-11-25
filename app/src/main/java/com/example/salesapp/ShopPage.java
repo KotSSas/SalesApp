@@ -427,6 +427,7 @@ public class ShopPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            //***
         } else if (title.getText().equals("Staff")) {
             try {
                 Document document = Jsoup.connect(
