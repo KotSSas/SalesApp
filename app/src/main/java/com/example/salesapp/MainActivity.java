@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity {
     Context context;
     Resources resources;
 
+    //тест
+
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @SuppressLint("WrongThread")
     @Override
