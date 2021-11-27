@@ -3,12 +3,17 @@ package com.example.salesapp;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityOptions;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,6 +22,7 @@ import android.content.pm.ShortcutManager;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Icon;
@@ -89,7 +95,11 @@ public class MainActivity extends AppCompatActivity {
         if (introPref.isFirstTimeLaunch()) {
 
             startActivity(new Intent(MainActivity.this, IntroActivity.class));
+            sendNotification(true);
+
         } else {
+            sendNotification(false);
+
             categoryList.clear();
             shopList.clear();
             fullShopsList.clear();
@@ -243,7 +253,6 @@ public class MainActivity extends AppCompatActivity {
 //            shopList.add(new Shop(3, 2, "citrus", "Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/")); //*
 //f
             fullShopsList.addAll(shopList);
-
 //        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 //        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 //        NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -296,6 +305,43 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void sendNotification(boolean firstTime) {
+        NotificationManagerCompat notificationManagerCompat;
+        Notification notification;
+        if (firstTime){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                NotificationChannel channel = new NotificationChannel("myCh","Notification", NotificationManager.IMPORTANCE_DEFAULT);
+                NotificationManager manager = getSystemService(NotificationManager.class);
+                manager.createNotificationChannel(channel);
+            }
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"myCh")
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher_foreground))
+                    .setSmallIcon(R.mipmap.ic_launcher_foreground)
+                    .setAutoCancel(true)
+                    .setContentTitle("Welcome!")
+                    .setContentText("Welcome to SalesApp. We see that it's your first time here.");
+
+            notification = builder.build();
+            notificationManagerCompat = NotificationManagerCompat.from(this);
+            notificationManagerCompat.notify(1,notification);
+        }else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                NotificationChannel channel = new NotificationChannel("myCh","Notification", NotificationManager.IMPORTANCE_DEFAULT);
+                NotificationManager manager = getSystemService(NotificationManager.class);
+                manager.createNotificationChannel(channel);
+            }
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"myCh")
+                    .setSmallIcon(R.mipmap.ic_launcher_foreground)
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher_foreground))
+                    .setAutoCancel(true)
+                    .setContentTitle("Welcome back again!")
+                    .setContentText("Welcome to SalesApp again!");
+            notification = builder.build();
+            notificationManagerCompat = NotificationManagerCompat.from(this);
+            notificationManagerCompat.notify(1,notification);
+
+        }
+    }
 
 
     private void onAddButtonClicked() {
