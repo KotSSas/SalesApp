@@ -34,6 +34,7 @@ import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
     boolean lang_selected = true;
     Context context;
     Resources resources;
+    private static final String TAG = "MainActivity";
 
     //тест
 
@@ -324,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
             notification = builder.build();
             notificationManagerCompat = NotificationManagerCompat.from(this);
             notificationManagerCompat.notify(1,notification);
+            Log.i(TAG,"First time app launch Notification");
         }else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
                 NotificationChannel channel = new NotificationChannel("myCh","Notification", NotificationManager.IMPORTANCE_DEFAULT);
@@ -339,6 +342,8 @@ public class MainActivity extends AppCompatActivity {
             notification = builder.build();
             notificationManagerCompat = NotificationManagerCompat.from(this);
             notificationManagerCompat.notify(1,notification);
+            Log.i(TAG,"Launch Notification");
+
 
         }
     }
