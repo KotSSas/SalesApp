@@ -638,13 +638,7 @@ public class ShopPage extends AppCompatActivity {
 
                     itemList.add(new Item(72, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                 }
-//                itemList.add(new Item(73, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(2)));
-//                itemList.add(new Item(74, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(3)));
-//                itemList.add(new Item(75, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(4)));
-//                itemList.add(new Item(76, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(5)));
-//                itemList.add(new Item(77, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(6)));
-//                itemList.add(new Item(78, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(7)));
-//                itemList.add(new Item(79, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(8)));
+//
                 printLogMessage("Urban Planet");
 
                 setItemRecycler(itemList);
@@ -877,7 +871,12 @@ public class ShopPage extends AppCompatActivity {
                     for (Element element : a) {
                         name.add(element.select("a").attr("title"));
                         links.add(element.select("a").attr("href"));
-                        photo.add(element.getElementsByClass("ProductTile__image").attr("src"));
+                        Elements select = element.getElementsByClass("ProductTile__image").select("img");
+                        for (Element element1 : select) {
+                            photo.add(element1.attr("src"));
+                        }
+
+
                         Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__prices");
 
                         for (Element pr_l : pr) {
@@ -888,10 +887,10 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 }
-                for (int i = 0; i <= name.size()-1; i++) {
-                    itemList.add(new Item(33, name.get(i), old_price.get(i)+ " ₴", new_price.get(i)+ " ₴", photo.get(i), "https://auchan.zakaz.ua"+links.get(i)));
 
-                }
+
+                fillAshan();
+
                 printLogMessage("Ashan");
 
                 setItemRecycler(itemList);
@@ -938,6 +937,24 @@ public class ShopPage extends AppCompatActivity {
 
         fullItemList.clear();
         fullItemList.addAll(itemList);
+    }
+
+    private void fillAshan() {
+        itemList.add(new Item(33, name.get(1), old_price.get(1)+ " ₴", new_price.get(1)+ " ₴", photo.get(3), "https://auchan.zakaz.ua"+links.get(1)));
+        itemList.add(new Item(33, name.get(2), old_price.get(2)+ " ₴", new_price.get(2)+ " ₴", photo.get(5), "https://auchan.zakaz.ua"+links.get(2)));
+        itemList.add(new Item(33, name.get(3), old_price.get(3)+ " ₴", new_price.get(3)+ " ₴", photo.get(7), "https://auchan.zakaz.ua"+links.get(3)));
+        itemList.add(new Item(33, name.get(4), old_price.get(4)+ " ₴", new_price.get(4)+ " ₴", photo.get(9), "https://auchan.zakaz.ua"+links.get(4)));
+        itemList.add(new Item(33, name.get(5), old_price.get(5)+ " ₴", new_price.get(5)+ " ₴", photo.get(11), "https://auchan.zakaz.ua"+links.get(5)));
+        itemList.add(new Item(33, name.get(6), old_price.get(6)+ " ₴", new_price.get(6)+ " ₴", photo.get(13), "https://auchan.zakaz.ua"+links.get(6)));
+        itemList.add(new Item(33, name.get(7), old_price.get(7)+ " ₴", new_price.get(7)+ " ₴", photo.get(15), "https://auchan.zakaz.ua"+links.get(7)));
+        itemList.add(new Item(33, name.get(8), old_price.get(8)+ " ₴", new_price.get(8)+ " ₴", photo.get(17), "https://auchan.zakaz.ua"+links.get(8)));
+        itemList.add(new Item(33, name.get(9), old_price.get(9)+ " ₴", new_price.get(9)+ " ₴", photo.get(19), "https://auchan.zakaz.ua"+links.get(9)));
+        itemList.add(new Item(33, name.get(10), old_price.get(10)+ " ₴", new_price.get(10)+ " ₴", photo.get(21), "https://auchan.zakaz.ua"+links.get(10)));
+        itemList.add(new Item(33, name.get(11), old_price.get(11)+ " ₴", new_price.get(11)+ " ₴", photo.get(23), "https://auchan.zakaz.ua"+links.get(11)));
+        itemList.add(new Item(33, name.get(12), old_price.get(12)+ " ₴", new_price.get(12)+ " ₴", photo.get(25), "https://auchan.zakaz.ua"+links.get(12)));
+        itemList.add(new Item(33, name.get(13), old_price.get(13)+ " ₴", new_price.get(13)+ " ₴", photo.get(27), "https://auchan.zakaz.ua"+links.get(13)));
+        itemList.add(new Item(33, name.get(14), old_price.get(14)+ " ₴", new_price.get(14)+ " ₴", photo.get(29), "https://auchan.zakaz.ua"+links.get(14)));
+        itemList.add(new Item(33, name.get(15), old_price.get(15)+ " ₴", new_price.get(15)+ " ₴", photo.get(31), "https://auchan.zakaz.ua"+links.get(15)));
     }
 
     private void printLogMessage(String s) {
