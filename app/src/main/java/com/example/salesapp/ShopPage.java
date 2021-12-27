@@ -50,6 +50,8 @@ public class ShopPage extends AppCompatActivity {
     List<String> photo;
     List<String> links;
 
+    FloatingActionButton commentsLink;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +111,13 @@ public class ShopPage extends AppCompatActivity {
                 openMatchingActivity();
 
             }
+        });
+        commentsLink =findViewById(R.id.commentsFloatButton);
+
+        commentsLink.setOnClickListener(v -> {
+            //v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
+            openCommentsActivity();
+
         });
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -937,6 +946,11 @@ public class ShopPage extends AppCompatActivity {
 
         fullItemList.clear();
         fullItemList.addAll(itemList);
+    }
+
+    private void openCommentsActivity() {
+        startActivity(new Intent(this, SignInAct.class));
+
     }
 
     private void fillAshan() {
