@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.adapter.UserAdapter;
 import com.example.salesapp.model.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,27 +43,19 @@ public class CommentsActivity extends AppCompatActivity {
     UserAdapter userAdapter;
     List<User> itemList;
     RatingBar rb;
+    ShopPage shopPage=new ShopPage();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_comm);
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
         button = findViewById(R.id.buttonApply);
         editText = findViewById(R.id.edMessage);
         rc = findViewById(R.id.rcView);
         rb= findViewById(R.id.ratingBar);
-
-//        int noofstars = rb.getNumStars();
-        int getrating = (int) rb.getRating();
         mauth = FirebaseAuth.getInstance();
-//        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("message");
-
-
         //setUpActionBar();
-
-
         button.setOnClickListener(view -> {
             myRef.child(Objects.requireNonNull(myRef.push().getKey())).setValue(
                     new User(Objects.requireNonNull(mauth.getCurrentUser())
@@ -101,9 +94,6 @@ public class CommentsActivity extends AppCompatActivity {
                     User user = s.getValue(User.class);
                     if (user!=null){
                         itemList.add(user);
-
-
-
                     }
                 }
 
@@ -120,28 +110,27 @@ public class CommentsActivity extends AppCompatActivity {
     private void setUpActionBar() {
         ActionBar ab = getSupportActionBar();
 //thread - поток
-        Runnable runnable = new Runnable() {
-            public void run() {
-                try {
-                    Bitmap bitmap = Picasso.get().load(mauth.getCurrentUser().getPhotoUrl()).get();
 
-                    Drawable d = new BitmapDrawable(getResources(), bitmap);
+        Runnable runnable = () -> {
+            try {
+                Bitmap bitmap = Picasso.get().load(mauth.getCurrentUser().getPhotoUrl()).get();
 
-                    Runnable runnable1 = new Runnable() {
-                        @Override
-                        public void run() {
-                            Objects.requireNonNull(ab).setDisplayHomeAsUpEnabled(true);
-                            ab.setHomeAsUpIndicator(d);
-                            ab.setTitle("Welcome back, " + mauth.getCurrentUser().getDisplayName());
-                        }
-                    };
-                    runOnUiThread(runnable1);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Drawable d = new BitmapDrawable(getResources(), bitmap);
 
-
+                Runnable runnable1 = new Runnable() {
+                    @Override
+                    public void run() {
+                        Objects.requireNonNull(ab).setDisplayHomeAsUpEnabled(true);
+                        ab.setHomeAsUpIndicator(d);
+                        ab.setTitle("Welcome back, " + mauth.getCurrentUser().getDisplayName());
+                    }
+                };
+                runOnUiThread(runnable1);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
+
         };
         Thread thread = new Thread(runnable);
         thread.start();

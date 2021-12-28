@@ -42,7 +42,7 @@ public class ShopPage extends AppCompatActivity {
     static List<Item> itemList = new ArrayList<>();
     static List<Item> fullItemList = new ArrayList<>();
 
-    TextView title;
+     TextView title;
     TextView main_scene, about_us, coming_soon_scene;
     List<String> name;
     List<String> old_price;
@@ -51,6 +51,8 @@ public class ShopPage extends AppCompatActivity {
     List<String> links;
 
     FloatingActionButton commentsLink;
+
+
 
 
     @Override
@@ -263,7 +265,7 @@ public class ShopPage extends AppCompatActivity {
                         for (Element el_price : el_prices) {
 
                             String s1 = el_price.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text();
-                            String s2 = el_price.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text();
+                            String s2 = el_price.getElementsByClass("jsx-221669879 Price__value_caption Price__value_discount").text();
                             if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
                                 old_price.add(s1.substring(0, s1.indexOf("г") - 1) + "₴");
                                 new_price.add(s2 + "₴");
@@ -488,7 +490,6 @@ public class ShopPage extends AppCompatActivity {
                     itemList.add(new Item(49, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                 }
                 printLogMessage("Staff");
-
 //                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
 //                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
 //                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
@@ -947,6 +948,8 @@ public class ShopPage extends AppCompatActivity {
         fullItemList.clear();
         fullItemList.addAll(itemList);
     }
+
+
 
     private void openCommentsActivity() {
         startActivity(new Intent(this, SignInAct.class));
