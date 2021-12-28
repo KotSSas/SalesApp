@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/item_bg"
+            android:background="@color/cat"
             android:orientation="vertical"
             android:paddingBottom="30dp">
 
@@ -50,9 +50,10 @@
 
                 <RatingBar
                     android:id="@+id/rating"
-                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    style="@style/RatingColor"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+
                     android:fontFamily="@font/montserrat_bold"
                     android:text="Raitng" />
 

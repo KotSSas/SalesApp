@@ -1,7 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SalesApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.SalesApp" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
+
         <item name="colorPrimary">#332E2F</item>
         <item name="android:textColorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -19,7 +20,10 @@
     <style name="Divider">
         <item name="android:background">#C4BCF8</item>
     </style>
-
+    <style name="RatingColor" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#C4BCF8</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>
     <style name="Divider.Horizontal" parent="Divider">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1.5dp</item>

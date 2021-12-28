@@ -15,11 +15,11 @@
         android:theme="@style/Theme.SalesApp">
 
         <activity
-            android:name=".Matching"
+            android:name=".activities.Matching"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ErrorPage"
+            android:name=".activities.ErrorPage"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity

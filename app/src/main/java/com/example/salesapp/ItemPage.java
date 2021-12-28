@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.example.salesapp.activities.AboutUsActivity;
 import com.example.salesapp.activities.MainActivity;
+import com.example.salesapp.activities.Matching;
 
 import java.io.InputStream;
 
@@ -34,6 +35,7 @@ public class ItemPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_item_page);
 
         image = findViewById(R.id.item_page_img);

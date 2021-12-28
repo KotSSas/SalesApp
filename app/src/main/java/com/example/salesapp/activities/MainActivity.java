@@ -37,7 +37,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.salesapp.IntroPref;
-import com.example.salesapp.Matching;
 import com.example.salesapp.R;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.Category;
@@ -79,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getSupportActionBar().hide();
         text_head_cat1 = findViewById(R.id.text_head_cat);
         text_head_cat2 = findViewById(R.id.text_head_cat2);
 

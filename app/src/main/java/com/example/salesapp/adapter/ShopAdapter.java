@@ -22,7 +22,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.salesapp.ErrorPage;
+import com.example.salesapp.activities.ErrorPage;
 
 import com.example.salesapp.LoadingDialog;
 import com.example.salesapp.R;

@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
-import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.adapter.UserAdapter;
 import com.example.salesapp.model.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -51,13 +50,16 @@ public class CommentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_comm);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+
         DatabaseReference myRef = database.getReference("message");
+
         button = findViewById(R.id.buttonApply);
         editText = findViewById(R.id.edMessage);
         rc = findViewById(R.id.rcView);
         rb= findViewById(R.id.ratingBar);
         mauth = FirebaseAuth.getInstance();
-        //setUpActionBar();
+
+        setUpActionBar();
         button.setOnClickListener(view -> {
             myRef.child(Objects.requireNonNull(myRef.push().getKey())).setValue(
                     new User(Objects.requireNonNull(mauth.getCurrentUser())
@@ -112,7 +114,7 @@ public class CommentsActivity extends AppCompatActivity {
     private void setUpActionBar() {
         ActionBar ab = getSupportActionBar();
 //thread - поток
-
+        ab.show();
         Runnable runnable = () -> {
             try {
                 Bitmap bitmap = Picasso.get().load(mauth.getCurrentUser().getPhotoUrl()).get();

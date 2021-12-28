@@ -23,10 +23,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.salesapp.activities.AboutUsActivity;
 import com.example.salesapp.activities.MainActivity;
-import com.example.salesapp.activities.SignInAct;
+import com.example.salesapp.activities.Matching;
 import com.example.salesapp.adapter.ItemAdapter;
 import com.example.salesapp.model.Item;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -52,11 +51,13 @@ public class ShopPage extends AppCompatActivity {
     List<String> new_price;
     List<String> photo;
     List<String> links;
-    FloatingActionButton commentsLink;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop_page);
+        getSupportActionBar().hide();
 
         Toast.makeText(this, R.string.wait, Toast.LENGTH_LONG).show();
 
@@ -71,7 +72,6 @@ public class ShopPage extends AppCompatActivity {
         itemList.clear();
 
         main_scene = findViewById(R.id.main_scene);
-
 
         main_scene.setOnClickListener(v -> {
             Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -112,13 +112,7 @@ public class ShopPage extends AppCompatActivity {
 
             }
         });
-        commentsLink =findViewById(R.id.commentsFloatButton);
 
-        commentsLink.setOnClickListener(v -> {
-            //v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
-            openCommentsActivity();
-
-        });
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -930,10 +924,7 @@ public class ShopPage extends AppCompatActivity {
 
 
 
-    private void openCommentsActivity() {
-        startActivity(new Intent(this, SignInAct.class));
 
-    }
 
     private void fillAshan() {
         itemList.add(new Item(33, name.get(1), old_price.get(1)+ " ₴", new_price.get(1)+ " ₴", photo.get(3), "https://auchan.zakaz.ua"+links.get(1)));
