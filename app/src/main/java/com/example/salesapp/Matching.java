@@ -16,6 +16,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.salesapp.activities.AboutUsActivity;
+import com.example.salesapp.activities.MainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Matching extends AppCompatActivity {

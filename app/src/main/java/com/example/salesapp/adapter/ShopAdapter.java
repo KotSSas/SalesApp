@@ -11,7 +11,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -26,7 +25,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.salesapp.ErrorPage;
 
 import com.example.salesapp.LoadingDialog;
-import com.example.salesapp.MainActivity;
 import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
 

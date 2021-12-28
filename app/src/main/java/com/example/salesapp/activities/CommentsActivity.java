@@ -1,4 +1,4 @@
-package com.example.salesapp;
+package com.example.salesapp.activities;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.salesapp.R;
+import com.example.salesapp.ShopPage;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.adapter.UserAdapter;
 import com.example.salesapp.model.User;
