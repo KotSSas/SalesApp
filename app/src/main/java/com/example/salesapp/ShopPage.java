@@ -254,7 +254,7 @@ public class ShopPage extends AppCompatActivity {
                         for (Element el_price : el_prices) {
 
                             String s1 = el_price.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text();
-                            String s2 = el_price.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text();
+                            String s2 = el_price.getElementsByClass("jsx-221669879 Price__value_caption Price__value_discount").text();
                             if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
                                 old_price.add(s1.substring(0, s1.indexOf("г") - 1) + "₴");
                                 new_price.add(s2 + "₴");
