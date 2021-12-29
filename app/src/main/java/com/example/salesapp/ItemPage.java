@@ -8,25 +8,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+
+import com.example.salesapp.activities.AboutUsActivity;
+import com.example.salesapp.activities.MainActivity;
+import com.example.salesapp.activities.Matching;
 
 import java.io.InputStream;
-import java.net.URL;
 
 public class ItemPage extends AppCompatActivity {
 
@@ -36,6 +35,7 @@ public class ItemPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_item_page);
 
         image = findViewById(R.id.item_page_img);

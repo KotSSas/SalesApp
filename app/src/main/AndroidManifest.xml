@@ -15,11 +15,11 @@
         android:theme="@style/Theme.SalesApp">
 
         <activity
-            android:name=".Matching"
+            android:name=".activities.Matching"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ErrorPage"
+            android:name=".activities.ErrorPage"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -31,7 +31,7 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AboutUsActivity"
+            android:name=".activities.AboutUsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
@@ -39,11 +39,11 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".IntroActivity"
+            android:name=".activities.IntroActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -52,7 +52,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+        android:name=".activities.SignInAct"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+        <activity
+            android:name=".activities.CommentsActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan"
+            >
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
