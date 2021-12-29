@@ -1,8 +1,7 @@
-package com.example.salesapp;
+package com.example.salesapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -15,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
+import com.example.salesapp.IntroPref;
+import com.example.salesapp.R;
 
 public class IntroActivity extends AppCompatActivity {
     private TextView tvNext;
@@ -29,6 +31,7 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
+        getSupportActionBar().hide();
 
         introPref = new IntroPref(this);
         if (!introPref.isFirstTimeLaunch()) {

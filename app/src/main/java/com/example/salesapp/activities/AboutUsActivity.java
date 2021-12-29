@@ -1,8 +1,7 @@
-package com.example.salesapp;
+package com.example.salesapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
@@ -12,30 +11,26 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Log;
 import android.util.Pair;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.ViewSwitcher;
+
+import com.example.salesapp.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AboutUsActivity extends AppCompatActivity {
 
     TextView main_scene, coming_soon_scene;
     ImageView ico;
+    FloatingActionButton commentsLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
+        getSupportActionBar().hide();
 
         main_scene = findViewById(R.id.main_scene);
         main_scene.setOnClickListener(new View.OnClickListener() {
@@ -64,9 +59,20 @@ public class AboutUsActivity extends AppCompatActivity {
 
             }
         });
+        commentsLink =findViewById(R.id.commentsFloatButton);
+
+        commentsLink.setOnClickListener(v -> {
+            //v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
+            openCommentsActivity();
+
+        });
 
     }
 
+    private void openCommentsActivity() {
+        startActivity(new Intent(this, SignInAct.class));
+
+    }
     public void openGit(View v){
         Vibrator v1 = (Vibrator) AboutUsActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {

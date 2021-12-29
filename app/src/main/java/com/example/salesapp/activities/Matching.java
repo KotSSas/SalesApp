@@ -1,4 +1,4 @@
-package com.example.salesapp;
+package com.example.salesapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.salesapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Matching extends AppCompatActivity {
@@ -27,6 +28,7 @@ public class Matching extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matching);
+        getSupportActionBar().hide();
 
         main_scene = findViewById(R.id.main_scene);
 
