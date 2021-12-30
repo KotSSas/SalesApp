@@ -8,15 +8,20 @@
 
     <EditText
         android:id="@+id/edMessage"
+        style="@style/Widget.AppCompat.EditText"
         android:layout_width="308dp"
         android:layout_height="49dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="18dp"
         android:layout_marginBottom="48dp"
-        android:ems="10"
 
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Message"
         android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:singleLine="true"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rcView" />
@@ -49,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/edMessage"
-        app:srcCompat="@drawable/ic_baseline_wrap_text_24"
+        app:srcCompat="@drawable/ic_baseline_send_24"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <RatingBar

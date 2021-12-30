@@ -244,18 +244,7 @@ public class MainActivity extends AppCompatActivity {
 //            shopList.add(new Shop(3, 2, "citrus", "Citrus", "Техника", "10:00 - 20:00", "https://www.citrus.ua/")); //*
 //f
             fullShopsList.addAll(shopList);
-//        ConnectivityManager cm = (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-//        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-//        NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-//        if (wifi!=null && wifi.isConnected()||(mob!=null && mob.isConnected())){
-//            setShopRecycler(shopList);
-//            System.out.println("Connected!");
-//            //true
-//        }else{
-//            //false
-//            showCustomDialog();
-//            System.out.println("connect to the internet");
-//        }
+
             setShopRecycler(shopList);
 
             about_us.setOnClickListener(new View.OnClickListener() {
@@ -309,13 +298,14 @@ public class MainActivity extends AppCompatActivity {
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher_foreground))
                     .setSmallIcon(R.mipmap.ic_launcher_foreground)
                     .setAutoCancel(true)
-                    .setContentTitle("Welcome!")
-                    .setContentText("Welcome to SalesApp. We see that it's your first time here.");
+                    .setContentTitle(getString(R.string.welcome_note_message))
+                    .setContentText(getString(R.string.hello_n_message));
 
             notification = builder.build();
             notificationManagerCompat = NotificationManagerCompat.from(this);
             notificationManagerCompat.notify(1,notification);
             Log.i(TAG,"First time app launch Notification");
+
         }else {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
                 NotificationChannel channel = new NotificationChannel("myCh","Notification", NotificationManager.IMPORTANCE_DEFAULT);
@@ -326,8 +316,8 @@ public class MainActivity extends AppCompatActivity {
                     .setSmallIcon(R.mipmap.ic_launcher_foreground)
                     .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher_foreground))
                     .setAutoCancel(true)
-                    .setContentTitle("Welcome back again!")
-                    .setContentText("Welcome to SalesApp again!");
+                    .setContentTitle(getString(R.string.welcome_note_message))
+                    .setContentText(getString(R.string.hello_again_n_message));
             notification = builder.build();
             notificationManagerCompat = NotificationManagerCompat.from(this);
             notificationManagerCompat.notify(1,notification);

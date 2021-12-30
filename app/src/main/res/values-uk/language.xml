@@ -76,6 +76,13 @@
     <string name="all_f3">Усі магазини з нашого додатку</string>
     <string name="sport_f3">Відфільтровані магазини, інше</string>
     <string name="products_f3">Відфільтровані магазини, продукти</string>
+    <string name="error_comment">Заповніть поле для коментарів!</string>
+    <string name="comment_success">Повідомлення успішно надіслано!</string>
+    <string name="welcome_message">З поверненням, </string>
+    <string name="hello_n_message">Вітаємо у SalesApp</string>
+    <string name="hello_again_n_message">З поверненням у SalesApp</string>
+    <string name="welcome_note_message">Вітаємо знов!</string>
+    <string name="success_message">Ваше повідомлення успішно надіслано!</string>
 
 
 </resources>

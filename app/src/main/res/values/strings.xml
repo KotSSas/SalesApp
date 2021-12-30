@@ -79,6 +79,13 @@
     <string name="intro2_2_3">У нас дюжина известных магазинов с популярными товарами…</string>
     <string name="loading">Загрузка…</string>
     <string name="start">"Начать "</string>
+<string name="error_comment">Заполните поле!</string>
+    <string name="comment_success">Сообщение успешно отправлено!</string>
+    <string name="welcome_message">С возвращением,</string>
+    <string name="welcome_note_message">Приветствуем вновь!</string>
+    <string name="hello_n_message">Добро пожаловать в SalesApp </string>
+    <string name="hello_again_n_message">С возвращением в SalesApp </string>
+    <string name="success_message">Ваше сообщение успешно отправлено!</string>
 
 
 </resources>

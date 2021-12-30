@@ -1,9 +1,15 @@
 package com.example.salesapp.activities;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -14,6 +20,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -45,6 +53,7 @@ public class CommentsActivity extends AppCompatActivity {
     List<User> itemList;
     RatingBar rb;
     ShopPage shopPage=new ShopPage();
+    private static final String TAG = "Page";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,17 +69,28 @@ public class CommentsActivity extends AppCompatActivity {
         mauth = FirebaseAuth.getInstance();
 
         setUpActionBar();
+        if (editText.getText().toString().isEmpty()){
+            Toast.makeText(this, R.string.error_comment, Toast.LENGTH_SHORT).show();
+            sendMessage(myRef);
+        }else {
+           sendMessage(myRef);
+        }
+    }
+
+    private void sendMessage(DatabaseReference myRef) {
         button.setOnClickListener(view -> {
             myRef.child(Objects.requireNonNull(myRef.push().getKey())).setValue(
                     new User(Objects.requireNonNull(mauth.getCurrentUser())
-                            .getDisplayName(),editText.getText().toString(),
-                            (int)rb.getRating()));
+                            .getDisplayName(), editText.getText().toString(),
+                            (int) rb.getRating()));
 
-            Toast.makeText(this, "Message successfully sent!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.comment_success, Toast.LENGTH_SHORT).show();
             editText.getText().clear();
 
         });
         onChangeListener(myRef);
+        sendNotification(Objects.requireNonNull(mauth.getCurrentUser()).getDisplayName());
+
     }
 
     @Override
@@ -126,7 +146,8 @@ public class CommentsActivity extends AppCompatActivity {
                     public void run() {
                         Objects.requireNonNull(ab).setDisplayHomeAsUpEnabled(true);
                         ab.setHomeAsUpIndicator(d);
-                        ab.setTitle("Welcome back, " + mauth.getCurrentUser().getDisplayName());
+
+                        ab.setTitle(getString(R.string.welcome_message) + mauth.getCurrentUser().getDisplayName());
                     }
                 };
                 runOnUiThread(runnable1);
@@ -149,5 +170,26 @@ public class CommentsActivity extends AppCompatActivity {
 
         userAdapter = new UserAdapter(this, itemList);
         rc.setAdapter(userAdapter);
+    }
+    private void sendNotification(String name) {
+        NotificationManagerCompat notificationManagerCompat;
+        Notification notification;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+                NotificationChannel channel = new NotificationChannel("myCh","Notification", NotificationManager.IMPORTANCE_DEFAULT);
+                NotificationManager manager = getSystemService(NotificationManager.class);
+                manager.createNotificationChannel(channel);
+            }
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"myCh")
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher_foreground))
+                    .setSmallIcon(R.mipmap.ic_launcher_foreground)
+                    .setAutoCancel(true)
+                    .setContentTitle(name)
+                    .setContentText(getString(R.string.success_message));
+
+            notification = builder.build();
+            notificationManagerCompat = NotificationManagerCompat.from(this);
+            notificationManagerCompat.notify(1,notification);
+            Log.i(TAG,"Notification sent!");
     }
 }
