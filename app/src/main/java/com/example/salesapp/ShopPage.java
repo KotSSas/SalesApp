@@ -723,14 +723,10 @@ public class ShopPage extends AppCompatActivity {
                 }
 
 
-                itemList.add(new Item(90, name.get(7), old_price.get(2), new_price.get(2), photo.get(2), links.get(7)));
-                itemList.add(new Item(91, name.get(9), old_price.get(3), new_price.get(3), photo.get(3), links.get(9)));
-                itemList.add(new Item(92, name.get(11), old_price.get(4), new_price.get(4), photo.get(4), links.get(11)));
-                itemList.add(new Item(93, name.get(13), old_price.get(5), new_price.get(5), photo.get(5), links.get(13)));
-                itemList.add(new Item(94, name.get(15), old_price.get(6), new_price.get(6), photo.get(6), links.get(15)));
-                itemList.add(new Item(95, name.get(17), old_price.get(7), new_price.get(7), photo.get(7), links.get(17)));
-                itemList.add(new Item(95, name.get(19), old_price.get(8), new_price.get(8), photo.get(8), links.get(19)));
-                itemList.add(new Item(95, name.get(21), old_price.get(9), new_price.get(9), photo.get(9), links.get(21)));
+                for (int i = 0; i < name.size(); i++) {
+                    itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+
+                }
                 printLogMessage("Kibernetiki");
 
                 setItemRecycler(itemList);
