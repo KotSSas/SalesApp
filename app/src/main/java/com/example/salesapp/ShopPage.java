@@ -44,7 +44,7 @@ public class ShopPage extends AppCompatActivity {
     static List<Item> itemList = new ArrayList<>();
     static List<Item> fullItemList = new ArrayList<>();
 
-     TextView title;
+    TextView title;
     TextView main_scene, about_us, coming_soon_scene;
     List<String> name;
     List<String> old_price;
@@ -308,66 +308,48 @@ public class ShopPage extends AppCompatActivity {
                 }
             } else if (title.getText().equals("Sinsey")) {
                 try {
-                    Document document = Jsoup.connect("https://www.sinsay.com/ua/uk/for-him").get();
-                    List<String> name = new ArrayList<>();
-                    List<String> old_price = new ArrayList<>();
-                    List<String> new_price = new ArrayList<>();
-                    List<String> photo
-                            = new ArrayList<>();
+                    Document document = Jsoup.connect("https://www.sinsay.com/ua/ru/sale").get();
+                    name = new ArrayList<>();
+                    old_price = new ArrayList<>();
+                    new_price = new ArrayList<>();
+                    photo = new ArrayList<>();
                     links = new ArrayList<>();
 
 
-                Elements elementsByClass = document.getElementsByClass("home-ss20-recommended");
-                for (Element byClass : elementsByClass) {
-                    Elements elementsByClass1 = byClass.getElementsByClass("category-products active");
-                    for (Element element : elementsByClass1) {
-                        //https://www.sinsay.com/ua/uk
-                        Elements elementsByClass2 = element.getElementsByClass("product-price");
-                        for (Element element1 : elementsByClass2) {
-                            Elements elementsByClass3 = element1.getElementsByClass("final-price");
-                            String text1 = elementsByClass3.text();
-                            System.out.println(text1);
-                            if (text1.indexOf("U") == text1.indexOf("A") - 1 && text1.indexOf("A") == text1.indexOf("H") - 1) {
-                                new_price.add(text1.substring(0, text1.indexOf("U") - 1) + " ₴");
-                            }
+                    Elements elementsByClass = document.getElementsByClass("section layout-with-controls layout-with-aside aside-on-left");
+                    for (Element byClass : elementsByClass) {
+//                        System.out.println(byClass.getElementsByClass("es-product"));
+                        Elements disc_pr = byClass.getElementsByClass("es-discount-price");
+                        Elements regular_pr = byClass.getElementsByClass("es-regular-price");
+                        for (Element element : disc_pr) {
+                            new_price.add(element.text());
                         }
-                        Elements elements_names = element.getElementsByClass("product-name");
-                        Elements a = elements_names.select("a");
-                        for (Element element1 : a) {
-                            name.add(element1.text());
+                        for (Element element : regular_pr) {
+                            old_price.add(element.text());
                         }
+                        Elements a = byClass.getElementsByClass("es-product").select("a");
+                        Elements a1 = byClass.getElementsByClass("es-product-name").select("a");
+                        for (Element element : a1) {
+                            name.add(element.text());
+                        }
+                        for (Element element : a) {
+                            photo.add(element.select("img").attr("data-src"));
+                            links.add(element.select("a").attr("href"));
+                        }
+                            itemList.add(new Item(25, name.get(1), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                            itemList.add(new Item(25, name.get(2), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
 
-                        Elements a1 = element.select("a");
-                        for (Element element1 : a1) {
-                            links.add(
-                                    "https://www.sinsay.com/ua/uk/" + element1.attr("href"));
-                        }
-                        Elements elements_pic = element.getElementsByClass("product-photo-img");
-                        for (Element element1 : elements_pic) {
-                            photo.add(element1.attr("data-img"));
-                        }
+
+
+                        printLogMessage("Sinsay");
+
+                        setItemRecycler(itemList);
                     }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
 
-                for (int i = 0; i < name.size(); i++) {
-                    itemList.add(new Item(41, name.get(i), new_price.get(i) , "Товар без скидки!", photo.get(i), links.get(i)));
-                }
-//                itemList.add(new Item(33, name.get(0), new_price.get(0), "Товар без скидки!", photo.get(0), links.get(1)));
-//                itemList.add(new Item(34, name.get(1), new_price.get(1), "Товар без скидки!", photo.get(1), links.get(2)));
-//                itemList.add(new Item(35, name.get(2), new_price.get(2), "Товар без скидки!", photo.get(2), links.get(3)));
-//                itemList.add(new Item(36, name.get(3), new_price.get(3), "Товар без скидки!", photo.get(3), links.get(4)));
-//                itemList.add(new Item(37, name.get(4), new_price.get(4), "Товар без скидки!", photo.get(4), links.get(5)));
-//                itemList.add(new Item(38, name.get(5), new_price.get(5), "Товар без скидки!", photo.get(5), links.get(6)));
-//                itemList.add(new Item(39, name.get(6), new_price.get(6), "Товар без скидки!", photo.get(6), links.get(7)));
-//                itemList.add(new Item(40, name.get(7), new_price.get(7), "Товар без скидки!", photo.get(7), links.get(8)));
-                    printLogMessage("Sinsey");
-
-                setItemRecycler(itemList);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else
+            } else
 
 //            if (title.getText().equals("Allo")) {
 //            try {
@@ -423,46 +405,46 @@ public class ShopPage extends AppCompatActivity {
 //            }
 //        } else
 
-            if (title.getText().equals("Staff")) {
-            try {
-                Document document = Jsoup.connect(
-                        "https://www.staff-clothes.com/m/discounts/").get();
-                List<String> name = new ArrayList<>();
-                List<String> old_price = new ArrayList<>();
-                List<String> new_price = new ArrayList<>();
-                List<String> photo = new ArrayList<>();
-                links = new ArrayList<>();
+                if (title.getText().equals("Staff")) {
+                    try {
+                        Document document = Jsoup.connect(
+                                "https://www.staff-clothes.com/m/discounts/").get();
+                        List<String> name = new ArrayList<>();
+                        List<String> old_price = new ArrayList<>();
+                        List<String> new_price = new ArrayList<>();
+                        List<String> photo = new ArrayList<>();
+                        links = new ArrayList<>();
 
 
-                Elements elementsByClass = document.getElementsByClass("catalog__products-container");
-                for (Element byClass : elementsByClass) {
-                    Elements elementsByClass1 = byClass.getElementsByClass("product-card__container");
-                    Elements elementsByClass2 = document.getElementsByClass("catalog__product-catalog");
-                    for (Element element : elementsByClass2) {
-                        links.add("https://www.staff-clothes.com" + element.select("a").attr("href"));
-                    }
+                        Elements elementsByClass = document.getElementsByClass("catalog__products-container");
+                        for (Element byClass : elementsByClass) {
+                            Elements elementsByClass1 = byClass.getElementsByClass("product-card__container");
+                            Elements elementsByClass2 = document.getElementsByClass("catalog__product-catalog");
+                            for (Element element : elementsByClass2) {
+                                links.add("https://www.staff-clothes.com" + element.select("a").attr("href"));
+                            }
 
 
-                    for (Element element : elementsByClass1) {
-                        photo.add(element.getElementsByClass("product-card__main-image").select("img").attr("src"));
-                        name.add(element.getElementsByClass("product-card__info--title").text());
+                            for (Element element : elementsByClass1) {
+                                photo.add(element.getElementsByClass("product-card__main-image").select("img").attr("src"));
+                                name.add(element.getElementsByClass("product-card__info--title").text());
 
 
-                        String s1 = element.getElementsByClass("product-card__info--price").text(); //with discount
-                        String s2 = element.getElementsByClass("product-card__info--oldprice").text(); //without discount
+                                String s1 = element.getElementsByClass("product-card__info--price").text(); //with discount
+                                String s2 = element.getElementsByClass("product-card__info--oldprice").text(); //without discount
 
-                        if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
-                            new_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
-                            old_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
+                                if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
+                                    new_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
+                                    old_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
+                                }
+
+                            }
                         }
+                        for (int i = 0; i < name.size(); i++) {
 
-                    }
-                }
-                for (int i = 0; i < name.size(); i++) {
-
-                    itemList.add(new Item(49, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
-                }
-                printLogMessage("Staff");
+                            itemList.add(new Item(49, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                        }
+                        printLogMessage("Staff");
 //                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
 //                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
 //                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
@@ -471,43 +453,43 @@ public class ShopPage extends AppCompatActivity {
 //                itemList.add(new Item(54, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
 //                itemList.add(new Item(55, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
 //                itemList.add(new Item(56, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
-                setItemRecycler(itemList);
+                        setItemRecycler(itemList);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if (title.getText().equals("Foxtrot")) {
-            try {
-                Document doc = Jsoup.connect("https://www.foxtrot.com.ua/uk/actions/12768").ignoreHttpErrors(true).timeout(5000).get();
-                List<String> name = new ArrayList<>();
-                List<String> old_price = new ArrayList<>();
-                List<String> new_price = new ArrayList<>();
-                List<String> photo = new ArrayList<>();
-                links = new ArrayList<>();
-
-                Elements elementsByClass1 = doc.getElementsByClass("action-product-container action-categoryid-58 slot");
-                for (Element e : elementsByClass1) {
-                    Elements elementsByClass = e.getElementsByClass("listing__body-wrap");
-                    for (Element byClass : elementsByClass) {
-                        Elements card__body = byClass.getElementsByClass("card__body");
-                        Elements card__head = byClass.getElementsByClass("card__image");
-                        for (Element element : card__head) {
-                            photo.add(element.select("source").attr("srcset"));
-                            links.add("https://www.foxtrot.com.ua" + element.select("a").attr("href"));
-
-                        }
-                        for (Element element : card__body) {
-                            name.add(element.getElementsByClass("card__title").text());
-                            new_price.add(element.getElementsByClass("card-price").text());
-                            old_price.add(element.getElementsByClass("card__price-discount").select("p").text());
-
-                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                }
-                for (int i = 0; i < name.size(); i++) {
+                } else if (title.getText().equals("Foxtrot")) {
+                    try {
+                        Document doc = Jsoup.connect("https://www.foxtrot.com.ua/uk/actions/12768").ignoreHttpErrors(true).timeout(5000).get();
+                        List<String> name = new ArrayList<>();
+                        List<String> old_price = new ArrayList<>();
+                        List<String> new_price = new ArrayList<>();
+                        List<String> photo = new ArrayList<>();
+                        links = new ArrayList<>();
 
-                    itemList.add(new Item(57, name.get(i), old_price.get(i) + " ₴", new_price.get(i), photo.get(i), links.get(i)));
-                }
+                        Elements elementsByClass1 = doc.getElementsByClass("action-product-container action-categoryid-58 slot");
+                        for (Element e : elementsByClass1) {
+                            Elements elementsByClass = e.getElementsByClass("listing__body-wrap");
+                            for (Element byClass : elementsByClass) {
+                                Elements card__body = byClass.getElementsByClass("card__body");
+                                Elements card__head = byClass.getElementsByClass("card__image");
+                                for (Element element : card__head) {
+                                    photo.add(element.select("source").attr("srcset"));
+                                    links.add("https://www.foxtrot.com.ua" + element.select("a").attr("href"));
+
+                                }
+                                for (Element element : card__body) {
+                                    name.add(element.getElementsByClass("card__title").text());
+                                    new_price.add(element.getElementsByClass("card-price").text());
+                                    old_price.add(element.getElementsByClass("card__price-discount").select("p").text());
+
+                                }
+                            }
+                        }
+                        for (int i = 0; i < name.size(); i++) {
+
+                            itemList.add(new Item(57, name.get(i), old_price.get(i) + " ₴", new_price.get(i), photo.get(i), links.get(i)));
+                        }
 //                itemList.add(new Item(57, name.get(0), old_price.get(0) + " ₴", new_price.get(0), photo.get(0), links.get(0)));
 //                itemList.add(new Item(58, name.get(1), old_price.get(1) + " ₴", new_price.get(1), photo.get(1), links.get(1)));
 //                itemList.add(new Item(59, name.get(2), old_price.get(2) + " ₴", new_price.get(2), photo.get(2), links.get(2)));
@@ -515,62 +497,61 @@ public class ShopPage extends AppCompatActivity {
 //                itemList.add(new Item(61, name.get(4), old_price.get(4) + " ₴", new_price.get(4), photo.get(4), links.get(4)));
 //                itemList.add(new Item(62, name.get(5), old_price.get(5) + " ₴", new_price.get(5), photo.get(5), links.get(5)));
 //                itemList.add(new Item(63, name.get(6), old_price.get(6) + " ₴", new_price.get(6), photo.get(6), links.get(6)));
-                printLogMessage("Foxtrot");
+                        printLogMessage("Foxtrot");
 
 
-                setItemRecycler(itemList);
+                        setItemRecycler(itemList);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        else if (title.getText().equals("ATB")) {
-            try {
-                Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").get();
-                List<String> name = new ArrayList<>();
-                List<String> old_price = new ArrayList<>();
-                List<String> new_price = new ArrayList<>();
-                List<String> photo = new ArrayList<>();
-                links = new ArrayList<>();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if (title.getText().equals("ATB")) {
+                    try {
+                        Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").get();
+                        List<String> name = new ArrayList<>();
+                        List<String> old_price = new ArrayList<>();
+                        List<String> new_price = new ArrayList<>();
+                        List<String> photo = new ArrayList<>();
+                        links = new ArrayList<>();
 
-                Elements elementsByClass1 = doc.getElementsByClass("catalog-list");
-                for (Element e : elementsByClass1) {
-                    Elements elementsByClass = e.getElementsByClass("  catalog-item js-product-container   ");
-                    for (Element byClass : elementsByClass) {
-                        Elements card__body = byClass.getElementsByClass("catalog-item__info");
-                        Elements card__pr = byClass.getElementsByClass("catalog-item__bottom");
-                        Elements card__head = byClass.getElementsByClass("catalog-item__photo");
+                        Elements elementsByClass1 = doc.getElementsByClass("catalog-list");
+                        for (Element e : elementsByClass1) {
+                            Elements elementsByClass = e.getElementsByClass("  catalog-item js-product-container   ");
+                            for (Element byClass : elementsByClass) {
+                                Elements card__body = byClass.getElementsByClass("catalog-item__info");
+                                Elements card__pr = byClass.getElementsByClass("catalog-item__bottom");
+                                Elements card__head = byClass.getElementsByClass("catalog-item__photo");
 
-                        for (Element element : card__head) {
-                            photo.add(element.getElementsByClass("catalog-item__img").attr("src"));
-                            links.add("https://zakaz.atbmarket.com" + element.getElementsByClass("catalog-item__photo-link").attr("href"));
-                        }
-                        for (Element element : card__body) {
-                            name.add(element.getElementsByClass("blue-link").text());
-                        }
-                        String s0;
-                        String s1;
-                        String s2;
-                        String s3;
-                        for (Element element : card__pr) {
-                            s0 = element.getElementsByClass("product-price__top").attr("value");
-                            s1 = element.getElementsByClass("product-price__bottom").attr("value");
+                                for (Element element : card__head) {
+                                    photo.add(element.getElementsByClass("catalog-item__img").attr("src"));
+                                    links.add("https://zakaz.atbmarket.com" + element.getElementsByClass("catalog-item__photo-link").attr("href"));
+                                }
+                                for (Element element : card__body) {
+                                    name.add(element.getElementsByClass("blue-link").text());
+                                }
+                                String s0;
+                                String s1;
+                                String s2;
+                                String s3;
+                                for (Element element : card__pr) {
+                                    s0 = element.getElementsByClass("product-price__top").attr("value");
+                                    s1 = element.getElementsByClass("product-price__bottom").attr("value");
 
-                            if(s1.length() != 0) {
-                                new_price.add(s0 + " ₴");
-                                old_price.add(s1 + " ₴");
-                            }else {
-                                new_price.add("Товар без скидки!");
-                                old_price.add(s0 + " ₴");
+                                    if (s1.length() != 0) {
+                                        new_price.add(s0 + " ₴");
+                                        old_price.add(s1 + " ₴");
+                                    } else {
+                                        new_price.add("Товар без скидки!");
+                                        old_price.add(s0 + " ₴");
+                                    }
+                                }
+                            }
+
+                            // itemList.add(new Item(64, "name.get(0)", "old_price.get(0)", "new_price.get(0)", "jj", "jj"));
+                            for (int i = 0; i < name.size(); i++) {
+                                itemList.add(new Item(64, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                             }
                         }
-                }
-
-               // itemList.add(new Item(64, "name.get(0)", "old_price.get(0)", "new_price.get(0)", "jj", "jj"));
-                    for (int i = 0; i < name.size(); i++) {
-                        itemList.add(new Item(64, name.get(i), old_price.get(i), new_price.get(i), photo.get(i),links.get(i)));
-                    }
-                }
 //                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
 //                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
 //                itemList.add(new Item(66, name.get(23), old_price.get(23), new_price.get(23), photo.get(23), links.get(23)));
@@ -579,58 +560,58 @@ public class ShopPage extends AppCompatActivity {
 //                itemList.add(new Item(69, name.get(15), old_price.get(15), new_price.get(15), photo.get(15), links.get(15)));
 //                itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20), links.get(20)));
 //                itemList.add(new Item(71, name.get(9), new_price.get(9), "Товар без скидки!", photo.get(9), links.get(9)));
-                printLogMessage("ATB");
+                        printLogMessage("ATB");
 
-                setItemRecycler(itemList);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if (title.getText().equals("Urban Planet")) {
-            try {
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
-                links = new ArrayList<>();
-                Document document = Jsoup.connect("https://urbanplanet-streetwear.com/sale").get();
-                Elements elementsByClass = document.getElementsByClass("products-page__content");
-                for (Element byClass : elementsByClass) {
-                    Elements ti = byClass.getElementsByClass("product-card__media");
-                    Elements im = byClass.getElementsByClass("product-card__media");
-                    Elements link = byClass.getElementsByClass("product-card__title");
-                    Elements pr = byClass.getElementsByClass("product-price product-price--has-old-price");
-                    for (Element element : im) {
+                        setItemRecycler(itemList);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else if (title.getText().equals("Urban Planet")) {
+                    try {
+                        name = new ArrayList<>();
+                        old_price = new ArrayList<>();
+                        new_price = new ArrayList<>();
+                        photo = new ArrayList<>();
+                        links = new ArrayList<>();
+                        Document document = Jsoup.connect("https://urbanplanet-streetwear.com/sale").get();
+                        Elements elementsByClass = document.getElementsByClass("products-page__content");
+                        for (Element byClass : elementsByClass) {
+                            Elements ti = byClass.getElementsByClass("product-card__media");
+                            Elements im = byClass.getElementsByClass("product-card__media");
+                            Elements link = byClass.getElementsByClass("product-card__title");
+                            Elements pr = byClass.getElementsByClass("product-price product-price--has-old-price");
+                            for (Element element : im) {
 
-                        photo.add(element.select("img").attr("data-src"));
-                    }
-                    for (Element element : link) {
-                        links.add("https://urbanplanet-streetwear.com" + element.select("a").attr("href"));
-                    }
-                    for (Element element : ti) {
-                        name.add(element.select("img").attr("alt"));
-                    }
-                    for (Element element : pr) {
-                        String s1 = element.getElementsByClass("product-price__price product-price__price--old").text();
-                        String s2 = element.getElementsByClass("product-price__price product-price__price--current").text();
-                        old_price.add(s1.substring(0, s1.indexOf("г")) + " ₴");
-                        new_price.add(s2.substring(0, s2.indexOf("г")) + " ₴");
-                    }
+                                photo.add(element.select("img").attr("data-src"));
+                            }
+                            for (Element element : link) {
+                                links.add("https://urbanplanet-streetwear.com" + element.select("a").attr("href"));
+                            }
+                            for (Element element : ti) {
+                                name.add(element.select("img").attr("alt"));
+                            }
+                            for (Element element : pr) {
+                                String s1 = element.getElementsByClass("product-price__price product-price__price--old").text();
+                                String s2 = element.getElementsByClass("product-price__price product-price__price--current").text();
+                                old_price.add(s1.substring(0, s1.indexOf("г")) + " ₴");
+                                new_price.add(s2.substring(0, s2.indexOf("г")) + " ₴");
+                            }
 
-                }
-                for (int i = 0; i < name.size(); i++) {
+                        }
+                        for (int i = 0; i < name.size(); i++) {
 
-                    itemList.add(new Item(72, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
-                }
+                            itemList.add(new Item(72, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                        }
 //
-                printLogMessage("Urban Planet");
+                        printLogMessage("Urban Planet");
 
-                setItemRecycler(itemList);
+                        setItemRecycler(itemList);
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
-        } else
+                } else
 //            if (title.getText().equals("Aviatsiya")) {
 //            try {
 //                name = new ArrayList<>();
@@ -685,233 +666,228 @@ public class ShopPage extends AppCompatActivity {
 //            } catch (IOException e) {
 //                e.printStackTrace();
 //            }
-            //proverka
+                    //proverka
 //        } else
 
-            if (title.getText().equals("Kibernetiki")) {
-            try {
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
-                links = new ArrayList<>();
+                    if (title.getText().equals("Kibernetiki")) {
+                        try {
+                            name = new ArrayList<>();
+                            old_price = new ArrayList<>();
+                            new_price = new ArrayList<>();
+                            photo = new ArrayList<>();
+                            links = new ArrayList<>();
 
 
-                Document document = Jsoup.connect("https://kibernetiki.com.ua/#prod1_1").get();
-                Elements elementsByClass = document.getElementsByClass("product-section special");
-                for (Element byClass : elementsByClass) {
-                    Elements img = byClass.select("img");
-                    Elements pr = byClass.getElementsByClass("item__price-wrap");
-                    Elements a = byClass.select("a");
-                    for (Element b : a) {
-                        links.add(b.attr("href"));
-                    }
-                    String s1;
-                    String s2;
-                    for (Element element : pr) {
-                        s1 = element.getElementsByClass("item__price-old").text();
-                        s2 = element.getElementsByClass("item__price").text();
-                        old_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
-                        new_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
-                        //System.out.println(element.getElementsByClass("item__price").text());
-                    }
-                    for (Element element : img) {
-                        photo.add(element.attr("src"));
-                        name.add(element.attr("alt"));
-                    }
+                            Document document = Jsoup.connect("https://kibernetiki.com.ua/#prod1_1").get();
+                            Elements elementsByClass = document.getElementsByClass("product-section special");
+                            for (Element byClass : elementsByClass) {
+                                Elements img = byClass.select("img");
+                                Elements pr = byClass.getElementsByClass("item__price-wrap");
+                                Elements a = byClass.select("a");
+                                for (Element b : a) {
+                                    links.add(b.attr("href"));
+                                }
+                                String s1;
+                                String s2;
+                                for (Element element : pr) {
+                                    s1 = element.getElementsByClass("item__price-old").text();
+                                    s2 = element.getElementsByClass("item__price").text();
+                                    old_price.add(s1.substring(0, s1.indexOf("г") - 1) + " ₴");
+                                    new_price.add(s2.substring(0, s2.indexOf("г") - 1) + " ₴");
+                                    //System.out.println(element.getElementsByClass("item__price").text());
+                                }
+                                for (Element element : img) {
+                                    photo.add(element.attr("src"));
+                                    name.add(element.attr("alt"));
+                                }
 
-                }
-
-
-                for (int i = 0; i < name.size(); i++) {
-                    itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
-
-                }
-                printLogMessage("Kibernetiki");
-
-                setItemRecycler(itemList);
+                            }
 
 
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else if (title.getText().equals("Prostor")){
+                            for (int i = 0; i < name.size(); i++) {
+                                itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
 
-                try {
-                    Document document =  Jsoup.connect("https://prostor.ua/ru/supertseny/").get();
+                            }
+                            printLogMessage("Kibernetiki");
 
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
-                links = new ArrayList<>();
-
-                  Elements elementsByClass = document.getElementsByClass("catalogGrid catalog-grid catalog-grid--m catalog-grid--sidebar");
-
-                    for (Element byClass : elementsByClass) {
+                            setItemRecycler(itemList);
 
 
-                        Elements article = byClass.getElementsByClass("catalog-grid__item");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    } else if (title.getText().equals("Prostor")) {
 
-                        String s1;
-                        String s2;
+                        try {
+                            Document document = Jsoup.connect("https://prostor.ua/ru/supertseny/").get();
 
-                        for (Element element : article) {
-                            name.add(element.getElementsByClass("catalogCard-img").attr("alt"));
-                            //System.out.println(element.getElementsByClass("product__link product__name").text());
-                            photo.add("https://prostor.ua"+ element.getElementsByClass("catalogCard-img").attr("src"));
-                            links.add("https://prostor.ua"+ element.getElementsByClass("catalogCard-image ").attr("href"));
-                            s1 = element.getElementsByClass("catalogCard-oldPrice").text();
-                            s2 = element.getElementsByClass("catalogCard-price").text();
-                           // s1 = s1.substring(0, s1.length()-3);
-                            old_price.add(s1 );
-                            new_price.add(s2 );
-                            //
+                            name = new ArrayList<>();
+                            old_price = new ArrayList<>();
+                            new_price = new ArrayList<>();
+                            photo = new ArrayList<>();
+                            links = new ArrayList<>();
+
+                            Elements elementsByClass = document.getElementsByClass("catalogGrid catalog-grid catalog-grid--m catalog-grid--sidebar");
+
+                            for (Element byClass : elementsByClass) {
+
+
+                                Elements article = byClass.getElementsByClass("catalog-grid__item");
+
+                                String s1;
+                                String s2;
+
+                                for (Element element : article) {
+                                    name.add(element.getElementsByClass("catalogCard-img").attr("alt"));
+                                    //System.out.println(element.getElementsByClass("product__link product__name").text());
+                                    photo.add("https://prostor.ua" + element.getElementsByClass("catalogCard-img").attr("src"));
+                                    links.add("https://prostor.ua" + element.getElementsByClass("catalogCard-image ").attr("href"));
+                                    s1 = element.getElementsByClass("catalogCard-oldPrice").text();
+                                    s2 = element.getElementsByClass("catalogCard-price").text();
+                                    // s1 = s1.substring(0, s1.length()-3);
+                                    old_price.add(s1);
+                                    new_price.add(s2);
+                                    //
+                                }
+
+                            }
+
+                            for (int i = 0; i <= name.size() - 1; i++) {
+                                itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                            }
+                            printLogMessage("Prostor");
+
+                            setItemRecycler(itemList);
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
 
-                    }
-
-                    for (int i = 0; i <= name.size()-1; i++) {
-                        itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
-                    }
-                    printLogMessage("Prostor");
-
-                    setItemRecycler(itemList);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-            else if (title.getText().equals("Sportmaster")) {
-            try {
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
-                links = new ArrayList<>();
+                    } else if (title.getText().equals("Sportmaster")) {
+                        try {
+                            name = new ArrayList<>();
+                            old_price = new ArrayList<>();
+                            new_price = new ArrayList<>();
+                            photo = new ArrayList<>();
+                            links = new ArrayList<>();
 
 
-                Document document = Jsoup.connect("https://www.sportmaster.ua/ru/catalog/odegda_i_obuv_kollektsiya_vesnaleto_2021/page-2/?sale=1").get();
+                            Document document = Jsoup.connect("https://www.sportmaster.ua/ru/catalog/odegda_i_obuv_kollektsiya_vesnaleto_2021/page-2/?sale=1").get();
 
-                Elements elementsByClass = document.getElementsByClass("products-list__box block_big l-goods  ");
-                for (Element byClass : elementsByClass) {
-                    Elements img = byClass.getElementsByClass("products-list__box-image");
-                    //Elements name_el = byClass.select("products-list__box-name");
-                    Elements pr = byClass.getElementsByClass("products-list__box-info");
+                            Elements elementsByClass = document.getElementsByClass("products-list__box block_big l-goods  ");
+                            for (Element byClass : elementsByClass) {
+                                Elements img = byClass.getElementsByClass("products-list__box-image");
+                                //Elements name_el = byClass.select("products-list__box-name");
+                                Elements pr = byClass.getElementsByClass("products-list__box-info");
 
-                    String s1;
-                    String s2;
-                    for (Element element : pr) {
-                        s1 = element.getElementsByClass("price-old").text();
-                        s2 = element.getElementsByClass("price-new bigger").text();
-                        old_price.add(s1.substring(0, s1.indexOf(",")) + " ₴");
-                        new_price.add(s2.substring(0, s2.indexOf(",")) + " ₴");
-                        name.add(element.getElementsByClass("products-list__box-name").attr("alt"));
+                                String s1;
+                                String s2;
+                                for (Element element : pr) {
+                                    s1 = element.getElementsByClass("price-old").text();
+                                    s2 = element.getElementsByClass("price-new bigger").text();
+                                    old_price.add(s1.substring(0, s1.indexOf(",")) + " ₴");
+                                    new_price.add(s2.substring(0, s2.indexOf(",")) + " ₴");
+                                    name.add(element.getElementsByClass("products-list__box-name").attr("alt"));
 
-                        //System.out.println(element.getElementsByClass("item__price").text());
-                    }
-                    String s3;
-                    for (Element element : img) {
-                        s3 = element.getElementsByClass("products-list__box-img").attr("style");
-                        photo.add(s3.substring(s3.indexOf("(") + 1, s3.length() - 2));
+                                    //System.out.println(element.getElementsByClass("item__price").text());
+                                }
+                                String s3;
+                                for (Element element : img) {
+                                    s3 = element.getElementsByClass("products-list__box-img").attr("style");
+                                    photo.add(s3.substring(s3.indexOf("(") + 1, s3.length() - 2));
 
-                        links.add(element.getElementsByClass("products-list__box-img").attr("href"));
-                    }
+                                    links.add(element.getElementsByClass("products-list__box-img").attr("href"));
+                                }
 
-                }
-                for (int i = 0; i < name.size(); i++) {
-                    itemList.add(new Item(96, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), "https://www.sportmaster.ua" + links.get(i)));
+                            }
+                            for (int i = 0; i < name.size(); i++) {
+                                itemList.add(new Item(96, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), "https://www.sportmaster.ua" + links.get(i)));
 
-                }
-                printLogMessage("Sportmaster");
+                            }
+                            printLogMessage("Sportmaster");
 
-                setItemRecycler(itemList);
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else if (title.getText().equals("Ashan")) {
-            try {
-                Document document =  Jsoup.connect("https://auchan.zakaz.ua/ru/promotions/").get();
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
-                links = new ArrayList<>();
+                            setItemRecycler(itemList);
 
 
-
-                Elements elementsByClass = document.getElementsByClass("jsx-33926795 ProductsBox__list");
-                for (Element byClass : elementsByClass) {
-                    Elements a = byClass.getElementsByClass("jsx-33926795 ProductsBox__listItem");
-                    for (Element element : a) {
-                        name.add(element.select("a").attr("title"));
-                        links.add(element.select("a").attr("href"));
-                        Elements select = element.getElementsByClass("ProductTile__image").select("img");
-                        for (Element element1 : select) {
-                            photo.add(element1.attr("src"));
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
+                    } else if (title.getText().equals("Ashan")) {
+                        try {
+                            Document document = Jsoup.connect("https://auchan.zakaz.ua/ru/promotions/").get();
+                            name = new ArrayList<>();
+                            old_price = new ArrayList<>();
+                            new_price = new ArrayList<>();
+                            photo = new ArrayList<>();
+                            links = new ArrayList<>();
 
 
-                        Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__prices");
+                            Elements elementsByClass = document.getElementsByClass("jsx-33926795 ProductsBox__list");
+                            for (Element byClass : elementsByClass) {
+                                Elements a = byClass.getElementsByClass("jsx-33926795 ProductsBox__listItem");
+                                for (Element element : a) {
+                                    name.add(element.select("a").attr("title"));
+                                    links.add(element.select("a").attr("href"));
+                                    Elements select = element.getElementsByClass("ProductTile__image").select("img");
+                                    for (Element element1 : select) {
+                                        photo.add(element1.attr("src"));
+                                    }
 
-                        for (Element pr_l : pr) {
-                            old_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_body Price__value_minor").text());
-                            new_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text());
+
+                                    Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__prices");
+
+                                    for (Element pr_l : pr) {
+                                        old_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_body Price__value_minor").text());
+                                        new_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text());
+                                    }
+
+                                }
+
+                            }
+
+
+                            fillAshan();
+
+                            printLogMessage("Ashan");
+
+                            setItemRecycler(itemList);
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
                         }
+                    } else if (title.getText().equals("Jysk")) {
+                        try {
+                            Document document = Jsoup.connect("https://jysk.ua/campaigns#meta=solr&start=0&sort=fts_field_product_rating%2Bdesc").get();
+                            name = new ArrayList<>();
+                            old_price = new ArrayList<>();
+                            new_price = new ArrayList<>();
+                            photo = new ArrayList<>();
+                            links = new ArrayList<>();
 
+
+                            Elements elementsByClass = document.getElementsByClass("products");
+
+                            for (Element byClass : elementsByClass) {
+                                Elements article = byClass.select("article");
+                                for (Element element : article) {
+                                    name.add(element.select("img").attr("alt"));
+                                    photo.add(element.select("img").attr("src"));
+                                    links.add("https://jysk.ua" + element.select("a").attr("href"));
+                                    old_price.add(element.getElementsByClass("product-price-support price-before beforeprice").text());
+                                    new_price.add(element.getElementsByClass("product-price-value").text());
+                                }
+
+                            }
+
+                            for (int i = 0; i <= name.size() - 1; i++) {
+                                itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                            }
+                            setItemRecycler(itemList);
+                            printLogMessage("Jysk");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-
-                }
-
-
-                fillAshan();
-
-                printLogMessage("Ashan");
-
-                setItemRecycler(itemList);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }else if (title.getText().equals("Jysk")){
-            try {
-                Document document =  Jsoup.connect("https://jysk.ua/campaigns#meta=solr&start=0&sort=fts_field_product_rating%2Bdesc").get();
-                name = new ArrayList<>();
-                old_price = new ArrayList<>();
-                new_price = new ArrayList<>();
-                photo = new ArrayList<>();
-                links = new ArrayList<>();
-
-
-
-                Elements elementsByClass = document.getElementsByClass("products");
-
-                for (Element byClass : elementsByClass) {
-                    Elements article = byClass.select("article");
-                    for (Element element : article) {
-                        name.add(element.select("img").attr("alt"));
-                        photo.add(element.select("img").attr("src"));
-                        links.add("https://jysk.ua"+element.select("a").attr("href"));
-                        old_price.add(element.getElementsByClass("product-price-support price-before beforeprice").text());
-                        new_price.add(element.getElementsByClass("product-price-value").text());
-                    }
-
-                }
-
-                for (int i = 0; i <= name.size()-1; i++) {
-                    itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
-                }
-                setItemRecycler(itemList);
-            printLogMessage("Jysk");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
 
 
         fullItemList.clear();
@@ -919,29 +895,26 @@ public class ShopPage extends AppCompatActivity {
     }
 
 
-
-
-
     private void fillAshan() {
-        itemList.add(new Item(33, name.get(1), old_price.get(1)+ " ₴", new_price.get(1)+ " ₴", photo.get(3), "https://auchan.zakaz.ua"+links.get(1)));
-        itemList.add(new Item(33, name.get(2), old_price.get(2)+ " ₴", new_price.get(2)+ " ₴", photo.get(5), "https://auchan.zakaz.ua"+links.get(2)));
-        itemList.add(new Item(33, name.get(3), old_price.get(3)+ " ₴", new_price.get(3)+ " ₴", photo.get(7), "https://auchan.zakaz.ua"+links.get(3)));
-        itemList.add(new Item(33, name.get(4), old_price.get(4)+ " ₴", new_price.get(4)+ " ₴", photo.get(9), "https://auchan.zakaz.ua"+links.get(4)));
-        itemList.add(new Item(33, name.get(5), old_price.get(5)+ " ₴", new_price.get(5)+ " ₴", photo.get(11), "https://auchan.zakaz.ua"+links.get(5)));
-        itemList.add(new Item(33, name.get(6), old_price.get(6)+ " ₴", new_price.get(6)+ " ₴", photo.get(13), "https://auchan.zakaz.ua"+links.get(6)));
-        itemList.add(new Item(33, name.get(7), old_price.get(7)+ " ₴", new_price.get(7)+ " ₴", photo.get(15), "https://auchan.zakaz.ua"+links.get(7)));
-        itemList.add(new Item(33, name.get(8), old_price.get(8)+ " ₴", new_price.get(8)+ " ₴", photo.get(17), "https://auchan.zakaz.ua"+links.get(8)));
-        itemList.add(new Item(33, name.get(9), old_price.get(9)+ " ₴", new_price.get(9)+ " ₴", photo.get(19), "https://auchan.zakaz.ua"+links.get(9)));
-        itemList.add(new Item(33, name.get(10), old_price.get(10)+ " ₴", new_price.get(10)+ " ₴", photo.get(21), "https://auchan.zakaz.ua"+links.get(10)));
-        itemList.add(new Item(33, name.get(11), old_price.get(11)+ " ₴", new_price.get(11)+ " ₴", photo.get(23), "https://auchan.zakaz.ua"+links.get(11)));
-        itemList.add(new Item(33, name.get(12), old_price.get(12)+ " ₴", new_price.get(12)+ " ₴", photo.get(25), "https://auchan.zakaz.ua"+links.get(12)));
-        itemList.add(new Item(33, name.get(13), old_price.get(13)+ " ₴", new_price.get(13)+ " ₴", photo.get(27), "https://auchan.zakaz.ua"+links.get(13)));
-        itemList.add(new Item(33, name.get(14), old_price.get(14)+ " ₴", new_price.get(14)+ " ₴", photo.get(29), "https://auchan.zakaz.ua"+links.get(14)));
-        itemList.add(new Item(33, name.get(15), old_price.get(15)+ " ₴", new_price.get(15)+ " ₴", photo.get(31), "https://auchan.zakaz.ua"+links.get(15)));
+        itemList.add(new Item(33, name.get(1), old_price.get(1) + " ₴", new_price.get(1) + " ₴", photo.get(3), "https://auchan.zakaz.ua" + links.get(1)));
+        itemList.add(new Item(33, name.get(2), old_price.get(2) + " ₴", new_price.get(2) + " ₴", photo.get(5), "https://auchan.zakaz.ua" + links.get(2)));
+        itemList.add(new Item(33, name.get(3), old_price.get(3) + " ₴", new_price.get(3) + " ₴", photo.get(7), "https://auchan.zakaz.ua" + links.get(3)));
+        itemList.add(new Item(33, name.get(4), old_price.get(4) + " ₴", new_price.get(4) + " ₴", photo.get(9), "https://auchan.zakaz.ua" + links.get(4)));
+        itemList.add(new Item(33, name.get(5), old_price.get(5) + " ₴", new_price.get(5) + " ₴", photo.get(11), "https://auchan.zakaz.ua" + links.get(5)));
+        itemList.add(new Item(33, name.get(6), old_price.get(6) + " ₴", new_price.get(6) + " ₴", photo.get(13), "https://auchan.zakaz.ua" + links.get(6)));
+        itemList.add(new Item(33, name.get(7), old_price.get(7) + " ₴", new_price.get(7) + " ₴", photo.get(15), "https://auchan.zakaz.ua" + links.get(7)));
+        itemList.add(new Item(33, name.get(8), old_price.get(8) + " ₴", new_price.get(8) + " ₴", photo.get(17), "https://auchan.zakaz.ua" + links.get(8)));
+        itemList.add(new Item(33, name.get(9), old_price.get(9) + " ₴", new_price.get(9) + " ₴", photo.get(19), "https://auchan.zakaz.ua" + links.get(9)));
+        itemList.add(new Item(33, name.get(10), old_price.get(10) + " ₴", new_price.get(10) + " ₴", photo.get(21), "https://auchan.zakaz.ua" + links.get(10)));
+        itemList.add(new Item(33, name.get(11), old_price.get(11) + " ₴", new_price.get(11) + " ₴", photo.get(23), "https://auchan.zakaz.ua" + links.get(11)));
+        itemList.add(new Item(33, name.get(12), old_price.get(12) + " ₴", new_price.get(12) + " ₴", photo.get(25), "https://auchan.zakaz.ua" + links.get(12)));
+        itemList.add(new Item(33, name.get(13), old_price.get(13) + " ₴", new_price.get(13) + " ₴", photo.get(27), "https://auchan.zakaz.ua" + links.get(13)));
+        itemList.add(new Item(33, name.get(14), old_price.get(14) + " ₴", new_price.get(14) + " ₴", photo.get(29), "https://auchan.zakaz.ua" + links.get(14)));
+        itemList.add(new Item(33, name.get(15), old_price.get(15) + " ₴", new_price.get(15) + " ₴", photo.get(31), "https://auchan.zakaz.ua" + links.get(15)));
     }
 
     private void printLogMessage(String s) {
-        Log.d(TAG, s+"launch");
+        Log.d(TAG, s + "launch");
     }
 
     public void openCart(View view) {
