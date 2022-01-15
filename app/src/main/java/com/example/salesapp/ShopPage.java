@@ -322,9 +322,11 @@ public class ShopPage extends AppCompatActivity {
                         Elements disc_pr = byClass.getElementsByClass("es-discount-price");
                         Elements regular_pr = byClass.getElementsByClass("es-regular-price");
                         for (Element element : disc_pr) {
+//                            System.out.println(element.text());
                             new_price.add(element.text());
                         }
                         for (Element element : regular_pr) {
+
                             old_price.add(element.text());
                         }
                         Elements a = byClass.getElementsByClass("es-product").select("a");
@@ -336,8 +338,11 @@ public class ShopPage extends AppCompatActivity {
                             photo.add(element.select("img").attr("data-src"));
                             links.add(element.select("a").attr("href"));
                         }
-                            itemList.add(new Item(25, name.get(1), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
-                            itemList.add(new Item(25, name.get(2), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                        for (int i = 0; i < old_price.size(); i++) {
+
+                            itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i++), links.get(i)));
+                        }
+
 
 
 
@@ -612,62 +617,61 @@ public class ShopPage extends AppCompatActivity {
                     }
 
                 } else
-//            if (title.getText().equals("Aviatsiya")) {
-//            try {
-//                name = new ArrayList<>();
-//                old_price = new ArrayList<>();
-//                new_price = new ArrayList<>();
-//                photo = new ArrayList<>();
-//                links = new ArrayList<>();
-//                Document document = Jsoup.connect("https://www.aviatsiyahalychyny.com/shop/?orderby=sale").get();
-//                Elements pricesU = document.getElementsByClass("row");
-//                for (Element element : pricesU) {
-//                    Elements elementsByClass = element.getElementsByClass("col-lg-3 col-md-4 col-sm-6 shortcode-product");
-//                    for (Element byClass : elementsByClass) {
-//
-//                        photo.add(byClass.select("img").attr("src"));
-//                        name.add(byClass.select("h2").attr("itemprop", "name").text());
-//                        links.add(byClass.select("h2").attr("itemprop", "url")
-//                                .select("a").attr("href"));
-//                        Elements buy_button_price = byClass.getElementsByClass("buy_button_price");
-//                        for (Element element1 : buy_button_price) {
-//                            Elements old = element1
-//                                    .getElementsByClass("product-price old-price");
-//                            for (Element g : old) {
-//                                old_price.add(g
-//                                        .select("span")
-//                                        .attr("itemprop", "price")
-//                                        .text());
-//                            }
-//                            Elements elementsByClass1 = element1
-//                                    .getElementsByClass("product-price color_red");
-//                            for (Element m : elementsByClass1) {
-//                                new_price.add(m
-//                                        .select("span")
-//                                        .attr("itemprop", "price")
-//                                        .text());
-//                            }
-//
-//                        }
-//                    }
-//                }
-//
-//                itemList.add(new Item(80, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
-//                itemList.add(new Item(81, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
-//                itemList.add(new Item(82, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
-//                itemList.add(new Item(83, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
-//                itemList.add(new Item(84, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
-//                itemList.add(new Item(85, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
-//                itemList.add(new Item(86, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
-//                itemList.add(new Item(87, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
-//
-//                setItemRecycler(itemList);
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-                    //proverka
-//        } else
+            if (title.getText().equals("Aviatsiya")) {
+            try {
+                name = new ArrayList<>();
+                old_price = new ArrayList<>();
+                new_price = new ArrayList<>();
+                photo = new ArrayList<>();
+                links = new ArrayList<>();
+                Document document = Jsoup.connect("https://www.aviatsiyahalychyny.com/shop/?orderby=sale").get();
+                Elements pricesU = document.getElementsByClass("row");
+                for (Element element : pricesU) {
+                    Elements elementsByClass = element.getElementsByClass("col-lg-3 col-md-4 col-sm-6 shortcode-product");
+                    for (Element byClass : elementsByClass) {
+
+                        photo.add(byClass.select("img").attr("src"));
+                        name.add(byClass.select("h2").attr("itemprop", "name").text());
+                        links.add(byClass.select("h2").attr("itemprop", "url")
+                                .select("a").attr("href"));
+                        Elements buy_button_price = byClass.getElementsByClass("buy_button_price");
+                        for (Element element1 : buy_button_price) {
+                            Elements old = element1
+                                    .getElementsByClass("product-price old-price");
+                            for (Element g : old) {
+                                old_price.add(g
+                                        .select("span")
+                                        .attr("itemprop", "price")
+                                        .text());
+                            }
+                            Elements elementsByClass1 = element1
+                                    .getElementsByClass("product-price color_red");
+                            for (Element m : elementsByClass1) {
+                                new_price.add(m
+                                        .select("span")
+                                        .attr("itemprop", "price")
+                                        .text());
+                            }
+
+                        }
+                    }
+                }
+
+                itemList.add(new Item(80, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
+                itemList.add(new Item(81, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
+                itemList.add(new Item(82, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
+                itemList.add(new Item(83, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
+                itemList.add(new Item(84, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
+                itemList.add(new Item(85, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
+                itemList.add(new Item(86, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
+                itemList.add(new Item(87, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
+
+                setItemRecycler(itemList);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            } else
 
                     if (title.getText().equals("Kibernetiki")) {
                         try {
