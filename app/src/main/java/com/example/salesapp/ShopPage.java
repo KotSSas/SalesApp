@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -318,11 +319,9 @@ public class ShopPage extends AppCompatActivity {
 
                     Elements elementsByClass = document.getElementsByClass("section layout-with-controls layout-with-aside aside-on-left");
                     for (Element byClass : elementsByClass) {
-//                        System.out.println(byClass.getElementsByClass("es-product"));
                         Elements disc_pr = byClass.getElementsByClass("es-discount-price");
                         Elements regular_pr = byClass.getElementsByClass("es-regular-price");
                         for (Element element : disc_pr) {
-//                            System.out.println(element.text());
                             new_price.add(element.text());
                         }
                         for (Element element : regular_pr) {
@@ -841,8 +840,8 @@ public class ShopPage extends AppCompatActivity {
                                     Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__prices");
 
                                     for (Element pr_l : pr) {
-                                        old_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_body Price__value_minor").text());
-                                        new_price.add(pr_l.getElementsByClass("jsx-3642073353 Price__value_caption Price__value_discount").text());
+                                        old_price.add(pr_l.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text());
+                                        new_price.add(pr_l.getElementsByClass("jsx-221669879 Price__value_caption Price__value_discount").text());
                                     }
 
                                 }
@@ -900,21 +899,21 @@ public class ShopPage extends AppCompatActivity {
 
 
     private void fillAshan() {
-        itemList.add(new Item(33, name.get(1), old_price.get(1) + " ₴", new_price.get(1) + " ₴", photo.get(3), "https://auchan.zakaz.ua" + links.get(1)));
-        itemList.add(new Item(33, name.get(2), old_price.get(2) + " ₴", new_price.get(2) + " ₴", photo.get(5), "https://auchan.zakaz.ua" + links.get(2)));
-        itemList.add(new Item(33, name.get(3), old_price.get(3) + " ₴", new_price.get(3) + " ₴", photo.get(7), "https://auchan.zakaz.ua" + links.get(3)));
-        itemList.add(new Item(33, name.get(4), old_price.get(4) + " ₴", new_price.get(4) + " ₴", photo.get(9), "https://auchan.zakaz.ua" + links.get(4)));
-        itemList.add(new Item(33, name.get(5), old_price.get(5) + " ₴", new_price.get(5) + " ₴", photo.get(11), "https://auchan.zakaz.ua" + links.get(5)));
-        itemList.add(new Item(33, name.get(6), old_price.get(6) + " ₴", new_price.get(6) + " ₴", photo.get(13), "https://auchan.zakaz.ua" + links.get(6)));
-        itemList.add(new Item(33, name.get(7), old_price.get(7) + " ₴", new_price.get(7) + " ₴", photo.get(15), "https://auchan.zakaz.ua" + links.get(7)));
-        itemList.add(new Item(33, name.get(8), old_price.get(8) + " ₴", new_price.get(8) + " ₴", photo.get(17), "https://auchan.zakaz.ua" + links.get(8)));
-        itemList.add(new Item(33, name.get(9), old_price.get(9) + " ₴", new_price.get(9) + " ₴", photo.get(19), "https://auchan.zakaz.ua" + links.get(9)));
-        itemList.add(new Item(33, name.get(10), old_price.get(10) + " ₴", new_price.get(10) + " ₴", photo.get(21), "https://auchan.zakaz.ua" + links.get(10)));
-        itemList.add(new Item(33, name.get(11), old_price.get(11) + " ₴", new_price.get(11) + " ₴", photo.get(23), "https://auchan.zakaz.ua" + links.get(11)));
-        itemList.add(new Item(33, name.get(12), old_price.get(12) + " ₴", new_price.get(12) + " ₴", photo.get(25), "https://auchan.zakaz.ua" + links.get(12)));
-        itemList.add(new Item(33, name.get(13), old_price.get(13) + " ₴", new_price.get(13) + " ₴", photo.get(27), "https://auchan.zakaz.ua" + links.get(13)));
-        itemList.add(new Item(33, name.get(14), old_price.get(14) + " ₴", new_price.get(14) + " ₴", photo.get(29), "https://auchan.zakaz.ua" + links.get(14)));
-        itemList.add(new Item(33, name.get(15), old_price.get(15) + " ₴", new_price.get(15) + " ₴", photo.get(31), "https://auchan.zakaz.ua" + links.get(15)));
+        itemList.add(new Item(33, name.get(1), old_price.get(1) , new_price.get(1) + " грн", photo.get(3), "https://auchan.zakaz.ua" + links.get(1)));
+        itemList.add(new Item(33, name.get(2), old_price.get(2) , new_price.get(2) + " грн", photo.get(5), "https://auchan.zakaz.ua" + links.get(2)));
+        itemList.add(new Item(33, name.get(3), old_price.get(3) , new_price.get(3) + " грн", photo.get(7), "https://auchan.zakaz.ua" + links.get(3)));
+        itemList.add(new Item(33, name.get(4), old_price.get(4) , new_price.get(4) + " грн", photo.get(9), "https://auchan.zakaz.ua" + links.get(4)));
+        itemList.add(new Item(33, name.get(5), old_price.get(5) , new_price.get(5) + " грн", photo.get(11), "https://auchan.zakaz.ua" + links.get(5)));
+        itemList.add(new Item(33, name.get(6), old_price.get(6) , new_price.get(6) + " грн", photo.get(13), "https://auchan.zakaz.ua" + links.get(6)));
+        itemList.add(new Item(33, name.get(7), old_price.get(7) , new_price.get(7) + " грн", photo.get(15), "https://auchan.zakaz.ua" + links.get(7)));
+        itemList.add(new Item(33, name.get(8), old_price.get(8) , new_price.get(8) + " грн", photo.get(17), "https://auchan.zakaz.ua" + links.get(8)));
+        itemList.add(new Item(33, name.get(9), old_price.get(9) , new_price.get(9) + " грн", photo.get(19), "https://auchan.zakaz.ua" + links.get(9)));
+        itemList.add(new Item(33, name.get(10), old_price.get(10) , new_price.get(10) + " грн", photo.get(21), "https://auchan.zakaz.ua" + links.get(10)));
+        itemList.add(new Item(33, name.get(11), old_price.get(11) , new_price.get(11) + " грн", photo.get(23), "https://auchan.zakaz.ua" + links.get(11)));
+        itemList.add(new Item(33, name.get(12), old_price.get(12) , new_price.get(12) + " грн", photo.get(25), "https://auchan.zakaz.ua" + links.get(12)));
+        itemList.add(new Item(33, name.get(13), old_price.get(13) , new_price.get(13) + " грн", photo.get(27), "https://auchan.zakaz.ua" + links.get(13)));
+        itemList.add(new Item(33, name.get(14), old_price.get(14) , new_price.get(14) + " грн", photo.get(29), "https://auchan.zakaz.ua" + links.get(14)));
+        itemList.add(new Item(33, name.get(15), old_price.get(15) , new_price.get(15) + " грн", photo.get(31), "https://auchan.zakaz.ua" + links.get(15)));
     }
 
     private void printLogMessage(String s) {
@@ -965,4 +964,5 @@ public class ShopPage extends AppCompatActivity {
         itemAdapter = new ItemAdapter(this, itemList);
         recyclerView.setAdapter(itemAdapter);
     }
+
 }
