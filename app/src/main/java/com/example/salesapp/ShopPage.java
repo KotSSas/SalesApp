@@ -298,7 +298,7 @@ public class ShopPage extends AppCompatActivity {
                         }
                     }
 
-                    for (int i = 0; i <= 20; i++) {
+                    for (int i = 1; i <= 7; i++) {
                         itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                     }
                     printLogMessage("Lc Walkiki");
