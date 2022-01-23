@@ -257,7 +257,7 @@ public class ShopPage extends AppCompatActivity {
 
                         }
                     }
-                    for (int i = 0; i < name.size(); i++) {
+                    for (int i = 0; i <= name.size()-1; i++) {
 
                         itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                     }
@@ -297,8 +297,7 @@ public class ShopPage extends AppCompatActivity {
                             }
                         }
                     }
-
-                    for (int i = 1; i <= 7; i++) {
+                    for (int i = 1; i <= 5; i++) {
                         itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                     }
                     printLogMessage("Lc Walkiki");
@@ -706,11 +705,20 @@ public class ShopPage extends AppCompatActivity {
 
                             }
 
+                            links.remove(0);
 
-                            for (int i = 0; i < name.size(); i++) {
-                                itemList.add(new Item(33, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
+                                itemList.add(new Item(33, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(3)));
+                                itemList.add(new Item(33, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(5)));
+                                itemList.add(new Item(33, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(7)));
+                                itemList.add(new Item(33, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(9)));
+                                itemList.add(new Item(33, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(11)));
+                                itemList.add(new Item(33, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(13)));
+                                itemList.add(new Item(33, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(15)));
+                                itemList.add(new Item(33, name.get(8), old_price.get(8), new_price.get(8), photo.get(8), links.get(17)));
+                                itemList.add(new Item(33, name.get(9), old_price.get(9), new_price.get(9), photo.get(9), links.get(19)));
+                                itemList.add(new Item(33, name.get(10), old_price.get(10), new_price.get(10), photo.get(10), links.get(21)));
 
-                            }
+
                             printLogMessage("Kibernetiki");
 
                             setItemRecycler(itemList);
