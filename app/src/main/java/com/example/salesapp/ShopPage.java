@@ -412,10 +412,10 @@ public class ShopPage extends AppCompatActivity {
                     try {
                         Document document = Jsoup.connect(
                                 "https://www.staff-clothes.com/m/discounts/").get();
-                        List<String> name = new ArrayList<>();
-                        List<String> old_price = new ArrayList<>();
-                        List<String> new_price = new ArrayList<>();
-                        List<String> photo = new ArrayList<>();
+                         name = new ArrayList<>();
+                         old_price = new ArrayList<>();
+                         new_price = new ArrayList<>();
+                         photo = new ArrayList<>();
                         links = new ArrayList<>();
 
 
@@ -444,18 +444,9 @@ public class ShopPage extends AppCompatActivity {
                             }
                         }
                         for (int i = 0; i < name.size(); i++) {
-
                             itemList.add(new Item(49, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                         }
                         printLogMessage("Staff");
-//                itemList.add(new Item(49, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
-//                itemList.add(new Item(50, name.get(1), old_price.get(1), new_price.get(1), photo.get(1), links.get(1)));
-//                itemList.add(new Item(51, name.get(2), old_price.get(2), new_price.get(2), photo.get(2), links.get(2)));
-//                itemList.add(new Item(52, name.get(3), old_price.get(3), new_price.get(3), photo.get(3), links.get(3)));
-//                itemList.add(new Item(53, name.get(4), old_price.get(4), new_price.get(4), photo.get(4), links.get(4)));
-//                itemList.add(new Item(54, name.get(5), old_price.get(5), new_price.get(5), photo.get(5), links.get(5)));
-//                itemList.add(new Item(55, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
-//                itemList.add(new Item(56, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
                         setItemRecycler(itemList);
 
                     } catch (IOException e) {
@@ -464,10 +455,10 @@ public class ShopPage extends AppCompatActivity {
                 } else if (title.getText().equals("Foxtrot")) {
                     try {
                         Document doc = Jsoup.connect("https://www.foxtrot.com.ua/uk/actions/12768").ignoreHttpErrors(true).timeout(5000).get();
-                        List<String> name = new ArrayList<>();
-                        List<String> old_price = new ArrayList<>();
-                        List<String> new_price = new ArrayList<>();
-                        List<String> photo = new ArrayList<>();
+                         name = new ArrayList<>();
+                         old_price = new ArrayList<>();
+                         new_price = new ArrayList<>();
+                         photo = new ArrayList<>();
                         links = new ArrayList<>();
 
                         Elements elementsByClass1 = doc.getElementsByClass("action-product-container action-categoryid-58 slot");
@@ -493,13 +484,7 @@ public class ShopPage extends AppCompatActivity {
 
                             itemList.add(new Item(57, name.get(i), old_price.get(i) + " ₴", new_price.get(i), photo.get(i), links.get(i)));
                         }
-//                itemList.add(new Item(57, name.get(0), old_price.get(0) + " ₴", new_price.get(0), photo.get(0), links.get(0)));
-//                itemList.add(new Item(58, name.get(1), old_price.get(1) + " ₴", new_price.get(1), photo.get(1), links.get(1)));
-//                itemList.add(new Item(59, name.get(2), old_price.get(2) + " ₴", new_price.get(2), photo.get(2), links.get(2)));
-//                itemList.add(new Item(60, name.get(3), old_price.get(3) + " ₴", new_price.get(3), photo.get(3), links.get(3)));
-//                itemList.add(new Item(61, name.get(4), old_price.get(4) + " ₴", new_price.get(4), photo.get(4), links.get(4)));
-//                itemList.add(new Item(62, name.get(5), old_price.get(5) + " ₴", new_price.get(5), photo.get(5), links.get(5)));
-//                itemList.add(new Item(63, name.get(6), old_price.get(6) + " ₴", new_price.get(6), photo.get(6), links.get(6)));
+
                         printLogMessage("Foxtrot");
 
 
@@ -511,10 +496,10 @@ public class ShopPage extends AppCompatActivity {
                 } else if (title.getText().equals("ATB")) {
                     try {
                         Document doc = Jsoup.connect("https://zakaz.atbmarket.com/catalog/1016/economy").get();
-                        List<String> name = new ArrayList<>();
-                        List<String> old_price = new ArrayList<>();
-                        List<String> new_price = new ArrayList<>();
-                        List<String> photo = new ArrayList<>();
+                         name = new ArrayList<>();
+                         old_price = new ArrayList<>();
+                         new_price = new ArrayList<>();
+                         photo = new ArrayList<>();
                         links = new ArrayList<>();
 
                         Elements elementsByClass1 = doc.getElementsByClass("catalog-list");
@@ -550,19 +535,10 @@ public class ShopPage extends AppCompatActivity {
                                 }
                             }
 
-                            // itemList.add(new Item(64, "name.get(0)", "old_price.get(0)", "new_price.get(0)", "jj", "jj"));
                             for (int i = 0; i < name.size(); i++) {
                                 itemList.add(new Item(64, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                             }
                         }
-//                itemList.add(new Item(64, name.get(0), old_price.get(0), new_price.get(0), photo.get(0), links.get(0)));
-//                itemList.add(new Item(65, name.get(7), old_price.get(7), new_price.get(7), photo.get(7), links.get(7)));
-//                itemList.add(new Item(66, name.get(23), old_price.get(23), new_price.get(23), photo.get(23), links.get(23)));
-//                itemList.add(new Item(67, name.get(8), old_price.get(8), new_price.get(8), photo.get(8), links.get(8)));
-//                itemList.add(new Item(68, name.get(6), old_price.get(6), new_price.get(6), photo.get(6), links.get(6)));
-//                itemList.add(new Item(69, name.get(15), old_price.get(15), new_price.get(15), photo.get(15), links.get(15)));
-//                itemList.add(new Item(70, name.get(20), old_price.get(20), new_price.get(20), photo.get(20), links.get(20)));
-//                itemList.add(new Item(71, name.get(9), new_price.get(9), "Товар без скидки!", photo.get(9), links.get(9)));
                         printLogMessage("ATB");
 
                         setItemRecycler(itemList);
@@ -755,10 +731,8 @@ public class ShopPage extends AppCompatActivity {
                                     links.add("https://prostor.ua" + element.getElementsByClass("catalogCard-image ").attr("href"));
                                     s1 = element.getElementsByClass("catalogCard-oldPrice").text();
                                     s2 = element.getElementsByClass("catalogCard-price").text();
-                                    // s1 = s1.substring(0, s1.length()-3);
                                     old_price.add(s1);
                                     new_price.add(s2);
-                                    //
                                 }
 
                             }
