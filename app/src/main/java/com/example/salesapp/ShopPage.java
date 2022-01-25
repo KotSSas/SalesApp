@@ -899,7 +899,7 @@ public class ShopPage extends AppCompatActivity {
     }
 
     private void printLogMessage(String s) {
-        Log.d(TAG, s + "launch");
+        Log.d(TAG, s + " launch");
     }
 
     public void openCart(View view) {
