@@ -144,7 +144,7 @@ public class ShopPage extends AppCompatActivity {
                             new_price.add(newP.getElementsByClass("price__discount").text());
                         }
                         photo.add(b.getElementsByClass("product__image").select("img").attr("src"));
-                        links.add(b.getElementsByClass("product__image").select("a").attr("href"));
+                        links.add("https://www.tavriav.ua"+b.getElementsByClass("product__image").select("a").attr("href"));
                     }
 
                 }
@@ -817,7 +817,7 @@ public class ShopPage extends AppCompatActivity {
                                         Elements a = g.select("a");
                                         for (Element element : a) {
                                             name.add(element.attr("title"));
-                                            links.add("https://auchan.zakaz.ua"+element.attr("href"));
+                                            links.add(element.attr("href"));
                                         }
 
                                         Elements select = g.getElementsByClass("ProductTile__image").select("img");
