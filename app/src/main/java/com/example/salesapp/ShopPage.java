@@ -228,7 +228,7 @@ public class ShopPage extends AppCompatActivity {
                     links = new ArrayList<>();
 
                     Elements elementsByClass =
-                            document.getElementsByClass("jsx-33926795 ProductsBox__list");
+                            document.getElementsByClass("jsx-1311419895 ProductsBox");
                     Elements a = elementsByClass.select("a");
                     for (Element k : a) {
                         links.add("https://metro.zakaz.ua" + k.attr("href"));
@@ -244,11 +244,11 @@ public class ShopPage extends AppCompatActivity {
                         }
                     }
                     for (Element byClass : elementsByClass) {
-                        Elements el_prices = byClass.getElementsByClass("jsx-2958303393 ProductTile__prices");
+                        Elements el_prices = byClass.getElementsByClass("jsx-1278518368 ProductTile__prices");
                         for (Element el_price : el_prices) {
 
-                            String s1 = el_price.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text();
-                            String s2 = el_price.getElementsByClass("jsx-221669879 Price__value_caption Price__value_discount").text();
+                            String s1 = el_price.getElementsByClass("jsx-1278518368 ProductTile__oldPrice").text();
+                            String s2 = el_price.getElementsByClass("jsx-162399883 Price__value_caption Price__value_discount").text();
                             if (s1.indexOf("г") == s1.indexOf("р") - 1 && s1.indexOf("р") == s1.indexOf("н") - 1) {
                                 old_price.add(s1.substring(0, s1.indexOf("г") - 1) + "₴");
                                 new_price.add(s2 + "₴");
@@ -257,10 +257,11 @@ public class ShopPage extends AppCompatActivity {
 
                         }
                     }
-                    for (int i = 0; i <= name.size()-1; i++) {
 
+                    for (int i = 0; i < name.size(); i++) {
                         itemList.add(new Item(25, name.get(i), old_price.get(i), new_price.get(i), photo.get(i), links.get(i)));
                     }
+
                     Log.d(TAG, "Metro launch");
                     setItemRecycler(itemList);
                 } catch (IOException e) {
