@@ -807,36 +807,37 @@ public class ShopPage extends AppCompatActivity {
                             links = new ArrayList<>();
 
 
-                            Elements elementsByClass = document.getElementsByClass("jsx-33926795 ProductsBox__list");
+                            Elements elementsByClass = document.getElementsByClass("jsx-1517360494 PageWrapBody");
                             for (Element byClass : elementsByClass) {
-                                Elements a = byClass.getElementsByClass("jsx-33926795 ProductsBox__listItem");
-                                for (Element element : a) {
-                                    name.add(element.select("a").attr("title"));
-                                    links.add(element.select("a").attr("href"));
-                                    Elements select = element.getElementsByClass("ProductTile__image").select("img");
-                                    for (Element element1 : select) {
-                                        photo.add(element1.attr("src"));
-                                    }
+                                Elements elementsByClass1 = byClass.getElementsByClass("jsx-1311419895 ProductsBox");
+                                for (Element e : elementsByClass1) {
+                                    Elements e2 = e.getElementsByClass("jsx-1311419895 ProductsBox__list");
+                                    for (Element g : e2) {
+                                        Elements a = g.select("a");
+                                        for (Element element : a) {
+                                            name.add(element.attr("title"));
+                                            links.add("https://auchan.zakaz.ua"+element.attr("href"));
+                                        }
 
+                                        Elements select = g.getElementsByClass("ProductTile__image").select("img");
+                                        for (Element element1 : select) {
+                                            photo.add(element1.attr("src"));
+                                        }
 
-                                    Elements pr = element.getElementsByClass("jsx-2958303393 ProductTile__prices");
+                                        Elements pr = g.getElementsByClass("jsx-1278518368 ProductTile__details");
+//                        System.out.println(pr);
 
-                                    for (Element pr_l : pr) {
-                                        old_price.add(pr_l.getElementsByClass("jsx-2958303393 ProductTile__oldPrice").text());
-                                        new_price.add(pr_l.getElementsByClass("jsx-221669879 Price__value_caption Price__value_discount").text());
+                                        for (Element pr_l : pr) {
+                                            old_price.add(pr_l.getElementsByClass("jsx-1278518368 ProductTile__oldPrice").text());
+                                            new_price.add(pr_l.getElementsByClass("jsx-162399883 Price__value_caption Price__value_discount").text());
+                                        }
                                     }
 
                                 }
-
                             }
-
-
                             fillAshan();
-
-                            printLogMessage("Ashan");
-
                             setItemRecycler(itemList);
-
+                            printLogMessage("Ashan");
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
