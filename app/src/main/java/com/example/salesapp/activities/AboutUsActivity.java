@@ -59,13 +59,13 @@ public class AboutUsActivity extends AppCompatActivity {
 
             }
         });
-        commentsLink =findViewById(R.id.commentsFloatButton);
+//        commentsLink =findViewById(R.id.commentsFloatButton);
 
-        commentsLink.setOnClickListener(v -> {
-            //v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
-            openCommentsActivity();
-
-        });
+//        commentsLink.setOnClickListener(v -> {
+//            //v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
+//            openCommentsActivity();
+//
+//        });
 
     }
 

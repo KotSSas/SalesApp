@@ -237,7 +237,7 @@ public class MainActivity extends AppCompatActivity {
             shopList.add(new Shop(9, 5, "spr", "Sportmaster", "Спорт", "10:00 - 22:00", "https://sportmaster.ua/"));
             shopList.add(new Shop(9, 5, "jysk", "Jysk", "Мебель", "10:30 - 20:30", "https://jysk.ua/"));
             shopList.add(new Shop(10, 4, "metr", "Metro", "Продукты", "07:00 - 23:00", "https://www.metro.ua/"));//*
-            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
+//            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
             shopList.add(new Shop(12, 4, "tavr", "Tavriya", "Продукты", "08:00 - 23:00", "https://www.tavriav.ua/"));//*
             shopList.add(new Shop(13, 3, "ah", "Aviatsiya", "Одежда", "10:00 - 21:00", "https://aviatsiyahalychyny.com"));//*
 //            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
