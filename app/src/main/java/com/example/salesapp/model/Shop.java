@@ -5,15 +5,12 @@ import android.media.Image;
 public class Shop {
 
     int id, category_s;
-    String img, title, category, work_time, site ;
+    String img, title;
 
-    public Shop(int id, int category_s, String img, String title, String category, String work_time, String site) {
+    public Shop(int id, int category_s, String img, String title) {
         this.id = id;
         this.img = img;
         this.title = title;
-        this.category = category;
-        this.work_time = work_time;
-        this.site = site;
         this.category_s = category_s;
     }
 
@@ -49,27 +46,4 @@ public class Shop {
         this.title = title;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getWork_time() {
-        return work_time;
-    }
-
-    public void setWork_time(String work_time) {
-        this.work_time = work_time;
-    }
-
-    public String getSite() {
-        return site;
-    }
-
-    public void setSite(String site) {
-        this.site = site;
-    }
 }

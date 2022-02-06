@@ -5,307 +5,122 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/apk/res-aut"
-    android:background="@color/background"
+    android:background="@drawable/grad"
     tools:context=".activities.MainActivity">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="70dp"
-        android:layout_height="0dp"
-        android:background="@color/r_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="3dp"
-            android:contentDescription="@string/sales_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_hot_deal" />
-
-        <TextView
-            android:id="@+id/main_scene"
-            android:layout_width="120dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="8dp"
-            android:clickable="true"
-            android:fontFamily="@font/montserrat_bold"
-            android:gravity="center"
-            android:rotation="270"
-            android:text="@string/main_scene"
-            android:textColor="#4B4768"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <TextView
-            android:id="@+id/about_us"
-            android:layout_width="120dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="0dp"
-            android:clickable="true"
-            android:fontFamily="@font/montserrat"
-            android:gravity="center"
-            android:rotation="270"
-            android:text="@string/about_us"
-            android:textColor="#7D75B8"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_scene" />
-
-        <TextView
-            android:id="@+id/coming_soon_scene"
-            android:layout_width="160dp"
-            android:layout_height="165dp"
-            android:clickable="true"
-            android:fontFamily="@font/montserrat"
-            android:gravity="center"
-            android:rotation="270"
-            android:text="@string/coming_soon"
-            android:textColor="#7D75B8"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/about_us" />
-
-
-        <ImageView
-            android:id="@+id/ico_image"
-            android:layout_width="50dp"
-            android:layout_height="76dp"
-            android:layout_marginBottom="16dp"
-            android:transitionName="icoImage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_logo" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <TextView
         android:id="@+id/h1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/h1"
-        android:textColor="@color/black"
-        android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/head"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/h2"
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+
+        android:fontFamily="@font/roboto"
+        android:text="@string/head2"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1" />
+
+
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginRight="30dp"
+        android:contentDescription="@string/sales_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h2"
+        app:srcCompat="@drawable/bar" />
+
+    <TextView
+        android:id="@+id/h2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="@string/h2"
-        android:textColor="@color/name_of_app"
-        android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/h1"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+
+    <TextView
+        android:id="@+id/h3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/h3"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/sales_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h3"
+        app:srcCompat="@drawable/bar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/shops_recycler"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="213dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
         tools:listitem="@layout/shop_item" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/mainButn"
+    <ImageView
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:transitionName="filterIco"
-        android:clickable="true"
-        app:backgroundTint="@color/name_of_app"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/sales_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rippleColor="#EDEDED"
-        app:srcCompat="@drawable/ic_gr" />
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/firstButn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:backgroundTint="#C4BCF8"
-        app:layout_constraintBottom_toTopOf="@+id/mainButn"
-        app:layout_constraintEnd_toEndOf="@+id/mainButn"
-        app:srcCompat="@drawable/ic_gr0" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/secondButn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:backgroundTint="#E8E6F5"
-        app:layout_constraintBottom_toTopOf="@+id/firstButn"
-        app:layout_constraintEnd_toEndOf="@+id/firstButn"
-        app:srcCompat="@drawable/ic_gr1" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/thirdButn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:backgroundTint="#E8E6F5"
-        app:layout_constraintBottom_toTopOf="@+id/firstButn"
-        app:layout_constraintEnd_toEndOf="@+id/firstButn"
-        app:srcCompat="@drawable/ic_gr3" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fourthButn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:backgroundTint="#E8E6F5"
-        app:layout_constraintBottom_toTopOf="@+id/firstButn"
-        app:layout_constraintEnd_toEndOf="@+id/firstButn"
-        app:srcCompat="@drawable/ic_gr_2" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fifthButn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:backgroundTint="#E8E6F5"
-
-        app:layout_constraintBottom_toTopOf="@+id/thirdButn"
-        app:layout_constraintEnd_toEndOf="@+id/thirdButn"
-        app:srcCompat="@drawable/ic_ico_5" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/h2">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:background="@drawable/ic_bcgr">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-               >
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    app:backgroundTint="@color/name_of_app"
-                    app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-                    app:layout_constraintTop_toBottomOf="@+id/h2"
-                    app:rippleColor="#EDEDED"
-                    app:srcCompat="@drawable/ic_gr" />
-
-                <LinearLayout
-                    android:id="@+id/linearLayout4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
-                    app:layout_constraintStart_toEndOf="@+id/floatingActionButton"
-                    app:layout_constraintTop_toTopOf="@+id/floatingActionButton">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:text="@string/main_text2"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/text_head_cat"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat"
-                        android:text="@string/main_text3"
-                        android:textColor="@color/text"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-
-            <View style="@style/Divider.Horizontal"
-                android:layout_marginTop="8dp"/>
-
-            <TextView
-                android:id="@+id/text_head_cat2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/main_text"
-                android:textColor="@color/text"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-                app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
-
-
-        </LinearLayout>
-        </LinearLayout>
-
-
-
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shops_recycler"
+        app:srcCompat="@drawable/bar" />
 
 
 

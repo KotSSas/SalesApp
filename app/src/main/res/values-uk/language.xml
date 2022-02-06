@@ -9,8 +9,7 @@
     <string name="coming_soon_h1">Порівняння</string>
     <string name="coming_soon_text">Ця сторінка буде доступна пізніше!</string>
     <string name="main_scene">Головна</string>
-    <string name="h1">Sales</string>
-    <string name="h2">App</string>
+    <string name="h2">Фільтр:</string>
     <string name="shop_cat">Магазин:</string>
     <string name="shop_work">Час роботи:</string>
     <string name="shop_site">Офіційний сайт</string>
@@ -83,6 +82,9 @@
     <string name="hello_again_n_message">З поверненням у SalesApp</string>
     <string name="welcome_note_message">Вітаємо знов!</string>
     <string name="success_message">Ваше повідомлення успішно надіслано!</string>
+    <string name="head">Вітаємо!</string>
+    <string name="head2">З поверненням у SalesApp</string>
+    <string name="h3">Магазини нашого додаку</string>
 
 
 </resources>

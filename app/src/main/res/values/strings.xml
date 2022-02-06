@@ -6,8 +6,10 @@
     <string name="coming_soon_h1">Сравнение</string>
     <string name="coming_soon_text">Данная страница пока что не доступна!</string>
     <string name="main_scene">Главная</string>
-    <string name="h1">Sales</string>
-    <string name="h2">App</string>
+    <string name="head">Привет!</string>
+    <string name="head2">C возращением в SalesApp!</string>
+    <string name="h2">Фильтр:</string>
+    <string name="h3" > Магазины нашего приложения</string>
     <string name="shop_cat">Магазин:</string>
     <string name="shop_work">Время работы:</string>
     <string name="shop_site">Официальный сайт:</string>

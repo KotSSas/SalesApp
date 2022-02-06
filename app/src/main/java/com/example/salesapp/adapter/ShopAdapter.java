@@ -55,12 +55,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         int img_id = context.getResources().getIdentifier("ic_" + shops.get(position).getImg(), "drawable", context.getPackageName());
         holder.img.setImageResource(img_id);
 
-
-        holder.title.setText(shops.get(position).getTitle());
-        holder.time_work.setText(shops.get(position).getWork_time());
-        holder.cat.setText(shops.get(position).getCategory());
-        holder.site.setText(shops.get(position).getSite());
-
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -87,8 +81,6 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 
                     intent.putExtra("image", img_id);
                     intent.putExtra("title", shops.get(position).getTitle());
-                    intent.putExtra("category", shops.get(position).getCategory());
-
 
                     dialog.startLoadingDialog();
                     Handler handler = new Handler();
@@ -130,17 +122,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     public static final class ShopViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
-        TextView title;
-        TextView time_work;
-        TextView cat;
-        TextView site;
 
         public ShopViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.shop_title);
-            cat = itemView.findViewById(R.id.shop_category);
-            time_work = itemView.findViewById(R.id.shop_work);
-            site = itemView.findViewById(R.id.shop_site);
             img = itemView.findViewById(R.id.image);
         }
 
