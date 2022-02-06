@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.os.Bundle;
@@ -66,9 +67,18 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
+
+
+
         navigationView = findViewById(R.id.nav_view);
         drawerLayout = findViewById(R.id.drawer_layout);
         image = findViewById(R.id.menuImage);
+        //animated background
+        AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
+        animationDrawable.setEnterFadeDuration(2500);
+        animationDrawable.setExitFadeDuration(5000);
+        animationDrawable.start();
+
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(item -> {
             itemListener(item);

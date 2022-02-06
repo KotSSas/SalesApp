@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/background_1.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/background_2.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/background_3.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/grad.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/gradient_list.xml" value="0.24074074074074073" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/home1.xml" value="0.24074074074074073" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_ah.xml" value="0.14814814814814814" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_allo.xml" value="0.2703125" />
@@ -14,6 +19,7 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_logo.xml" value="0.14814814814814814" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_prost.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_site_b.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout-land/activity_main.xml" value="0.2708333333333333" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout-land/nav_header_layout.xml" value="0.2708333333333333" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout-v26/activity_main.xml" value="0.25052083333333336" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_about_us.xml" value="0.264" />
