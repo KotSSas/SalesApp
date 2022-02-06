@@ -4,45 +4,35 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
 import android.util.Log;
-import android.util.Pair;
-import android.view.View;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.Window;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.salesapp.IntroPref;
 import com.example.salesapp.R;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.Category;
 import com.example.salesapp.model.Shop;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
     static List<Shop> fullShopsList = new ArrayList<>();
     private static final String TAG = "MainActivity";
 
+
+    ImageView image;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
     //тест
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
@@ -72,50 +66,88 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-//        setCategotyRecycler(categoryList);
-//        setShopRecycler(shopList);
+        navigationView = findViewById(R.id.nav_view);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        image = findViewById(R.id.menuImage);
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(item -> {
+            itemListener(item);
+            return true;
+        });
+        navigationView.setCheckedItem(R.id.nav_home);
 
-            categoryList.add(new Category(1, 1));
-            categoryList.add(new Category(2, 0));
-            categoryList.add(new Category(3, 0));
-            categoryList.add(new Category(4, 0));
-            categoryList.add(new Category(5, 0));
-            // categoryList.add(new Category(5, "Разное", "category"));
 
-            shopList.add(new Shop(1, 3, "staff", "Staff"));
-            shopList.add(new Shop(5, 2, "ciber", "Kibernetiki"));//*
-            shopList.add(new Shop(6, 4, "atb", "ATB"));
-            shopList.add(new Shop(14, 4, "ahn", "Ashan"));
-            shopList.add(new Shop(7, 3, "urb", "Urban Planet"));//*
-            shopList.add(new Shop(1, 5, "prost", "Prostor"));
-            shopList.add(new Shop(8, 2, "fox", "Foxtrot"));
-            shopList.add(new Shop(9, 5, "spr", "Sportmaster"));
-            shopList.add(new Shop(9, 5, "jysk", "Jysk"));
-            shopList.add(new Shop(10, 4, "metr", "Metro"));//*
+        image.setOnClickListener(view -> {
+            drawerLayout.openDrawer(Gravity.LEFT);
+        });
+
+
+        categoryList.add(new Category(1, 1));
+        categoryList.add(new Category(2, 0));
+        categoryList.add(new Category(3, 0));
+        categoryList.add(new Category(4, 0));
+        categoryList.add(new Category(5, 0));
+
+        shopList.add(new Shop(1, 3, "staff", "Staff"));
+        shopList.add(new Shop(5, 2, "ciber", "Kibernetiki"));//*
+        shopList.add(new Shop(6, 4, "atb", "ATB"));
+        shopList.add(new Shop(14, 4, "ahn", "Ashan"));
+        shopList.add(new Shop(7, 3, "urb", "Urban Planet"));//*
+        shopList.add(new Shop(1, 5, "prost", "Prostor"));
+        shopList.add(new Shop(8, 2, "fox", "Foxtrot"));
+        shopList.add(new Shop(9, 5, "spr", "Sportmaster"));
+        shopList.add(new Shop(9, 5, "jysk", "Jysk"));
+        shopList.add(new Shop(10, 4, "metr", "Metro"));//*
 //            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
-            shopList.add(new Shop(12, 4, "tavr", "Tavriya"));//*
-            shopList.add(new Shop(13, 3, "ah", "Aviatsiya"));//*
+        shopList.add(new Shop(12, 4, "tavr", "Tavriya"));//*
+        shopList.add(new Shop(13, 3, "ah", "Aviatsiya"));//*
 //            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
-            fullShopsList.addAll(shopList);
+        fullShopsList.addAll(shopList);
 
-            setShopRecycler(shopList);
+        setShopRecycler(shopList);
 
 
+    }
+
+    private void itemListener(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                drawerLayout.closeDrawer(Gravity.LEFT);
+                break;
+            case R.id.nav_gallery:
+                Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_slideshow:
+                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                break;
         }
 
+        drawerLayout.closeDrawer(GravityCompat.START);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+
+    }
 
 
     private void sendNotification(boolean firstTime) {
         NotificationManagerCompat notificationManagerCompat;
         Notification notification;
-        if (firstTime){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-                NotificationChannel channel = new NotificationChannel("myCh","Notification", NotificationManager.IMPORTANCE_DEFAULT);
+        if (firstTime) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel("myCh", "Notification", NotificationManager.IMPORTANCE_DEFAULT);
                 NotificationManager manager = getSystemService(NotificationManager.class);
                 manager.createNotificationChannel(channel);
             }
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"myCh")
-                    .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher_foreground))
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "myCh")
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_foreground))
                     .setSmallIcon(R.mipmap.ic_launcher_foreground)
                     .setAutoCancel(true)
                     .setContentTitle(getString(R.string.welcome_note_message))
@@ -123,30 +155,29 @@ public class MainActivity extends AppCompatActivity {
 
             notification = builder.build();
             notificationManagerCompat = NotificationManagerCompat.from(this);
-            notificationManagerCompat.notify(1,notification);
-            Log.i(TAG,"First time app launch Notification");
+            notificationManagerCompat.notify(1, notification);
+            Log.i(TAG, "First time app launch Notification");
 
-        }else {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-                NotificationChannel channel = new NotificationChannel("myCh","Notification", NotificationManager.IMPORTANCE_DEFAULT);
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel("myCh", "Notification", NotificationManager.IMPORTANCE_DEFAULT);
                 NotificationManager manager = getSystemService(NotificationManager.class);
                 manager.createNotificationChannel(channel);
             }
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"myCh")
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "myCh")
                     .setSmallIcon(R.mipmap.ic_launcher_foreground)
-                    .setLargeIcon(BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher_foreground))
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_foreground))
                     .setAutoCancel(true)
                     .setContentTitle(getString(R.string.welcome_note_message))
                     .setContentText(getString(R.string.hello_again_n_message));
             notification = builder.build();
             notificationManagerCompat = NotificationManagerCompat.from(this);
-            notificationManagerCompat.notify(1,notification);
-            Log.i(TAG,"Launch Notification");
+            notificationManagerCompat.notify(1, notification);
+            Log.i(TAG, "Launch Notification");
 
 
         }
     }
-
 
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
@@ -178,10 +209,10 @@ public class MainActivity extends AppCompatActivity {
                 .setRank(3)
                 .setLongLabel("Main page")
                 .setShortLabel("This is main page")
-                .setIcon(Icon.createWithResource(this, R.drawable.home))
+                .setIcon(Icon.createWithResource(this, R.drawable.home1))
                 .build();
 
-        sM.setDynamicShortcuts(Arrays.asList(shortcut1,shortcut2));
+        sM.setDynamicShortcuts(Arrays.asList(shortcut1, shortcut2));
 
     }
 //    private void showCustomDialog() {
