@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_gallery:
                 Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
                 startActivity(intent);
+                Toast.makeText(this, "About us page\uD83D\uDC4C\uD83D\uDE3C", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_slideshow:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
