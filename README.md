@@ -22,3 +22,4 @@ https://user-images.githubusercontent.com/51232472/142820255-724ae7af-b43f-4042-
 
 
 
+![Google Play screenshots  ru  copy](https://user-images.githubusercontent.com/51232472/152702266-bf3c8d64-8800-4bce-9071-a4462d323d8b.png)
