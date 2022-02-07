@@ -130,7 +130,9 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "About us page\uD83D\uDC4C\uD83D\uDE3C", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_slideshow:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(MainActivity.this, Matching.class);
+                startActivity(intent1);
+                Toast.makeText(this, "Comapre page", Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -249,8 +251,6 @@ public class MainActivity extends AppCompatActivity {
 
         shopAdapter = new ShopAdapter(this, shopList);
 //        shopRecycler.setAdapter(shopAdapter);
-
-
         AlphaInAnimationAdapter alpha = new AlphaInAnimationAdapter(shopAdapter);
         alpha.setDuration(1000);
         alpha.setInterpolator(new OvershootInterpolator());
