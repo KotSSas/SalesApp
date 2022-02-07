@@ -9,8 +9,8 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
-        android:layout_width="0dp"
-        android:layout_height="731dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/ctr_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +40,7 @@
                     android:src="@drawable/ab_pr"
                     app:layout_constraintEnd_toEndOf="parent" />
 
+
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
@@ -47,7 +48,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="932dp"
+            android:layout_height="788dp"
             android:background="@drawable/layout_bg"
             android:padding="20dp"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">

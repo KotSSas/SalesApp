@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/background_1.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/background_2.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/background_3.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/grad.xml" value="0.20185185185185187" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/gradient_list.xml" value="0.24074074074074073" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/home1.xml" value="0.24074074074074073" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_ah.xml" value="0.14814814814814814" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_allo.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_atb.xml" value="0.2703125" />
@@ -13,58 +19,43 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_logo.xml" value="0.14814814814814814" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_prost.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/ic_site_b.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/drawable/layout_bg.xml" value="0.2703125" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout-land/activity_main.xml" value="0.2708333333333333" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout-land/nav_header_layout.xml" value="0.2708333333333333" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout-v26/activity_main.xml" value="0.25052083333333336" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_about_us.xml" value="0.536" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_about_us.xml" value="0.4" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_cart_shop_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_error.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_intro.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_item_page.xml" value="0.25" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main_comm.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_matching.xml" value="0.2542991141219385" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.536" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.176" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_splash.xml" value="0.25052083333333336" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/cart_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/category.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/category_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/custom_dialog.xml" value="0.19814814814814816" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_four.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_one.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_three.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/intro_two.xml" value="0.264" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/item.xml" value="0.1" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/nav_header_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.25025641025641027" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/user_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/user_message.xml" value="0.19814814814814816" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/menu/ff_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/category_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/bar.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/grad.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_but1.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr0.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr1.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr1cl.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr2cl.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr3.xml" value="0.6" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr3cl.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr4.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr4cl.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr5cl.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr_2.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_gr_c.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_group1.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_hot_deal.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_ico_5.xml" value="0.26510416666666664" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/font/roboto_bold.xml" value="0.159375" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/layout-land/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/layout/activity_matching.xml" value="0.19882246376811594" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/layout/category.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/layout/gradient.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/layout/shop_item.xml" value="0.4" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.26875" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.26875" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/bg.xml" value="0.26510416666666664" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/card_edge.xml" value="0.26875" />
         <entry key="..\:/Users/User/AndroidStudioProjects/SalesApp3/app/src/main/res/drawable/ctr_bg.xml" value="0.18796296296296297" />
