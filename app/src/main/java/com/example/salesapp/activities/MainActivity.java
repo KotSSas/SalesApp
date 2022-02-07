@@ -94,10 +94,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        categoryList.add(new Category(1,"gr1"));
+        categoryList.clear();
+        shopList.clear();
+
+        categoryList.add(new Category(1,"gr1cl"));
         categoryList.add(new Category(2,"gr2"));
-        categoryList.add(new Category(3,"gr3"));
-        categoryList.add(new Category(4,"gr4"));
+        categoryList.add(new Category(3,"gr4"));
+        categoryList.add(new Category(4,"gr3"));
         categoryList.add(new Category(5,"gr5"));
 
         setCategoryRecycler(categoryList);
@@ -112,10 +115,12 @@ public class MainActivity extends AppCompatActivity {
         shopList.add(new Shop(9, 5, "spr", "Sportmaster"));
         shopList.add(new Shop(9, 5, "jysk", "Jysk"));
         shopList.add(new Shop(10, 4, "metr", "Metro"));//*
-//            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
         shopList.add(new Shop(12, 4, "tavr", "Tavriya"));//*
         shopList.add(new Shop(13, 3, "ah", "Aviatsiya"));//*
+//            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
 //            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
+
+
         fullShopsList.addAll(shopList);
 
         setShopRecycler(shopList);
@@ -273,5 +278,70 @@ public class MainActivity extends AppCompatActivity {
         shopRecycler.setAdapter(alpha);
     }
 
+    public  static  void showCategory(int category){
 
+        shopList.clear();
+        shopList.addAll(fullShopsList);
+
+        List<Shop> filtShops = new ArrayList<>();
+
+        if(category == 1){
+
+            categoryList.clear();
+            categoryList.add(new Category(1,"gr1cl"));
+            categoryList.add(new Category(2,"gr2"));
+            categoryList.add(new Category(3,"gr4"));
+            categoryList.add(new Category(4,"gr3"));
+            categoryList.add(new Category(5,"gr5"));
+
+            shopList.clear();
+            shopList.addAll(fullShopsList)      ;
+
+        }else{
+            for(Shop s : shopList){
+                if (s.getCategory_s() == category){
+                    filtShops.add(s);
+                }
+            }
+
+            if (category == 2){
+                categoryList.clear();
+                categoryList.add(new Category(1,"gr1"));
+                categoryList.add(new Category(2,"gr2cl"));
+                categoryList.add(new Category(3,"gr4"));
+                categoryList.add(new Category(4,"gr3"));
+                categoryList.add(new Category(5,"gr5"));
+
+            } else if (category == 3){
+                categoryList.clear();
+                categoryList.add(new Category(1,"gr1"));
+                categoryList.add(new Category(2,"gr2"));
+                categoryList.add(new Category(3,"gr4cl"));
+                categoryList.add(new Category(4,"gr3"));
+                categoryList.add(new Category(5,"gr5"));
+
+            } else if (category == 4){
+                categoryList.clear();
+                categoryList.add(new Category(1,"gr1"));
+                categoryList.add(new Category(2,"gr2"));
+                categoryList.add(new Category(3,"gr4"));
+                categoryList.add(new Category(4,"gr3cl"));
+                categoryList.add(new Category(5,"gr5"));
+
+            } else if (category == 5){
+                categoryList.clear();
+                categoryList.add(new Category(1,"gr1"));
+                categoryList.add(new Category(2,"gr2"));
+                categoryList.add(new Category(3,"gr4"));
+                categoryList.add(new Category(4,"gr3"));
+                categoryList.add(new Category(5,"gr5cl"));
+
+
+            }
+            shopList.clear();
+            shopList.addAll(filtShops);
+        }
+        categoryAdapter.notifyDataSetChanged();
+        shopAdapter.notifyDataSetChanged();
+    }
 }
