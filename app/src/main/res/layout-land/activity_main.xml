@@ -141,8 +141,7 @@
         app:backgroundTint="@color/name_of_app"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:rippleColor="#EDEDED"
-        app:srcCompat="@drawable/ic_gr" />
+        app:rippleColor="#EDEDED" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -154,7 +153,7 @@
         app:backgroundTint="#C4BCF8"
         app:layout_constraintBottom_toTopOf="@+id/mainButn"
         app:layout_constraintEnd_toEndOf="@+id/mainButn"
-        app:srcCompat="@drawable/ic_gr0" />
+        app:srcCompat="@drawable/ic_gr1" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/secondButn"
@@ -190,7 +189,7 @@
         app:backgroundTint="#E8E6F5"
         app:layout_constraintBottom_toTopOf="@+id/firstButn"
         app:layout_constraintEnd_toEndOf="@+id/firstButn"
-        app:srcCompat="@drawable/ic_gr_2" />
+        app:srcCompat="@drawable/ic_gr2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fifthButn"

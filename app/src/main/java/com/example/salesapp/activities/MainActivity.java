@@ -30,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.salesapp.R;
+import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.Category;
 import com.example.salesapp.model.Shop;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView, shopRecycler;
     static ShopAdapter shopAdapter;
+    static CategoryAdapter categoryAdapter;
     static List<Category> categoryList = new ArrayList<>();
     static List<Shop> shopList = new ArrayList<>();
     static List<Shop> fullShopsList = new ArrayList<>();
@@ -92,11 +94,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        categoryList.add(new Category(1, 1));
-        categoryList.add(new Category(2, 0));
-        categoryList.add(new Category(3, 0));
-        categoryList.add(new Category(4, 0));
-        categoryList.add(new Category(5, 0));
+        categoryList.add(new Category(1,"gr1"));
+        categoryList.add(new Category(2,"gr2"));
+        categoryList.add(new Category(3,"gr3"));
+        categoryList.add(new Category(4,"gr4"));
+        categoryList.add(new Category(5,"gr5"));
+
+        setCategoryRecycler(categoryList);
 
         shopList.add(new Shop(1, 3, "staff", "Staff"));
         shopList.add(new Shop(5, 2, "ciber", "Kibernetiki"));//*
@@ -117,6 +121,17 @@ public class MainActivity extends AppCompatActivity {
         setShopRecycler(shopList);
 
 
+    }
+
+    private void setCategoryRecycler(List<Category> categoryList) {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL
+                , false);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+
+        categoryAdapter = new CategoryAdapter(this, categoryList);
+        recyclerView.setAdapter(categoryAdapter);
     }
 
     private void itemListener(MenuItem item) {
