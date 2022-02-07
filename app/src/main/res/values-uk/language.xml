@@ -83,8 +83,9 @@
     <string name="welcome_note_message">Вітаємо знов!</string>
     <string name="success_message">Ваше повідомлення успішно надіслано!</string>
     <string name="head">Вітаємо!</string>
-    <string name="head2">З поверненням у SalesApp</string>
+    <string name="head2">З поверненням у SalesApp!</string>
     <string name="h3">Магазини нашого додаку</string>
+    <string name="filter1">Ви не обрали фільтр!</string>
 
 
 </resources>

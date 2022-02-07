@@ -18,30 +18,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="63dp"
             android:layout_marginRight="30dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/head"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-
             android:fontFamily="@font/roboto"
             android:text="@string/head2"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/h1" />
+            app:layout_constraintTop_toBottomOf="@+id/menuImage" />
 
 
         <ImageView
@@ -50,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="14dp"
             android:contentDescription="@string/sales_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.411"
@@ -63,15 +48,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="40dp"
             android:layout_marginRight="30dp"
+            android:layout_marginTop="14dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/h2"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
 
         <TextView
@@ -79,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="21dp"
             android:layout_marginRight="30dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/h3"
@@ -95,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="11dp"
             android:layout_marginRight="30dp"
             android:contentDescription="@string/sales_icon"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +94,7 @@
             android:layout_width="0dp"
             android:layout_height="213dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -117,10 +102,11 @@
 
         <ImageView
 
+            android:id="@+id/imageView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:contentDescription="@string/sales_icon"
             app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +120,7 @@
             android:layout_width="36dp"
             android:layout_height="23dp"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="43dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/menu" />
@@ -144,9 +130,85 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="14dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/h2" />
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="265dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="45dp"
+            android:background="#2B2B2B"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/h1" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/h2"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cart_view"
+            android:layout_width="match_parent"
+            android:layout_height="89dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="30dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#2B2B2B"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginLeft="35dp"
+                    android:contentDescription="@string/sales_icon"
+                    android:transitionName="shopImage"
+                    app:srcCompat="@drawable/ic_filter" />
+
+
+                <TextView
+                    android:id="@+id/filter_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="34dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginRight="35dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/filter1"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

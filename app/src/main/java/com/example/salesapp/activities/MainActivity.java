@@ -27,6 +27,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.salesapp.R;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     static List<Shop> fullShopsList = new ArrayList<>();
     private static final String TAG = "MainActivity";
 
+    static TextView filt;
 
     ImageView image;
     DrawerLayout drawerLayout;
@@ -68,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-
-
+        filt = findViewById(R.id.filter_text);
+        filt.setText(R.string.filter1);
 
 
         navigationView = findViewById(R.id.nav_view);
@@ -294,8 +296,10 @@ public class MainActivity extends AppCompatActivity {
             categoryList.add(new Category(4,"gr3"));
             categoryList.add(new Category(5,"gr5"));
 
+            filt.setText(R.string.filter1);
+
             shopList.clear();
-            shopList.addAll(fullShopsList)      ;
+            shopList.addAll(fullShopsList);
 
         }else{
             for(Shop s : shopList){
@@ -311,6 +315,7 @@ public class MainActivity extends AppCompatActivity {
                 categoryList.add(new Category(3,"gr4"));
                 categoryList.add(new Category(4,"gr3"));
                 categoryList.add(new Category(5,"gr5"));
+                filt.setText(R.string.tech_f2);
 
             } else if (category == 3){
                 categoryList.clear();
@@ -319,6 +324,7 @@ public class MainActivity extends AppCompatActivity {
                 categoryList.add(new Category(3,"gr4cl"));
                 categoryList.add(new Category(4,"gr3"));
                 categoryList.add(new Category(5,"gr5"));
+                filt.setText(R.string.clothes_f2);
 
             } else if (category == 4){
                 categoryList.clear();
@@ -327,6 +333,7 @@ public class MainActivity extends AppCompatActivity {
                 categoryList.add(new Category(3,"gr4"));
                 categoryList.add(new Category(4,"gr3cl"));
                 categoryList.add(new Category(5,"gr5"));
+                filt.setText(R.string.products_f2);
 
             } else if (category == 5){
                 categoryList.clear();
@@ -335,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
                 categoryList.add(new Category(3,"gr4"));
                 categoryList.add(new Category(4,"gr3"));
                 categoryList.add(new Category(5,"gr5cl"));
-
+                filt.setText(R.string.sport_f2);
 
             }
             shopList.clear();

@@ -19,6 +19,7 @@
     <string name="item_price2">Цена со скидкой:</string>
     <string name="cart_h1">Cart</string>
     <string name="cart_h2">Page</string>
+    <string name="filter1">Фильтр не выбран!</string>
 
     <string name="clothes_f">Одежда</string>
     <string name="tech_f">Техника</string>
@@ -26,11 +27,11 @@
     <string name="sport_f">Разное</string>
     <string name="products_f">Продукты</string>
 
-    <string name="clothes_f2">\"Одежда\"</string>
-    <string name="tech_f2">\"Техника\"</string>
+    <string name="clothes_f2">Отфильтровано: \"Одежда\"</string>
+    <string name="tech_f2">Отфильтровано: \"Техника\"</string>
     <string name="all_f2">\"Всё\"</string>
-    <string name="sport_f2">\"Разное\"</string>
-    <string name="products_f2">\"Продукты\"</string>
+    <string name="sport_f2">Отфильтровано: \"Разное\"</string>
+    <string name="products_f2">Отфильтровано: \"Продукты\"</string>
 
     <string name="clothes_f3">Отфильтрованые магазины, одежда</string>
     <string name="tech_f3">Отфильтрованые магазины, техника</string>
