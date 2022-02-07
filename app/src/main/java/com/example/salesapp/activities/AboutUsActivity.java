@@ -22,8 +22,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AboutUsActivity extends AppCompatActivity {
 
-    TextView main_scene, coming_soon_scene;
+//    TextView main_scene, coming_soon_scene;
     ImageView ico;
+    ImageView main_scene;
     FloatingActionButton commentsLink;
 
     @Override
@@ -44,21 +45,21 @@ public class AboutUsActivity extends AppCompatActivity {
                 openMainActivity();
             }
         });
-        coming_soon_scene = findViewById(R.id.coming_soon_scene);
-        coming_soon_scene.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
-                }
-
-                v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
-                openMatchingActivity();
-
-            }
-        });
+//        coming_soon_scene = findViewById(R.id.coming_soon_scene);
+//        coming_soon_scene.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
+//                }
+//
+//                v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
+//                openMatchingActivity();
+//
+//            }
+//        });
 //        commentsLink =findViewById(R.id.commentsFloatButton);
 
 //        commentsLink.setOnClickListener(v -> {
