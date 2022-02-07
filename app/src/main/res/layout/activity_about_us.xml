@@ -32,13 +32,13 @@
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
-
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_gravity="center|end"
                     android:src="@drawable/ab_pr"
                     app:layout_constraintEnd_toEndOf="parent" />
+
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -47,7 +47,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="932dp"
+            android:layout_height="match_parent"
             android:background="@drawable/layout_bg"
             android:padding="20dp"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
