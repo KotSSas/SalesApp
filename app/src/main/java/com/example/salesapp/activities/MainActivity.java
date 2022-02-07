@@ -250,19 +250,6 @@ public class MainActivity extends AppCompatActivity {
         sM.setDynamicShortcuts(Arrays.asList(shortcut1, shortcut2));
 
     }
-//    private void showCustomDialog() {
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setMessage("Please connect to the Internet ")
-//                .setCancelable(false)
-//                .setPositiveButton("Connect", (dialogInterface, i) -> startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS)))
-//                .setNegativeButton("Exit", (dialogInterface, i) -> {
-//                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                    finish();
-//                })
-//                .show()
-//        ;
-//    }
-
 
     private void setShopRecycler(List<Shop> shopList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL

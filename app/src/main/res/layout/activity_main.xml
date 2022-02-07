@@ -29,6 +29,38 @@
             app:layout_constraintTop_toBottomOf="@+id/menuImage" />
 
 
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/head"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/h1" />
+
+
+        <ImageView
+
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="30dp"
+            android:contentDescription="@string/sales_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10"
+            app:srcCompat="@drawable/bar" />
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
@@ -49,14 +81,14 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="14dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/h2"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
 
         <TextView
@@ -134,16 +166,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/h2" />
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="265dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="45dp"
-            android:background="#2B2B2B"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/h1" />
-
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
@@ -209,14 +231,5 @@
 
         </androidx.cardview.widget.CardView>
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        app:headerLayout="@layout/nav_header_layout"
-        app:menu="@menu/nav_menu"
-        android:layout_gravity="start"/>
 </androidx.drawerlayout.widget.DrawerLayout>
