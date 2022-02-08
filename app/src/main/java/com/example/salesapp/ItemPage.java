@@ -30,7 +30,7 @@ import java.io.InputStream;
 public class ItemPage extends AppCompatActivity {
 
     ImageView main_scene;
-    TextView title, title2;
+    TextView title;
     ImageView image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,6 @@ public class ItemPage extends AppCompatActivity {
         });
 
         title = findViewById(R.id.item_title);
-        title2 = findViewById(R.id.item_title2);
         TextView pr1 = findViewById(R.id.item_p1);
         TextView pr2 = findViewById(R.id.item_p2);
 
@@ -68,7 +67,6 @@ public class ItemPage extends AppCompatActivity {
                 .execute(getIntent().getStringExtra("image"));
 
         title.setText(getIntent().getStringExtra("title"));
-        title2.setText(title.getText());
         pr1.setText(getIntent().getStringExtra("pr1"));
         pr2.setText(getIntent().getStringExtra("pr2"));
 

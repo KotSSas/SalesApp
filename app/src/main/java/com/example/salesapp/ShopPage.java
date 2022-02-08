@@ -832,8 +832,11 @@ public class ShopPage extends AppCompatActivity {
                                     name.add(element.select("img").attr("alt"));
                                     photo.add(element.select("img").attr("src"));
                                     links.add("https://jysk.ua" + element.select("a").attr("href"));
-                                    old_price.add(element.getElementsByClass("product-price-support price-before beforeprice").text());
-                                    new_price.add(element.getElementsByClass("product-price-value").text());
+
+                                    String p1 = element.getElementsByClass("product-price-support price-before beforeprice").text();
+                                    String p2 = element.getElementsByClass("product-price-value").text();
+                                    old_price.add(p1.substring(0, p1.indexOf("г")) + " ₴");
+                                    new_price.add(p2.substring(0, p2.indexOf("г")) + " ₴");
                                 }
 
                             }
