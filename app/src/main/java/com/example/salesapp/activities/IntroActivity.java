@@ -2,6 +2,7 @@ package com.example.salesapp.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -52,15 +54,12 @@ public class IntroActivity extends AppCompatActivity {
                 R.layout.intro_four
         };
 
-        tvNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int current = getItem(+1);
-                if (current < layouts.length) {
-                    viewPager.setCurrentItem(current);
-                } else {
-                    launchHomeScreen();
-                }
+        tvNext.setOnClickListener(v -> {
+            int current = getItem(+1);
+            if (current < layouts.length) {
+                viewPager.setCurrentItem(current);
+            } else {
+                launchHomeScreen();
             }
         });
 
