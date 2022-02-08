@@ -29,7 +29,7 @@ import java.io.InputStream;
 
 public class ItemPage extends AppCompatActivity {
 
-    TextView main_scene, about_us, coming_soon_scene;
+    ImageView main_scene;
     TextView title;
     ImageView image;
     @Override
@@ -85,52 +85,6 @@ public class ItemPage extends AppCompatActivity {
             openMainActivity();
         });
 
-        about_us = findViewById(R.id.about_us);
-        about_us.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
-                }
-                v.startAnimation(AnimationUtils.loadAnimation(ItemPage.this, R.anim.anim_item));
-                openAboutActivity();
-            }
-        });
-        coming_soon_scene = findViewById(R.id.coming_soon_scene);
-        coming_soon_scene.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
-                }
-
-                v.startAnimation(AnimationUtils.loadAnimation(ItemPage.this, R.anim.anim_item));
-                openMatchingActivity();
-
-            }
-        });
-
-    }
-
-
-    private void openMatchingActivity() {
-        Intent intent = new Intent(this, Matching.class);
-        startActivity(intent);
-    }
-
-    private void openAboutActivity() {
-
-        ImageView ico = findViewById(R.id.imageView3);
-        Intent intent = new Intent(this, AboutUsActivity.class);
-
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
-                new Pair<View, String>(ico, "icoImage")
-        );
-        startActivity(intent, options.toBundle());
     }
 
     private void openMainActivity() {
