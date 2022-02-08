@@ -25,10 +25,10 @@
 
 
     //active colors
-    <color name="orange_one">#897BDF</color>
-    <color name="orange_two">#897BDF</color>
-    <color name="orange_three">#897BDF</color>
-    <color name="orange_four">#897BDF</color>
+    <color name="orange_one">#1FD2FD</color>
+    <color name="orange_two">#1FD2FD</color>
+    <color name="orange_three">#1FD2FD</color>
+    <color name="orange_four">#1FD2FD</color>
 
     <array name="inactive">
         <item>@color/dark_one</item>

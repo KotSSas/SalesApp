@@ -10,7 +10,8 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:id="@+id/layoutDots"
@@ -29,7 +30,7 @@
         android:layout_marginBottom="50dp"
         android:fontFamily="@font/montserrat_bold"
         android:text=""
-        android:textColor="@color/text"
+        android:textColor="@color/white"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
