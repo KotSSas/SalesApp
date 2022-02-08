@@ -30,6 +30,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.salesapp.IntroPref;
 import com.example.salesapp.R;
 import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
@@ -70,63 +71,71 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        filt = findViewById(R.id.filter_text);
-        filt.setText(R.string.filter1);
+
+        IntroPref introPref = new IntroPref(this);
+        if (introPref.isFirstTimeLaunch()) {
+
+            startActivity(new Intent(MainActivity.this, IntroActivity.class));
+            sendNotification(true);
+
+        } else {
+            sendNotification(false);
+
+            filt = findViewById(R.id.filter_text);
+            filt.setText(R.string.filter1);
+            navigationView = findViewById(R.id.nav_view);
+            drawerLayout = findViewById(R.id.drawer_layout);
+            image = findViewById(R.id.menuImage);
+            //animated background
+            AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
+            animationDrawable.setEnterFadeDuration(2500);
+            animationDrawable.setExitFadeDuration(5000);
+            animationDrawable.start();
+
+            navigationView.bringToFront();
+            navigationView.setNavigationItemSelectedListener(item -> {
+                itemListener(item);
+                return true;
+            });
+            navigationView.setCheckedItem(R.id.nav_home);
 
 
-        navigationView = findViewById(R.id.nav_view);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        image = findViewById(R.id.menuImage);
-        //animated background
-        AnimationDrawable animationDrawable = (AnimationDrawable) drawerLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(2500);
-        animationDrawable.setExitFadeDuration(5000);
-        animationDrawable.start();
-
-        navigationView.bringToFront();
-        navigationView.setNavigationItemSelectedListener(item -> {
-            itemListener(item);
-            return true;
-        });
-        navigationView.setCheckedItem(R.id.nav_home);
+            image.setOnClickListener(view -> {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            });
 
 
-        image.setOnClickListener(view -> {
-            drawerLayout.openDrawer(Gravity.LEFT);
-        });
+            categoryList.clear();
+            shopList.clear();
 
+            categoryList.add(new Category(1, "gr1cl"));
+            categoryList.add(new Category(2, "gr2"));
+            categoryList.add(new Category(3, "gr4"));
+            categoryList.add(new Category(4, "gr3"));
+            categoryList.add(new Category(5, "gr5"));
 
-        categoryList.clear();
-        shopList.clear();
+            setCategoryRecycler(categoryList);
 
-        categoryList.add(new Category(1,"gr1cl"));
-        categoryList.add(new Category(2,"gr2"));
-        categoryList.add(new Category(3,"gr4"));
-        categoryList.add(new Category(4,"gr3"));
-        categoryList.add(new Category(5,"gr5"));
-
-        setCategoryRecycler(categoryList);
-
-        shopList.add(new Shop(1, 3, "staff","staff_l", "Staff"));
-        shopList.add(new Shop(5, 2, "ciber","ciber_l", "Kibernetiki"));//*
-        shopList.add(new Shop(6, 4, "atb",  "atb_l",   "ATB"));
-        shopList.add(new Shop(14, 4, "ahn",  "ahn_l",  "Ashan"));
-        shopList.add(new Shop(7, 3, "urb",  "urb_l",   "Urban Planet"));//*
-        shopList.add(new Shop(1, 5, "prost","prost_l", "Prostor"));
-        shopList.add(new Shop(8, 2, "fox",  "fox_l",   "Foxtrot"));
-        shopList.add(new Shop(9, 5, "spr",  "spr_l",   "Sportmaster"));
-        shopList.add(new Shop(9, 5, "jysk", "jysk_l",  "Jysk"));
-        shopList.add(new Shop(10, 4, "metr", "metr_l", "Metro"));//*
-        shopList.add(new Shop(12, 4, "tavr", "tavr_l", "Tavriya"));//*
-        shopList.add(new Shop(13, 3, "ah",   "ah_l",   "Aviatsiya"));//*
+            shopList.add(new Shop(1, 3, "staff", "staff_l", "Staff"));
+            shopList.add(new Shop(5, 2, "ciber", "ciber_l", "Kibernetiki"));//*
+            shopList.add(new Shop(6, 4, "atb", "atb_l", "ATB"));
+            shopList.add(new Shop(14, 4, "ahn", "ahn_l", "Ashan"));
+            shopList.add(new Shop(7, 3, "urb", "urb_l", "Urban Planet"));//*
+            shopList.add(new Shop(1, 5, "prost", "prost_l", "Prostor"));
+            shopList.add(new Shop(8, 2, "fox", "fox_l", "Foxtrot"));
+            shopList.add(new Shop(9, 5, "spr", "spr_l", "Sportmaster"));
+            shopList.add(new Shop(9, 5, "jysk", "jysk_l", "Jysk"));
+            shopList.add(new Shop(10, 4, "metr", "metr_l", "Metro"));//*
+            shopList.add(new Shop(12, 4, "tavr", "tavr_l", "Tavriya"));//*
+            shopList.add(new Shop(13, 3, "ah", "ah_l", "Aviatsiya"));//*
 //            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
 //            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
 
 
-        fullShopsList.addAll(shopList);
+            fullShopsList.addAll(shopList);
 
-        setShopRecycler(shopList);
-
+            setShopRecycler(shopList);
+        }
 
     }
 
