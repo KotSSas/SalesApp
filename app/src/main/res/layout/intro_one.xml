@@ -30,7 +30,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
-        android:text="more then app"
+        android:text="more than an app"
         android:textColor="@color/text"
         android:textSize="18sp"
         android:textStyle="bold"
