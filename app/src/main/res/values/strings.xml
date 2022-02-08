@@ -21,6 +21,8 @@
     <string name="cart_h2">Page</string>
     <string name="filter1">Фильтр не выбран!</string>
 
+    <string name="buy">Заказать на сайте</string>
+
     <string name="clothes_f">Одежда</string>
     <string name="tech_f">Техника</string>
     <string name="all_f">Всё</string>

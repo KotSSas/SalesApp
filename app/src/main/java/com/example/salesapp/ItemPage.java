@@ -57,9 +57,9 @@ public class ItemPage extends AppCompatActivity {
 
         });
 
-        title = findViewById(R.id.item_page_text);
-        TextView pr1 = findViewById(R.id.price_item1);
-        TextView pr2 = findViewById(R.id.price_item2);
+        title = findViewById(R.id.item_title);
+        TextView pr1 = findViewById(R.id.item_p1);
+        TextView pr2 = findViewById(R.id.item_p2);
 
 //        image.setImageResource(getIntent().getIntExtra("image", 0));
 

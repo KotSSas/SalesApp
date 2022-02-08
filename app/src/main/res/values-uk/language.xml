@@ -86,6 +86,7 @@
     <string name="head2">З поверненням у SalesApp!</string>
     <string name="h3">Магазини нашого додаку</string>
     <string name="filter1">Ви не обрали фільтр!</string>
+    <string name="buy">Замовити на сайті</string>
 
 
 </resources>
