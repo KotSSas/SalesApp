@@ -46,7 +46,7 @@ public class ShopPage extends AppCompatActivity {
     static List<Item> fullItemList = new ArrayList<>();
 
     TextView title;
-    TextView main_scene, about_us, coming_soon_scene;
+    ImageView main_scene;
     List<String> name;
     List<String> old_price;
     List<String> new_price;
@@ -63,12 +63,12 @@ public class ShopPage extends AppCompatActivity {
         Toast.makeText(this, R.string.wait, Toast.LENGTH_LONG).show();
 
         ImageView image = findViewById(R.id.shop_page_img);
-        title = findViewById(R.id.shop_page_text);
-        TextView category = findViewById(R.id.shop_page_cat);
+        image.setImageResource(getIntent().getIntExtra("image_l", 0));
 
-        image.setImageResource(getIntent().getIntExtra("image", 0));
-        title.setText(getIntent().getStringExtra("title"));
-        category.setText(getIntent().getStringExtra("category"));
+       title = findViewById(R.id.shop_page_text);
+       title.setText(getIntent().getStringExtra("title"));
+
+     //   category.setText(getIntent().getStringExtra("category"));
 
         itemList.clear();
 
@@ -84,34 +84,6 @@ public class ShopPage extends AppCompatActivity {
             }
             v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
             openMainActivity();
-        });
-
-        about_us = findViewById(R.id.about_us);
-        about_us.setOnClickListener(v -> {
-            Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-// Vibrate for 400 milliseconds
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                v1.vibrate(VibrationEffect.createOneShot(100, 1));
-            }
-            v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
-            openAboutActivity();
-        });
-        coming_soon_scene = findViewById(R.id.coming_soon_scene);
-        coming_soon_scene.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
-                }
-
-                v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
-                openMatchingActivity();
-
-            }
         });
 
 
@@ -920,20 +892,6 @@ public class ShopPage extends AppCompatActivity {
         return Jsoup.connect(url).get();
     }
 
-    private void openAboutActivity() {
-        ImageView ico = findViewById(R.id.imageView3);
-        Intent intent = new Intent(this, AboutUsActivity.class);
-
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
-                new Pair<View, String>(ico, "icoImage")
-        );
-
-        startActivity(intent, options.toBundle());
-    }
-
-    private void openMatchingActivity() {
-        startActivity(new Intent(this, Matching.class));
-    }
 
     private void openMainActivity() {
         startActivity(new Intent(this, MainActivity.class));

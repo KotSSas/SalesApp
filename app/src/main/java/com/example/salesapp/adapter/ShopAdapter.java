@@ -55,6 +55,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         int img_id = context.getResources().getIdentifier("ic_" + shops.get(position).getImg(), "drawable", context.getPackageName());
         holder.img.setImageResource(img_id);
 
+        int img_l_id = context.getResources().getIdentifier("ic_" + shops.get(position).getImg_l(), "drawable", context.getPackageName());
+
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mob = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -75,11 +77,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 
                     Intent intent = new Intent(context, ShopPage.class);
 
-                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context,
-                            new Pair<View, String>(holder.img, "shopImage")
-                    );
-
                     intent.putExtra("image", img_id);
+                    intent.putExtra("image_l", img_l_id);
                     intent.putExtra("title", shops.get(position).getTitle());
 
                     dialog.startLoadingDialog();
@@ -88,7 +87,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                         @Override
                         public void run() {
                             dialog.dismissDialog();
-                            context.startActivity(intent, options.toBundle());
+                            context.startActivity(intent);
 
                         }
                     }, 2000);
