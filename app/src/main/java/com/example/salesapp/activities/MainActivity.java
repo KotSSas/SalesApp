@@ -103,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             image.setOnClickListener(view -> {
                 drawerLayout.openDrawer(Gravity.LEFT);
             });
+            createShorcut();
 
 
             categoryList.clear();
