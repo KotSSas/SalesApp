@@ -22,9 +22,10 @@ android:background="#212121"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/montserrat_bold"
                 android:gravity="center"
                 android:text="@string/loading"
+                android:textSize="20dp"
                 android:textColor="@color/white" />
 
     <pl.droidsonroids.gif.GifImageView
