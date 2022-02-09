@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="460dp"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/roboto_bold"
         android:gravity="center"
         android:text="@string/intro2_2_1"
         android:textColor="@color/white"
@@ -33,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/frame" />
+        app:srcCompat="@drawable/foto1" />
 
     <TextView
         android:id="@+id/textView5"
@@ -42,8 +42,8 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="60dp"
-        android:fontFamily="@font/montserrat"
-
+        android:fontFamily="@font/roboto"
+        android:gravity="center"
         android:text="@string/intro2_2_3"
 
         android:textColor="@color/white"
@@ -51,16 +51,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView11" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="221dp"
-        android:layout_height="224dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView11"
-        app:srcCompat="@drawable/photo_2022_02_08_16_15_36" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
