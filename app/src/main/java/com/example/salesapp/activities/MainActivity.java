@@ -19,6 +19,7 @@ import android.content.pm.ShortcutManager;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -165,6 +166,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(MainActivity.this, Matching.class);
                 startActivity(intent1);
                 Toast.makeText(this, "Comapre page", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_git:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));
+                startActivity(browserIntent);
+                Toast.makeText(this, "Git hub page ", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_feed:
+                Toast.makeText(this, "Share your feedback and opinion about the app!", Toast.LENGTH_SHORT).show();
                 break;
         }
 
