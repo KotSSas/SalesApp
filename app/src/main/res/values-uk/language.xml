@@ -87,6 +87,8 @@
     <string name="h3">Магазини нашого додаку</string>
     <string name="filter1">Ви не обрали фільтр!</string>
     <string name="buy">Замовити на сайті</string>
+    <string name="error1">Перейти в налаштування мережі</string>
+    <string name="error2">Вийти з додатку</string>
 
 
 </resources>

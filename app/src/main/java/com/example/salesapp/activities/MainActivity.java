@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -25,6 +26,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView image;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     //тест
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
@@ -71,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+
+        if (getIntent().getBooleanExtra("finish", false)) finish();
 
 
         IntroPref introPref = new IntroPref(this);
@@ -357,4 +362,6 @@ public class MainActivity extends AppCompatActivity {
         categoryAdapter.notifyDataSetChanged();
         shopAdapter.notifyDataSetChanged();
     }
+
+
 }

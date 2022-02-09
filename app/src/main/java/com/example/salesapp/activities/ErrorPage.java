@@ -24,6 +24,23 @@ public class ErrorPage extends AppCompatActivity {
             startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
         });
 
+        ImageView exit_img = findViewById(R.id.exit_b);
+        exit_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               exit();
+            }
+        });
+    }
+
+    private void exit() {
+        Intent intent = new Intent(this, MainActivity.class);
+
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        intent.putExtra("finish", true);
+
+        startActivity(intent);
     }
 
 }
