@@ -7,128 +7,74 @@
     android:background="@color/background"
     tools:context=".activities.Matching">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="70dp"
-        android:layout_height="0dp"
-        android:background="@color/r_background"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/main_scene"
+        android:layout_width="32dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:srcCompat="@drawable/back" />
 
+    <ImageView
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="3dp"
-            android:contentDescription="@string/sales_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_hot_deal" />
-
-        <TextView
-            android:id="@+id/main_scene"
-            android:layout_width="120dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/montserrat"
-            android:gravity="center"
-            android:rotation="270"
-            android:text="@string/main_scene"
-            android:textColor="#7D75B8"
-            android:textSize="25sp"
-            android:clickable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-        <TextView
-            android:id="@+id/about_us"
-            android:layout_width="120dp"
-            android:layout_height="145dp"
-            android:layout_marginTop="0dp"
-            android:fontFamily="@font/montserrat"
-            android:gravity="center"
-            android:rotation="270"
-            android:text="@string/about_us"
-            android:textColor="#7D75B8"
-            android:textSize="25sp"
-            android:clickable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_scene" />
-
-        <TextView
-            android:id="@+id/coming_soon_scene"
-            android:layout_width="160dp"
-            android:layout_height="165dp"
-            android:clickable="true"
-            android:fontFamily="@font/montserrat_bold"
-            android:gravity="center"
-            android:rotation="270"
-            android:text="@string/coming_soon"
-            android:textColor="#4B4768"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/about_us" />
-
-        <ImageView
-            android:id="@+id/logo2"
-            android:layout_width="50dp"
-            android:layout_height="76dp"
-            android:layout_marginBottom="16dp"
-            android:transitionName="icoImage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_logo" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/sales_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/toolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bar_shop" />
 
     <TextView
         android:id="@+id/h1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="88dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/coming_soon_h1"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gifImageView" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="36dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/coming_soon_text"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toBottomOf="@+id/h1" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="144dp"
         android:src="@drawable/soon1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

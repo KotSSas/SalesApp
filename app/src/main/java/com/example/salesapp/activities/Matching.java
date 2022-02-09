@@ -21,7 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Matching extends AppCompatActivity {
 
-    TextView main_scene, about_us;
+    ImageView main_scene;
     ImageView ico;
 
     @Override
@@ -34,41 +34,14 @@ public class Matching extends AppCompatActivity {
 
         main_scene.setOnClickListener(v -> {
             Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-// Vibrate for 400 milliseconds
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 v1.vibrate(VibrationEffect.createOneShot(100, 1));
             }
             v.startAnimation(AnimationUtils.loadAnimation(Matching.this, R.anim.anim_item));
             openMainActivity();
         });
-
-        about_us = findViewById(R.id.about_us);
-        about_us.setOnClickListener(v -> {
-            Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-// Vibrate for 400 milliseconds
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                v1.vibrate(VibrationEffect.createOneShot(100, 1));
-            }
-
-            v.startAnimation(AnimationUtils.loadAnimation(Matching.this, R.anim.anim_item));
-            openAboutActivity();
-        });
     }
 
-    private void openAboutActivity() {
-
-        ico = findViewById(R.id.logo2);
-        Intent intent = new Intent(this, AboutUsActivity.class);
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
-                new Pair<View, String>(ico, "icoImage")
-        );
-
-        startActivity(intent, options.toBundle());
-    }
 
     private void openMainActivity() {
         FloatingActionButton fb0 = findViewById(R.id.mainButn);
