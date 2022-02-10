@@ -124,17 +124,17 @@ public class MainActivity extends AppCompatActivity {
             setCategoryRecycler(categoryList);
 
             shopList.add(new Shop(1, 3, "staff", "staff_l", "Staff"));
-            shopList.add(new Shop(5, 2, "ciber", "ciber_l", "Kibernetiki"));//*
+            shopList.add(new Shop(5, 2, "ciber", "ciber_l", "Kibernetiki"));
             shopList.add(new Shop(6, 4, "atb", "atb_l", "ATB"));
             shopList.add(new Shop(14, 4, "ahn", "ahn_l", "Ashan"));
-            shopList.add(new Shop(7, 3, "urb", "urb_l", "Urban Planet"));//*
+            shopList.add(new Shop(7, 3, "urb", "urb_l", "Urban Planet"));
             shopList.add(new Shop(1, 5, "prost", "prost_l", "Prostor"));
             shopList.add(new Shop(8, 2, "fox", "fox_l", "Foxtrot"));
             shopList.add(new Shop(9, 5, "spr", "spr_l", "Sportmaster"));
             shopList.add(new Shop(9, 5, "jysk", "jysk_l", "Jysk"));
-            shopList.add(new Shop(10, 4, "metr", "metr_l", "Metro"));//*
-            shopList.add(new Shop(12, 4, "tavr", "tavr_l", "Tavriya"));//*
-            shopList.add(new Shop(13, 3, "ah", "ah_l", "Aviatsiya"));//*
+            shopList.add(new Shop(10, 4, "metr", "metr_l", "Metro"));
+            shopList.add(new Shop(12, 4, "tavr", "tavr_l", "Tavriya"));
+            shopList.add(new Shop(13, 3, "ah", "ah_l", "Aviatsiya"));
 //            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
 //            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
 
