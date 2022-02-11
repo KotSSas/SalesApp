@@ -93,6 +93,11 @@
     <string name="hello_n_message">Добро пожаловать в SalesApp </string>
     <string name="hello_again_n_message">С возвращением в SalesApp </string>
     <string name="success_message">Ваше сообщение успешно отправлено!</string>
+    <string name="menu_home">Домой</string>
+    <string name="menu_about_us">Про нас</string>
+    <string name="menu_comapre">Сравнение</string>
+    <string name="menu_feed">Поделиться отзывом</string>
+    <string name="menu_gith">Перейти на GitHub</string>
 
 
 </resources>

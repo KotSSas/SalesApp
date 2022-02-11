@@ -8,15 +8,15 @@
                 <item
                     android:id="@+id/nav_home"
                     android:icon="@drawable/home1"
-                    android:title="Home" />
+                    android:title="@string/menu_home" />
                 <item
                     android:id="@+id/nav_gallery"
                     android:icon="@drawable/info"
-                    android:title="About us" />
+                    android:title="@string/menu_about_us" />
                 <item
                     android:id="@+id/nav_slideshow"
                     android:icon="@drawable/help"
-                    android:title="Compare page" />
+                    android:title="@string/menu_comapre" />
         </menu>
     </item>
     <item android:title="Contact us">
@@ -25,11 +25,11 @@
                 <item
                     android:id="@+id/nav_feed"
                     android:icon="@drawable/like"
-                    android:title="Share feedback" />
+                    android:title="@string/menu_feed" />
                 <item
                     android:id="@+id/nav_git"
                     android:icon="@drawable/help"
-                    android:title="Check our GitHub for udpates " />
+                    android:title="@string/menu_gith" />
 
             </group>
         </menu>
