@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="All information">
+    <item android:title="@string/all_information">
         <menu>
                 <item
                     android:id="@+id/nav_home"
@@ -19,7 +19,7 @@
                     android:title="@string/menu_comapre" />
         </menu>
     </item>
-    <item android:title="Contact us">
+    <item android:title="@string/contact_us">
         <menu>
             <group android:checkableBehavior="single">
                 <item
