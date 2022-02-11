@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     static List<Shop> fullShopsList = new ArrayList<>();
     private static final String TAG = "MainActivity";
 
+    //f
+
     static TextView filt;
 
     ImageView image;
