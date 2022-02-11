@@ -89,6 +89,13 @@
     <string name="buy">Замовити на сайті</string>
     <string name="error1">Перейти в налаштування мережі</string>
     <string name="error2">Вийти з додатку</string>
+    <string name="menu_home">Додому</string>
+    <string name="menu_about_us">Про нас</string>
+    <string name="menu_comapre">Порівняння</string>
+    <string name="menu_feed">Розповісти про нас</string>
+    <string name="menu_gith">Перейти на GitHub</string>
+    <string name="all_information">Усі пункти:</string>
+    <string name="contact_us">Звязатися з нами:</string>
 
 
 </resources>
