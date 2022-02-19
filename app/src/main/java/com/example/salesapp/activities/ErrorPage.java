@@ -25,12 +25,7 @@ public class ErrorPage extends AppCompatActivity {
         });
 
         ImageView exit_img = findViewById(R.id.exit_b);
-        exit_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               exit();
-            }
-        });
+        exit_img.setOnClickListener(v -> exit());
     }
 
     private void exit() {

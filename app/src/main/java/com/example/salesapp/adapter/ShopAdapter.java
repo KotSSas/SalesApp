@@ -29,6 +29,7 @@ import com.example.salesapp.R;
 import com.example.salesapp.ShopPage;
 
 import com.example.salesapp.model.Shop;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -87,26 +88,17 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
                         @Override
                         public void run() {
                             dialog.dismissDialog();
-                            context.startActivity(intent);
-
+                           context.startActivity(intent);
                         }
-                    }, 2000);
-//                    context.startActivity(intent, options.toBundle());
+                    }
+                    , 2000);
                 }
             });
-            //System.out.println("Connected!");
-            //true
         } else {
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, ErrorPage.class);
-                    context.startActivity(intent);
-                }
+            holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(context, ErrorPage.class);
+                context.startActivity(intent);
             });
-            //false
-//            showCustomDialog();
-
             System.out.println("connect to the internet");
         }
 

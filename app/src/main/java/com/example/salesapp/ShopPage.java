@@ -68,16 +68,12 @@ public class ShopPage extends AppCompatActivity {
        title = findViewById(R.id.shop_page_text);
        title.setText(getIntent().getStringExtra("title"));
 
-     //   category.setText(getIntent().getStringExtra("category"));
-
         itemList.clear();
 
         main_scene = findViewById(R.id.main_scene);
 
         main_scene.setOnClickListener(v -> {
             Vibrator v1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-// Vibrate for 400 milliseconds
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 v1.vibrate(VibrationEffect.createOneShot(100, 1));

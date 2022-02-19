@@ -82,10 +82,8 @@ public class MainActivity extends AppCompatActivity {
 
         IntroPref introPref = new IntroPref(this);
         if (introPref.isFirstTimeLaunch()) {
-
             startActivity(new Intent(MainActivity.this, IntroActivity.class));
             sendNotification(true);
-
         } else {
             sendNotification(false);
 
@@ -137,14 +135,15 @@ public class MainActivity extends AppCompatActivity {
             shopList.add(new Shop(10, 4, "metr", "metr_l", "Metro"));
             shopList.add(new Shop(12, 4, "tavr", "tavr_l", "Tavriya"));
             shopList.add(new Shop(13, 3, "ah", "ah_l", "Aviatsiya"));
-//            shopList.add(new Shop(11, 3, "sin", "Sinsey", "Одежда", "10:00 - 21:00", "https://www.sinsay.com/ua"));//*
-//            shopList.add(new Shop(4, 3, "lc", "LC Waikiki", "Одежда", "10:00 - 21:00", "https://www.lcwaikiki.ua/"));//*
-
 
             fullShopsList.addAll(shopList);
 
             setShopRecycler(shopList);
         }
+
+    }
+
+    private void checkConnenction() {
 
     }
 
