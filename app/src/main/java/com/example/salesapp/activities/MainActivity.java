@@ -239,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+// ffff
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     private void createShorcut() {
         ShortcutManager sM = getSystemService(ShortcutManager.class);
