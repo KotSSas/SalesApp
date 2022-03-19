@@ -17,15 +17,16 @@
                     android:id="@+id/nav_slideshow"
                     android:icon="@drawable/help"
                     android:title="@string/menu_comapre" />
+            <item
+                android:id="@+id/nav_feed"
+                android:icon="@drawable/like"
+                android:title="@string/menu_feed" />
         </menu>
     </item>
     <item android:title="@string/contact_us">
         <menu>
             <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/nav_feed"
-                    android:icon="@drawable/like"
-                    android:title="@string/menu_feed" />
+
                 <item
                     android:id="@+id/nav_git"
                     android:icon="@drawable/help"

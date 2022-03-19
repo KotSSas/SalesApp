@@ -176,10 +176,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nav_git:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));
                 startActivity(browserIntent);
-                Toast.makeText(this, "Git hub page ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Git hub page👨‍💻", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_feed:
-                Toast.makeText(this, "Share your feedback and opinion about the app!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Favourites page❤", Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -292,68 +292,68 @@ public class MainActivity extends AppCompatActivity {
         shopRecycler.setAdapter(alpha);
     }
 
-    public  static  void showCategory(int category){
+    public static void showCategory(int category) {
 
         shopList.clear();
         shopList.addAll(fullShopsList);
 
         List<Shop> filtShops = new ArrayList<>();
 
-        if(category == 1){
+        if (category == 1) {
 
             categoryList.clear();
-            categoryList.add(new Category(1,"gr1cl"));
-            categoryList.add(new Category(2,"gr2"));
-            categoryList.add(new Category(3,"gr4"));
-            categoryList.add(new Category(4,"gr3"));
-            categoryList.add(new Category(5,"gr5"));
+            categoryList.add(new Category(1, "gr1cl"));
+            categoryList.add(new Category(2, "gr2"));
+            categoryList.add(new Category(3, "gr4"));
+            categoryList.add(new Category(4, "gr3"));
+            categoryList.add(new Category(5, "gr5"));
 
             filt.setText(R.string.filter1);
 
             shopList.clear();
             shopList.addAll(fullShopsList);
 
-        }else{
-            for(Shop s : shopList){
-                if (s.getCategory_s() == category){
+        } else {
+            for (Shop s : shopList) {
+                if (s.getCategory_s() == category) {
                     filtShops.add(s);
                 }
             }
 
-            if (category == 2){
+            if (category == 2) {
                 categoryList.clear();
-                categoryList.add(new Category(1,"gr1"));
-                categoryList.add(new Category(2,"gr2cl"));
-                categoryList.add(new Category(3,"gr4"));
-                categoryList.add(new Category(4,"gr3"));
-                categoryList.add(new Category(5,"gr5"));
+                categoryList.add(new Category(1, "gr1"));
+                categoryList.add(new Category(2, "gr2cl"));
+                categoryList.add(new Category(3, "gr4"));
+                categoryList.add(new Category(4, "gr3"));
+                categoryList.add(new Category(5, "gr5"));
                 filt.setText(R.string.tech_f2);
 
-            } else if (category == 3){
+            } else if (category == 3) {
                 categoryList.clear();
-                categoryList.add(new Category(1,"gr1"));
-                categoryList.add(new Category(2,"gr2"));
-                categoryList.add(new Category(3,"gr4cl"));
-                categoryList.add(new Category(4,"gr3"));
-                categoryList.add(new Category(5,"gr5"));
+                categoryList.add(new Category(1, "gr1"));
+                categoryList.add(new Category(2, "gr2"));
+                categoryList.add(new Category(3, "gr4cl"));
+                categoryList.add(new Category(4, "gr3"));
+                categoryList.add(new Category(5, "gr5"));
                 filt.setText(R.string.clothes_f2);
 
-            } else if (category == 4){
+            } else if (category == 4) {
                 categoryList.clear();
-                categoryList.add(new Category(1,"gr1"));
-                categoryList.add(new Category(2,"gr2"));
-                categoryList.add(new Category(3,"gr4"));
-                categoryList.add(new Category(4,"gr3cl"));
-                categoryList.add(new Category(5,"gr5"));
+                categoryList.add(new Category(1, "gr1"));
+                categoryList.add(new Category(2, "gr2"));
+                categoryList.add(new Category(3, "gr4"));
+                categoryList.add(new Category(4, "gr3cl"));
+                categoryList.add(new Category(5, "gr5"));
                 filt.setText(R.string.products_f2);
 
-            } else if (category == 5){
+            } else if (category == 5) {
                 categoryList.clear();
-                categoryList.add(new Category(1,"gr1"));
-                categoryList.add(new Category(2,"gr2"));
-                categoryList.add(new Category(3,"gr4"));
-                categoryList.add(new Category(4,"gr3"));
-                categoryList.add(new Category(5,"gr5cl"));
+                categoryList.add(new Category(1, "gr1"));
+                categoryList.add(new Category(2, "gr2"));
+                categoryList.add(new Category(3, "gr4"));
+                categoryList.add(new Category(4, "gr3"));
+                categoryList.add(new Category(5, "gr5cl"));
                 filt.setText(R.string.sport_f2);
 
             }

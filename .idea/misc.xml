@@ -31,9 +31,10 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_about_us.xml" value="0.4" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_cart_shop_page.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_error.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_fav.xml" value="0.264" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_intro.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_item_page.xml" value="0.4" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_main_comm.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_matching.xml" value="0.2542991141219385" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/activity_shop_page.xml" value="0.2857142857142857" />
@@ -54,7 +55,7 @@
         <entry key="..\:/Programming/SalesApp/app/src/main/res/layout/user_message.xml" value="0.19814814814814816" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/menu/ff_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/menu/main_menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Programming/SalesApp/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Programming/SalesApp/app/src/main/res/menu/nav_menu.xml" value="0.4" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Programming/SalesApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
         <entry key="..\:/Users/Alex/Desktop/SalesAppV1/SalesApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
@@ -112,7 +113,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_15" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
