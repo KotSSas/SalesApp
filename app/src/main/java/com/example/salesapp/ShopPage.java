@@ -125,66 +125,6 @@ public class ShopPage extends AppCompatActivity {
                 e.printStackTrace();
             }
         } else
-//            if (title.getText().equals("Citrus")) {
-//            try {
-//                Document document = Jsoup.connect(
-//                        "https://www.citrus.ua/shares/vremya-skidok-ot-philips-tehniku-dlya-kuhni/").get();
-//                name = new ArrayList<>();
-//                old_price = new ArrayList<>();
-//                photo = new ArrayList<>();
-//                links = new ArrayList<>();
-//
-//
-//                Elements a = document.getElementsByClass("el-tabs");
-//                for (Element element : a) {
-//                    Elements elementsByClass = element.getElementsByClass("products__list");
-//                    for (Element byClass : elementsByClass) {
-//                        Elements elementsByClass1 = byClass.getElementsByClass("product-card product-card--mini product-card--mini--separate");
-//                        for (Element element1 : elementsByClass1) {
-//                            Elements a1 = elementsByClass1.select("a");
-//                            for (Element element2 : a1) {
-//                                links.add("https://www.citrus.ua" + element2.attr("href").replaceAll("reviews", "description"));
-//                            }
-//                            String name_el = element1.getElementsByClass("product-card__name").select("a").attr("title");
-//                            name.add(name_el);
-//                            old_price.add(element1.getElementsByClass("price").text());
-//                            //это не работает
-//
-//                            String ph = element1.getElementsByClass("image-catalog").attr("src");
-//
-//                            photo.add(ph);
-//
-//                            links.add(element1.getElementsByClass("product-card__preview").select("a").attr("href"));
-//                        }
-//
-//
-//                    }
-//
-//                }
-//
-//
-//
-//                String s1;
-//                String s2;
-//                for (int i = 0; i < name.size(); i++) {
-//                    if (old_price.get(i).lastIndexOf(" ") == old_price.get(i).indexOf(" ")) {
-//                        s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ")) + "₴";
-//                        s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ")) + "₴";
-//                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i)));
-//                    } else {
-//                        s1 = old_price.get(i).substring(0, old_price.get(i).indexOf(" ", 3)) + "₴";
-//                        s2 = old_price.get(i).substring(old_price.get(i).indexOf(" ", 3)) + "₴";
-//                        itemList.add(new Item(i + 9, name.get(i), s1, s2, photo.get(i), links.get(i)));
-//                    }
-//                }
-//
-//
-//                setItemRecycler(itemList);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        } else
-//
             if (title.getText().equals("Metro")) {
                 try {
                     Document document = Jsoup.connect(
