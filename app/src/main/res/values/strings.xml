@@ -45,10 +45,10 @@
     <string name="language">Ukrainian</string>
 
     <string name="cart_price">Только сейчас:</string>
-    <string name="cart_items_list">Товаровы из этого магазина добавленые в список желаемого</string>
-    <string name="shop_cat1">Товаровы в корзине</string>
+    <string name="cart_items_list" translatable="false">Товаровы из этого магазина добавленые в список желаемого</string>
+    <string name="shop_cat1" translatable="false">Товаровы в корзине</string>
     <string name="error">Отсутствует подключение к сети!</string>
-    <string name="error1">Перйти в настройки сети</string>
+    <string name="error1">Перейти в настройки сети</string>
     <string name="error2">Выйти из приложения</string>
     <string name="main_text">Все магазины из нашего приложения</string>
     <string name="main_text2">Фильтр:</string>
@@ -100,8 +100,8 @@
     <string name="menu_gith">Перейти на GitHub</string>
     <string name="all_information">Все пункты:</string>
     <string name="contact_us">"Связаться с нами "</string>
-    <string name="fv">Избранные магазины</string>
-    <string name="fav_descr">Магазины которые вы посчитали наиболие интересными будут находиться в этом списке.</string>
+    <string name="fv" translatable="false">Избранные магазины</string>
+    <string name="fav_descr" translatable="false">Магазины которые вы посчитали наиболие интересными будут находиться в этом списке.</string>
 
 
 </resources>

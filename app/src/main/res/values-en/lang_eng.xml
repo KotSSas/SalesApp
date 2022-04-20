@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SalesApp</string>
+    <string name="sales_icon">Sales</string>
+    <string name="about_us">About us</string>
+    <string name="coming_soon">"Comparing "</string>
+    <string name="coming_soon_h1">Comparing</string>
+    <string name="coming_soon_text">This page is unavailable</string>
+    <string name="main_scene">Main</string>
+    <string name="head">Glory to Ukraine!</string>
+    <string name="head2">Welcome back to Sales App!</string>
+    <string name="h2">Filter:</string>
+    <string name="h3" >All shops from the app</string>
+    <string name="shop_cat">Shop:</string>
+    <string name="shop_work">Working hours:</string>
+    <string name="shop_site">Official website:</string>
+    <string name="h2.1">About</string>
+    <string name="h2.2">Us</string>
+    <string name="item_price1">Price before discount:</string>
+    <string name="item_price2">Price with a discount:</string>
+    <string name="cart_h1">Cart</string>
+    <string name="cart_h2">Page</string>
+    <string name="filter1">Filter is not chosen yet</string>
+
+    <string name="buy">Order from a website</string>
+
+    <string name="clothes_f">Clothes</string>
+    <string name="tech_f">Tech</string>
+    <string name="all_f">All</string>
+    <string name="sport_f">"Different "</string>
+    <string name="products_f">Products</string>
+
+    <string name="clothes_f2">Filtered: \"Clothes\"</string>
+    <string name="tech_f2">Filtered: \"Tech\"</string>
+    <string name="all_f2">\"All\"</string>
+    <string name="sport_f2">Filtered: \"Different\"</string>
+    <string name="products_f2">Filtered: \"Продукты\"</string>
+
+    <string name="clothes_f3">Filtered shops: clothes</string>
+    <string name="tech_f3">Filtered shops: tech</string>
+    <string name="all_f3">All shops from our app</string>
+    <string name="sport_f3">"Filtered shop: different "</string>
+    <string name="products_f3">Filtered shops: products</string>
+
+    <string name="wait">Wait a bit until we search up for bargains;)</string>
+    <string name="language">Ukrainian</string>
+
+    <string name="cart_price">Right now:</string>
+    <string name="cart_items_list">Товаровы из этого магазина добавленые в список желаемого</string>
+    <string name="shop_cat1">Товаровы в корзине</string>
+    <string name="error">No Internet connection</string>
+    <string name="error1">Check connection settings</string>
+    <string name="error2">Exit the app</string>
+    <string name="main_text">All shops from the list</string>
+    <string name="main_text2">Filter:</string>
+    <string name="main_text3">Absent</string>
+    <string name="description">We are developers from Sector Java team If you want to find out about us more, just wait a bit</string>
+    <string name="description2.2">This app was made in order to show the bargains and sales in different shops in one app</string>
+    <string name="description2.3">In the app you will be able to find a shop with a product you need most. Besides, you will be able to check a website with it and find out about it more.\n</string>
+    <string name="description3.1">\nSector Java has also created another huge project - Discord Bots\n</string>
+    <string name="description3.3">"These bots were created in order to help people especially teachers to make their online lessons more fun \n    "</string>
+
+
+
+
+
+    <string name="intro1.1">Скидки на товары, разных категорий, которыми ты интересуешься…</string>
+    <string name="intro2.1">Множество выгодных предложений</string>
+    <string name="intro2.2">"a product that you need "</string>
+    <string name="intro2.3">Go to the page of rhis product in your browser and order it there....</string>
+
+
+    <string name="intro4_1">BUY</string>
+    <string name="intro4_2">"or pick and choose a product you want "</string>
+    <string name="intro4_3">And remember to use our app regularly❤😉</string>
+    <string name="intro2_2_1">A huge amount of shops</string>
+    <string name="intro2_2_2">all bargains in your region (Ukraine)</string>
+    <string name="intro2_2_3">Get an access to lots of shops without closing an app</string>
+    <string name="loading">Loading…</string>
+    <string name="start">Begin</string>
+    <string name="error_comment">Fill this field!</string>
+    <string name="comment_success">"Your message was successfully sent "</string>
+    <string name="welcome_message">Welcome back,</string>
+    <string name="welcome_note_message">Welcome back again!</string>
+    <string name="hello_n_message">"Welcome to SalesApp "</string>
+    <string name="hello_again_n_message">Welcome back to SalesApp</string>
+    <string name="success_message">The message was successfully sent</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_about_us">About us</string>
+    <string name="menu_comapre">Comparing</string>
+    <string name="menu_feed">Favourite</string>
+    <string name="menu_gith">Jump into GitHub page</string>
+    <string name="all_information">All information:</string>
+    <string name="contact_us">"Contact us: "</string>
+    <string name="fv">Избранные магазины</string>
+    <string name="fav_descr">Магазины которые вы посчитали наиболие интересными будут находиться в этом списке.</string>
+    <string name="description3.2">\"Bots\" are some kind of admins for Discord platform</string>
+
+
+</resources>
