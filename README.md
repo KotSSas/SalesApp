@@ -38,11 +38,11 @@ Besides, after finding this product online you can read about it more and get mo
 | v.1.1 | [Pre-Release ⚠](https://github.com/KotSSas/SalesApp/releases/tag/v1.1)  | Not stable enough|
 | v.1.0| [Pre-Release ⚠](https://github.com/KotSSas/SalesApp/releases/tag/v1.0)  | Not stable enough|
 
-# Другие наши роботы
-Хотелось бы добавить про другие проекты которые вышли из под нашей команды – Дискорд боты. Один из них вышел настолько хорош что смог удивить жюри и получить заслуженое первое место. Бот представлял из себя помошника для учителей на платформе Дискорд проводить уроки с комфортом и так же помогать им с трудностями которые могли возникнуть в ходе учебного процесса. 
+# Our other projects
+I would like to add about other projects that came out from under our team - Discord bots. One of them came out so well that he was able to surprise the jury and get a well-deserved first place. The bot was an assistant for teachers on the Discord platform to conduct lessons comfortably and also help them with difficulties that might arise during the learning process.
 
-# Связь с разроботчиками 
-Если вы в ходе експлуатации нашего проека столкнулись с трудностями связаными с нашей недороботкой вы всегда можете связаться с нами через платформу GitHub чтобы выскозать ваше недовольство или предложить изминение или улучшение функционала приложения. Так же вы можете посетить наш Тик-ток где мы будем стрататься расказть про наш проект как можно больше и привлечь внимание других заинтересованых людей.
+# Communication with developers
+If you encounter difficulties during the operation of our project due to our shortcomings, you can always contact us through the GitHub platform to express your dissatisfaction or suggest a change or improvement in the application's functionality. You can also visit our Tiktok where we will try to tell about our project as much as possible and attract the attention of other interested people.
 
 
 
