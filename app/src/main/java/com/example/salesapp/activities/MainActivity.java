@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     static List<Shop> fullShopsList = new ArrayList<>();
     private static final String TAG = "MainActivity";
 
-    //f
+    //check new account
 
     static TextView filt;
 
