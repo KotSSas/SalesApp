@@ -18,9 +18,6 @@ public class Item {
 
     }
 
-
-
-
     public String getLink() {
         return link;
     }
@@ -52,7 +49,6 @@ public class Item {
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public String getPrice1() {
         return price1;

@@ -2,6 +2,7 @@ package com.example.salesapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
@@ -32,6 +33,8 @@ public class ItemPage extends AppCompatActivity {
     ImageView main_scene;
     TextView title;
     ImageView image;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,14 +85,14 @@ public class ItemPage extends AppCompatActivity {
 
 //                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com"));
 //                startActivity(browserIntent);
-            openMainActivity();
+            finish();
         });
 
     }
 
-    private void openMainActivity() {
-        startActivity(new Intent(this, MainActivity.class));
-    }
+//    private void openMainActivity() {
+//        startActivity(new Intent(this, MainActivity.class));
+//    }
 
 
 

@@ -101,8 +101,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
 public static final class ItemViewHolder extends RecyclerView.ViewHolder {
 
-    TextView title, id, price1, price2;
-    ImageView img;
+    TextView title, price1, price2;
 
     public ItemViewHolder(@NonNull View itemView) {
         super(itemView);

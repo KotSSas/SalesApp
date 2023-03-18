@@ -79,7 +79,7 @@ public class ShopPage extends AppCompatActivity {
                 v1.vibrate(VibrationEffect.createOneShot(100, 1));
             }
             v.startAnimation(AnimationUtils.loadAnimation(ShopPage.this, R.anim.anim_item));
-            openMainActivity();
+            finish();
         });
 
 
@@ -832,9 +832,9 @@ public class ShopPage extends AppCompatActivity {
     }
 
 
-    private void openMainActivity() {
-        startActivity(new Intent(this, MainActivity.class));
-    }
+//    private void openMainActivity() {
+//        startActivity(new Intent(this, MainActivity.class));
+//    }
 
     private void setItemRecycler(List<Item> itemList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);

@@ -111,19 +111,17 @@ public class MainActivity extends AppCompatActivity {
             });
             createShorcut();
 
-
-            categoryList.clear();
             shopList.clear();
+            categoryList.clear();
 
             categoryList.add(new Category(1, "gr1cl"));
-            categoryList.add(new Category(2, "gr2"));
+           // categoryList.add(new Category(2, "gr2"));
             categoryList.add(new Category(3, "gr4"));
             categoryList.add(new Category(4, "gr3"));
             categoryList.add(new Category(5, "gr5"));
 
             setCategoryRecycler(categoryList);
 
-            shopList.add(new Shop(1, 3, "staff", "staff_l", "Staff"));
             //shopList.add(new Shop(5, 2, "ciber", "ciber_l", "Kibernetiki"));                      //No available prices because of the war
             //shopList.add(new Shop(6, 4, "atb", "atb_l", "ATB"));  //No available prices because of the war
             //shopList.add(new Shop(14, 4, "ahn", "ahn_l", "Ashan"));  //No available prices because of the war
@@ -131,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             shopList.add(new Shop(1, 5, "prost", "prost_l", "Prostor"));
             //shopList.add(new Shop(8, 2, "fox", "fox_l", "Foxtrot")); //No available prices because of the war
             shopList.add(new Shop(9, 5, "spr", "spr_l", "Sportmaster"));
+            shopList.add(new Shop(1, 3, "staff", "staff_l", "Staff"));
             //shopList.add(new Shop(9, 5, "jysk", "jysk_l", "Jysk")); //No available prices because of the war
             //shopList.add(new Shop(10, 4, "metr", "metr_l", "Metro")); //No available prices because of the war
             shopList.add(new Shop(12, 4, "tavr", "tavr_l", "Tavriya"));
@@ -168,18 +167,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 Toast.makeText(this, "About us page\uD83D\uDC4C\uD83D\uDE3C", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_slideshow:
-                Intent intent1 = new Intent(MainActivity.this, Matching.class);
-                startActivity(intent1);
-                Toast.makeText(this, "Comapre page", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.nav_git:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));
                 startActivity(browserIntent);
                 Toast.makeText(this, "Git hub page👨‍💻", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_feed:
-                Toast.makeText(this, "Favourites page❤", Toast.LENGTH_SHORT).show();
                 break;
         }
 
@@ -303,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
 
             categoryList.clear();
             categoryList.add(new Category(1, "gr1cl"));
-            categoryList.add(new Category(2, "gr2"));
+           // categoryList.add(new Category(2, "gr2"));
             categoryList.add(new Category(3, "gr4"));
             categoryList.add(new Category(4, "gr3"));
             categoryList.add(new Category(5, "gr5"));
@@ -323,7 +314,7 @@ public class MainActivity extends AppCompatActivity {
             if (category == 2) {
                 categoryList.clear();
                 categoryList.add(new Category(1, "gr1"));
-                categoryList.add(new Category(2, "gr2cl"));
+              //  categoryList.add(new Category(2, "gr2cl"));
                 categoryList.add(new Category(3, "gr4"));
                 categoryList.add(new Category(4, "gr3"));
                 categoryList.add(new Category(5, "gr5"));
@@ -332,7 +323,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (category == 3) {
                 categoryList.clear();
                 categoryList.add(new Category(1, "gr1"));
-                categoryList.add(new Category(2, "gr2"));
+              //  categoryList.add(new Category(2, "gr2"));
                 categoryList.add(new Category(3, "gr4cl"));
                 categoryList.add(new Category(4, "gr3"));
                 categoryList.add(new Category(5, "gr5"));
@@ -341,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (category == 4) {
                 categoryList.clear();
                 categoryList.add(new Category(1, "gr1"));
-                categoryList.add(new Category(2, "gr2"));
+              //  categoryList.add(new Category(2, "gr2"));
                 categoryList.add(new Category(3, "gr4"));
                 categoryList.add(new Category(4, "gr3cl"));
                 categoryList.add(new Category(5, "gr5"));
@@ -350,7 +341,7 @@ public class MainActivity extends AppCompatActivity {
             } else if (category == 5) {
                 categoryList.clear();
                 categoryList.add(new Category(1, "gr1"));
-                categoryList.add(new Category(2, "gr2"));
+               // categoryList.add(new Category(2, "gr2"));
                 categoryList.add(new Category(3, "gr4"));
                 categoryList.add(new Category(4, "gr3"));
                 categoryList.add(new Category(5, "gr5cl"));

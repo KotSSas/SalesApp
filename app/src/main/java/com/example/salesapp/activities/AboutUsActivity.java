@@ -42,7 +42,7 @@ public class AboutUsActivity extends AppCompatActivity {
                     v1.vibrate(VibrationEffect.createOneShot(100, 1));
                 }
                 v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
-                openMainActivity();
+                finish();
             }
         });
 //        coming_soon_scene = findViewById(R.id.coming_soon_scene);
@@ -96,25 +96,5 @@ public class AboutUsActivity extends AppCompatActivity {
 //
 //        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(""));
 //        startActivity(browserIntent);
-    }
-
-    private void openMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
-        ico = findViewById(R.id.photo1);
-
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
-                new Pair<View, String>(ico, "icoImage")
-        );
-        startActivity(intent, options.toBundle());
-    }
-
-    private void openMatchingActivity() {
-        Intent intent = new Intent(this, Matching.class);
-        ico = findViewById(R.id.photo1);
-
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) this,
-                new Pair<View, String>(ico, "icoImage")
-        );
-        startActivity(intent, options.toBundle());
     }
 }
