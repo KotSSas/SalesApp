@@ -241,9 +241,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
         intent2.setAction(Intent.ACTION_VIEW);
 
-        Intent intent3 = new Intent(getApplicationContext(), Matching.class);
-        intent3.setAction(Intent.ACTION_VIEW);
-
         ShortcutInfo shortcut1 = new ShortcutInfo.Builder(this, "shortcut1")
                 .setIntent(intent1)
                 .setShortLabel("About")
