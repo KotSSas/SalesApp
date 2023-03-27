@@ -96,5 +96,7 @@
     <string name="fav_descr">Магазины которые вы посчитали наиболие интересными будут находиться в этом списке.</string>
     <string name="description3.2">\"Bots\" are some kind of admins for Discord platform</string>
 
-
+    <string name="support_ukraine">Support Ukraine!</string>
+    <string name="support_ukraine_text">russia has invaded Ukraine and already killed tens of thousands of civilians, with many more raped or tortured.
+The death toll keeps climbing. It\'s a genocide. We need your help. Let\'s fight back against the russian regime.\n<b><i>Click on the banner below the text</i></b></string>
 </resources>

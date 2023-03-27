@@ -14,6 +14,7 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
@@ -23,17 +24,21 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.salesapp.IntroPref;
+import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
 import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
@@ -62,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     static TextView filt;
 
-    ImageView image;
+    ImageView image, image_support;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
@@ -140,6 +145,18 @@ public class MainActivity extends AppCompatActivity {
             setShopRecycler(shopList);
         }
 
+        image_support = findViewById(R.id.image_support);
+        image_support.setOnClickListener(v -> {
+                Vibrator v1 = (Vibrator) MainActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    v1.vibrate(VibrationEffect.createOneShot(100, 1));
+                }
+
+                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.anim_item));
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://stand-with-ukraine.pp.ua/"));
+                startActivity(browserIntent);
+            });
     }
 
     private void checkConnenction() {

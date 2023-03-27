@@ -102,6 +102,8 @@
     <string name="contact_us">"Связаться с нами "</string>
     <string name="fv" translatable="false">Избранные магазины</string>
     <string name="fav_descr" translatable="false">Магазины которые вы посчитали наиболие интересными будут находиться в этом списке.</string>
-
+    <string name="support_ukraine">Помоги Украине!</string>
+    <string name="support_ukraine_text">Вторжение росии в Украину убило десятки тысяч мирных жителей, еще больше было изнасиловано или подвергнуто пыткам.
+        Число погибших продолжает расти. Это геноцид. Нам нужна ваша помощь. Давайте дадим отпор русскому режиму.\n<i><b>Кликай на бенер ниже!</b></i></string>
 
 </resources>
