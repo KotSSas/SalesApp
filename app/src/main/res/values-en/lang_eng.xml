@@ -87,7 +87,7 @@
     <string name="success_message">The message was successfully sent</string>
     <string name="menu_home">Home</string>
     <string name="menu_about_us">About us</string>
-    <string name="menu_comapre">Comparing</string>
+    <string name="menu_set">Settings</string>
     <string name="menu_feed">Favourite</string>
     <string name="menu_gith">Jump into GitHub page</string>
     <string name="all_information">All information:</string>
@@ -95,6 +95,13 @@
     <string name="fv">Избранные магазины</string>
     <string name="fav_descr">Магазины которые вы посчитали наиболие интересными будут находиться в этом списке.</string>
     <string name="description3.2">\"Bots\" are some kind of admins for Discord platform</string>
+
+    <string name="settings_h">Settings:</string>
+    <string name="settings_text0">App language:</string>
+    <string name="spinner0">Set Language</string>
+    <string name="spinner1">Ukrainian</string>
+    <string name="spinner2">English</string>
+    <string name="spinner3">Svino-soba4a</string>
 
     <string name="support_ukraine">Support Ukraine!</string>
     <string name="support_ukraine_text">russia has invaded Ukraine and already killed tens of thousands of civilians, with many more raped or tortured.

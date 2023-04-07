@@ -40,6 +40,7 @@ import android.widget.Toast;
 import com.example.salesapp.IntroPref;
 import com.example.salesapp.ItemPage;
 import com.example.salesapp.R;
+import com.example.salesapp.Settings;
 import com.example.salesapp.adapter.CategoryAdapter;
 import com.example.salesapp.adapter.ShopAdapter;
 import com.example.salesapp.model.Category;
@@ -174,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(categoryAdapter);
     }
 
+    @SuppressLint("NonConstantResourceId")
     private void itemListener(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
@@ -183,6 +185,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "About us page\uD83D\uDC4C\uD83D\uDE3C", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_settings:
+                Intent set_intent = new Intent(MainActivity.this, Settings.class);
+                startActivity(set_intent);
+                Toast.makeText(this, "Settings page\uD83D\uDC4C\uD83D\uDE3C", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_git:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));

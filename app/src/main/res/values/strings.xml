@@ -9,7 +9,7 @@
     <string name="head">Некоторые магазины было вылучено из-за полномаштабного вторжения росии в Украину! Слава Украине! Слава ЗСУ❤</string>
     <string name="head2">C возращением в SalesApp!</string>
     <string name="h2">Фильтр:</string>
-    <string name="h3" > Магазины нашего приложения</string>
+    <string name="h3"> Магазины нашего приложения</string>
     <string name="shop_cat">Магазин:</string>
     <string name="shop_work">Время работы:</string>
     <string name="shop_site">Официальный сайт:</string>
@@ -69,9 +69,6 @@
     </string>
 
 
-
-
-
     <string name="intro1.1">Скидки на товары, разных категорий, которыми ты интересуешься…</string>
     <string name="intro2.1">Множество выгодных предложений</string>
     <string name="intro2.2">нужный тебе товар</string>
@@ -86,7 +83,7 @@
     <string name="intro2_2_3">Доступ к огромному количеству разных магазинов не выходя из приложения…</string>
     <string name="loading">Загрузка…</string>
     <string name="start">"Начать "</string>
-<string name="error_comment">Заполните поле!</string>
+    <string name="error_comment">Заполните поле!</string>
     <string name="comment_success">Сообщение успешно отправлено!</string>
     <string name="welcome_message">С возвращением,</string>
     <string name="welcome_note_message">Приветствуем вновь!</string>
@@ -95,7 +92,7 @@
     <string name="success_message">Ваше сообщение успешно отправлено!</string>
     <string name="menu_home">Домой</string>
     <string name="menu_about_us">O нас</string>
-    <string name="menu_comapre">Сравнение</string>
+    <string name="menu_set">Настройки</string>
     <string name="menu_feed">Избранное</string>
     <string name="menu_gith">Перейти на GitHub</string>
     <string name="all_information">Все пункты:</string>
@@ -105,5 +102,12 @@
     <string name="support_ukraine">Помоги Украине!</string>
     <string name="support_ukraine_text">Вторжение росии в Украину убило десятки тысяч мирных жителей, еще больше было изнасиловано или подвергнуто пыткам.
         Число погибших продолжает расти. Это геноцид. Нам нужна ваша помощь. Давайте дадим отпор русскому режиму.\n<i><b>Кликай на бенер ниже!</b></i></string>
+
+    <string name="settings_h">Настройки:</string>
+    <string name="settings_text0">Язык приложения:</string>
+    <string name="spinner0">Выбери язык</string>
+    <string name="spinner1">Украинский</string>
+    <string name="spinner2">Английский</string>
+    <string name="spinner3">Сивино-собачий</string>
 
 </resources>

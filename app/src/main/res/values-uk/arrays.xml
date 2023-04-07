@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string-array name="languages" >
+        <item>Обери мову</item>
+        <item>Українська</item>
+        <item>Англійська</item>
+        <item>Російська</item>
+    </string-array>
+</resources>

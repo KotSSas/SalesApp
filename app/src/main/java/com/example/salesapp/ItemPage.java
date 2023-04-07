@@ -3,8 +3,6 @@ package com.example.salesapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,16 +13,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Pair;
-import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
-import com.example.salesapp.activities.AboutUsActivity;
-import com.example.salesapp.activities.MainActivity;
-import com.example.salesapp.activities.Matching;
 
 import java.io.InputStream;
 

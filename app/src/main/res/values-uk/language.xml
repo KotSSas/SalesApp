@@ -91,11 +91,18 @@
     <string name="error2">Вийти з додатку</string>
     <string name="menu_home">Додому</string>
     <string name="menu_about_us">Про нас</string>
-    <string name="menu_comapre">Порівняння</string>
+    <string name="menu_set">Налаштування</string>
     <string name="menu_feed">"Вибранне "</string>
     <string name="menu_gith">Перейти на GitHub</string>
     <string name="all_information">Усі пункти:</string>
     <string name="contact_us">Звязатися з нами:</string>
+
+    <string name="settings_h">Налаштунки:</string>
+    <string name="settings_text0">Мова додатку:</string>
+    <string name="spinner0">Вибери мову</string>
+    <string name="spinner1">Україська</string>
+    <string name="spinner2">Англійська</string>
+    <string name="spinner3">Сивино-собача</string>
 
     <string name="support_ukraine">Допоможи Україні!</string>
     <string name="support_ukraine_text">Вторгнення росії в Україну вбило десятки тисяч мирних жителів, ще більше було зґвалтовано чи піддано тортурам.

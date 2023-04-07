@@ -1,17 +1,12 @@
 package com.example.salesapp;
 
-import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.util.Log;
-import android.util.Pair;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -22,9 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.salesapp.activities.AboutUsActivity;
-import com.example.salesapp.activities.MainActivity;
-import com.example.salesapp.activities.Matching;
 import com.example.salesapp.adapter.ItemAdapter;
 import com.example.salesapp.model.Item;
 

@@ -23,7 +23,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class AboutUsActivity extends AppCompatActivity {
 
 //    TextView main_scene, coming_soon_scene;
-    ImageView ico;
     ImageView main_scene;
     FloatingActionButton commentsLink;
 
