@@ -22,7 +22,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:theme="@style/Theme.MaterialComponents">
 
@@ -43,25 +43,25 @@
 
         <TextView
             android:id="@+id/h1"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="15dp"
             android:fontFamily="@font/roboto"
             android:text="@string/head2"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/menuImage" />
+            app:layout_constraintStart_toEndOf="@+id/menuImage"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="30dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@string/head"
@@ -79,6 +79,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
+            android:paddingBottom="20dp"
             android:contentDescription="@string/sales_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -92,6 +93,7 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#343C3C"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3">
