@@ -69,31 +69,31 @@ public class AboutUsActivity extends AppCompatActivity {
 
     }
 
-    private void openCommentsActivity() {
-        startActivity(new Intent(this, SignInAct.class));
-
-    }
-    public void openGit(View v){
-        Vibrator v1 = (Vibrator) AboutUsActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            v1.vibrate(VibrationEffect.createOneShot(100, 1));
-        }
-
-        v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
-
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));
-        startActivity(browserIntent);
-    }
-
-    public void openTt(View v){
-        Vibrator v1 = (Vibrator) AboutUsActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            v1.vibrate(VibrationEffect.createOneShot(100, 1));
-        }
-
-        v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
+//    private void openCommentsActivity() {
+//        startActivity(new Intent(this, SignInAct.class));
 //
-//        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(""));
+//    }
+//    public void openGit(View v){
+//        Vibrator v1 = (Vibrator) AboutUsActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//            v1.vibrate(VibrationEffect.createOneShot(100, 1));
+//        }
+//
+//        v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
+//
+//        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));
 //        startActivity(browserIntent);
-    }
+//    }
+//
+//    public void openTt(View v){
+//        Vibrator v1 = (Vibrator) AboutUsActivity.this.getSystemService(Context.VIBRATOR_SERVICE);
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//            v1.vibrate(VibrationEffect.createOneShot(100, 1));
+//        }
+//
+//        v.startAnimation(AnimationUtils.loadAnimation(AboutUsActivity.this, R.anim.anim_item));
+////
+////        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(""));
+////        startActivity(browserIntent);
+//    }
 }

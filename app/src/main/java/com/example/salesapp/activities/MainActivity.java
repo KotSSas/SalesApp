@@ -14,6 +14,8 @@ import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
@@ -191,10 +193,47 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(set_intent);
                 Toast.makeText(this, "Settings page\uD83D\uDC4C\uD83D\uDE3C", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.nav_git:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas/SalesApp"));
-                startActivity(browserIntent);
-                Toast.makeText(this, "Git hub page👨‍💻", Toast.LENGTH_SHORT).show();
+            case R.id.nav_git0:
+                Intent git0 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KotSSas"));
+                startActivity(git0);
+                Toast.makeText(this, "Alex's git hub page👨‍💻", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_git1:
+                Intent git1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/maksym-kravchenko"));
+                startActivity(git1);
+                Toast.makeText(this, "Maksym's git hub page👨‍💻", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_mail0:
+                Intent mail0 = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:sashasmug@gmail.com"));
+                startActivity(mail0);
+                Toast.makeText(this, "Alex's EMail👨‍💻", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_mail1:
+                Intent mail1 = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:ang.work1607@gmail.com"));
+                startActivity(mail1);
+                Toast.makeText(this, "Maksym's EMail👨‍💻", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_inst0:
+                Intent inst0 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/validolxm/"));
+                startActivity(inst0);
+                Toast.makeText(this, "Alex's Instagram👨‍💻", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_inst1:
+                Intent inst1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/maksyym.k/"));
+                startActivity(inst1);
+                Toast.makeText(this, "Maksym's Instagram👨‍💻", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_phn0:
+                ClipboardManager clipboard0 = (ClipboardManager) this.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip0 = ClipData.newPlainText("", "+380956523010");
+                clipboard0.setPrimaryClip(clip0);
+                Toast.makeText(this, "Phone\'s number copied", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_phn1:
+                ClipboardManager clipboard1 = (ClipboardManager) this.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip1 = ClipData.newPlainText("", "+41765293875");
+                clipboard1.setPrimaryClip(clip1);
+                Toast.makeText(this, "Phone\'s number copied", Toast.LENGTH_SHORT).show();
                 break;
         }
 

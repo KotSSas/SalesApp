@@ -15,18 +15,53 @@
                     android:title="@string/menu_about_us" />
             <item
             android:id="@+id/nav_settings"
-            android:icon="@drawable/info"
+            android:icon="@drawable/ic_baseline_settings_24"
             android:title="@string/menu_set" />
         </menu>
     </item>
-    <item android:title="@string/contact_us">
+    <item android:title="@string/contact_0">
         <menu>
             <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_inst0"
+                    android:icon="@drawable/instlogo"
+                    android:title="@string/menu_inst" />
+                <item
+                    android:id="@+id/nav_git0"
+                    android:icon="@drawable/fui_ic_github_white_24dp"
+                    android:title="@string/menu_gith" />
 
                 <item
-                    android:id="@+id/nav_git"
-                    android:icon="@drawable/help"
+                    android:id="@+id/nav_mail0"
+                    android:icon="@drawable/ic_email"
+                    android:title="@string/menu_mail" />
+                <item
+                    android:id="@+id/nav_phn0"
+                    android:icon="@drawable/ic_phone_msg"
+                    android:title="@string/menu_phn" />
+
+            </group>
+        </menu>
+    </item>
+    <item android:title="@string/contact_1">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_inst1"
+                    android:icon="@drawable/instlogo"
+                    android:title="@string/menu_inst" />
+                <item
+                    android:id="@+id/nav_git1"
+                    android:icon="@drawable/fui_ic_github_white_24dp"
                     android:title="@string/menu_gith" />
+                <item
+                    android:id="@+id/nav_mail1"
+                    android:icon="@drawable/ic_email"
+                    android:title="@string/menu_mail" />
+                <item
+                    android:id="@+id/nav_phn1"
+                    android:icon="@drawable/ic_phone_msg"
+                    android:title="@string/menu_phn" />
 
             </group>
         </menu>

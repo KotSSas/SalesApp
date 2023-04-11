@@ -94,9 +94,13 @@
     <string name="menu_about_us">O нас</string>
     <string name="menu_set">Настройки</string>
     <string name="menu_feed">Избранное</string>
-    <string name="menu_gith">Перейти на GitHub</string>
+    <string name="menu_gith">GitHub</string>
+    <string name="menu_mail">EMail</string>
+    <string name="menu_inst">Instagram</string>
+    <string name="menu_phn">Номер телефона</string>
     <string name="all_information">Все пункты:</string>
-    <string name="contact_us">"Связаться с нами "</string>
+    <string name="contact_0">Связаться с Александром:</string>
+    <string name="contact_1">Связаться с Максимом:</string>
     <string name="fv" translatable="false">Избранные магазины</string>
     <string name="fav_descr" translatable="false">Магазины которые вы посчитали наиболие интересными будут находиться в этом списке.</string>
     <string name="support_ukraine">Помоги Украине!</string>
@@ -109,5 +113,10 @@
     <string name="spinner1">Украинский</string>
     <string name="spinner2">Английский</string>
     <string name="spinner3">Сивино-собачий</string>
+
+    <string name="prof">Розроботчик програмного обезпечения</string>
+    <string name="name0">Максим Кравченко</string>
+    <string name="name1">Александр Смугляков</string>
+    <string name="about_us_title">Создатели приложения</string>
 
 </resources>

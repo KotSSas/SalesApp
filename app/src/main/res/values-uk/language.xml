@@ -93,9 +93,13 @@
     <string name="menu_about_us">Про нас</string>
     <string name="menu_set">Налаштування</string>
     <string name="menu_feed">"Вибранне "</string>
-    <string name="menu_gith">Перейти на GitHub</string>
+    <string name="menu_gith">GitHub</string>
+    <string name="menu_mail">EMail</string>
+    <string name="menu_inst">Instagram</string>
+    <string name="menu_phn">Номер телефону</string>
     <string name="all_information">Усі пункти:</string>
-    <string name="contact_us">Звязатися з нами:</string>
+    <string name="contact_0">Зв\'язатися з Олександром:</string>
+    <string name="contact_1">Зв\'язатися з Максимом:</string>
 
     <string name="settings_h">Налаштунки:</string>
     <string name="settings_text0">Мова додатку:</string>
@@ -107,4 +111,10 @@
     <string name="support_ukraine">Допоможи Україні!</string>
     <string name="support_ukraine_text">Вторгнення росії в Україну вбило десятки тисяч мирних жителів, ще більше було зґвалтовано чи піддано тортурам.
         Кількість загиблих продовжує зростати. Це геноцид. Нам потрібна ваша допомога. Давайте дамо відсіч російському режиму.\n<b><i>Клікай на банер під текстом</i></b></string>
+
+    <string name="prof">Розробник програмного забезпечення</string>
+    <string name="name0">Максим Кравченко</string>
+    <string name="name1">Олександр Смугляков</string>
+    <string name="about_us_title">Розробники додатку</string>
+
 </resources>
